@@ -1160,21 +1160,21 @@ body.home .page {
 
 .about-image-layers {
   width: 100%; 
-  height: 162px;
+  height: 120px;
   background-size: 90%;
   background-image: url(/wp-content/themes/eeonyx-wp-theme/images/about-layers.png);
 }
 
 .about-image-scroll {
   width: 160px; 
-  height: 198px;
+  height: 150px;
   background-size: 160px 150px;
   background-image: url(/wp-content/themes/eeonyx-wp-theme/images/about-scroll.png);
 }
 
 .about-image-thin {
   width: 240px; 
-  height: 105px;
+  height: 146px;
   background-size: 240px 105px;
   background-image: url(/wp-content/themes/eeonyx-wp-theme/images/about-thin.png);
 }

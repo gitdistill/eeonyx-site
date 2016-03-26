@@ -27,7 +27,7 @@
 -->
 			
 					
-				<?php if (!is_home()) { ?>
+				<?php if (!is_home() && !is_404()) { ?>
 				<div class="footer">
 					<div class="logo"></div>
 				</div>

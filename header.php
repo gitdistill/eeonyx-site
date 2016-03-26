@@ -39,6 +39,9 @@
 						Smart
 						Fabrics
 					</a>
+					<a class="menu-item" href="/custom-solutions">
+						Custom Solutions
+					</a>
 					<a class="menu-item active" href="/about-eeonyx">
 						About 
 						Eeonyx

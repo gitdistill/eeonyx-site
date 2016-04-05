@@ -147,10 +147,10 @@ Slideout.prototype.isOpen = function() {
  */
 Slideout.prototype._translateXTo = function(translateX) {
   this._currentOffsetX = translateX;
-  // this.panel.style[prefix + 'transform'] = this.panel.style.transform = 'translateX(' + translateX + 'px)';
+  this.panel.style[prefix + 'transform'] = this.panel.style.transform = 'translateX(' + translateX + 'px)';
   this.toggleElement.style.left = (translateX + 30) + 'px';
-  this.panel.style.left = translateX + 'px';
-  this.panel.style.padding = '0 ' + translateX + 'px 0 0';
+  // this.panel.style.left = translateX + 'px';
+  // this.panel.style.padding = '0 ' + translateX + 'px 0 0';
   return this;
 };
 

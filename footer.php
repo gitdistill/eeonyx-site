@@ -35,6 +35,7 @@
 			</main>
 		</div>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript" src="/wp-content/themes/eeonyx-wp-theme/js/autosize.min.js"></script>
 		<script type="text/javascript" src="/wp-content/themes/eeonyx-wp-theme/vendor/slideout.js"></script>
 		<script type="text/javascript" src="/wp-content/themes/eeonyx-wp-theme/main.js"></script>
 		<?php wp_footer(); ?>

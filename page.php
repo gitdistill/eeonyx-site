@@ -11,13 +11,7 @@
  * @since Twenty Sixteen 1.0
  */
 
-get_header(); ?>
-
-<div id="nav-link">
-	<div class='nav-toggle'><div class='nav-icon'><span></span><span></span><span></span></div></div>
-	<div class='logo small'></div>
-</div>
-<?php
+get_header();
 $show_topbar = false;
 $is_smart_fabrics = false;
 $pos = strpos(get_permalink(), 'smart-fabrics');

@@ -53,14 +53,26 @@
 			</div>
 	  	</header>
 	</nav>
-
+	<?php
+	if (!is_home()) { 
+		?>
+		<div id="nav-link">
+			<div class='nav-toggle'><div class='nav-icon'><span></span><span></span><span></span></div></div>
+			<div class='logo small'></div>
+		</div>
+		<?php
+	} else {
+		?>
+		<div id="nav-link" class='hidden-desktop'>
+			<div class='nav-toggle'><div class='nav-icon'><span></span><span></span><span></span></div></div>
+			<div class='logo small'></div>
+		</div>
+		<?php
+	}; 
+	?>
 	<div id="outer">
 		<main id="panel" <?php if (is_home() && ! wp_is_mobile()) { ?>class="slideout-panel" style="left: 220px;padding-right: 220px;"<?php } ?>>
 			<?php if (is_home()) { ?>
-				<div id="nav-link" class='hidden-desktop'>
-					<div class='nav-toggle'><div class='nav-icon'><span></span><span></span><span></span></div></div>
-					<div class='logo small'></div>
-				</div>
 				<div class="content">
 					<div class="inner">
 						<div class="logo big hidden-mobile"></div>

@@ -729,21 +729,11 @@ label {
 .menu-items {
 }
 
-.home .menu-items {
-  background: #fafafa;
-}
-
-
-.home .menu-item {
-  border-bottom: 1px solid #edf1e8;
-}
 
 .home .menu-header {
   margin-top: 50px;
   /* background: #edf1e8; */
   background: transparent;
-  color: #7A897A;
-  border-color: #edf1e8;
 }
 
 .menu-item {
@@ -758,20 +748,10 @@ label {
   color: #e6e7e8;
 }
 
-.home .menu-item {
-  color: #4B574D;
-  font-weight: 500;
-}
-
 .menu-item:hover {
   background: #4d5b4e;
 }
 
-
-.home .menu-item:hover {
-  color: #fff;
-  background: #3CD52E;
-}
 
 .green-circle {
   height: 12px;
@@ -881,11 +861,6 @@ body.home .page {
   display: none;
 }
 
-
-.home #menu {
-  background: #fff;
-}
-
 .slideout-panel {
   position:relative;
   z-index: 1;
@@ -894,10 +869,6 @@ body.home .page {
   padding: 0px;
   /* will-change: transform; */
   background: #fff;
-}
-
-.home #menu {
-  width: 220px;
 }
 
 .slideout-open #outer {
@@ -951,23 +922,26 @@ body.home .page {
   margin: 0 0 20px 0;
 }
 
-.contact-form .form-group input[type='text'] {
+.contact-form .form-group input[type='text'],.contact-form .form-group textarea {
   width: 100%;
   display: block;
   padding: 0 1px;
   outline: none;
   -webkit-box-shadow: none;
     box-shadow: none;
-  line-height: 2em;
+  line-height: 1.5em;
   font-size: 18px;
+  border: 0px;
+  /*
     border-style: solid;
   border-color: #3CD52E;
   border-width: 0 0 5px 0;
+  */
 }
 
 .contact-form .form-group label {
   display: block;
-  margin: 9px 0 0 0 ;
+  margin: 2px 0 0 0;
   padding: 0 1px;
 }
 
@@ -980,6 +954,11 @@ body.home .page {
   transform: translateZ(0);
   width: 221px;
   left: 30px;
+}
+
+a[href^="tel"]{
+  color:inherit;
+  text-decoration:none;
 }
 
 #nav-link .nav-toggle {
@@ -1186,6 +1165,11 @@ body.home .page {
   background-image: url(/wp-content/themes/eeonyx-wp-theme/images/about-bolts.png);
 }
 
+.contact-form .ajax-loader {
+  margin: 10px auto 0 auto !important;
+  display: block;
+}
+
 .contact-form input[type='submit'] {
   margin: 0 auto;
   display: block;
@@ -1200,7 +1184,8 @@ body.home .page {
   text-transform: uppercase;
   color: #fff;
   line-height: 57px;
-  padding:;
+  outline: none;
+  padding:0;
   text-align: center;
   font-family: 'SeravekBold', sans-serif;
 }
@@ -1265,6 +1250,111 @@ body.home .page {
     display: none !important;
   }
 }
+
+/* Isao */
+.input__field--isao {
+  z-index: 10;
+  padding: 0.75em 0.1em 0.25em;
+  width: 100%;
+  background: transparent;
+  color: #afb3b8;
+}
+
+.wpcf7-response-output {
+  display: none !important;
+}
+
+.contact-error .wpcf7-response-output {
+  display: block !important;
+}
+
+.contact-form span.wpcf7-not-valid-tip {
+    color: #f00;
+    font-size: 1em;
+    display: block;
+    position: absolute;
+    width: 300px;
+    top: -23px;
+}
+
+.contact-form label {
+  position: relative;
+  overflow:hidden;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.contact-form label::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  width: 100%;
+  height: 5px;
+  background: #252C26;
+  -webkit-transform: scale3d(1, 0.4, 1);
+  transform: scale3d(1, 0.4, 1);
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
+  transition: transform 0.3s, background-color 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.contact-form label::after {
+  content: attr(data-content);
+  position: absolute;
+  top:  0;
+  left: 1px;
+  color: #3CD52E;
+  padding:9px 0 0 0;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 50%, 0);
+  transform: translate3d(0, 50%, 0);
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.contact-form .active-input label::before {
+  background-color: #3CD52E;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+
+.contact-form .active-input label {
+  pointer-events: none;
+}
+
+.contact-form .active-input label::after {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.contact-form label .label-content {
+  display: block;
+  margin: 9px 0 0 0;
+}
+
+.contact-form .active-input label .label-content {
+  opacity: 0;
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+}
+
+.contact-form .form-group input[type='text']:-webkit-autofill, .contact-form .form-group textarea:-webkit-autofill {
+  background: transparent;
+  -webkit-box-shadow:0 0 0 500px white inset; }
+}
+
 /*
 
 .content-section {

@@ -922,7 +922,7 @@ body.home .page {
   margin: 0 0 20px 0;
 }
 
-.contact-form .form-group input[type='text'],.contact-form .form-group textarea {
+.contact-form .form-group input[type='text'], .contact-form .form-group input[type='email'],.contact-form .form-group textarea {
   width: 100%;
   display: block;
   padding: 0 1px;
@@ -1350,7 +1350,7 @@ a[href^="tel"]{
   transform: translate3d(0, -50%, 0);
 }
 
-.contact-form .form-group input[type='text']:-webkit-autofill, .contact-form .form-group textarea:-webkit-autofill {
+.contact-form .form-group input[type='text']:-webkit-autofill, .contact-form .form-group input[type='email']:-webkit-autofill, .contact-form .form-group textarea:-webkit-autofill {
   background: transparent;
   -webkit-box-shadow:0 0 0 500px white inset; }
 }

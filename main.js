@@ -22,7 +22,7 @@ if ($(".contact-form").length) {
 		$($(this).parent().find('input')[0]).focus();
 	});
 
-	autosize($('.contact-form input[name="message"]'));
+	autosize($('.contact-form textarea'));
 
 	$(".contact-form input[type='text']").each(function() { 
 		$(this).on('focus', function() { 

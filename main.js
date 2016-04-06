@@ -19,12 +19,12 @@ $(document).on('ready', function() {
 
 if ($(".contact-form").length) { 
 	$(".contact-form").on('click', "span.wpcf7-not-valid-tip", function() {
-		$($(this).parent().find('input')[0]).focus();
+		$($(this).parent().find('input, textarea')[0]).focus();
 	});
 
 	autosize($('.contact-form textarea'));
 
-	$(".contact-form input[type='text']").each(function() { 
+	$(".contact-form input[type='text'], .contact-form input[type='email'], .contact-form textarea").each(function() { 
 		$(this).on('focus', function() { 
 			$(this).parent().parent().addClass('active-input');
 			var errorMessages = $(this).parent().find("span.wpcf7-not-valid-tip");

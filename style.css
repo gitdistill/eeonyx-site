@@ -469,26 +469,26 @@ optgroup {
 
 @font-face {
   font-family: 'SeravekExtraLight';
-  src: url('/wp-content/themes/eeonyx-wp-theme/fonts/SeravekWebBasicExtraLight.eot'); /* IE9 Compat Modes */
-  src: url('/wp-content/themes/eeonyx-wp-theme/fonts/SeravekWebBasicExtraLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/wp-content/themes/eeonyx-wp-theme/fonts/SeravekWebBasicExtraLight.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/wp-content/themes/eeonyx-wp-theme/fonts/SeravekWebBasicExtraLight.woff') format('woff'); /* Pretty Modern Browsers */
+  src: url('./fonts/SeravekWebBasicExtraLight.eot'); /* IE9 Compat Modes */
+  src: url('./fonts/SeravekWebBasicExtraLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/SeravekWebBasicExtraLight.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/SeravekWebBasicExtraLight.woff') format('woff'); /* Pretty Modern Browsers */
 }
 
 @font-face {
   font-family: 'SeravekBold';
-  src: url('/wp-content/themes/eeonyx-wp-theme/fonts/SeravekWebBasicBold.eot'); /* IE9 Compat Modes */
-  src: url('/wp-content/themes/eeonyx-wp-theme/fonts/SeravekWebBasicBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/wp-content/themes/eeonyx-wp-theme/fonts/SeravekWebBasicBold.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/wp-content/themes/eeonyx-wp-theme/fonts/SeravekWebBasicBold.woff') format('woff'); /* Pretty Modern Browsers */
+  src: url('./fonts/SeravekWebBasicBold.eot'); /* IE9 Compat Modes */
+  src: url('./fonts/SeravekWebBasicBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/SeravekWebBasicBold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/SeravekWebBasicBold.woff') format('woff'); /* Pretty Modern Browsers */
 }
 
 @font-face {
   font-family: 'SeravekLight';
-  src: url('/wp-content/themes/eeonyx-wp-theme/fonts/SeravekWebBasicLight.eot'); /* IE9 Compat Modes */
-  src: url('/wp-content/themes/eeonyx-wp-theme/fonts/SeravekWebBasicLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/wp-content/themes/eeonyx-wp-theme/fonts/SeravekWebBasicLight.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/wp-content/themes/eeonyx-wp-theme/fonts/SeravekWebBasicLight.woff') format('woff'); /* Pretty Modern Browsers */
+  src: url('./fonts/SeravekWebBasicLight.eot'); /* IE9 Compat Modes */
+  src: url('./fonts/SeravekWebBasicLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/SeravekWebBasicLight.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/SeravekWebBasicLight.woff') format('woff'); /* Pretty Modern Browsers */
 }
 
 body {
@@ -527,6 +527,15 @@ h3 {
   font-weight: 700;
   font-family: 'SeravekBold', sans-serif;
   text-transform: uppercase;
+  line-height: 1.3em;
+  letter-spacing: .05em;
+}
+
+h3.light {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'SeravekLight', sans-serif;
+  text-transform: none;
   line-height: 1.3em;
   letter-spacing: .05em;
 }
@@ -580,12 +589,16 @@ h6 {
   line-height: 1.4em;
 }
 
-h6.section-title, .icon-heading .text {
+h6.section-title, .icon-heading .text, .product-columns .inquire-link .text {
   font-size: 18px;
   line-height: 1em;
   font-weight: 700;
   font-family: 'SeravekBold', sans-serif;
   letter-spacing: .05em;
+}
+
+.product-columns .inquire-link .text {
+  text-transform: uppercase;
 }
 
 p strong {
@@ -617,10 +630,10 @@ h6.item-label {
   font-weight: 400;
   font-family: 'SeravekLight', sans-serif;
   margin: 0 0 .5em 0;
-  list-style-image: url('/wp-content/themes/eeonyx-wp-theme/images/green-arrow.png');
+  list-style-image: url('./images/green-arrow.png');
 }
 
-label {
+label, .product-crumb .text strong {
   font-size: 12px;
   font-weight: 700;
   font-family: 'SeravekBold', sans-serif;
@@ -674,7 +687,7 @@ label {
   height: 57px;
   width: 48px;
   background-size: 48px 57px;
-  background-image: url(/wp-content/themes/eeonyx-wp-theme/images/menu-bg-blank.png);
+  background-image: url(./images/menu-bg-blank.png);
   background-position: center;
   margin: 30px auto 30px auto;
 }
@@ -769,7 +782,7 @@ label {
 
 .logo {
   background-repeat: no-repeat;
-  background-image: url(/wp-content/themes/eeonyx-wp-theme/images/logo.svg);
+  background-image: url(./images/logo.svg);
 }
 
 .logo.big {
@@ -785,6 +798,13 @@ label {
 
 .sub-page-header {
   margin: 40px 0;
+}
+
+.grid-header {
+
+}
+
+.grid-subtitle {
 }
 
 .sub-page-subtitle {
@@ -831,7 +851,13 @@ body.home .page {
   width: 155px;
   height: 44px;
   background-size: 155px 44px;
-  background-image: url(/wp-content/themes/eeonyx-wp-theme/images/logo-plain.svg);
+  background-image: url(./images/logo-plain.svg);
+}
+
+#fullpage .section .footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
 }
 
 .home, .home #outer .content {
@@ -839,11 +865,11 @@ body.home .page {
 }
 
 .content .inner {
-  padding: 50px 7%;
+  padding: 40px 7%;
 }
 
 .content .inner.pad2x {
-  padding: 50px 14%;
+  padding: 40px 14%;
 }
 
 .slideout-menu {
@@ -884,7 +910,7 @@ body.home .page {
   width: 100%;
   background-position:center center;
   background-attachment: local;
-  background-image: url(/wp-content/themes/eeonyx-wp-theme/images/fabric-bg.jpg);
+  background-image: url(./images/fabric-bg.jpg);
 }
 
 .icon-heading {
@@ -901,11 +927,11 @@ body.home .page {
 }
 
 .icon-heading .icon.phone {
-  background-image: url(/wp-content/themes/eeonyx-wp-theme/images/icon-phone.png);
+  background-image: url(./images/icon-phone.png);
 }
 
 .icon-heading .icon.location {
-  background-image: url(/wp-content/themes/eeonyx-wp-theme/images/icon-location.png);
+  background-image: url(./images/icon-location.png);
 }
 
 .icon-heading .text {
@@ -956,6 +982,10 @@ body.home .page {
   left: 30px;
 }
 
+#nav-link.static {
+  position: absolute;
+}
+
 a[href^="tel"]{
   color:inherit;
   text-decoration:none;
@@ -965,7 +995,7 @@ a[href^="tel"]{
   height: 45px;
   width: 38px;
   background-size: 38px 45px;
-  background-image: url(/wp-content/themes/eeonyx-wp-theme/images/menu-bg-blank.png);
+  background-image: url(./images/menu-bg-blank.png);
   float: left;
   margin-right: 30px;
 }
@@ -1072,7 +1102,7 @@ a[href^="tel"]{
   margin-bottom: .5em;
 }
 
-.clearfix:after {
+.clearfix:after, .specs-table .table-row:after {
   visibility: hidden;
   display: block;
   font-size: 0;
@@ -1134,35 +1164,35 @@ a[href^="tel"]{
   width: 160px; 
   height: 160px;
   background-size: 160px 120px;
-  background-image: url(/wp-content/themes/eeonyx-wp-theme/images/about-top.png);
+  background-image: url(./images/about-top.png);
 }
 
 .about-image-layers {
   width: 100%; 
   height: 120px;
   background-size: 90%;
-  background-image: url(/wp-content/themes/eeonyx-wp-theme/images/about-layers.png);
+  background-image: url(./images/about-layers.png);
 }
 
 .about-image-scroll {
   width: 160px; 
   height: 150px;
   background-size: 160px 150px;
-  background-image: url(/wp-content/themes/eeonyx-wp-theme/images/about-scroll.png);
+  background-image: url(./images/about-scroll.png);
 }
 
 .about-image-thin {
   width: 240px; 
   height: 146px;
   background-size: 240px 105px;
-  background-image: url(/wp-content/themes/eeonyx-wp-theme/images/about-thin.png);
+  background-image: url(./images/about-thin.png);
 }
 
 .about-image-bolts {
   width: 50px; 
   height: 220px;
   background-size: 50px 220px;
-  background-image: url(/wp-content/themes/eeonyx-wp-theme/images/about-bolts.png);
+  background-image: url(./images/about-bolts.png);
 }
 
 .contact-form .ajax-loader {
@@ -1178,7 +1208,7 @@ a[href^="tel"]{
   background-size: 48px 57px;
   background-color: transparent;
   border: 0px;
-  background-image: url(/wp-content/themes/eeonyx-wp-theme/images/green-bg.png);
+  background-image: url(./images/green-bg.png);
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1352,11 +1382,240 @@ a[href^="tel"]{
 
 .contact-form .form-group input[type='text']:-webkit-autofill, .contact-form .form-group input[type='email']:-webkit-autofill, .contact-form .form-group textarea:-webkit-autofill {
   background: transparent;
-  -webkit-box-shadow:0 0 0 500px white inset; }
+  -webkit-box-shadow:0 0 0 500px white inset;
+}
+
+.top-gray-wrapper {
+  background: #E6E7E8;
+}
+
+.top-gray-wrapper .inner {
+  padding: 90px 40px 40px 40px;
+}
+
+.product-grid {
+  padding: 20px;
+}
+
+.product-grid .item {
+  display: inline-block;
+  width: 49%;
+  margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .top-gray-wrapper .inner {
+    padding: 90px 20px 20px 20px;
+  }
+
+  .product-grid {
+    padding: 10px;
+  }
+
+  .product-grid .item {
+    width: 100%;
+  }
+  .product-grid .item .item-inner {
+    padding: 10px;
+  }
+}
+
+.product-grid .item .item-inner {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.product-grid .item .image-wrapper {
+
+}
+
+.product-grid .item .image-wrapper img {
+  max-width: 100%;
+}
+
+.product-grid .item .item-text {
+
+}
+
+.product-grid .item .category-icon {
+  float: right;
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+  background-size: 25px 25px;
+}
+
+.product-grid .item .category-icon.warming {
+  background-image: url(./images/icon-warming.png);
+}
+
+.product-grid .item .item-text a.item-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-grid .item .item-inner:hover .item-text a.item-link {
+  color: #3CD52E;
+}
+
+.product-columns {
+  margin: 0 -20px;
+}
+
+.product-columns .left-column, .product-columns .right-column {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+
+.product-columns .left-column .column-inner, .product-columns .right-column .column-inner {
+  padding: 0 20px;
+}
+
+.product-columns .left-column {
+  width: 60%;
+}
+
+.product-columns .right-column {
+  width: 39%;
+}
+
+@media only screen and (max-width: 768px) {
+  .product-columns .left-column, .product-columns .right-column {
+    width: 100%;
+  }
+}
+
+.product-columns .inquire-link {  
+}
+
+.product-columns .inquire-link .inquire-icon {
+  width: 30px;
+  height: 35px;
+  background-size: 30px 35px;
+  background-image: url(./images/icon-inquire.png);
+  float: left;
+  margin: 0 12px 0 0;
+}
+
+.product-columns .inquire-link .text {
+  line-height: 32px;
+}
+
+.product-columns .product-image-wrapper {
+  margin: 40px 0 0 0;
+}
+
+.product-columns .product-image-wrapper img {
+  max-width: 100%;
+}
+
+.specs-section {
+  margin: 0 20px;
+}
+
+.specs-table {
+  margin: 3px -15px;
+}
+
+.specs-table-inner {
+  width: 100%;
+}
+
+.specs-table .column {
+  margin: 0;
+  padding: 9px 15px;
+  text-align: left;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.specs-table .first-column {
+  width: 25%;
+}
+
+.specs-table .second-column {
+  width: 48%;
+}
+
+.specs-table .third-column {
+  width: 25%;
+}
+
+
+.specs-table .header-column {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #3CD52E;
+  letter-spacing: 2px;
+  font-family: 'SeravekLight', sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+  .specs-table .header-column {
+    letter-spacing: .5px;
+  }
+}
+
+.specs-table .header-row {
+  border-bottom: 5px solid #3CD52E;
+}
+
+.specs-table .body-column {
+  line-height: 24px;
+  font-size: 20px;
+  font-family: 'SeravekLight', sans-serif;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 768px) {
+  .specs-table .body-column {
+    line-height: 20px;
+    font-size: 16px;
+  }
+}
+
+.specs-table .body-row {
+  border-bottom: 3px dotted #3CD52E;
+}
+
+.specs-table .body-row.last-row {
+  border-bottom: 0px;
+}
+
+.specs-table .body-column.first-column {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'SeravekLight', sans-serif;
+  font-weight: 500;
+}
+
+.product-crumb {
+  margin: 70px 0 38px 0;
+}
+
+.product-crumb .product-icon {
+  width: 30px;
+  height: 35px;
+  background-size: 30px 35px;
+  background-image: url(./images/product-icon-anti-static.png);
+  float: left;
+  margin-right: 10px;
+}
+
+.product-crumb .product-icon.anti-static {
+
+}
+
+.product-crumb .text {
+  line-height: 1;
+}
+
+.product-crumb .text strong {
+  line-height: 1;
 }
 
 /*
-
 .content-section {
   margin-bottom: 90px;
   width: 100%;

@@ -887,6 +887,10 @@ body.home .page {
   display: none;
 }
 
+.slideout-menu.static {
+  position: absolute;
+}
+
 .slideout-panel {
   position:relative;
   z-index: 1;
@@ -1615,6 +1619,322 @@ a[href^="tel"]{
   line-height: 1;
 }
 
+#fullpage .section-top-header {
+  position: absolute;
+  z-index: 5;
+  top: 36px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#fullpage .section-top-header .text {
+  border-bottom: 5px solid #3CD52E;
+  font-size: 16px;
+  font-family: 'SeravekBold', sans-serif;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  letter-spacing: 2px;
+  width: auto;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+
+#fullpage .section-top-header .text.white {
+  color: #fff;
+}
+
+#fullpage .top-right-link {
+  position:absolute;
+  z-index:6;
+  right: 30px;
+  top: 35px;
+  width: 190px;
+  cursor:pointer;
+}
+
+#fullpage .top-right-link .arrow {
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
+  background-image: url(./images/icon-arrow.png);
+  float: right;
+  margin-left: 4px;
+  position: relative;
+}
+
+#fullpage .top-right-link .text {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'SeravekBold', sans-serif;
+}
+
+#fullpage .section-text {
+  padding: 40px 80px;
+}
+
+#fullpage .links-bar {
+  margin: 40px -30px 0 -30px;
+  text-align: center;
+}
+
+#fullpage .bottom-home-text {
+  font-size: 24px;
+}
+
+#fullpage .links-bar .link-wrapper {
+  padding: 0 30px 10px 30px;
+  width: 19%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+}
+
+#fullpage .links-bar .link-wrapper a {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: 'SeravekBold', sans-serif;
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  letter-spacing: 2px;
+}
+
+#fullpage .links-bar a:hover {
+  color: #3CD52E;
+}
+
+@media only screen and (max-width: 768px) {
+  #fullpage .section-text {
+    padding: 0 20px;
+  }
+
+  #fullpage .links-bar .link-wrapper {
+    width: 41%;
+    margin-bottom: 10px;
+  }
+}
+
+#section2 .slide, #section1 {
+  background-position: center center;
+  background-size: cover;
+}
+#section1 {
+  background-image: url(./images/bg-fibers.png);
+}
+#section2 #slide1 {
+  background-image: url(./images/bg-touch-device.png);
+}
+#section2 #slide2 {
+  background-image: url(./images/bg-fibers.png);
+}
+
+#fullpage .explore-intro {
+  margin: 1em 0 0 0 ;
+  color: #fff;
+}
+
+#fullpage .combs-container {
+  margin: 40px -125px 0 0;
+  text-align: center;
+}
+
+#fullpage .combs-container .comb {
+  width: 217px;
+  height: 228px;
+  background-size: 217px 228px;
+  background-image: url(./images/bg-comb.png);
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 20px;
+  vertical-align: top;
+}
+
+#fullpage .combs-container .icon {
+  width: 38px;
+  position: relative;
+  top: 65px;
+  margin: 0 auto 20px auto;
+  height: 38px;
+  background-size: cover;
+  background-position: center center;
+
+  /*
+  margin: 5px auto 15px auto;
+  width: 19px;
+  height: 19px;
+  background-size: 19px 19px;
+  */
+}
+
+.icon-warming-fabrics, .icon-warming {
+  background-image: url(./images/icon-warming.png);
+}
+
+.icon-smart-fabrics {
+  background-image: url(./images/icon-touch.png);
+}
+.icon-pressure-sensors, .icon-pressure {
+  background-image: url(./images/icon-pressure.png);
+}
+
+.icon-stealth {
+  background-image: url(./images/icon-smart.png);
+}
+
+.icon-anti-static, .icon-static {
+  background-image: url(./images/icon-static.png);
+}
+
+.icon-custom {
+  background-image: url(./images/icon-custom.png);
+}
+
+#fullpage .combs-container .title {
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0;
+  position: relative;
+  top: 65px;
+  /*
+  font-size: 14px;
+  padding: 0 60px;
+  */
+}
+#fullpage .combs-container .comb:hover .title, #fullpage .combs-container .comb.active .title {
+  text-decoration: underline;
+}
+
+#fullpage .combs-container .comb .body {
+  font-size: 14px;
+  padding: 0 30px;
+  text-align: center;
+  opacity: 0;
+  position: relative;
+  top: 10px;
+}
+
+#fullpage .combs-container .dummy-comb {
+  width: 250px;
+  display: inline-block;
+  vertical-align: top;
+  height: 1px;
+}
+
+#fullpage .green-product-box {
+  width: 560px;
+  height: 255px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  background: url(./images/bg-green-box.png);
+}
+
+#fullpage .green-product-box .product-category, #fullpage .green-product-box .product-title, #fullpage .green-product-box .product-description {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#fullpage .green-product-box .product-category {
+  margin-top: 30px;
+}
+
+#fullpage .green-product-box .product-category .icon {
+  width: 30px;
+  height: 30px;
+  float: left;
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.icon.icon-pressure-sensors-white, .icon.icon-pressure-white {
+  background-image: url(./images/icon-pressure-white.png);
+}
+
+#fullpage .green-product-box .product-category .text {
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 1.3em;
+  letter-spacing: 2px;
+  font-family: "SeravekBold", 'sans-serif';
+}
+
+#fullpage .green-product-box .product-title {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "SeravekBold", 'sans-serif';
+  line-height: 1.3em;
+  text-transform: uppercase;
+  margin-top: 25px;
+  letter-spacing: 1px;
+}
+
+#fullpage .green-product-box .product-description {
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.3em;
+  letter-spacing: 1px;
+  font-family: "SeravekBold", 'sans-serif';
+  margin-right: 100px;
+  margin-top: 22px;
+}
+
+#fullpage .link-circles {
+  margin: 8px auto 0 auto;
+  width: auto;
+}
+
+#fullpage .link-circle, #fullpage .link-circle .empty, #fullpage .link-circle .full {
+  width: 11px;
+  height: 11px;
+}
+
+#fullpage .link-circle {
+  margin: 0 5px;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+#fullpage .link-circle .empty, #fullpage .link-circle .full {
+  background-size: 11px 11px;
+}
+
+#fullpage .link-circle .empty {
+  background-image: url(./images/circle-empty.png);
+}
+
+#fullpage .link-circle .full {
+  background-image: url(./images/circle-full.png);
+}
+
+#fullpage .link-circle.active .empty, #fullpage .link-circle:hover .empty {
+  display: none;
+}
+
+#fullpage .link-circle.active .full, #fullpage .link-circle:hover .full {
+  display: block;
+}
+
+.fp-controlArrow {
+  width: 8px !important;
+  height: 16px !important;
+  background-size: cover;
+}
+
+.fp-controlArrow.fp-prev {
+  border: 0;
+  background-image: url(./images/arrow-left.png);
+}
+
+.fp-controlArrow.fp-next {
+  border: 0;
+  background-image: url(./images/arrow-right.png);
+}
 /*
 .content-section {
   margin-bottom: 90px;

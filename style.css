@@ -1238,11 +1238,11 @@ a[href^="tel"]{
   display:none;
 }
 
-.hidden-mobile {
-
-}
-
 @media only screen and (max-width: 768px) {
+  .hidden-mobile {
+    display: none;
+  }
+
   .home h1 {
     margin: 1em 0 .5em 0;
   }
@@ -1628,6 +1628,12 @@ a[href^="tel"]{
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 768px) {
+  #fullpage .section-top-header {
+    top: 90px;
+  }
+}
+
 #fullpage .section-top-header .text {
   border-bottom: 5px solid #3CD52E;
   font-size: 16px;
@@ -1684,6 +1690,13 @@ a[href^="tel"]{
   font-size: 24px;
 }
 
+@media only screen and (max-width: 768px) {
+  #fullpage .bottom-home-text {
+    margin-top: 5px;
+    font-size: 20px;
+  }
+}
+
 #fullpage .links-bar .link-wrapper {
   padding: 0 30px 10px 30px;
   width: 19%;
@@ -1734,6 +1747,10 @@ a[href^="tel"]{
 #fullpage .explore-intro {
   margin: 1em 0 0 0 ;
   color: #fff;
+}
+
+@media only screen and (max-width: 908px) {
+
 }
 
 #fullpage .combs-container {
@@ -1819,10 +1836,34 @@ a[href^="tel"]{
 }
 
 #fullpage .combs-container .dummy-comb {
-  width: 250px;
+  width: 248px;
   display: inline-block;
   vertical-align: top;
   height: 1px;
+}
+
+#fullpage .combs-container .dummy-comb-2, #fullpage .combs-container .dummy-comb-3 {
+  display: inline-block;
+  vertical-align: top;
+  height: 1px;
+  width: 0px;
+}
+
+@media only screen and (max-width: 1050px) {
+  #fullpage .combs-container .first-second-row, #fullpage .combs-container .second-second-row, #fullpage .combs-container .third-second-row {
+    position: relative;
+    left: -128px;
+  }
+
+  #fullpage .combs-container .dummy-comb {
+    width: 0px;
+  }
+}
+
+@media only screen and (max-width: 908px) {
+  #fullpage .combs-container .comb {
+    zoom: .8;
+  }
 }
 
 #fullpage .green-product-box {

@@ -647,6 +647,12 @@ label, .product-crumb .text strong {
   margin: 0 auto;
 }
 
+.less-narrow-column {
+  max-width: 460px;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
 .hidden {
   display: none;
 }
@@ -1617,6 +1623,76 @@ a[href^="tel"]{
 
 .product-crumb .text strong {
   line-height: 1;
+}
+
+.article {
+  margin-top: 60px;
+  border-bottom: 5px solid #121212;
+}
+
+.article .article-title {
+  font-size: 30px;
+  line-height: 1.25em;
+  font-family: 'SeravekBold', sans-serif;
+  margin: 0 0 .25em 0;
+}
+
+.article .article-authors {
+  font-size: 24px;
+  line-height: 1.5em;
+  margin: 0 0 .5em 0;
+}
+
+.article .article-publication-name, .article .article-date {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 1em 0;
+}
+
+.article .article-body {
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
+.article .article-body strong {
+  font-family: 'SeravekBold', sans-serif;
+}
+
+.article .article-link-wrapper {
+  padding: 8px 12px;
+  margin: 5px 0 0 0;
+}
+
+.article .article-link-wrapper a {
+  color: #121212;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: 'SeravekBold', sans-serif;
+}
+
+.article .article-link-wrapper a:hover {
+  color: #3CD52E;
+}
+
+.article.patent .patent-number {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0 0 .5em 0;
+}
+
+.article.patent {
+
+}
+
+.article.news-item {
+
+}
+
+.article.journal-item {
+
 }
 
 #fullpage .section-top-header {

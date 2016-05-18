@@ -527,9 +527,11 @@ label {
   z-index: 2;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  transition: background-color 0.5s;
 }
 .slideout-menu.visible {
   left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .slideout-menu .column-1 {
   z-index: 30;

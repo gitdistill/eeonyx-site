@@ -26,30 +26,68 @@
 	<nav id="menu" <?php if (is_home() && ! wp_is_mobile()) { ?>class='slideout-menu'<?php } else { ?>class='hidden'<?php } ?>>
 	  	<header>
 	    	<div class="left-menu">
-				<div class="menu-header">Menu</div>
 
-				<div class="menu-items">
+				<div class="menu-items column-1">
 					<?php
 					if (!is_home()) { ?>
 					<a class="menu-item black" href="/">
 						Home
 					</a>
 					<?php } ?>
-					<a class="menu-item" href="/smart-fabrics">
-						Smart
-						Fabrics
+					<a class="menu-item" href="/smart-fabrics" data-slug="has-menu">
+						Has<br/>
+						Menu
 					</a>
-					<a class="menu-item" href="/custom-solutions">
+					<a class="menu-item" href="/custom-solutions" data-slug="custom-solutions">
 						Custom Solutions
 					</a>
-					<a class="menu-item active" href="/about-eeonyx">
+					<a class="menu-item active" href="/about-eeonyx" data-slug="about-eeonyx">
 						About 
 						Eeonyx
 					</a>
-					<a class="menu-item" href="/contact">
+					<a class="menu-item" href="/contact" data-slug="contact">
 						Contact
 					</a>
 				</div>
+
+				<div class="menu-items column-2" data-slug="has-menu">
+					<a class="menu-item" href="/smart-fabrics" data-slug="has-menu-2">
+						Has<br/>
+						Menu
+					</a>
+					<a class="menu-item" href="/custom-solutions">
+						Smart
+						Fabrics 2
+					</a>
+					<a class="menu-item active" href="/about-eeonyx">
+						Smart
+						Fabrics 2
+					</a>
+					<a class="menu-item" href="/contact">
+						Smart
+						Fabrics 2
+					</a>
+				</div>
+
+				<div class="menu-items column-3" data-slug="has-menu-2">
+					<a class="menu-item" href="/smart-fabrics">
+						Smart
+						Fabrics 3
+					</a>
+					<a class="menu-item" href="/custom-solutions">
+						Smart
+						Fabrics 3
+					</a>
+					<a class="menu-item active" href="/about-eeonyx">
+						Smart
+						Fabrics 3
+					</a>
+					<a class="menu-item" href="/contact">
+						Smart
+						Fabrics 3
+					</a>
+				</div>
+
 			</div>
 	  	</header>
 	</nav>

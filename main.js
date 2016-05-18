@@ -24,9 +24,12 @@ var EeonyxSlideout = function( $nav ){
 		var $slugLinks = $nav.find('a[data-slug]');
 		$slugLinks.click( function( e ){
 			e.preventDefault();
-			$link = $( this );
+			var $link = $( this );
 			var slug = $link.data('slug');
 			var $slugColumn = $allColumns.filter('[data-slug=' + slug + ']');
+			var columnClasses = $slugColumn.attr('class');
+			var $siblings = $slugColumn.siblings( '.'+columnClasses.split(/\s+/).join('.') );
+			$siblings.removeClass('visible');
 			$slugColumn.addClass('visible');
 			$link.siblings().removeClass('selected');
 			$link.siblings('.active').addClass('was-active');

@@ -515,37 +515,42 @@ label {
  *
  */
 .menu-transition {
-  transition: left 0.5s ease;
+  transition: background-color 0.3s, transform 0.5s ease;
 }
 .slideout-menu {
-  transition: left 0.5s ease;
+  transition: background-color 0.3s, transform 0.5s ease;
   position: fixed;
-  left: -130px;
   top: 0;
   bottom: 0;
   right: 0;
+  left: 0;
   z-index: 2;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  transition: background-color 0.3s, left 0.5s ease;
 }
 .slideout-menu.visible {
-  left: 0;
   background-color: rgba(0, 0, 0, 0.2);
+}
+.slideout-menu.visible .menu-items {
+  transform: translateX(0);
 }
 .slideout-menu .column-1 {
   z-index: 30;
+  width: 36.36%;
+  max-width: 14180.4px;
+  transform: translateX(-100%);
 }
 .slideout-menu .column-2,
 .slideout-menu .column-3 {
   left: 0;
+  transform: translateX(-100%);
 }
 .slideout-menu .column-2.visible {
-  left: 130px;
+  transform: translateX(87.5%);
   z-index: 20;
 }
 .slideout-menu .column-3.visible {
-  left: 260px;
+  transform: translateX(175%);
   z-index: 10;
 }
 .slideout-menu.static {
@@ -558,12 +563,19 @@ label {
   display: block;
 }
 .menu-items {
-  transition: left 0.5s ease;
+  transition: background-color 0.3s, transform 0.5s ease;
   position: absolute;
-  background-color: #fff;
-  padding-top: 150px;
   top: 0;
   bottom: 0;
+  width: 36.36%;
+  max-width: 14180.4px;
+  background-color: #fff;
+}
+.menu-items div {
+  position: absolute;
+  top: 150px;
+  bottom: 0;
+  overflow-y: auto;
 }
 .home,
 .home #outer .content {
@@ -577,8 +589,7 @@ label {
   color: #252c26;
   display: block;
   padding: 17px 15px 7px 15px;
-  margin: 0 15px;
-  max-width: 100px;
+  margin: 0 15px 0 15px;
   min-height: 70px;
   font-size: 14px;
   line-height: 1.5em;
@@ -591,6 +602,26 @@ label {
 .menu-item.active,
 .menu-item.selected {
   border-bottom-color: #252c26;
+}
+.menu-item span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.left-menu {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 390px;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+.left-menu:after {
+  display: table;
+  content: " ";
+  height: 0;
+  clear: both;
 }
 .green-circle {
   height: 12px;
@@ -627,10 +658,6 @@ label {
 .page {
   min-height: 100%;
   position: relative;
-}
-.left-menu {
-  padding: 0;
-  box-sizing: border-box;
 }
 .slideout-panel {
   box-sizing: border-box;

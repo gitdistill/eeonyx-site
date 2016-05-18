@@ -9,6 +9,30 @@
  * @since Twenty Sixteen 1.0
  */
 
+
+$taxonomies = get_object_taxonomies('product');
+$product_taxonomy = $taxonomies[0];
+$product_catgories = get_terms( $product_taxonomy, array(
+    'hide_empty' => false,
+) );
+
+// if(count($customPostTaxonomies) > 0)
+// {
+//      foreach($customPostTaxonomies as $tax)
+//      {
+// 	     $args = array(
+//          	  'orderby' => 'name',
+// 	          'show_count' => 0,
+//         	  'pad_counts' => 0,
+// 	          'hierarchical' => 1,
+//         	  'taxonomy' => $tax,
+//         	  'title_li' => ''
+//         	);
+
+// 	     wp_list_categories( $args );
+//      }
+// }
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js <?php if (wp_is_mobile()) { ?>mobile <?php } else { ?>desktop <?php } ?><?php if (is_home() && ! wp_is_mobile()) { ?>slideout-open<?php } ?>">
 <head>
@@ -28,65 +52,98 @@
 	    	<div class="left-menu">
 
 				<div class="menu-items column-1">
-					<?php
-					if (!is_home()) { ?>
-					<a class="menu-item black" href="/">
-						Home
-					</a>
+					<div>
+						<?php
+						if (!is_home()) { ?>
+						<a class="menu-item black" href="/">
+							<span>Home</span>
+						</a>
+						<?php } ?>
+						<a class="menu-item" href="/conductive-fabrics" data-slug="conductive-fabrics">
+							Conductive<br/>
+							Fabrics
+						</a>
+						<a class="menu-item" href="/custom-solutions" data-slug="custom-solutions">
+							Custom Solutions
+						</a>
+						<a class="menu-item active" href="/about-eeonyx" data-slug="about-eeonyx">
+							About 
+							Eeonyx
+						</a>
+						<a class="menu-item" href="/contact" data-slug="contact">
+							Contact
+						</a>
+						<a class="menu-item" href="/custom-solutions" data-slug="custom-solutions">
+							Custom Solutions
+						</a>
+						<a class="menu-item active" href="/about-eeonyx" data-slug="about-eeonyx">
+							About 
+							Eeonyx
+						</a>
+						<a class="menu-item" href="/contact" data-slug="contact">
+							Contact
+						</a>
+						<a class="menu-item" href="/custom-solutions" data-slug="custom-solutions">
+							Custom Solutions
+						</a>
+						<a class="menu-item active" href="/about-eeonyx" data-slug="about-eeonyx">
+							About 
+							Eeonyx
+						</a>
+						<a class="menu-item" href="/contact" data-slug="contact">
+							Contact
+						</a>
+					</div>
+				</div>
+
+				<div class="menu-items column-2" data-slug="conductive-fabrics">
+					<div>
+
+						<?php foreach ($product_catgories as $index => $cat) { ?>
+						<a class="menu-item" href="#" data-slug="<?=$cat->slug?>">
+							<?=$cat->name?>
+						</a>
+
+						<?php } ?>
+					</div>
+				</div>
+
+				<?php foreach ($product_catgories as $index => $cat) { 
+
+					$args = array(
+					  'post_type' => 'product',
+					  'numberposts' => -1,
+					  'tax_query' => array(
+					    array(
+					      'taxonomy' => $product_taxonomy,
+					      'field' => 'name',
+					      'terms' => $cat->name // Where term_id of Term 1 is "1".
+					    )
+					  )
+					);
+
+					$products = get_posts( $args );
+					
+					if( count( $products ) > 0 ) { ?>
+
+						<div class="menu-items column-3" data-slug="<?=$cat->slug?>">
+							<div>
+							
+							<?php
+
+						foreach ($products as $index => $product) { ?>
+
+							<a class="menu-item" href="<?= get_permalink( $product->ID ) ?>" >
+								<?= get_field( 'name', $product->ID ); ?>
+							</a>
+
+						<?php } ?>
+
+						</div>
+					</div>
+
 					<?php } ?>
-					<a class="menu-item" href="/smart-fabrics" data-slug="has-menu">
-						Has<br/>
-						Menu
-					</a>
-					<a class="menu-item" href="/custom-solutions" data-slug="custom-solutions">
-						Custom Solutions
-					</a>
-					<a class="menu-item active" href="/about-eeonyx" data-slug="about-eeonyx">
-						About 
-						Eeonyx
-					</a>
-					<a class="menu-item" href="/contact" data-slug="contact">
-						Contact
-					</a>
-				</div>
-
-				<div class="menu-items column-2" data-slug="has-menu">
-					<a class="menu-item" href="/smart-fabrics" data-slug="has-menu-2">
-						Has<br/>
-						Menu
-					</a>
-					<a class="menu-item" href="/custom-solutions">
-						Smart
-						Fabrics 2
-					</a>
-					<a class="menu-item active" href="/about-eeonyx">
-						Smart
-						Fabrics 2
-					</a>
-					<a class="menu-item" href="/contact">
-						Smart
-						Fabrics 2
-					</a>
-				</div>
-
-				<div class="menu-items column-3" data-slug="has-menu-2">
-					<a class="menu-item" href="/smart-fabrics">
-						Smart
-						Fabrics 3
-					</a>
-					<a class="menu-item" href="/custom-solutions">
-						Smart
-						Fabrics 3
-					</a>
-					<a class="menu-item active" href="/about-eeonyx">
-						Smart
-						Fabrics 3
-					</a>
-					<a class="menu-item" href="/contact">
-						Smart
-						Fabrics 3
-					</a>
-				</div>
+				<?php } ?>
 
 			</div>
 	  	</header>

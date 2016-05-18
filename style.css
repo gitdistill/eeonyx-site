@@ -527,7 +527,7 @@ label {
   z-index: 2;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  transition: background-color 0.5s;
+  transition: background-color 0.3s, left 0.5s ease;
 }
 .slideout-menu.visible {
   left: 0;

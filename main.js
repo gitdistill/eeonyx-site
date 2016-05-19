@@ -38,6 +38,7 @@ var EeonyxSlideout = function( $nav ){
 			var $linkColumn = $link.parents('.menu-items');
 			var $slugColumn = $allColumns.filter('[data-slug=' + $link.data('slug') + ']');
 			$allChildrenByNumber[ $linkColumn.data('column') ].removeClass('visible open');
+			$allChildrenByNumber[ $linkColumn.data('column') ].find('.menu-item.selected').removeClass('selected');
 			$slugColumn.addClass('visible');
 			$linkColumn.addClass('open');
 			$link.siblings().removeClass('selected');

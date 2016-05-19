@@ -19,21 +19,28 @@ var EeonyxSlideout = function( $nav ){
 	var visible = false;
 	var $allColumns = $nav.find('.menu-items');
 	var $allLinks = $nav.find('.menu-item');
+	var $allSiblingsByNumber = {
+		1: $allColumns.filter( '[data-column=1]' ),
+		2: $allColumns.filter( '[data-column=2]' ),
+		3: $allColumns.filter( '[data-column=3]' )
+	};
+	var $allChildrenByNumber = {
+		1: $allSiblingsByNumber[2].add( $allSiblingsByNumber[3] ),
+		2: $allSiblingsByNumber[3]
+	};
+
 	function init(){
 		$nav.addClass('slideout-menu');
 		var $slugLinks = $nav.find('a[data-slug]');
 		$slugLinks.click( function( e ){
 			e.preventDefault();
 			var $link = $( this );
-			var slug = $link.data('slug');
-			var $slugColumn = $allColumns.filter('[data-slug=' + slug + ']');
-			var columnClasses = $slugColumn.attr('class');
-			var $siblings = $slugColumn.siblings( '.'+columnClasses.split(/\s+/).join('.') );
-			$siblings.removeClass('visible');
+			var $linkColumn = $link.parents('.menu-items');
+			var $slugColumn = $allColumns.filter('[data-slug=' + $link.data('slug') + ']');
+			$allChildrenByNumber[ $linkColumn.data('column') ].removeClass('visible open');
 			$slugColumn.addClass('visible');
+			$linkColumn.addClass('open');
 			$link.siblings().removeClass('selected');
-			$link.siblings('.active').addClass('was-active');
-			$link.siblings('.active').removeClass('active');
 			$link.addClass('selected');
 		});
 	}
@@ -43,8 +50,8 @@ var EeonyxSlideout = function( $nav ){
 		}else{
 			$allColumns.removeClass('visible');
 			$nav.removeClass('visible');
-			$allLinks.filter('.was-active').addClass('active');
 			$allLinks.removeClass('selected');
+			$allColumns.removeClass('visible open');
 		}
 		visible = !visible;
 	};

@@ -51,57 +51,38 @@ $product_catgories = get_terms( $product_taxonomy, array(
 	  	<header>
 	    	<div class="left-menu">
 
-				<div class="menu-items column-1">
+				<div class="menu-items column-1" data-column="1">
 					<div>
 						<?php
 						if (!is_home()) { ?>
 						<a class="menu-item black" href="/">
-							<span>Home</span>
+							<div>Home</div>
 						</a>
 						<?php } ?>
 						<a class="menu-item" href="/conductive-fabrics" data-slug="conductive-fabrics">
-							Conductive<br/>
-							Fabrics
+							<div>Conductive Fabrics</div>
 						</a>
-						<a class="menu-item" href="/custom-solutions" data-slug="custom-solutions">
-							Custom Solutions
+						<a class="menu-item" href="#">
+							<div>Eeonyx in Action</div>
 						</a>
-						<a class="menu-item active" href="/about-eeonyx" data-slug="about-eeonyx">
-							About 
-							Eeonyx
+						<a class="menu-item" href="#">
+							<div>The Tech</div>
 						</a>
-						<a class="menu-item" href="/contact" data-slug="contact">
-							Contact
+						<a class="menu-item active" href="/about-eeonyx">
+							<div>About Eeonyx</div>
 						</a>
-						<a class="menu-item" href="/custom-solutions" data-slug="custom-solutions">
-							Custom Solutions
-						</a>
-						<a class="menu-item active" href="/about-eeonyx" data-slug="about-eeonyx">
-							About 
-							Eeonyx
-						</a>
-						<a class="menu-item" href="/contact" data-slug="contact">
-							Contact
-						</a>
-						<a class="menu-item" href="/custom-solutions" data-slug="custom-solutions">
-							Custom Solutions
-						</a>
-						<a class="menu-item active" href="/about-eeonyx" data-slug="about-eeonyx">
-							About 
-							Eeonyx
-						</a>
-						<a class="menu-item" href="/contact" data-slug="contact">
-							Contact
+						<a class="menu-item" href="/contact">
+							<div>Contact</div>
 						</a>
 					</div>
 				</div>
 
-				<div class="menu-items column-2" data-slug="conductive-fabrics">
+				<div class="menu-items column-2" data-column="2" data-slug="conductive-fabrics">
 					<div>
 
 						<?php foreach ($product_catgories as $index => $cat) { ?>
-						<a class="menu-item" href="#" data-slug="<?=$cat->slug?>">
-							<?=$cat->name?>
+						<a class="menu-item has-icon" href="#" data-slug="<?=$cat->slug?>">
+							<div><?=$cat->name?></div>
 						</a>
 
 						<?php } ?>
@@ -126,15 +107,21 @@ $product_catgories = get_terms( $product_taxonomy, array(
 					
 					if( count( $products ) > 0 ) { ?>
 
-						<div class="menu-items column-3" data-slug="<?=$cat->slug?>">
+						<div class="menu-items column-3"  data-column="3" data-slug="<?=$cat->slug?>">
 							<div>
 							
 							<?php
 
-						foreach ($products as $index => $product) { ?>
+						foreach ($products as $index => $product) {
+							$type = get_field( 'type_shown_in_nav', $product->ID );
+							$type = $type=='' ? get_field( 'type', $product->ID ) : $type;
+							?>
 
 							<a class="menu-item" href="<?= get_permalink( $product->ID ) ?>" >
-								<?= get_field( 'name', $product->ID ); ?>
+								<div>
+									<?= get_field( 'name', $product->ID ); ?><br/>
+									<span class="type"><?=$type?></span>
+								</div>
 							</a>
 
 						<?php } ?>

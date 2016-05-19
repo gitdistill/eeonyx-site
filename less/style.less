@@ -575,11 +575,22 @@ label {
   width: @menu-column-width;
   max-width: @menu-width * @menu-column-width;
   background-color: #fff;
-  div{
+  &>div{
     position: absolute;
     top:150px;
     bottom:0;
     overflow-y: auto;
+  }
+  &.open {
+    .menu-item {
+      color: lighten(@black, 60%);
+      &:hover{
+        color: lighten( @black, 30%);
+      }
+      &.selected {
+        color: @black;
+      }
+    }
   }
 }
 .home {
@@ -591,26 +602,75 @@ label {
     background:transparent;
   }
 }
+
 .menu-item {
   .black;
+  @height: 36px;
   display:block;
-  padding: 17px 15px 7px 15px;
+  position: relative;
+  padding: 10px 0 10px 0;
   margin: 0 15px 0 15px;
-  min-height: 70px;
+  min-height: @height;
+  line-height: @height;
   font-size:14px;
-  line-height:1.5em;
   font-family:'SeravekBold', sans-serif;
   text-decoration:none;
   text-align:left;
   border-bottom: 4px solid @grey-green-7;
-  &:hover,
-  &.active,
+  vertical-align: middle;
+  cursor: pointer;
   &.selected {
     border-bottom-color: @black;
   }
-  span {
-    display:inline-block;
+  &.active {
+    color: #80D443;
+  }
+  div {
+    position: relative;
+    display: inline-block;
+    padding: 0 15px 0 15px;
     vertical-align: middle;
+    line-height: 1.25em;
+    .type {
+      display: inline-block;
+      margin-top: 3px;
+      line-height: 1.3em;
+      text-transform: uppercase;
+      font-family:'SeravekLight', sans-serif;
+    }
+  }
+  &.has-icon {
+    div {
+      padding: 0 0 0 35px;
+    }
+    &[data-slug]:before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 3px;
+      top: 0;
+      bottom: 0;
+      width: 30px;
+      background-image: url(images/default.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 28px;
+    }
+    &[data-slug=pressure-sensors]:before {
+      background-image: url(images/pressure-sensors.svg);
+    }
+    &[data-slug=emi-stealth]:before {
+      background-image: url(images/emi-stealth.svg);
+    }
+    &[data-slug=smart-fabrics]:before {
+      background-image: url(images/smart-fabrics.svg);
+    }
+    &[data-slug=warming-fabrics]:before {
+      background-image: url(images/warming-fabrics.svg);
+    }
+    &[data-slug=anti-static]:before {
+      background-image: url(images/anti-static.svg);
+    }
   }
 }
 .left-menu {
@@ -921,6 +981,7 @@ label {
 /* slideout was here */
 
 #outer {
+  padding-top: 50px;
   min-height:100%;
 }
 #top-bar {

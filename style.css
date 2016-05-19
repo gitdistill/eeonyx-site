@@ -571,11 +571,20 @@ label {
   max-width: 14180.4px;
   background-color: #fff;
 }
-.menu-items div {
+.menu-items > div {
   position: absolute;
   top: 150px;
   bottom: 0;
   overflow-y: auto;
+}
+.menu-items.open .menu-item {
+  color: #bcc7be;
+}
+.menu-items.open .menu-item:hover {
+  color: #6b7f6e;
+}
+.menu-items.open .menu-item.selected {
+  color: #252c26;
 }
 .home,
 .home #outer .content {
@@ -588,24 +597,69 @@ label {
 .menu-item {
   color: #252c26;
   display: block;
-  padding: 17px 15px 7px 15px;
+  position: relative;
+  padding: 10px 0 10px 0;
   margin: 0 15px 0 15px;
-  min-height: 70px;
+  min-height: 36px;
+  line-height: 36px;
   font-size: 14px;
-  line-height: 1.5em;
   font-family: 'SeravekBold', sans-serif;
   text-decoration: none;
   text-align: left;
   border-bottom: 4px solid #DAE5CE;
+  vertical-align: middle;
+  cursor: pointer;
 }
-.menu-item:hover,
-.menu-item.active,
 .menu-item.selected {
   border-bottom-color: #252c26;
 }
-.menu-item span {
+.menu-item.active {
+  color: #80D443;
+}
+.menu-item div {
+  position: relative;
   display: inline-block;
+  padding: 0 15px 0 15px;
   vertical-align: middle;
+  line-height: 1.25em;
+}
+.menu-item div .type {
+  display: inline-block;
+  margin-top: 3px;
+  line-height: 1.3em;
+  text-transform: uppercase;
+  font-family: 'SeravekLight', sans-serif;
+}
+.menu-item.has-icon div {
+  padding: 0 0 0 35px;
+}
+.menu-item.has-icon[data-slug]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 3px;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  background-image: url(images/default.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
+}
+.menu-item.has-icon[data-slug=pressure-sensors]:before {
+  background-image: url(images/pressure-sensors.svg);
+}
+.menu-item.has-icon[data-slug=emi-stealth]:before {
+  background-image: url(images/emi-stealth.svg);
+}
+.menu-item.has-icon[data-slug=smart-fabrics]:before {
+  background-image: url(images/smart-fabrics.svg);
+}
+.menu-item.has-icon[data-slug=warming-fabrics]:before {
+  background-image: url(images/warming-fabrics.svg);
+}
+.menu-item.has-icon[data-slug=anti-static]:before {
+  background-image: url(images/anti-static.svg);
 }
 .left-menu {
   position: absolute;
@@ -904,6 +958,7 @@ label {
 }
 /* slideout was here */
 #outer {
+  padding-top: 50px;
   min-height: 100%;
 }
 #top-bar {

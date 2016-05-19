@@ -18,7 +18,8 @@ var gulp = require( 'gulp' ),
     // cache = require( 'gulp-cache' ),
     connect = require( 'gulp-connect' ),
     // wiredep = require('gulp-wiredep'),
-    watch = require('gulp-watch');
+    watch = require('gulp-watch'),
+    plumber = require('gulp-plumber');
     // del = require( 'del' );
 
 // Styles

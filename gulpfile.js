@@ -27,7 +27,7 @@ gulp.task( 'generate-concatenated-styles', function () {
     return gulp.src( [ 'less/*.less' ] )
         // .pipe( concat( 'styles.css' ) )
         .pipe( less() )
-        .pipe( autoprefixer( 'last 2 version' ) )
+        .pipe( autoprefixer( 'last 5 version' ) )
         .pipe( gulp.dest( '.' ) )
         // .pipe( rename( { suffix: '.min' } ) )
         // .pipe( minifycss() )

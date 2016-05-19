@@ -28,8 +28,6 @@ html {
   height: 100%;
 }
 html * {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 body {
@@ -438,14 +436,10 @@ h6.item-label {
   list-style-image: url('images/green-arrow.png');
 }
 .content .inner {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 40px 7%;
 }
 .content .inner * {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 .content .inner.pad2x {
@@ -521,10 +515,14 @@ label {
  *
  */
 .menu-transition {
+  transition: background-color 0.3s, -webkit-transform 0.5s ease;
   transition: background-color 0.3s, transform 0.5s ease;
+  transition: background-color 0.3s, transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 .slideout-menu {
+  transition: background-color 0.3s, -webkit-transform 0.5s ease;
   transition: background-color 0.3s, transform 0.5s ease;
+  transition: background-color 0.3s, transform 0.5s ease, -webkit-transform 0.5s ease;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -538,25 +536,35 @@ label {
   background-color: rgba(0, 0, 0, 0.2);
 }
 .slideout-menu.visible .menu-items {
-  transform: translateX(0);
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
 .slideout-menu .column-1 {
   z-index: 30;
   width: 36.36%;
   max-width: 14180.4px;
-  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 .slideout-menu .column-2,
 .slideout-menu .column-3 {
   left: 0;
-  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 .slideout-menu .column-2.visible {
-  transform: translateX(87.5%);
+  -webkit-transform: translateX(87.5%);
+      -ms-transform: translateX(87.5%);
+          transform: translateX(87.5%);
   z-index: 20;
 }
 .slideout-menu .column-3.visible {
-  transform: translateX(175%);
+  -webkit-transform: translateX(175%);
+      -ms-transform: translateX(175%);
+          transform: translateX(175%);
   z-index: 10;
 }
 .slideout-menu.static {
@@ -569,7 +577,9 @@ label {
   display: block;
 }
 .menu-items {
+  transition: background-color 0.3s, -webkit-transform 0.5s ease;
   transition: background-color 0.3s, transform 0.5s ease;
+  transition: background-color 0.3s, transform 0.5s ease, -webkit-transform 0.5s ease;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -674,8 +684,6 @@ label {
   padding: 0;
   width: 100%;
   max-width: 390px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   overflow-y: hidden;
 }
@@ -690,8 +698,6 @@ label {
   width: 12px;
   background: #ffffff;
   border: 2px solid #3cd52e;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
   border-radius: 7px;
 }
 .green-circle.selected {
@@ -724,8 +730,6 @@ label {
   position: relative;
 }
 .slideout-panel {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
@@ -990,7 +994,6 @@ label {
   display: block;
   padding: 0 1px;
   outline: none;
-  -webkit-box-shadow: none;
   box-shadow: none;
   line-height: 1.5em;
   font-size: 18px;
@@ -1044,9 +1047,9 @@ label {
   padding: 0;
   width: 100%;
   text-align: left;
-  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
   transition: opacity 0.3s, transform 0.3s;
-  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 .contact-form label .label-content {
@@ -1063,10 +1066,11 @@ label {
   -webkit-transform: scale3d(1, 0.4, 1);
   transform: scale3d(1, 0.4, 1);
   -webkit-transform-origin: 50% 100%;
-  transform-origin: 50% 100%;
-  -webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
+  -ms-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+  transition: background-color 0.3s, -webkit-transform 0.3s;
   transition: transform 0.3s, background-color 0.3s;
-  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition: transform 0.3s, background-color 0.3s, -webkit-transform 0.3s;
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 .contact-form label::after {
@@ -1079,9 +1083,9 @@ label {
   opacity: 0;
   -webkit-transform: translate3d(0, 50%, 0);
   transform: translate3d(0, 50%, 0);
-  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
   transition: opacity 0.3s, transform 0.3s;
-  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   pointer-events: none;
 }
@@ -1133,12 +1137,8 @@ label {
   position: relative;
   margin: 12px auto;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
+  -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
   transition: 0.5s ease-in-out;
   cursor: pointer;
 }
@@ -1152,40 +1152,32 @@ label {
   opacity: 1;
   left: 0;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
+  -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
   transition: 0.25s ease-in-out;
 }
 .nav-icon span:nth-child(1) {
   top: 0px;
   -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
+  -ms-transform-origin: left center;
+      transform-origin: left center;
 }
 .nav-icon span:nth-child(2) {
   top: 8px;
   -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
+  -ms-transform-origin: left center;
+      transform-origin: left center;
 }
 .nav-icon span:nth-child(3) {
   top: 16px;
   -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
+  -ms-transform-origin: left center;
+      transform-origin: left center;
 }
 .nav-icon.open span:nth-child(1) {
   -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
   top: 0px;
   left: 4px;
 }
@@ -1195,9 +1187,8 @@ label {
 }
 .nav-icon.open span:nth-child(3) {
   -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
   top: 18px;
   left: 4px;
 }
@@ -1432,7 +1423,9 @@ label {
   margin-left: 180px;
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 .product-category-grid .product-grid-item .product-text .product-title {
   font-size: 24px;

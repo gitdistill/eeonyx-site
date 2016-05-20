@@ -257,13 +257,16 @@ h3 {
   line-height:1.3em;
   letter-spacing:.05em;
 }
-h4 {
+.h4 {
   margin:0;
   font-size:30px;
   font-family:'SeravekExtraLight', sans-serif;
   line-height:1.5em;
   font-weight:200;
   letter-spacing:.05em;
+}
+h4 {
+  .h4;
 }
 h5 {
   margin:0;
@@ -285,6 +288,9 @@ p {
   strong {
     font-weight:700;
     font-family:'SeravekBold', sans-serif;
+  }
+  &.p1 {
+    .h4;
   }
 }
 .text-center {
@@ -327,6 +333,12 @@ h6.section-title {
   font-family:'SeravekBold', sans-serif;
   letter-spacing:.05em;
 }
+
+#page {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 .icon-heading {
   margin-bottom:30px;
   .text {
@@ -358,7 +370,7 @@ h6.section-title {
   }
 }
 .product-columns {
-  margin:0 -20px;
+  //margin:0 -20px;
   .left-column .column-inner, .right-column .column-inner {
     padding:0 20px;
   }
@@ -381,18 +393,19 @@ h6.section-title {
       margin:0 12px 0 0;
     }
   }
-  .left-column {
-    display:inline-block;
-    vertical-align:top;
-    margin:0;
-    width:60%;
-  }
-  .right-column {
-    display:inline-block;
-    vertical-align:top;
-    margin:0;
-    width:39%;
-  }
+   .left-column {
+  //   display:inline-block;
+  //   vertical-align:top;
+  //   margin:0;
+  //   width:60%;
+     overflow-x: hidden;
+   }
+   .right-column {
+  //   display:inline-block;
+  //   vertical-align:top;
+  //   margin:0;
+  //   width:39%;
+   }
   .product-image-wrapper {
     margin:40px 0 0 0;
     img {
@@ -445,6 +458,7 @@ label {
   text-transform:uppercase;
 }
 .product-crumb {
+  display: none;
   margin:70px 0 38px 0;
   .text {
     line-height:1;
@@ -510,8 +524,8 @@ label {
  *
  */
 
-@menu-column-width: 36.36%;
-@second-column-translation: 87.5%;
+@menu-column-width: 36%;
+@second-column-translation: 89.5%;
 @third-column-translation: 2* @second-column-translation;
 @menu-width: 390px;
 
@@ -537,8 +551,6 @@ label {
   }
   .column-1 {
     z-index: 30;
-    width: @menu-column-width;
-    max-width: @menu-width * @menu-column-width;
     transform: translateX(-100%);
   }
   .column-2,
@@ -567,16 +579,28 @@ label {
     display:block;
   }
 }
+.home {
+  &, #outer .content {
+    background:#e6e7e8;
+  }
+  .menu-header {
+    margin-top:50px;
+    background:transparent;
+  }
+}
+
 .menu-items {
   .menu-transition;
   position: absolute;
   top:0;
   bottom:0;
   width: @menu-column-width;
-  max-width: @menu-width * @menu-column-width;
+  max-width: @menu-width * (@menu-column-width/100);
   background-color: #fff;
   &>div{
     position: absolute;
+    width: 100%;
+    padding: 0 15px 0 15px;
     top:150px;
     bottom:0;
     overflow-y: auto;
@@ -593,23 +617,13 @@ label {
     }
   }
 }
-.home {
-  &, #outer .content {
-    background:#e6e7e8;
-  }
-  .menu-header {
-    margin-top:50px;
-    background:transparent;
-  }
-}
-
 .menu-item {
   .black;
   @height: 36px;
   display:block;
   position: relative;
   padding: 10px 0 10px 0;
-  margin: 0 15px 0 15px;
+  //margin: 0 15px 0 15px;
   min-height: @height;
   line-height: @height;
   font-size:14px;
@@ -628,33 +642,31 @@ label {
   div {
     position: relative;
     display: inline-block;
-    padding: 0 15px 0 15px;
+    // padding: 0 15px 0 15px;
     vertical-align: middle;
     line-height: 1.25em;
     .type {
       display: inline-block;
-      margin-top: 3px;
-      line-height: 1.3em;
       text-transform: uppercase;
       font-family:'SeravekLight', sans-serif;
     }
   }
   &.has-icon {
     div {
-      padding: 0 0 0 35px;
+      padding: 0 0 0 25px;
     }
     &[data-slug]:before {
       content: "";
       display: block;
       position: absolute;
-      left: 3px;
+      left: -3px;
       top: 0;
       bottom: 0;
-      width: 30px;
+      width: 27px;
       background-image: url(images/default.svg);
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 28px;
+      background-size: 25px;
     }
     &[data-slug=pressure-sensors]:before {
       background-image: url(images/pressure-sensors.svg);
@@ -748,7 +760,7 @@ label {
 .footer {
   background:#101013;
   padding:10px 0;
-  height:45px;
+  height:55px;
   width:100%;
   .logo {
     margin:0 auto;
@@ -981,7 +993,7 @@ label {
 /* slideout was here */
 
 #outer {
-  padding-top: 50px;
+  padding-top: 100px;
   min-height:100%;
 }
 #top-bar {
@@ -1357,7 +1369,7 @@ label {
   }
 }
 .specs-section {
-  margin:0 20px;
+  margin: 40px 20px 0px 20px;
 }
 .specs-table {
   margin:3px -15px;

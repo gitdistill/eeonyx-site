@@ -31,6 +31,7 @@ var EeonyxSlideout = function( $nav ){
 
 	function init(){
 		$nav.addClass('slideout-menu');
+		$nav.hide();
 		var $slugLinks = $nav.find('a[data-slug]');
 		$slugLinks.click( function( e ){
 			e.preventDefault();
@@ -47,9 +48,14 @@ var EeonyxSlideout = function( $nav ){
 	}
 	this.toggle = function(){
 		if( !visible ){
+			$nav.show();
 			$nav.addClass('visible');
 		}else{
 			$allColumns.removeClass('visible');
+			$nav.one('transitionend webkitTransitionEnd oTransitionEnd', function () {
+				$nav.hide();
+				console.log('hide');
+			});
 			$nav.removeClass('visible');
 			$allLinks.removeClass('selected');
 			$allColumns.removeClass('visible open');

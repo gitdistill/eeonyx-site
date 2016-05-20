@@ -49,12 +49,15 @@ var EeonyxSlideout = function( $nav ){
 	this.toggle = function(){
 		if( !visible ){
 			$nav.show();
-			$nav.addClass('visible');
+			setTimeout(function(){
+				$nav.addClass('visible');
+			},10);
 		}else{
 			$allColumns.removeClass('visible');
 			$nav.one('transitionend webkitTransitionEnd oTransitionEnd', function () {
-				$nav.hide();
-				console.log('hide');
+				if( !visible ) {
+					$nav.hide();
+				}
 			});
 			$nav.removeClass('visible');
 			$allLinks.removeClass('selected');

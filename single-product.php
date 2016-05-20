@@ -11,7 +11,6 @@ while ( have_posts() ) : the_post();
 
 ?>
 
-
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
@@ -27,8 +26,8 @@ while ( have_posts() ) : the_post();
 					<div class='clear'></div>
 				</div>
 
-				<div class='product-columns'>
-					<div class='left-column'>
+				<div class='product-columns row'>
+					<div class='left-column col-sm-7'>
 						<div class='column-inner'>
 							<h2>
 								<?php the_field('name'); ?>
@@ -60,7 +59,7 @@ while ( have_posts() ) : the_post();
 						</div>
 					</div>
 
-					<div class='right-column'>
+					<div class='right-column col-sm-5'>
 						<div class='column-inner'>
 							<div class='inquire-link'>
 								<div class='inquire-icon'></div>

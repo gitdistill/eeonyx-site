@@ -16,22 +16,16 @@ $product_catgories = get_terms( $product_taxonomy, array(
     'hide_empty' => false,
 ) );
 
-// if(count($customPostTaxonomies) > 0)
-// {
-//      foreach($customPostTaxonomies as $tax)
-//      {
-// 	     $args = array(
-//          	  'orderby' => 'name',
-// 	          'show_count' => 0,
-//         	  'pad_counts' => 0,
-// 	          'hierarchical' => 1,
-//         	  'taxonomy' => $tax,
-//         	  'title_li' => ''
-//         	);
+$page = get_post();
+global $active_slug;
+$active_slug = $page->post_name;
 
-// 	     wp_list_categories( $args );
-//      }
-// }
+function active( $slug ){
+	global $active_slug;
+	if( $active_slug==$slug ){
+		echo 'active';
+	}
+}
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js <?php if (wp_is_mobile()) { ?>mobile <?php } else { ?>desktop <?php } ?><?php if (is_home() && ! wp_is_mobile()) { ?>slideout-open<?php } ?>">
@@ -60,19 +54,19 @@ $product_catgories = get_terms( $product_taxonomy, array(
 							<div>Home</div>
 						</a>
 						<?php } ?>
-						<a class="menu-item" href="/conductive-fabrics" data-slug="conductive-fabrics">
+						<a class="menu-item <?php active('conductive-fabrics') ?>" href="/conductive-fabrics" data-slug="conductive-fabrics">
 							<div>Conductive Fabrics</div>
 						</a>
-						<a class="menu-item" href="#">
+						<a class="menu-item <?php active('eeonyx-in-action') ?>" href="#">
 							<div>Eeonyx in Action</div>
 						</a>
-						<a class="menu-item" href="#">
+						<a class="menu-item <?php active('the-tech') ?>" href="#">
 							<div>The Tech</div>
 						</a>
-						<a class="menu-item active" href="/about-eeonyx">
+						<a class="menu-item <?php active('about-eeonyx') ?>" href="/about-eeonyx">
 							<div>About Eeonyx</div>
 						</a>
-						<a class="menu-item" href="/contact">
+						<a class="menu-item <?php active('contact') ?>" href="/contact">
 							<div>Contact</div>
 						</a>
 					</div>

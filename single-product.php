@@ -78,51 +78,56 @@ while ( have_posts() ) : the_post();
 					</div>
 					<div class='clear'></div>
 
-					<div class='specs-section'>
-						<h4>
-							Specs
-						</h4>
-						<div class='specs-table'>
-							<div class='specs-table-inner'>
-								<div class='table-header'>
-									<div class='header-row table-row'>
-										<div class='first-column header-column column'>
-											Characteristic
+					<?php foreach( get_field('tables') as $table ){ ?>
+
+						<div class='specs-section col-sm-12'>
+							<h4>
+								<?=$table['heading']?>
+							</h4>
+							<div class='specs-table'>
+								<div class='specs-table-inner'>
+									<div class='table-header'>
+										<div class='header-row table-row'>
+											<div class='first-column header-column column'>
+												Characteristic
+											</div>
+											<div class='second-column header-column column'>
+												Measured Value
+											</div>
+											<?php if ( $table['has_standards_column'] ){ ?>
+											<div class='third-column header-column column'>
+												Standard
+											</div>
+											<?php } ?>
 										</div>
-										<div class='second-column header-column column'>
-											Measured Value
-										</div>
-										<?php if ( get_field('has_standards') ){ ?>
-										<div class='third-column header-column column'>
-											Standard
-										</div>
-										<?php } ?>
 									</div>
-								</div>
-								<div class='table-body'>
+									<div class='table-body'>
 
-									<?php foreach( get_field('specs') as $row ){ ?>
+										<?php foreach( $table['specs'] as $row ){ ?>
 
-									<div class='table-row body-row'>
-										<div class='first-column body-column column'>
-											<?= $row['characteristic'] ?>
-										</div>
-										<div class='second-column body-column column'>
-											<?= $row['measured_value'] ?>
-										</div>
-										<?php if ( get_field('has_standards') ){ ?>
-										<div class='third-column body-column column'>
-											<?= $row['standard'] ?>
-										</div>
+											<div class='table-row body-row'>
+												<div class='first-column body-column column'>
+													<?= $row['characteristic'] ?>
+												</div>
+												<div class='second-column body-column column'>
+													<?= $row['measured_value'] ?>
+												</div>
+												<?php if ( $table['has_standards_column'] ){ ?>
+												<div class='third-column body-column column'>
+													<?= $row['standard'] ?>
+												</div>
+												<?php } ?>
+											</div>
+
 										<?php } ?>
+
 									</div>
-
-									<?php } ?>
-
 								</div>
 							</div>
 						</div>
-					</div>
+
+					<?php } ?><!--end tables loop -->
+
 				</div>
 
 			</div>

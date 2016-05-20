@@ -45,15 +45,18 @@ while ( have_posts() ) : the_post();
 							 * Bullet lists
 							 *
 							 */
-							foreach( get_field('bullet_lists') as $list ){ ?>
-								<h4>
-									<?= $list['heading'] ?>
-								</h4>
-								<ul class='bottom-margin-1x'>
-									<?php foreach( $list['items'] as $item ){ ?>
-									<li><?= $item['item'] ?></li>
-									<?php } ?>
-								</ul>
+							$bulletLists = get_field('bullet_lists');
+							if ( is_array($bulletLists) ){
+								foreach( $bulletLists as $list ){ ?>
+									<h4>
+										<?= $list['heading'] ?>
+									</h4>
+									<ul class='bottom-margin-1x'>
+										<?php foreach( $list['items'] as $item ){ ?>
+										<li><?= $item['item'] ?></li>
+										<?php } ?>
+									</ul>
+								<?php } ?>
 							<?php } ?>
 
 						</div>
@@ -69,10 +72,13 @@ while ( have_posts() ) : the_post();
 								<div class='clear'></div>
 							</div>
 
-							<?php foreach( get_field('images') as $image ){ ?>
-							<div class='product-image-wrapper'>
-								<img src="<?= $image['image']['url'] ?>"" />
-							</div>
+							<?php
+							if ( is_array( get_field('images') ) ){
+								foreach( get_field('images') as $image ){ ?>
+								<div class='product-image-wrapper'>
+									<img src="<?= $image['image']['url'] ?>"" />
+								</div>
+								<?php } ?>
 							<?php } ?>
 						</div>
 					</div>

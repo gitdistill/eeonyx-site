@@ -1424,6 +1424,7 @@ label {
 .product-category-grid .product-grid-item .product-image img {
   width: 300px;
   margin-top: -30px;
+  margin-left: -70px;
 }
 .product-category-grid .product-grid-item .product-text {
   margin-left: 180px;

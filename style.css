@@ -270,6 +270,14 @@ h3 {
   line-height: 1.3em;
   letter-spacing: .05em;
 }
+.h4 {
+  margin: 0;
+  font-size: 30px;
+  font-family: 'SeravekExtraLight', sans-serif;
+  line-height: 1.5em;
+  font-weight: 200;
+  letter-spacing: .05em;
+}
 h4 {
   margin: 0;
   font-size: 30px;
@@ -299,6 +307,14 @@ p {
 p strong {
   font-weight: 700;
   font-family: 'SeravekBold', sans-serif;
+}
+p.p1 {
+  margin: 0;
+  font-size: 30px;
+  font-family: 'SeravekExtraLight', sans-serif;
+  line-height: 1.5em;
+  font-weight: 200;
+  letter-spacing: .05em;
 }
 .text-center {
   text-align: center;
@@ -340,6 +356,10 @@ h6.section-title {
   font-family: 'SeravekBold', sans-serif;
   letter-spacing: .05em;
 }
+#page {
+  max-width: 1400px;
+  margin: 0 auto;
+}
 .icon-heading {
   margin-bottom: 30px;
 }
@@ -370,9 +390,6 @@ h6.section-title {
 .icon-heading .text.two-line {
   margin-top: -0.66em;
 }
-.product-columns {
-  margin: 0 -20px;
-}
 .product-columns .left-column .column-inner,
 .product-columns .right-column .column-inner {
   padding: 0 20px;
@@ -395,16 +412,7 @@ h6.section-title {
   margin: 0 12px 0 0;
 }
 .product-columns .left-column {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0;
-  width: 60%;
-}
-.product-columns .right-column {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0;
-  width: 39%;
+  overflow-x: hidden;
 }
 .product-columns .product-image-wrapper {
   margin: 40px 0 0 0;
@@ -453,6 +461,7 @@ label {
   text-transform: uppercase;
 }
 .product-crumb {
+  display: none;
   margin: 70px 0 38px 0;
 }
 .product-crumb .text {
@@ -542,8 +551,6 @@ label {
 }
 .slideout-menu .column-1 {
   z-index: 30;
-  width: 36.36%;
-  max-width: 14180.4px;
   -webkit-transform: translateX(-100%);
       -ms-transform: translateX(-100%);
           transform: translateX(-100%);
@@ -556,15 +563,15 @@ label {
           transform: translateX(-100%);
 }
 .slideout-menu .column-2.visible {
-  -webkit-transform: translateX(87.5%);
-      -ms-transform: translateX(87.5%);
-          transform: translateX(87.5%);
+  -webkit-transform: translateX(89.5%);
+      -ms-transform: translateX(89.5%);
+          transform: translateX(89.5%);
   z-index: 20;
 }
 .slideout-menu .column-3.visible {
-  -webkit-transform: translateX(175%);
-      -ms-transform: translateX(175%);
-          transform: translateX(175%);
+  -webkit-transform: translateX(179%);
+      -ms-transform: translateX(179%);
+          transform: translateX(179%);
   z-index: 10;
 }
 .slideout-menu.static {
@@ -576,6 +583,14 @@ label {
 .slideout-open .slideout-menu {
   display: block;
 }
+.home,
+.home #outer .content {
+  background: #e6e7e8;
+}
+.home .menu-header {
+  margin-top: 50px;
+  background: transparent;
+}
 .menu-items {
   transition: background-color 0.3s, -webkit-transform 0.5s ease;
   transition: background-color 0.3s, transform 0.5s ease;
@@ -583,12 +598,14 @@ label {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 36.36%;
-  max-width: 14180.4px;
+  width: 36%;
+  max-width: 140.4px;
   background-color: #fff;
 }
 .menu-items > div {
   position: absolute;
+  width: 100%;
+  padding: 0 15px 0 15px;
   top: 150px;
   bottom: 0;
   overflow-y: auto;
@@ -602,20 +619,11 @@ label {
 .menu-items.open .menu-item.selected {
   color: #252c26;
 }
-.home,
-.home #outer .content {
-  background: #e6e7e8;
-}
-.home .menu-header {
-  margin-top: 50px;
-  background: transparent;
-}
 .menu-item {
   color: #252c26;
   display: block;
   position: relative;
   padding: 10px 0 10px 0;
-  margin: 0 15px 0 15px;
   min-height: 36px;
   line-height: 36px;
   font-size: 14px;
@@ -635,32 +643,29 @@ label {
 .menu-item div {
   position: relative;
   display: inline-block;
-  padding: 0 15px 0 15px;
   vertical-align: middle;
   line-height: 1.25em;
 }
 .menu-item div .type {
   display: inline-block;
-  margin-top: 3px;
-  line-height: 1.3em;
   text-transform: uppercase;
   font-family: 'SeravekLight', sans-serif;
 }
 .menu-item.has-icon div {
-  padding: 0 0 0 35px;
+  padding: 0 0 0 25px;
 }
 .menu-item.has-icon[data-slug]:before {
   content: "";
   display: block;
   position: absolute;
-  left: 3px;
+  left: -3px;
   top: 0;
   bottom: 0;
-  width: 30px;
+  width: 27px;
   background-image: url(images/default.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 28px;
+  background-size: 25px;
 }
 .menu-item.has-icon[data-slug=pressure-sensors]:before {
   background-image: url(images/pressure-sensors.svg);
@@ -741,7 +746,7 @@ label {
 .footer {
   background: #101013;
   padding: 10px 0;
-  height: 45px;
+  height: 55px;
   width: 100%;
 }
 .footer .logo {
@@ -974,7 +979,7 @@ label {
 }
 /* slideout was here */
 #outer {
-  padding-top: 50px;
+  padding-top: 100px;
   min-height: 100%;
 }
 #top-bar {
@@ -1337,7 +1342,7 @@ label {
   color: #3cd52e;
 }
 .specs-section {
-  margin: 0 20px;
+  margin: 40px 20px 0px 20px;
 }
 .specs-table {
   margin: 3px -15px;

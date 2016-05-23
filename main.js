@@ -14,7 +14,8 @@
 // 	slideout.toggle();
 // });
 
-var EeonyxSlideout = function( $nav ){
+function EeonyxSlideout( $nav ){
+	var _self = this;
 	var menuColumnWidth = 130;
 	var visible = false;
 	var $allColumns = $nav.find('.menu-items');
@@ -29,9 +30,14 @@ var EeonyxSlideout = function( $nav ){
 		2: $allSiblingsByNumber[3]
 	};
 
-	function init(){
+	var init = function(){
 		$nav.addClass('slideout-menu');
 		$nav.hide();
+		$nav.click( function(e){
+			if( $(e.toElement)[0] == $nav[0] ){
+				_self.toggle();
+			}
+		});
 		var $slugLinks = $nav.find('a[data-slug]');
 		$slugLinks.click( function( e ){
 			e.preventDefault();
@@ -45,7 +51,7 @@ var EeonyxSlideout = function( $nav ){
 			$link.siblings().removeClass('selected');
 			$link.addClass('selected');
 		});
-	}
+	};
 	this.toggle = function(){
 		if( !visible ){
 			$nav.show();
@@ -79,6 +85,7 @@ $(".nav-toggle").on('click', function() {
 
 $(document).on('ready', function() {
 	$("#menu").removeClass('hidden');
+	$('.wipe-hero .image').addClass('visible');
 });
 
 if ($(".combs-container .comb").length) {

@@ -13,7 +13,7 @@ $args = array(
     'product_category' => $term->slug
 );
 $query = new WP_Query( $args );
-
+$hero_image = get_field( 'hero_image', $term );
 
 ?>
 
@@ -23,134 +23,132 @@ $query = new WP_Query( $args );
     <div class="content">
       <div class="inner">
 
-        <h2 class="dark-black sub-page-header bottom-margin-half text-center">
+      <div class="wipe-hero">
+        <div class="image"><img src="<?= $hero_image['url'] ?>"></div>
+      </div>
+
+        <h2 class="dark-black sub-page-header text-center">
           <?php echo $term->name; ?>
         </h2>
 
 
         <?php if ($query->have_posts()) { ?>
 
-          <div class='product-category-grid'>
+          <div class='product-category-grid row'>
 
-          <?php while ( $query->have_posts() ){ $query->the_post(); ?>
+            <div class='col-sm-12'><div class='row'>
 
-          <div class='product-grid-item'><div class='product-grid-item-inner'>
-            <div class='product-image'>
-              <img src='<?php $images = get_field('images'); echo $images[0]['image']['url']; ?>' />
-            </div>
-            <div class='product-text'>
-              <a href="'.get_permalink().'">
-                <div class='product-title'>
-                  <?= get_field('name'); ?>
+          <?php
+          $count = 0;
+          while ( $query->have_posts() ){
+            $query->the_post();
+            if( $count > 0 && $count%2 == 0 ) { ?>
+            </div></div>
+
+            <div class='col-sm-12 hidden-sm hidden-xs'><div class='row'>
+              <div class='lower-line col-md-6'></div>
+              <div class='lower-line col-md-6'></div>
+            </div></div>
+
+            <div class='col-sm-12'><div class='row'>
+            <?php } ?>
+
+              <div class='product-grid-item col-md-6'><div class='product-grid-item-inner row'>
+                <div class='product-image col-sm-5'>
+                  <a href="<?= get_permalink(); ?>">
+                    <img src='<?php $images = get_field('images'); echo $images[0]['image']['url']; ?>' />
+                  </a>
                 </div>
-                <div class='product-sub-title'>
-                  <?= get_field('type'); ?>
+                <div class='product-text col-sm-7'>
+                  <a href="<?= get_permalink(); ?>">
+                    <div class='product-title'>
+                      <?= get_field('name'); ?>
+                    </div>
+                    <div class='product-sub-title'>
+                      <?= get_field('type'); ?>
+                    </div>
+                  </a>
+                  <div class='product-description'>
+                    <?= wp_trim_words( get_field('short_description'), $num_words = 10, $more = '... <a href="'.get_permalink().'">more</a>' ); ?>
+                  </div>
                 </div>
-              </a>
-              <div class='product-description'>
-                <?= wp_trim_words( get_field('description'), $num_words = 20, $more = '... <a href="'.get_permalink().'">more</a>' ); ?>
-              </div>
-            </div>
+              </div></div>
+              <div class='lower-line col-md-6 hidden-md hidden-lg'></div>
+
+          <?php
+          $count++;
+          } ?><!-- end while -->
           </div></div>
 
-          <?php } ?><!-- end while -->
+          <div class='col-sm-12 hidden-sm hidden-xs'><div class='row'>
+            <div class='lower-line col-md-6'></div>
+            <?php if ( $count%2 == 0 ) { ?>
+            <div class='lower-line col-md-6'></div>
+            <?php } ?>
+          </div></div>
 
         </div>
 
         <?php } ?><!-- end if -->
 
 
-        <div class='text-center' style='margin-bottom: -30px; margin-top: 70px;'>
-        <h6 class="text-center black section-title sub-page-subtitle line thick uppercase">About our smart fabrics</h6>
+        <div class='text-center'>
+        <h6 class="text-center black section-title sub-page-subtitle line thick uppercase">About <?php echo $term->name; ?></h6>
         </div>
 
-        <h4 class="bottom-margin-1x">Eeonyx’s smart fabrics are fashionable enough for touchscreen compatible dress gloves yet rugged and reliable enough for mission critical environments, including hospitals and warfighting platforms. Eeonyx can tune the conductivity of its textiles to deliver different electromagnetic and electroactive functions including:</h4>
+        <div class="about-category">
+        <?= the_field( 'about', $term ); ?>
+        </div>
 
-        <ul>
-        <li>Piezo-resistive sensors for measuring and mapping pressure, bend and stretch</li>
-        <li>EMI absorbers for protecting electronics and lowering radar cross section</li>
-        <li>Capacitive fabrics for touchscreen compatible apparel</li>
-        <li>Resistive fabrics for radiant heating</li>
-        <li>Conductive textiles for filters</li>
-        <li>Anti-static fibers for needle punch carpets</li>
-        </ul>
-
-        <h4 class="bottom-margin-1x">Eeonyx’s products are free of odors and VOCs. Coatings are made with organic polymers. They are recyclable and RoHS compliant. The coating process does not require post-process onsite waste treatment.</h4>
-
-        <div class='text-center' style='margin-bottom: -65px; margin-top: 50px;'>
+        <div class='text-center'>
         <h6 class="black section-title sub-page-subtitle line thick uppercase">Some of our smart fabrics in action</h6>
         </div>
 
-        <div class='product-grid'>
-          <div class='item'><div class='item-inner'>
-            <div class='image-wrapper'>
-              <img src='./images/product-grid-image-1.png' />
-            </div>
-            <div class='item-text'>
-              <div class='category-icon warming'></div>
-              <h3>
-                <a href='#' class='item-link'>
-                  QUNEXUS SMART SENSOR KEYBOARD CONTROLLER
-                </a>
-              </h3>
-            </div>
-          </div></div>
-          <div class='item'><div class='item-inner'>
-            <div class='image-wrapper'>
-              <img src='./images/product-grid-image-1.png' />
-            </div>
-            <div class='item-text'>
-              <div class='category-icon warming'></div>
-              <h3>
-                <a href='#' class='item-link'>
-                  QUNEXUS SMART SENSOR KEYBOARD CONTROLLER
-                </a>
-              </h3>
-            </div>
-          </div></div>
-          <div class='clear'></div>
-          <div class='item'><div class='item-inner'>
-            <div class='image-wrapper'>
-              <img src='./images/product-grid-image-1.png' />
-            </div>
-            <div class='item-text'>
-              <div class='category-icon warming'></div>
-              <h3>
-                <a href='#' class='item-link'>
-                  QUNEXUS SMART SENSOR KEYBOARD CONTROLLER
-                </a>
-              </h3>
-            </div>
-          </div></div>
+    <?php
+    $args = array(
+        'post_type' => 'application',
+        'product_category' => $term->slug
+    );
+    $query = new WP_Query( $args );
+    if ($query->have_posts()) { ?>
 
-          <div class='item'><div class='item-inner'>
+      <div class='product-grid row'>
+
+        <div class='col-sm-12'><div class='row'>
+
+        <?php
+        $count = 0;
+        while ( $query->have_posts() ){
+          $query->the_post();
+          $primary_category = get_field('primary_category');
+          if( $count > 0 && $count%2 == 0 ) { ?>
+        </div></div>
+        <div class='col-sm-12'><div class='row'>
+        <?php } ?>
+
+          <div class='item col-sm-6'>
             <div class='image-wrapper'>
-              <img src='./images/product-grid-image-1.png' />
+              <a href="<?= get_permalink(); ?>">
+                <img src='<?php $image = get_field('grid_image'); echo $image['url']; ?>' />
+              </a>
             </div>
             <div class='item-text'>
-              <div class='category-icon warming'></div>
+              <div class="category-icon <?= $primary_category->slug ?>"></div>
               <h3>
-                <a href='#' class='item-link'>
-                  QUNEXUS SMART SENSOR KEYBOARD CONTROLLER
+                <a href="<?= get_permalink(); ?>" class='item-link'>
+                  <?= get_the_title(); ?>
                 </a>
               </h3>
             </div>
-          </div></div>
-          <div class='clear'></div>
-          <div class='item'><div class='item-inner'>
-            <div class='image-wrapper'>
-              <img src='./images/product-grid-image-1.png' />
-            </div>
-            <div class='item-text'>
-              <div class='category-icon warming'></div>
-              <h3>
-                <a href='#' class='item-link'>
-                  QUNEXUS SMART SENSOR KEYBOARD CONTROLLER
-                </a>
-              </h3>
-            </div>
-          </div></div>
-        </div>
+          </div>
+        <?php $count++;
+        } ?><!-- end while -->
+        </div></div>
+
+      </div>
+
+      <?php } ?><!-- end if -->
+
       </div>
     </div>
 

@@ -48,7 +48,7 @@ while ( have_posts() ) : the_post();
 							$bulletLists = get_field('bullet_lists');
 							if ( is_array($bulletLists) ){
 								foreach( $bulletLists as $list ){ ?>
-									<h4>
+									<h4 class="subsection-heading">
 										<?= $list['heading'] ?>
 									</h4>
 									<ul class='bottom-margin-1x'>
@@ -87,9 +87,12 @@ while ( have_posts() ) : the_post();
 					<?php foreach( get_field('tables') as $table ){ ?>
 
 						<div class='specs-section col-sm-12'>
-							<h4>
+							<h4 class="subsection-heading">
 								<?=$table['heading']?>
 							</h4>
+							<div class="scroll-message hidden visible-xs-block">
+								Scroll right to see full table...
+							</div>
 							<div class='specs-table'>
 								<div class='specs-table-inner'>
 									<div class='table-header'>

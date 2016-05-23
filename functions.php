@@ -414,7 +414,7 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
  *
  */
 
-function create_posttype() {
+function create_products() {
 
 	$labels = array(
 	    'name' => __('Products', 'post type general name'),
@@ -452,37 +452,8 @@ function create_posttype() {
 	);
 	register_post_type( 'product' , $args );
 
-  $labels = array(
-      'name' => _x( 'Product Categories', 'taxonomy general name' ),
-      'singular_name' => _x( 'Product Category', 'taxonomy singular name' ),
-      'search_items' =>  __( 'Search Product Categories' ),
-      'popular_items' => __( 'Popular Product Categories' ),
-      'all_items' => __( 'All Product Categories' ),
-      'parent_item' => null,
-      'parent_item_colon' => null,
-      'edit_item' => __( 'Edit Product Category' ),
-      'update_item' => __( 'Update Product Category' ),
-      'add_new_item' => __( 'Add New Product Category' ),
-      'new_item_name' => __( 'New Product Category Name' ),
-      'separate_items_with_commas' => __( 'Separate Product Categories with commas' ),
-      'add_or_remove_items' => __( 'Add or remove functions tags' ),
-      'choose_from_most_used' => __( 'Choose from the most used Product Categories' ),
-      'menu_name' => __( 'Product Categories' )
-  );
-
-  register_taxonomy('product_category','product', array(
-      'hierarchical' => true,
-      'labels' => $labels,
-      'show_in_rest' => true,
-      'show_ui' => true,
-      'show_admin_column' => true,
-      'update_count_callback' => '_update_post_term_count',
-      'query_var' => true,
-      'rewrite' => array( 'slug' => 'product_category' )
-  ));
-
 }
-add_action( 'init', 'create_posttype' );
+add_action( 'init', 'create_products' );
 
 
 /** 
@@ -516,8 +487,103 @@ function addProductTaxonomyFilters() {
         }
     }
 }
-
 add_action('restrict_manage_posts', 'addProductTaxonomyFilters');
 
+
+/**
+ *
+ * Eeonyx applications
+ *
+ */
+
+function create_applications() {
+
+	$labels = array(
+	    'name' => __('Applications', 'post type general name'),
+	    'singular_name' => __('Application', 'post type singular name'),
+	    'add_new' => __('Add Application', 'project item'),
+	    'add_new_item' => __('Add New Application'),
+	    'edit_item' => __('Edit Application'),
+	    'new_item' => __('New Application'),
+	    'view_item' => __('View Application'),
+	    'search_items' => __('Search Applications'),
+	    'not_found' =>  __('Nothing found'),
+	    'not_found_in_trash' => __('Nothing found in Trash'),
+	    'parent_item_colon' => ''
+	);
+
+	$args = array(
+	    'labels' => $labels,
+	    'public' => true,
+	    'show_in_rest' => true,
+	    'exclude_from_search' => false,
+	    'publicly_queryable' => true,
+	    'has_archive' => true,
+      'show_ui'             => true,
+      'show_in_menu'        => true,
+      'show_in_nav_menus'   => true,
+      'show_in_admin_bar'   => true,
+      'menu_position'       => 5,
+      'can_export'          => true,
+	    'query_var' => true,
+	    'rewrite' => true,
+	    'capability_type' => 'page',
+	    'hierarchical' => true,
+	    'supports' => array('title', 'editor', 'page-attributes', 'tags'),
+	    'rewrite' => array('slug' => 'applications')
+	);
+	register_post_type( 'application' , $args );
+
+}
+add_action( 'init', 'create_applications' );
+
+function register_product_category(){
+
+	$labels = array(
+	    'name' => _x( 'Product Categories', 'taxonomy general name' ),
+	    'singular_name' => _x( 'Product Category', 'taxonomy singular name' ),
+	    'search_items' =>  __( 'Search Product Categories' ),
+	    'popular_items' => __( 'Popular Product Categories' ),
+	    'all_items' => __( 'All Product Categories' ),
+	    'parent_item' => null,
+	    'parent_item_colon' => null,
+	    'edit_item' => __( 'Edit Product Category' ),
+	    'update_item' => __( 'Update Product Category' ),
+	    'add_new_item' => __( 'Add New Product Category' ),
+	    'new_item_name' => __( 'New Product Category Name' ),
+	    'separate_items_with_commas' => __( 'Separate Product Categories with commas' ),
+	    'add_or_remove_items' => __( 'Add or remove functions tags' ),
+	    'choose_from_most_used' => __( 'Choose from the most used Product Categories' ),
+	    'menu_name' => __( 'Product Categories' )
+	);
+
+	register_taxonomy('product_category', array('product','application'), array(
+	    'hierarchical' => true,
+	    'labels' => $labels,
+	    'show_in_rest' => true,
+	    'show_ui' => true,
+	    'show_admin_column' => true,
+	    'update_count_callback' => '_update_post_term_count',
+	    'query_var' => true,
+	    'rewrite' => array( 'slug' => 'product_category' )
+	));
+
+}
+add_action( 'init', 'register_product_category' );
+
+/**
+ *
+ * Remove taxonomy from post admin page so it is only shown in the custom fields
+ *
+ */
+
+function remove_product_category_meta() {
+	remove_meta_box( 'product_categorydiv', 'product', 'side' );
+	remove_meta_box( 'product_categorydiv', 'application', 'side' );
+	remove_meta_box( 'pageparentdiv', 'product', 'side' );
+	remove_meta_box( 'pageparentdiv', 'application', 'side' );
+}
+
+add_action( 'admin_menu' , 'remove_product_category_meta' );
 
 

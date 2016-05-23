@@ -54,8 +54,8 @@ function active( $slug ){
 							<div>Home</div>
 						</a>
 						<?php } ?>
-						<a class="menu-item <?php active('conductive-fabrics') ?>" href="/conductive-fabrics" data-slug="conductive-fabrics">
-							<div>Conductive Fabrics</div>
+						<a class="menu-item <?php active('conductive-products') ?>" href="/conductive-products" data-slug="conductive-products">
+							<div>Conductive Products</div>
 						</a>
 						<a class="menu-item <?php active('eeonyx-in-action') ?>" href="#">
 							<div>Eeonyx in Action</div>
@@ -72,7 +72,7 @@ function active( $slug ){
 					</div>
 				</div>
 
-				<div class="menu-items column-2" data-column="2" data-slug="conductive-fabrics">
+				<div class="menu-items column-2" data-column="2" data-slug="conductive-products">
 					<div>
 
 						<?php foreach ($product_catgories as $index => $cat) { ?>
@@ -105,6 +105,12 @@ function active( $slug ){
 						<div class="menu-items column-3"  data-column="3" data-slug="<?=$cat->slug?>">
 							<div>
 							
+								<a class="menu-item" href="/product_category/<?=$cat->slug?>" >
+									<div>
+										View all <?=$cat->name?>
+									</div>
+								</a>
+
 							<?php
 
 						foreach ($products as $index => $product) {

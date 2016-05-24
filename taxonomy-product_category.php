@@ -110,44 +110,11 @@ $hero_image = get_field( 'hero_image', $term );
         'product_category' => $term->slug
     );
     $query = new WP_Query( $args );
-    if ($query->have_posts()) { ?>
+    if ($query->have_posts()) { 
 
-      <div class='product-grid row'>
+      include get_template_directory() . '/template-parts/application-product-grid.php';
 
-        <div class='col-sm-12'><div class='row'>
-
-        <?php
-        $count = 0;
-        while ( $query->have_posts() ){
-          $query->the_post();
-          $primary_category = get_field('primary_category');
-          if( $count > 0 && $count%2 == 0 ) { ?>
-        </div></div>
-        <div class='col-sm-12'><div class='row'>
-        <?php } ?>
-
-          <div class='item col-sm-6'>
-            <div class='image-wrapper'>
-              <a href="<?= get_permalink(); ?>">
-                <img src='<?php $image = get_field('grid_image'); echo $image['url']; ?>' />
-              </a>
-            </div>
-            <div class='item-text'>
-              <div class="category-icon <?= $primary_category->slug ?>"></div>
-              <h3>
-                <a href="<?= get_permalink(); ?>" class='item-link'>
-                  <?= get_the_title(); ?>
-                </a>
-              </h3>
-            </div>
-          </div>
-        <?php $count++;
-        } ?><!-- end while -->
-        </div></div>
-
-      </div>
-
-      <?php } ?><!-- end if -->
+    } ?><!-- end if -->
 
       </div>
     </div>

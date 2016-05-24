@@ -57,7 +57,7 @@ function active( $slug ){
 						<a class="menu-item <?php active('conductive-products') ?>" href="/conductive-products" data-slug="conductive-products">
 							<div>Conductive Products</div>
 						</a>
-						<a class="menu-item <?php active('eeonyx-in-action') ?>" href="#">
+						<a class="menu-item <?php active('eeonyx-in-action') ?>" href="/eeonyx-in-action">
 							<div>Eeonyx in Action</div>
 						</a>
 						<a class="menu-item <?php active('the-tech') ?>" href="#">

@@ -1652,6 +1652,10 @@ label {
   position: relative;
   padding-left: 80px;
   padding-right: 80px;
+  @media (max-width: @tablet-max ) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   h2 {
     text-align: center;
     margin-bottom: 40px;
@@ -1697,6 +1701,20 @@ label {
 }
 
 
+/**
+ *
+ * About page
+ *
+ */
+.row-0 {
+  @media (min-width: @tablet-min ) {
+    .image {
+      padding-left: 40px;
+      padding-top: 40px;
+    }
+  }
+
+}
 
 
 

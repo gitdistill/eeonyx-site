@@ -1121,11 +1121,11 @@ label {
   position: fixed;
   z-index: 10;
   top: 40px;
+  margin-left: 40px;
   height: 45px;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   width: 231px;
-  margin-left: 40px;
 }
 #nav-link .nav-toggle {
   height: 45px;
@@ -1619,6 +1619,11 @@ label {
  * Basic Pages
  *
  */
+.page {
+  position: relative;
+  padding-left: 80px;
+  padding-right: 80px;
+}
 .page h2 {
   text-align: center;
   margin-bottom: 40px;
@@ -1656,7 +1661,40 @@ label {
           transform: skewX(-30deg) translate(-180px, 0px);
 }
 .wipe-hero .image.visible img {
-  -webkit-transform: skewX(30deg) translate(0px, 0px);
-      -ms-transform: skewX(30deg) translate(0px, 0px);
-          transform: skewX(30deg) translate(0px, 0px);
+  -webkit-transform: skewX(30deg) translate(100px, 0px);
+      -ms-transform: skewX(30deg) translate(100px, 0px);
+          transform: skewX(30deg) translate(100px, 0px);
+}
+.wipe-hero.short {
+  height: 540px;
+  position: absolute;
+  top: -30px;
+  left: 0;
+}
+.wipe-hero.short .image {
+  -webkit-transform: skewX(-30deg) translate(-1200px, 0px);
+      -ms-transform: skewX(-30deg) translate(-1200px, 0px);
+          transform: skewX(-30deg) translate(-1200px, 0px);
+  transition: -webkit-transform 1.5s ease;
+  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
+  overflow: hidden;
+}
+.wipe-hero.short .image img {
+  -webkit-transform: skewX(30deg) translate(620px, 0px);
+      -ms-transform: skewX(30deg) translate(620px, 0px);
+          transform: skewX(30deg) translate(620px, 0px);
+  transition: -webkit-transform 1.5s ease;
+  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
+}
+.wipe-hero.short .image.visible {
+  -webkit-transform: skewX(-30deg) translate(-880px, 0px);
+      -ms-transform: skewX(-30deg) translate(-880px, 0px);
+          transform: skewX(-30deg) translate(-880px, 0px);
+}
+.wipe-hero.short .image.visible img {
+  -webkit-transform: skewX(30deg) translate(400px, 0px);
+      -ms-transform: skewX(30deg) translate(400px, 0px);
+          transform: skewX(30deg) translate(400px, 0px);
 }

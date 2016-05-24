@@ -1132,11 +1132,11 @@ label {
   position:fixed;
   z-index:10;
   top:40px;
+  margin-left:40px;
   height:45px;
   -webkit-transform:translateZ(0);
   transform:translateZ(0);
   width:231px;
-  margin-left:40px;
   .nav-toggle {
     height:45px;
     width:38px;
@@ -1649,6 +1649,9 @@ label {
  */
 
 .page {
+  position: relative;
+  padding-left: 80px;
+  padding-right: 80px;
   h2 {
     text-align: center;
     margin-bottom: 40px;
@@ -1660,26 +1663,40 @@ label {
  * Animated Wipe Hero
  *
  */
-
+.wipe-image( @angle, @start-x, @end-x, @image-start-x, @image-end-x) {
+  transform: skewX(@angle) translate(@start-x,0px);
+  transition: transform 1.5s ease;
+  overflow: hidden;
+  img {
+      transform: skewX(-1*@angle) translate(@image-start-x,0px);
+      transition: transform 1.5s ease;
+  }
+  &.visible{
+    transform: skewX(@angle) translate(@end-x,0px);
+    img {
+      transform: skewX(-1*@angle) translate(@image-end-x,0px);
+    }
+  }
+}
 .wipe-hero {
   height: 275px;
   width: 100%;
   overflow: hidden;
   .image{
-    transform: skewX(-30deg) translate(-1100px,0px);
-    transition: transform 1.5s ease;
-    overflow: hidden;
-    img {
-        transform: skewX(30deg) translate(620px,0px);
-        transition: transform 1.5s ease;
-    }
-    &.visible{
-      transform: skewX(-30deg) translate(-180px,0px);
-      img {
-        transform: skewX(30deg) translate(0px,0px);
-      }
+    .wipe-image( -30deg, -1100px, -180px, 620px, 100px);
+  }
+  &.short{
+    height: 540px;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    .image{
+      .wipe-image( -30deg, -1200px, -880px, 620px, 400px);
     }
   }
 }
+
+
+
 
 

@@ -1,4 +1,4 @@
-<div class='product-grid row'>
+<div class='application-product-grid row'>
 
   <div class='col-sm-12'><div class='row'>
   <?php
@@ -6,6 +6,7 @@
   while ( $query->have_posts() ){
     $query->the_post();
     $primary_category = get_field('primary_category');
+    $image = get_field('grid_image');
     if( $count > 0 && $count%2 == 0 ) { ?>
   </div></div>
 
@@ -17,7 +18,7 @@
 
         <div class='image-wrapper'>
           <a href="<?= get_permalink(); ?>">
-            <img src='<?php $image = get_field('grid_image'); echo $image['url']; ?>' />
+            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
           </a>
         </div>
 

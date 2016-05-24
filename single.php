@@ -9,8 +9,8 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+<div id="outer">
+	<main id="main" class="<?= $post->post_name; ?>">
 		<?php
 		// Start the loop.
 		while ( have_posts() ) : the_post();
@@ -45,10 +45,6 @@ get_header(); ?>
 		?>
 
 	</main><!-- .site-main -->
+</div><!-- .outer -->
 
-	<?php get_sidebar( 'content-bottom' ); ?>
-
-</div><!-- .content-area -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

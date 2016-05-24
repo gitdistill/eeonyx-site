@@ -363,6 +363,14 @@ h6.section-title {
   margin: 0 auto;
   position: relative;
 }
+main {
+  padding: 60px 40px;
+}
+@media (max-width: 767px) {
+  main {
+    padding: 0 20px;
+  }
+}
 .icon-heading {
   margin-bottom: 30px;
 }
@@ -438,10 +446,10 @@ h6.item-label {
   line-height: 22px;
   text-transform: uppercase;
 }
-.content ul {
+main ul {
   margin: 1em 0 2em 0;
 }
-.content ul li {
+main ul li {
   padding-left: 5px;
   font-size: 18px;
   line-height: 1.6em;
@@ -449,16 +457,6 @@ h6.item-label {
   font-family: 'SeravekLight', sans-serif;
   margin: 0 0 .5em 0;
   list-style-image: url('images/MiniO-Fill-2-01.svg');
-}
-.content .inner {
-  box-sizing: border-box;
-  padding: 40px 7%;
-}
-.content .inner * {
-  box-sizing: border-box;
-}
-.content .inner.pad2x {
-  padding: 40px 14%;
 }
 label {
   font-size: 12px;
@@ -591,7 +589,7 @@ label {
   display: block;
 }
 .home,
-.home #outer .content {
+.home #outer {
   background: #e6e7e8;
 }
 .home .menu-header {
@@ -1122,7 +1120,7 @@ label {
 #nav-link {
   position: fixed;
   z-index: 10;
-  top: 60px;
+  top: 40px;
   height: 45px;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -1313,32 +1311,6 @@ label {
 .top-gray-wrapper {
   background: #e6e7e8;
 }
-.top-gray-wrapper .inner {
-  padding: 90px 40px 40px 40px;
-}
-.product-grid {
-  padding: 20px;
-}
-.product-grid .item {
-  padding-bottom: 20px;
-}
-.product-grid .image-wrapper img {
-  width: 100%;
-}
-.product-grid .item-text a.item-link {
-  color: inherit;
-  text-decoration: none;
-}
-.product-grid .category-icon {
-  float: right;
-  height: 25px;
-  width: 25px;
-  margin: 5px;
-  background-size: 25px 25px;
-}
-.product-grid .item-inner:hover .item-text a.item-link {
-  color: #3cd52e;
-}
 .specs-section {
   margin: 40px 0 0 0;
 }
@@ -1468,38 +1440,6 @@ label {
   font-weight: normal;
   padding-bottom: 40px;
 }
-.wipe-hero {
-  height: 275px;
-  width: 100%;
-  overflow: hidden;
-}
-.wipe-hero .image {
-  -webkit-transform: skewX(-30deg) translate(-1100px, 0px);
-      -ms-transform: skewX(-30deg) translate(-1100px, 0px);
-          transform: skewX(-30deg) translate(-1100px, 0px);
-  transition: -webkit-transform 1.5s ease;
-  transition: transform 1.5s ease;
-  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
-  overflow: hidden;
-}
-.wipe-hero .image img {
-  -webkit-transform: skewX(30deg) translate(620px, 0px);
-      -ms-transform: skewX(30deg) translate(620px, 0px);
-          transform: skewX(30deg) translate(620px, 0px);
-  transition: -webkit-transform 1.5s ease;
-  transition: transform 1.5s ease;
-  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
-}
-.wipe-hero .image.visible {
-  -webkit-transform: skewX(-30deg) translate(-180px, 0px);
-      -ms-transform: skewX(-30deg) translate(-180px, 0px);
-          transform: skewX(-30deg) translate(-180px, 0px);
-}
-.wipe-hero .image.visible img {
-  -webkit-transform: skewX(30deg) translate(0px, 0px);
-      -ms-transform: skewX(30deg) translate(0px, 0px);
-          transform: skewX(30deg) translate(0px, 0px);
-}
 .article {
   margin-top: 60px;
   border-bottom: 6px solid #121212;
@@ -1564,6 +1504,11 @@ label {
   background-size: cover;
   background-image: url(images/bg-fibers.png);
 }
+/**
+ *
+ * Icons
+ *
+ */
 .category-icon.warming-fabrics,
 .icon-warming-fabrics,
 .icon-warming {
@@ -1619,6 +1564,11 @@ label {
 .paragraph-with-image .image {
   padding: 0;
 }
+@media (max-width: 767px) {
+  .paragraph-with-image .image {
+    padding: 0 15px 0 15px;
+  }
+}
 .paragraph-with-image .image img {
   width: 100%;
   height: auto;
@@ -1629,4 +1579,84 @@ label {
   line-height: 30px;
   font-weight: 300;
   font-family: 'SeravekLight', sans-serif;
+}
+/**
+ *
+ * Application product grid
+ *
+ */
+.application-product-grid {
+  margin: 0;
+  padding: 40px 25px 20px 25px;
+}
+@media (max-width: 767px) {
+  .application-product-grid {
+    padding: 30px 0px 0px 0px;
+  }
+}
+.application-product-grid .item {
+  padding-bottom: 20px;
+}
+.application-product-grid .image-wrapper img {
+  width: 100%;
+}
+.application-product-grid .item-text a.item-link {
+  color: inherit;
+  text-decoration: none;
+}
+.application-product-grid .category-icon {
+  float: right;
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+  background-size: 25px 25px;
+}
+.application-product-grid .item-inner:hover .item-text a.item-link {
+  color: #3cd52e;
+}
+/**
+ *
+ * Basic Pages
+ *
+ */
+.page h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+/**
+ *
+ * Animated Wipe Hero
+ *
+ */
+.wipe-hero {
+  height: 275px;
+  width: 100%;
+  overflow: hidden;
+}
+.wipe-hero .image {
+  -webkit-transform: skewX(-30deg) translate(-1100px, 0px);
+      -ms-transform: skewX(-30deg) translate(-1100px, 0px);
+          transform: skewX(-30deg) translate(-1100px, 0px);
+  transition: -webkit-transform 1.5s ease;
+  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
+  overflow: hidden;
+}
+.wipe-hero .image img {
+  -webkit-transform: skewX(30deg) translate(620px, 0px);
+      -ms-transform: skewX(30deg) translate(620px, 0px);
+          transform: skewX(30deg) translate(620px, 0px);
+  transition: -webkit-transform 1.5s ease;
+  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
+}
+.wipe-hero .image.visible {
+  -webkit-transform: skewX(-30deg) translate(-180px, 0px);
+      -ms-transform: skewX(-30deg) translate(-180px, 0px);
+          transform: skewX(-30deg) translate(-180px, 0px);
+}
+.wipe-hero .image.visible img {
+  -webkit-transform: skewX(30deg) translate(0px, 0px);
+      -ms-transform: skewX(30deg) translate(0px, 0px);
+          transform: skewX(30deg) translate(0px, 0px);
 }

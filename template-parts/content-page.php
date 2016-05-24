@@ -17,6 +17,9 @@
 	if ($is_contact) { ?>
 		<div class='narrow-column'>
 	<?php } ?>
+
+		<h2><?php the_title() ?></h2>
+
 		<?php
 		the_content();
 
@@ -37,11 +40,11 @@
 			<div class="paragraph-with-image row">
 				<div class="col-sm-4 image <?=$swap_columns?'col-sm-push-8':'';?>">
 					<?php if( $row['image'] ) { ?>
-						<img src="<?=$row['image']['url']?>" class="<?=$hide_image_on_mobile?'hidden-sm hidden-xs':'';?>">
+						<img src="<?=$row['image']['url']?>" class="<?=$hide_image_on_mobile?'hidden-xs':'';?>" alt="<?=$row['image']['alt']?>">
 					<?php } ?>
 				</div>
 				<div class="col-sm-7 text <?=$swap_columns?'col-sm-pull-3':'';?>">
-				<?=$row['text']?>
+					<?=$row['text']?>
 				</div>
 			</div>
 

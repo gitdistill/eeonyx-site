@@ -2,7 +2,6 @@
 /**
  * The template for displaying the header
  *
- * Displays all of the head element and everything up until the "site-content" div.
  *
  * @package WordPress
  * @subpackage Twenty_Sixteen
@@ -153,18 +152,3 @@ function active( $slug ){
 		<?php
 	}; 
 	?>
-	<div id="outer">
-		<main id="panel" <?php if (is_home() && ! wp_is_mobile()) { ?>class="slideout-panel" style="left: 220px;padding-right: 220px;"<?php } ?>>
-			<?php if (is_home()) { ?>
-				<div class="content">
-					<div class="inner">
-						<div class="logo big hidden-mobile"></div>
-						<h1 class="dark-black">
-							SMART FABRICS FOR THE INTERNET OF THINGS
-						</h1>
-						<h4>
-							Look smart. Be smart. Discover electronics you can wash and wear. Conductive textiles by Eeonyx warm you up, sense your environment, and protect you and your devices from unwanted energy.    
-						</h4>
-					</div>
-				</div>
-			<?php } ?>

@@ -12,19 +12,10 @@
  */
 
 get_header();
-$show_topbar = false;
-$is_smart_fabrics = false;
-$pos = strpos(get_permalink(), 'smart-fabrics');
-if ($pos !== false) { $is_smart_fabrics = true; }
 
-if ($is_smart_fabrics) {
-	?>
-	<div id='top-bar'></div>
-	<?php
-}
 ?>
-<div class="content">
-	<div class="inner pad2x">
+<div id="outer">
+	<main id="main" class="page <?= $post->post_name; ?>">
 		<?php
 		// Start the loop.
 		while ( have_posts() ) : the_post();
@@ -40,7 +31,6 @@ if ($is_smart_fabrics) {
 			// End of the loop.
 		endwhile;
 		?>
-	</div>
+	</main>
 </div>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

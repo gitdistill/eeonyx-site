@@ -5,8 +5,8 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+<div id="outer">
+	<main id="main" class="<?= $post->post_name; ?>">
 		
 		<?php
 		// Start the loop.
@@ -35,6 +35,9 @@ get_header(); ?>
 		 } ?>
 
 <?php } ?><!-- end post loop -->
+
+	</main>
+</div><!-- end outer -->
 
 <?php get_footer(); ?>
 

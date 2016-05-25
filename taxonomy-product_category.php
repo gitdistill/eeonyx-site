@@ -19,7 +19,7 @@ $hero_image = get_field( 'hero_image', $term );
 
 
 <div id="outer">
-  <main id="main" class="<?= $post->post_name; ?>">
+  <main id="main" class="product-category <?= $post->post_name; ?>">
 
     <div class="wipe-hero">
       <div class="image"><img src="<?= $hero_image['url'] ?>" alt="<?= $hero_image['alt'] ?>"></div>

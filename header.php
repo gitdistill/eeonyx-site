@@ -16,6 +16,7 @@ $product_catgories = get_terms( $product_taxonomy, array(
 ) );
 
 $page = get_post();
+
 global $active_slug;
 $active_slug = $page->post_name;
 

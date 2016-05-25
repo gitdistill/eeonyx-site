@@ -14,10 +14,11 @@ $tables = get_field('tables');
 ?>
 
 <div id="outer">
-	<main id="main" class="<?= $post->post_name; ?>">
+	<main id="main" class="product <?= $post->post_name; ?>">
 
+	<!-- TODO IMPLEMENT CRUMB -->
 		<div class='product-crumb'>
-			<div class='product-icon anti-static'></div>
+			<div class='category-icon anti-static'></div>
 			<div class='text'>
 				<strong>Product</strong><br />
 				<strong>Antistatic</strong>

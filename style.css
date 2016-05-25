@@ -260,7 +260,7 @@ h2 {
   font-family: 'SeravekBold', sans-serif;
   text-transform: uppercase;
   line-height: 1.3em;
-  letter-spacing: .07em;
+  letter-spacing: .05em;
 }
 h3 {
   margin: 0;
@@ -364,7 +364,7 @@ h6.section-title {
   position: relative;
 }
 main {
-  padding: 60px 40px;
+  padding: 0 40px 60px 40px;
 }
 @media (max-width: 767px) {
   main {
@@ -466,8 +466,8 @@ label {
   text-transform: uppercase;
 }
 .product-crumb {
+  margin: 0 0 38px 0;
   display: none;
-  margin: 70px 0 38px 0;
 }
 .product-crumb .text {
   line-height: 1;
@@ -480,13 +480,37 @@ label {
   line-height: 1;
   text-transform: uppercase;
 }
-.product-crumb .product-icon {
-  width: 30px;
-  height: 35px;
-  background-size: 30px 35px;
-  background-image: url(images/product-icon-anti-static.png);
+.product-crumb .category-icon {
+  width: 19px;
+  height: 25px;
+  margin-top: 3px;
+  background-size: 100%;
+  background-repeat: no-repeat;
   float: left;
-  margin-right: 10px;
+  margin-right: 8px;
+}
+.application-crumb {
+  margin: 0 0 38px 0;
+}
+.application-crumb .text {
+  line-height: 1;
+}
+.application-crumb .text strong {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'SeravekBold', sans-serif;
+  line-height: 1.1em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.application-crumb .category-icon {
+  width: 19px;
+  height: 25px;
+  margin-top: 3px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  float: left;
+  margin-right: 8px;
 }
 .narrow-column {
   max-width: 340px;
@@ -1619,20 +1643,202 @@ label {
  * Basic Pages
  *
  */
-.page {
-  position: relative;
+.page,
+.product,
+.product-category {
   padding-left: 80px;
   padding-right: 80px;
+  position: relative;
 }
 @media (max-width: 1023px) {
-  .page {
+  .page,
+  .product,
+  .product-category {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
-.page h2 {
+@media (max-width: 767px) {
+  .page,
+  .product,
+  .product-category {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.page .remove-horizontal-padding .from-left-position,
+.product .remove-horizontal-padding .from-left-position,
+.product-category .remove-horizontal-padding .from-left-position {
+  left: -80px;
+}
+.page .remove-horizontal-padding .from-right-position,
+.product .remove-horizontal-padding .from-right-position,
+.product-category .remove-horizontal-padding .from-right-position {
+  right: -80px;
+}
+.page .remove-horizontal-padding .from-left-margin,
+.product .remove-horizontal-padding .from-left-margin,
+.product-category .remove-horizontal-padding .from-left-margin {
+  margin-left: -80px;
+}
+.page .remove-horizontal-padding .from-right-margin,
+.product .remove-horizontal-padding .from-right-margin,
+.product-category .remove-horizontal-padding .from-right-margin {
+  margin-right: -80px;
+}
+.page .remove-horizontal-padding .from-margins,
+.product .remove-horizontal-padding .from-margins,
+.product-category .remove-horizontal-padding .from-margins,
+.page .wipe-hero,
+.product .wipe-hero,
+.product-category .wipe-hero {
+  margin-right: -80px;
+  margin-left: -80px;
+}
+@media (max-width: 1023px) {
+  .page .remove-horizontal-padding .from-left-position,
+  .product .remove-horizontal-padding .from-left-position,
+  .product-category .remove-horizontal-padding .from-left-position {
+    left: -20px;
+  }
+  .page .remove-horizontal-padding .from-right-position,
+  .product .remove-horizontal-padding .from-right-position,
+  .product-category .remove-horizontal-padding .from-right-position {
+    right: -20px;
+  }
+  .page .remove-horizontal-padding .from-left-margin,
+  .product .remove-horizontal-padding .from-left-margin,
+  .product-category .remove-horizontal-padding .from-left-margin {
+    margin-left: -20px;
+  }
+  .page .remove-horizontal-padding .from-right-margin,
+  .product .remove-horizontal-padding .from-right-margin,
+  .product-category .remove-horizontal-padding .from-right-margin {
+    margin-right: -20px;
+  }
+  .page .remove-horizontal-padding .from-margins,
+  .product .remove-horizontal-padding .from-margins,
+  .product-category .remove-horizontal-padding .from-margins,
+  .page .wipe-hero,
+  .product .wipe-hero,
+  .product-category .wipe-hero {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+}
+@media (max-width: 767px) {
+  .page .remove-horizontal-padding .from-left-position,
+  .product .remove-horizontal-padding .from-left-position,
+  .product-category .remove-horizontal-padding .from-left-position {
+    left: -20px;
+  }
+  .page .remove-horizontal-padding .from-right-position,
+  .product .remove-horizontal-padding .from-right-position,
+  .product-category .remove-horizontal-padding .from-right-position {
+    right: -20px;
+  }
+  .page .remove-horizontal-padding .from-left-margin,
+  .product .remove-horizontal-padding .from-left-margin,
+  .product-category .remove-horizontal-padding .from-left-margin {
+    margin-left: -20px;
+  }
+  .page .remove-horizontal-padding .from-right-margin,
+  .product .remove-horizontal-padding .from-right-margin,
+  .product-category .remove-horizontal-padding .from-right-margin {
+    margin-right: -20px;
+  }
+  .page .remove-horizontal-padding .from-margins,
+  .product .remove-horizontal-padding .from-margins,
+  .product-category .remove-horizontal-padding .from-margins,
+  .page .wipe-hero,
+  .product .wipe-hero,
+  .product-category .wipe-hero {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+}
+.page h2,
+.product h2,
+.product-category h2 {
   text-align: center;
   margin-bottom: 40px;
+}
+.page article,
+.product article,
+.product-category article {
+  padding-top: 60px;
+}
+.application {
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+}
+@media (max-width: 1023px) {
+  .application {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .application {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.application .remove-horizontal-padding .from-left-position {
+  left: -40px;
+}
+.application .remove-horizontal-padding .from-right-position {
+  right: -40px;
+}
+.application .remove-horizontal-padding .from-left-margin {
+  margin-left: -40px;
+}
+.application .remove-horizontal-padding .from-right-margin {
+  margin-right: -40px;
+}
+.application .remove-horizontal-padding .from-margins,
+.application .wipe-hero {
+  margin-right: -40px;
+  margin-left: -40px;
+}
+@media (max-width: 1023px) {
+  .application .remove-horizontal-padding .from-left-position {
+    left: -20px;
+  }
+  .application .remove-horizontal-padding .from-right-position {
+    right: -20px;
+  }
+  .application .remove-horizontal-padding .from-left-margin {
+    margin-left: -20px;
+  }
+  .application .remove-horizontal-padding .from-right-margin {
+    margin-right: -20px;
+  }
+  .application .remove-horizontal-padding .from-margins,
+  .application .wipe-hero {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+}
+@media (max-width: 767px) {
+  .application .remove-horizontal-padding .from-left-position {
+    left: -20px;
+  }
+  .application .remove-horizontal-padding .from-right-position {
+    right: -20px;
+  }
+  .application .remove-horizontal-padding .from-left-margin {
+    margin-left: -20px;
+  }
+  .application .remove-horizontal-padding .from-right-margin {
+    margin-right: -20px;
+  }
+  .application .remove-horizontal-padding .from-margins,
+  .application .wipe-hero {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
 }
 /**
  *
@@ -1640,9 +1846,11 @@ label {
  *
  */
 .wipe-hero {
-  height: 275px;
-  width: 100%;
+  position: relative;
+  top: -40px;
+  margin-bottom: -20px;
   overflow: hidden;
+  height: 275px;
 }
 .wipe-hero .image {
   -webkit-transform: skewX(-30deg) translate(-1100px, 0px);
@@ -1662,20 +1870,21 @@ label {
   transition: transform 1.5s ease, -webkit-transform 1.5s ease;
 }
 .wipe-hero .image.visible {
-  -webkit-transform: skewX(-30deg) translate(-180px, 0px);
-      -ms-transform: skewX(-30deg) translate(-180px, 0px);
-          transform: skewX(-30deg) translate(-180px, 0px);
+  -webkit-transform: skewX(-30deg) translate(-176px, 0px);
+      -ms-transform: skewX(-30deg) translate(-176px, 0px);
+          transform: skewX(-30deg) translate(-176px, 0px);
 }
 .wipe-hero .image.visible img {
-  -webkit-transform: skewX(30deg) translate(100px, 0px);
-      -ms-transform: skewX(30deg) translate(100px, 0px);
-          transform: skewX(30deg) translate(100px, 0px);
+  -webkit-transform: skewX(30deg) translate(140px, 0px);
+      -ms-transform: skewX(30deg) translate(140px, 0px);
+          transform: skewX(30deg) translate(140px, 0px);
 }
 .wipe-hero.short {
-  height: 540px;
   position: absolute;
-  top: -30px;
+  top: 0;
   left: 0;
+  margin: 0;
+  height: 540px;
 }
 .wipe-hero.short .image {
   -webkit-transform: skewX(-30deg) translate(-1200px, 0px);
@@ -1703,6 +1912,36 @@ label {
   -webkit-transform: skewX(30deg) translate(400px, 0px);
       -ms-transform: skewX(30deg) translate(400px, 0px);
           transform: skewX(30deg) translate(400px, 0px);
+}
+.wipe-hero.large {
+  height: 430px;
+}
+.wipe-hero.large .image {
+  -webkit-transform: skewX(-30deg) translate(-1140px, 0px);
+      -ms-transform: skewX(-30deg) translate(-1140px, 0px);
+          transform: skewX(-30deg) translate(-1140px, 0px);
+  transition: -webkit-transform 1.5s ease;
+  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
+  overflow: hidden;
+}
+.wipe-hero.large .image img {
+  -webkit-transform: skewX(30deg) translate(620px, 0px);
+      -ms-transform: skewX(30deg) translate(620px, 0px);
+          transform: skewX(30deg) translate(620px, 0px);
+  transition: -webkit-transform 1.5s ease;
+  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
+}
+.wipe-hero.large .image.visible {
+  -webkit-transform: skewX(-30deg) translate(-124px, 0px);
+      -ms-transform: skewX(-30deg) translate(-124px, 0px);
+          transform: skewX(-30deg) translate(-124px, 0px);
+}
+.wipe-hero.large .image.visible img {
+  -webkit-transform: skewX(30deg) translate(100px, 0px);
+      -ms-transform: skewX(30deg) translate(100px, 0px);
+          transform: skewX(30deg) translate(100px, 0px);
 }
 /**
  *

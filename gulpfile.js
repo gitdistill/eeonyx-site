@@ -26,7 +26,7 @@ var gulp = require( 'gulp' ),
 gulp.task( 'generate-concatenated-styles', function () {
     return gulp.src( [ 'less/*.less' ] )
         // .pipe( concat( 'styles.css' ) )
-        .pipe( less() )
+        .pipe( less().on("error", notify.onError("Error: <%= error.message %>")) )
         .pipe( autoprefixer( 'last 5 version' ) )
         .pipe( gulp.dest( '.' ) )
         // .pipe( rename( { suffix: '.min' } ) )
@@ -50,15 +50,16 @@ gulp.task( 'generate-concatenated-scripts', function () {
         .pipe( notify( { message: 'Scripts concat task complete' } ) );
 } );
 
-/*
+
 // Templates
-gulp.task( 'copy-templates', function () {
-    return gulp.src( 'templates/*.html' )
-        .pipe( wiredep() )
-        .pipe( gulp.dest( 'dist' ) )
+gulp.task( 'update-templates', function () {
+    return gulp.src( '**/*.php' )
+        // .pipe( wiredep() )
+        // .pipe( gulp.dest( 'dist' ) )
+        .pipe( connect.reload() )
         .pipe( notify( { message: 'Copy templates task complete' } ) );
 } );
-*/
+
 
 // Clean
 gulp.task( 'clean', function ( cb ) {
@@ -77,8 +78,8 @@ gulp.task( 'watch', function () {
     // Watch .less files
     gulp.watch( 'less/*.less', [ 'generate-concatenated-styles' ] );
 
-    // // Watch html files
-    // gulp.watch( [ 'templates/*.html' ], [ 'copy-templates' ] );
+    // // Watch php files
+    gulp.watch( [ '**/*.php' ], [ 'update-templates' ] );
 
     // // Watch .js files
     gulp.watch( [ '*.js' ], [ 'generate-concatenated-scripts' ] );

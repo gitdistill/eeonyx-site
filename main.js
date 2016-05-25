@@ -58,6 +58,7 @@ function EeonyxSlideout( $nav ){
 			setTimeout(function(){
 				$nav.addClass('visible');
 			},10);
+			$('main').addClass('menu-open');
 		}else{
 			$allColumns.removeClass('visible');
 			$nav.one('transitionend webkitTransitionEnd oTransitionEnd', function () {
@@ -68,6 +69,7 @@ function EeonyxSlideout( $nav ){
 			$nav.removeClass('visible');
 			$allLinks.removeClass('selected');
 			$allColumns.removeClass('visible open');
+			$('main').removeClass('menu-open');
 		}
 		visible = !visible;
 	};

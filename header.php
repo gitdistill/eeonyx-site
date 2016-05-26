@@ -18,7 +18,7 @@ $product_catgories = get_terms( $product_taxonomy, array(
 $page = get_post();
 
 global $active_slug;
-$active_slug = $page->post_name;
+$active_slug = $page? $page->post_name: '';
 
 function active( $slug ){
 	global $active_slug;
@@ -44,6 +44,9 @@ function active( $slug ){
 <div id="page" class="site">
 	<nav id="menu" <?php if (is_home() && ! wp_is_mobile()) { ?>class='slideout-menu'<?php } else { ?>class='hidden'<?php } ?>>
 	  	<header>
+
+	  		<div class="margin-filler"></div>
+	    
 	    	<div class="left-menu">
 
 				<div class="menu-items column-1" data-column="1">
@@ -133,23 +136,16 @@ function active( $slug ){
 					<?php } ?>
 				<?php } ?>
 
-			</div>
+				</div>
 	  	</header>
 	</nav>
-	<?php
-	if (!is_home()) { 
-		?>
+
+	<div class="content-container">
 		<div id="nav-link">
-			<div class='nav-toggle'><div class='nav-icon'><span></span><span></span><span></span></div></div>
-			<div class='logo small'></div>
+			<div class='nav-toggle'>
+				<div class='nav-icon'>
+					<span></span><span></span><span></span></div></div>
+				<div class='logo small'>
+			</div>
 		</div>
-		<?php
-	} else {
-		?>
-		<div id="nav-link" class='hidden-desktop'>
-			<div class='nav-toggle'><div class='nav-icon'><span></span><span></span><span></span></div></div>
-			<div class='logo small'></div>
-		</div>
-		<?php
-	}; 
-	?>
+	</div>

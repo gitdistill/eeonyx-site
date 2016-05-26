@@ -58,7 +58,7 @@ function EeonyxSlideout( $nav ){
 			setTimeout(function(){
 				$nav.addClass('visible');
 			},10);
-			$('main').addClass('menu-open');
+			$('#outer').addClass('menu-open');
 		}else{
 			$allColumns.removeClass('visible');
 			$nav.one('transitionend webkitTransitionEnd oTransitionEnd', function () {
@@ -69,7 +69,7 @@ function EeonyxSlideout( $nav ){
 			$nav.removeClass('visible');
 			$allLinks.removeClass('selected');
 			$allColumns.removeClass('visible open');
-			$('main').removeClass('menu-open');
+			$('#outer').removeClass('menu-open');
 		}
 		visible = !visible;
 	};
@@ -86,8 +86,20 @@ $(".nav-toggle").on('click', function() {
 
 
 $(document).on('ready', function() {
+
 	$("#menu").removeClass('hidden');
+	
 	$('.wipe-hero .image').addClass('visible');
+
+	if ( $('#fullpage').length ){
+		$('#fullpage').fullpage({
+      anchors: ['intro', 'explore-products', 'products-in-action', 'about-eeonyx'],
+      sectionsColor: ['#E6E7E8', '#ffffff', '#E6E7E8', '#ffffff'],
+      css3: true,
+      responsiveWidth: 768
+  	});
+	}
+
 });
 
 if ($(".combs-container .comb").length) {

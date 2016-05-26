@@ -28,7 +28,7 @@ function active( $slug ){
 }
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js <?php if (wp_is_mobile()) { ?>mobile <?php } else { ?>desktop <?php } ?><?php if (is_home() && ! wp_is_mobile()) { ?>slideout-open<?php } ?>">
+<html <?php language_attributes(); ?> class="no-js <?php if (wp_is_mobile()) { ?>mobile <?php } else { ?>desktop <?php } ?><?php if (is_front_page() && ! wp_is_mobile()) { ?>slideout-open<?php } ?>">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,12 +37,13 @@ function active( $slug ){
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel='stylesheet' id=''  href='/wp-content/themes/eeonyx-wp-theme/vendor/jquery.fullPage.css' type='text/css' media='all' />
 	<?php wp_head(); ?>
 </head>
 
-<body <?php if (is_home()) { ?>class='home'<?php } ?>>
+<body <?php if (is_front_page()) { ?>class='home'<?php } ?>>
 <div id="page" class="site">
-	<nav id="menu" <?php if (is_home() && ! wp_is_mobile()) { ?>class='slideout-menu'<?php } else { ?>class='hidden'<?php } ?>>
+	<nav id="menu" <?php if (is_front_page() && ! wp_is_mobile()) { ?>class='slideout-menu'<?php } else { ?>class='hidden'<?php } ?>>
 	  	<header>
 
 	  		<div class="margin-filler"></div>
@@ -52,7 +53,7 @@ function active( $slug ){
 				<div class="menu-items column-1" data-column="1">
 					<div>
 						<?php
-						if (!is_home()) { ?>
+						if (!is_front_page()) { ?>
 						<a class="menu-item black" href="/">
 							<div>Home</div>
 						</a>

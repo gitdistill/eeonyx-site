@@ -13,8 +13,9 @@ $tables = get_field('tables');
 
 ?>
 
-<div id="outer">
-	<main id="main" class="product <?= $post->post_name; ?>">
+<div id="outer" class="product <?= $post->post_name; ?>">
+  <div class="content-container">
+
 
 	<!-- TODO IMPLEMENT CRUMB -->
 		<div class='product-crumb'>
@@ -152,8 +153,8 @@ $tables = get_field('tables');
 
 		<?php } ?><!--end tables loop and if statement -->
 
-	</main><!-- .site-main -->
-</div>
+	</div><!-- content-container -->
+</div><!--outer-->
 
 <?php 
 		// End of the loop.

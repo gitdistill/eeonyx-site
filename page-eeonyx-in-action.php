@@ -5,8 +5,7 @@
 
 get_header(); ?>
 
-<div id="outer">
-	<main id="main" class="<?= $post->post_name; ?>">
+<div id="outer" class="page <?= $post->post_name; ?>">
 		
 		<?php
 		// Start the loop.
@@ -23,6 +22,8 @@ get_header(); ?>
 			</div>
 		</div>
 
+		<div id="main" class="content-container">
+
 		<?php
 		$args = array(
 		    'post_type' => 'application'
@@ -36,7 +37,7 @@ get_header(); ?>
 
 <?php } ?><!-- end post loop -->
 
-	</main>
+	</div>
 </div><!-- end outer -->
 
 <?php get_footer(); ?>

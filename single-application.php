@@ -10,11 +10,26 @@ get_header();
 while ( have_posts() ) : the_post();
 $primary_category = get_field('primary_category');
 $hero_image = get_field( 'hero_image' );
+$background_image = get_field( 'background_image' );
 
 ?>
 
-<div id="outer">
-	<main id="main" class="application <?= $post->post_name; ?>">
+<div id="outer" class="application <?= $post->post_name; ?>">
+	<div id="main" class="content-container">
+
+	<!--get outside of the container-->
+	</div>
+	<!--============================-->
+
+<div class="background-image">
+  <div class="image">
+  	<img src="<?= $background_image['url'] ?>" alt="<?= $background_image['alt'] ?>">
+  </div>
+</div>
+
+	<!--get back inside the container-->
+	<div class="content-container">
+	<!--============================-->
 
 		<div class="wipe-hero large">
 		  <div class="image">

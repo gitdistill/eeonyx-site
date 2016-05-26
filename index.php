@@ -18,8 +18,8 @@ get_header(); ?>
 <?php if (is_home()) { ?>
 	
 <?php } else { ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="outer" class="page">
+		<div id="main" class="content-container">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -57,7 +57,7 @@ get_header(); ?>
 		endif;
 		?>
 
-		</main><!-- .site-main -->
+		</div><!-- .site-main -->
 	</div><!-- .content-area -->
 <?php } ?>
 <?php get_sidebar(); ?>

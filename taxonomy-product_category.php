@@ -18,8 +18,8 @@ $hero_image = get_field( 'hero_image', $term );
 ?>
 
 
-<div id="outer">
-  <main id="main" class="product-category <?= $post->post_name; ?>">
+<div id="outer" class="product-category <?= $post->post_name; ?>">
+  <div class="content-container">
 
     <div class="wipe-hero">
       <div class="image"><img src="<?= $hero_image['url'] ?>" alt="<?= $hero_image['alt'] ?>"></div>
@@ -131,7 +131,7 @@ $hero_image = get_field( 'hero_image', $term );
 
     } ?><!-- end if -->
 
-  </main><!-- .site-main -->
+  </div><!-- .site-main -->
 </div><!-- .content-area -->
 
 <?php get_footer(); ?>

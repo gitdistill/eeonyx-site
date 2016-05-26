@@ -9,7 +9,7 @@
 		<div class="footer">
 			<div class="logo"></div>
 		</div>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script type="text/javascript" src="/wp-content/themes/eeonyx-wp-theme/vendor/jquery.slimscroll.min.js"></script>
 		<script type="text/javascript" src="/wp-content/themes/eeonyx-wp-theme/vendor/jquery.fullPage.min.js"></script>
 		<script type="text/javascript" src="/wp-content/themes/eeonyx-wp-theme/vendor/autosize.min.js"></script>

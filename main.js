@@ -108,7 +108,7 @@ if ($(".combs-container .comb").length) {
 	$(".combs-container").on('click', '.comb', function(e) {
 
 		//dont run on tablets
-		if ( true ){ return }
+		if ( true ){ return } //e.originalEvent.sourceCapabilities.firesTouchEvents
 
 		console.log(e);
 		var el = $(this);

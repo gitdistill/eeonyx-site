@@ -22,6 +22,7 @@
        url('./fonts/SeravekWebBasicLight.woff') format('woff'); /* Pretty Modern Browsers */
 }
 
+@site-max-width: 1024px;
 
 @large-desktop-min: 1280px;
 @desktop-min: 1024px;
@@ -344,21 +345,13 @@ h6.section-title {
   margin-bottom: 30px;
 }
 
-#page {
-  max-width: 1024px;
-  margin: 0 auto;
-  position: relative;
-}
-
-main {
-  padding: 0 40px 60px 40px;
-  @media (max-width: @mobile-max ) {
-    padding: 0 20px;
-  }
+#outer {
+  padding-bottom: 60px;
   &.menu-open {
     -webkit-filter: blur(3px);
   }
 }
+
 .icon-heading {
   margin-bottom:30px;
   .text {
@@ -423,6 +416,9 @@ main {
   //   margin:0;
   //   width:60%;
      overflow-x: hidden;
+     h2{
+      text-align: left;
+     }
    }
    .right-column {
   //   display:inline-block;
@@ -448,7 +444,7 @@ h6.item-label {
   line-height:22px;
   text-transform:uppercase;
 }
-main ul {
+ul {
   margin:1em 0 2em 0;
   li {
     padding-left:5px;
@@ -538,7 +534,7 @@ label {
  */
 
 @menu-column-width: 36%;
-@second-column-translation: 89.5%;
+@second-column-translation: 89.8%;
 @third-column-translation: 2* @second-column-translation;
 @menu-width: 390px;
 
@@ -584,14 +580,6 @@ label {
   position:absolute;
 }
 
-.slideout-open {
-  #outer {
-    overflow-x:hidden;
-  }
-  .slideout-menu {
-    display:block;
-  }
-}
 .home {
   &, #outer {
     background:#e6e7e8;
@@ -609,6 +597,9 @@ label {
   bottom:0;
   width: @menu-column-width;
   max-width: @menu-width * (@menu-column-width/100);
+  @media (max-width: @mobile-max ) {
+    max-width: @menu-column-width;
+  }
   background-color: #fff;
   cursor: pointer;
   &>div{
@@ -699,6 +690,23 @@ label {
     }
   }
 }
+nav{
+  header {
+    &:extend( .content-container );
+    position: relative;
+    overflow: visible;
+    height: 100%;
+    .margin-filler {
+      display: block;
+      position: absolute;
+      height: 100%;
+      right: 100%;
+      left: -200%;
+      background-color: #fff;
+      z-index: 100;
+    }
+  }
+}
 .left-menu {
   position: absolute;
   bottom: 0;
@@ -706,10 +714,13 @@ label {
   padding:0;
   width: 100%;
   max-width: @menu-width;
+  @media (max-width: @mobile-max ) {
+    max-width: 100%;
+  }
   -moz-box-sizing:border-box;
   -webkit-box-sizing:border-box;
   box-sizing:border-box;
-  overflow-y: hidden;
+  overflow: hidden;
   &:after {
     display: table;
     content: " ";
@@ -1339,9 +1350,6 @@ label {
 .contact-error .wpcf7-response-output {
   display:block !important;
 }
-.top-gray-wrapper {
-  background:#e6e7e8;
-}
 
 .specs-section {
   margin: 40px 0 0 0;
@@ -1404,8 +1412,11 @@ label {
   }
 }
 .product-category-grid {
-  margin:0 -40px 60px -40px;
+  &:extend(.remove-horizontal-padding .from-margins all);
   text-align:center;
+  @media (max-width: @mobile-max ) {
+    margin-bottom: 40px;
+  }
   .lower-line {
     padding: 0 40px;
     &:before {
@@ -1594,8 +1605,7 @@ label {
  */
 
 .application-product-grid {
-  margin: 0;
-  padding: 40px 25px 20px 25px;
+  padding: 40px 0 20px 0;
   @media (max-width: @mobile-max ) {
     padding: 30px 0px 0px 0px;
   }
@@ -1636,6 +1646,12 @@ label {
   line-height: 30px;
   font-weight: 300;
   font-family: 'SeravekLight', sans-serif;
+}
+
+.content-container {
+  max-width: @site-max-width;
+  margin: 0 auto;
+  position: relative;
 }
 
 @horizontal-page-padding-desktop: 80px;
@@ -1701,8 +1717,10 @@ label {
 .page,
 .product,
 .product-category {
-  .default-horizontal-padding;
-  position: relative;
+  .content-container {
+    .default-horizontal-padding;
+    position: relative;
+  }
   h2 {
     text-align: center;
     margin-bottom: 40px;
@@ -1711,10 +1729,23 @@ label {
     padding-top: 60px;
   }
 }
-.application {
-  .reduced-horizontal-padding;
-  position: relative;
+.application,
+.eeonyx-in-action {
+  .content-container {
+    .reduced-horizontal-padding;
+    position: relative;
+  }
 }
+.top-gray-wrapper {
+  &:extend( .content-container );
+  background:#e6e7e8;
+  .inner{
+    .reduced-horizontal-padding;
+    padding-bottom: 40px;
+    padding-top: 80px;
+  }
+}
+
 
 /**
  *
@@ -1810,10 +1841,42 @@ label {
  *
  */
 .application {
+  position: relative;
   &:extend( .default-text );
   .row {
     @media (min-width: @tablet-min ) {
       margin: 0;
+    }
+  }
+  .background-image {
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    .image{
+      width: @site-max-width;
+      margin: 0 auto;
+      text-align: center;
+      overflow: visible;
+      &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+        background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+      }
+    }
+    img {
+      width: 130%;
+      margin-left: 0px;
+      margin-top: 200px;
     }
   }
   .summary {
@@ -1827,11 +1890,49 @@ label {
     }
     .information {
       padding: 20px;
+      color: #DAE5CE;
+      font-size: 18px;
+      font-family: Seravek;
+      .summary-list {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 20px 0;
+        &:after {
+          display: table;
+          height: 0;
+          content: "";
+          clear: both;
+        }
+        .list-column {
+          display: block;
+          float: left;
+          span {
+            font-size: 12px;
+            line-height: 24px;
+            font-family: SeravekBold;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            a {
+              color: inherit;
+              text-decoration: underline;
+            }
+            &.name {
+              color: #7A897A;
+              padding-right: 20px;
+            }
+          }
+        }
+      }
     }
   }
   .description {
     margin-top: 60px;
     padding: 0 120px 40px 120px; 
+    *{
+      position: relative;
+      z-index: 20;
+    }
     @media (max-width: @tablet-max ) {
       padding: 0 60px 40px 60px; 
     }
@@ -1839,7 +1940,7 @@ label {
       padding: 0 0 40px 0;
     }
     .full-text:first-letter {
-      padding-right: 5px;
+      padding-right: 10px;
       float: left;
       font-family: SeravekBold;
       font-size: 60px;

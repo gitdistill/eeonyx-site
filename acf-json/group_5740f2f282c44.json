@@ -21,9 +21,30 @@
             "media_upload": 1
         },
         {
-            "key": "field_5740f45daa91d",
-            "label": "Short Description",
-            "name": "",
+            "key": "field_574603ec05d87",
+            "label": "Drop Quote",
+            "name": "drop_quote",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5746040a05d88",
+            "label": "Drop Quote Attribution",
+            "name": "drop_quote_attribution",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -40,6 +61,24 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_5740f45daa91d",
+            "label": "Short Description",
+            "name": "Used in product grids, but not on the detail page for this application",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
         },
         {
             "key": "field_5740f4038aecc",
@@ -132,6 +171,151 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_57454b3337157",
+            "label": "Background Image",
+            "name": "background_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_57460018c76a5",
+            "label": "Summary Heading",
+            "name": "summary_heading",
+            "type": "textarea",
+            "instructions": "Green heading of summary box on detail page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57460132c76a7",
+            "label": "Summary List",
+            "name": "summary_list",
+            "type": "repeater",
+            "instructions": "List of application specs in black portion of summary box on detail page for this application",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_57460171c76a8",
+                    "label": "Property Name",
+                    "name": "property_name",
+                    "type": "text",
+                    "instructions": "eg \"Industry\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_574601b9c76a9",
+                    "label": "Property Value",
+                    "name": "property_value",
+                    "type": "text",
+                    "instructions": "eg \"Entertainment\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5746020380942",
+                    "label": "Property Link",
+                    "name": "property_link",
+                    "type": "url",
+                    "instructions": "Optional url for \"Property Value\" to link to",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_574600e4c76a6",
+            "label": "Summary Blurb",
+            "name": "summary_blurb",
+            "type": "textarea",
+            "instructions": "Short blurb in black portion of summary box on detail page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -153,5 +337,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1464122944
+    "modified": 1464206729
 }

@@ -358,20 +358,10 @@ h6.section-title {
   letter-spacing: .05em;
   margin-bottom: 30px;
 }
-#page {
-  max-width: 1024px;
-  margin: 0 auto;
-  position: relative;
+#outer {
+  padding-bottom: 60px;
 }
-main {
-  padding: 0 40px 60px 40px;
-}
-@media (max-width: 767px) {
-  main {
-    padding: 0 20px;
-  }
-}
-main.menu-open {
+#outer.menu-open {
   -webkit-filter: blur(3px);
 }
 .icon-heading {
@@ -432,6 +422,9 @@ main.menu-open {
 .product-columns .left-column {
   overflow-x: hidden;
 }
+.product-columns .left-column h2 {
+  text-align: left;
+}
 .product-columns .product-image-wrapper {
   margin: 40px 0 0 0;
 }
@@ -449,10 +442,10 @@ h6.item-label {
   line-height: 22px;
   text-transform: uppercase;
 }
-main ul {
+ul {
   margin: 1em 0 2em 0;
 }
-main ul li {
+ul li {
   padding-left: 5px;
   font-size: 18px;
   line-height: 1.6em;
@@ -591,25 +584,19 @@ label {
           transform: translateX(-100%);
 }
 .slideout-menu .column-2.visible {
-  -webkit-transform: translateX(89.5%);
-      -ms-transform: translateX(89.5%);
-          transform: translateX(89.5%);
+  -webkit-transform: translateX(89.8%);
+      -ms-transform: translateX(89.8%);
+          transform: translateX(89.8%);
   z-index: 20;
 }
 .slideout-menu .column-3.visible {
-  -webkit-transform: translateX(179%);
-      -ms-transform: translateX(179%);
-          transform: translateX(179%);
+  -webkit-transform: translateX(179.6%);
+      -ms-transform: translateX(179.6%);
+          transform: translateX(179.6%);
   z-index: 10;
 }
 .slideout-menu.static {
   position: absolute;
-}
-.slideout-open #outer {
-  overflow-x: hidden;
-}
-.slideout-open .slideout-menu {
-  display: block;
 }
 .home,
 .home #outer {
@@ -630,6 +617,11 @@ label {
   max-width: 140.4px;
   background-color: #fff;
   cursor: pointer;
+}
+@media (max-width: 767px) {
+  .menu-items {
+    max-width: 36%;
+  }
 }
 .menu-items > div {
   position: absolute;
@@ -711,6 +703,20 @@ label {
 .menu-item.has-icon[data-slug=anti-static]:before {
   background-image: url(images/anti-static.svg);
 }
+nav header {
+  position: relative;
+  overflow: visible;
+  height: 100%;
+}
+nav header .margin-filler {
+  display: block;
+  position: absolute;
+  height: 100%;
+  right: 100%;
+  left: -200%;
+  background-color: #fff;
+  z-index: 100;
+}
 .left-menu {
   position: absolute;
   bottom: 0;
@@ -719,7 +725,12 @@ label {
   width: 100%;
   max-width: 390px;
   box-sizing: border-box;
-  overflow-y: hidden;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .left-menu {
+    max-width: 100%;
+  }
 }
 .left-menu:after {
   display: table;
@@ -1331,9 +1342,6 @@ label {
 .contact-error .wpcf7-response-output {
   display: block !important;
 }
-.top-gray-wrapper {
-  background: #e6e7e8;
-}
 .specs-section {
   margin: 40px 0 0 0;
 }
@@ -1392,8 +1400,12 @@ label {
   font-weight: 500;
 }
 .product-category-grid {
-  margin: 0 -40px 60px -40px;
   text-align: center;
+}
+@media (max-width: 767px) {
+  .product-category-grid {
+    margin-bottom: 40px;
+  }
 }
 .product-category-grid .lower-line {
   padding: 0 40px;
@@ -1582,8 +1594,7 @@ label {
  *
  */
 .application-product-grid {
-  margin: 0;
-  padding: 40px 25px 20px 25px;
+  padding: 40px 0 20px 0;
 }
 @media (max-width: 767px) {
   .application-product-grid {
@@ -1623,116 +1634,132 @@ label {
   font-weight: 300;
   font-family: 'SeravekLight', sans-serif;
 }
-.page,
-.product,
-.product-category {
+.content-container,
+nav header,
+.top-gray-wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+  position: relative;
+}
+.page .content-container,
+.product .content-container,
+.product-category .content-container {
   padding-left: 80px;
   padding-right: 80px;
   position: relative;
 }
 @media (max-width: 1023px) {
-  .page,
-  .product,
-  .product-category {
+  .page .content-container,
+  .product .content-container,
+  .product-category .content-container {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
 @media (max-width: 767px) {
-  .page,
-  .product,
-  .product-category {
+  .page .content-container,
+  .product .content-container,
+  .product-category .content-container {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
-.page .remove-horizontal-padding .from-left-position,
-.product .remove-horizontal-padding .from-left-position,
-.product-category .remove-horizontal-padding .from-left-position {
+.page .content-container .remove-horizontal-padding .from-left-position,
+.product .content-container .remove-horizontal-padding .from-left-position,
+.product-category .content-container .remove-horizontal-padding .from-left-position {
   left: -80px;
 }
-.page .remove-horizontal-padding .from-right-position,
-.product .remove-horizontal-padding .from-right-position,
-.product-category .remove-horizontal-padding .from-right-position {
+.page .content-container .remove-horizontal-padding .from-right-position,
+.product .content-container .remove-horizontal-padding .from-right-position,
+.product-category .content-container .remove-horizontal-padding .from-right-position {
   right: -80px;
 }
-.page .remove-horizontal-padding .from-left-margin,
-.product .remove-horizontal-padding .from-left-margin,
-.product-category .remove-horizontal-padding .from-left-margin {
+.page .content-container .remove-horizontal-padding .from-left-margin,
+.product .content-container .remove-horizontal-padding .from-left-margin,
+.product-category .content-container .remove-horizontal-padding .from-left-margin {
   margin-left: -80px;
 }
-.page .remove-horizontal-padding .from-right-margin,
-.product .remove-horizontal-padding .from-right-margin,
-.product-category .remove-horizontal-padding .from-right-margin {
+.page .content-container .remove-horizontal-padding .from-right-margin,
+.product .content-container .remove-horizontal-padding .from-right-margin,
+.product-category .content-container .remove-horizontal-padding .from-right-margin {
   margin-right: -80px;
 }
-.page .remove-horizontal-padding .from-margins,
-.product .remove-horizontal-padding .from-margins,
-.product-category .remove-horizontal-padding .from-margins,
-.page .wipe-hero,
-.product .wipe-hero,
-.product-category .wipe-hero {
+.page .content-container .remove-horizontal-padding .from-margins,
+.product .content-container .remove-horizontal-padding .from-margins,
+.product-category .content-container .remove-horizontal-padding .from-margins,
+.page .content-container .product-category-grid,
+.product .content-container .product-category-grid,
+.product-category .content-container .product-category-grid,
+.page .content-container .wipe-hero,
+.product .content-container .wipe-hero,
+.product-category .content-container .wipe-hero {
   margin-right: -80px;
   margin-left: -80px;
 }
 @media (max-width: 1023px) {
-  .page .remove-horizontal-padding .from-left-position,
-  .product .remove-horizontal-padding .from-left-position,
-  .product-category .remove-horizontal-padding .from-left-position {
+  .page .content-container .remove-horizontal-padding .from-left-position,
+  .product .content-container .remove-horizontal-padding .from-left-position,
+  .product-category .content-container .remove-horizontal-padding .from-left-position {
     left: -20px;
   }
-  .page .remove-horizontal-padding .from-right-position,
-  .product .remove-horizontal-padding .from-right-position,
-  .product-category .remove-horizontal-padding .from-right-position {
+  .page .content-container .remove-horizontal-padding .from-right-position,
+  .product .content-container .remove-horizontal-padding .from-right-position,
+  .product-category .content-container .remove-horizontal-padding .from-right-position {
     right: -20px;
   }
-  .page .remove-horizontal-padding .from-left-margin,
-  .product .remove-horizontal-padding .from-left-margin,
-  .product-category .remove-horizontal-padding .from-left-margin {
+  .page .content-container .remove-horizontal-padding .from-left-margin,
+  .product .content-container .remove-horizontal-padding .from-left-margin,
+  .product-category .content-container .remove-horizontal-padding .from-left-margin {
     margin-left: -20px;
   }
-  .page .remove-horizontal-padding .from-right-margin,
-  .product .remove-horizontal-padding .from-right-margin,
-  .product-category .remove-horizontal-padding .from-right-margin {
+  .page .content-container .remove-horizontal-padding .from-right-margin,
+  .product .content-container .remove-horizontal-padding .from-right-margin,
+  .product-category .content-container .remove-horizontal-padding .from-right-margin {
     margin-right: -20px;
   }
-  .page .remove-horizontal-padding .from-margins,
-  .product .remove-horizontal-padding .from-margins,
-  .product-category .remove-horizontal-padding .from-margins,
-  .page .wipe-hero,
-  .product .wipe-hero,
-  .product-category .wipe-hero {
+  .page .content-container .remove-horizontal-padding .from-margins,
+  .product .content-container .remove-horizontal-padding .from-margins,
+  .product-category .content-container .remove-horizontal-padding .from-margins,
+  .page .content-container .product-category-grid,
+  .product .content-container .product-category-grid,
+  .product-category .content-container .product-category-grid,
+  .page .content-container .wipe-hero,
+  .product .content-container .wipe-hero,
+  .product-category .content-container .wipe-hero {
     margin-right: -20px;
     margin-left: -20px;
   }
 }
 @media (max-width: 767px) {
-  .page .remove-horizontal-padding .from-left-position,
-  .product .remove-horizontal-padding .from-left-position,
-  .product-category .remove-horizontal-padding .from-left-position {
+  .page .content-container .remove-horizontal-padding .from-left-position,
+  .product .content-container .remove-horizontal-padding .from-left-position,
+  .product-category .content-container .remove-horizontal-padding .from-left-position {
     left: -20px;
   }
-  .page .remove-horizontal-padding .from-right-position,
-  .product .remove-horizontal-padding .from-right-position,
-  .product-category .remove-horizontal-padding .from-right-position {
+  .page .content-container .remove-horizontal-padding .from-right-position,
+  .product .content-container .remove-horizontal-padding .from-right-position,
+  .product-category .content-container .remove-horizontal-padding .from-right-position {
     right: -20px;
   }
-  .page .remove-horizontal-padding .from-left-margin,
-  .product .remove-horizontal-padding .from-left-margin,
-  .product-category .remove-horizontal-padding .from-left-margin {
+  .page .content-container .remove-horizontal-padding .from-left-margin,
+  .product .content-container .remove-horizontal-padding .from-left-margin,
+  .product-category .content-container .remove-horizontal-padding .from-left-margin {
     margin-left: -20px;
   }
-  .page .remove-horizontal-padding .from-right-margin,
-  .product .remove-horizontal-padding .from-right-margin,
-  .product-category .remove-horizontal-padding .from-right-margin {
+  .page .content-container .remove-horizontal-padding .from-right-margin,
+  .product .content-container .remove-horizontal-padding .from-right-margin,
+  .product-category .content-container .remove-horizontal-padding .from-right-margin {
     margin-right: -20px;
   }
-  .page .remove-horizontal-padding .from-margins,
-  .product .remove-horizontal-padding .from-margins,
-  .product-category .remove-horizontal-padding .from-margins,
-  .page .wipe-hero,
-  .product .wipe-hero,
-  .product-category .wipe-hero {
+  .page .content-container .remove-horizontal-padding .from-margins,
+  .product .content-container .remove-horizontal-padding .from-margins,
+  .product-category .content-container .remove-horizontal-padding .from-margins,
+  .page .content-container .product-category-grid,
+  .product .content-container .product-category-grid,
+  .product-category .content-container .product-category-grid,
+  .page .content-container .wipe-hero,
+  .product .content-container .wipe-hero,
+  .product-category .content-container .wipe-hero {
     margin-right: -20px;
     margin-left: -20px;
   }
@@ -1748,74 +1775,180 @@ label {
 .product-category article {
   padding-top: 60px;
 }
-.application {
+.application .content-container,
+.eeonyx-in-action .content-container {
   padding-left: 40px;
   padding-right: 40px;
   position: relative;
 }
 @media (max-width: 1023px) {
-  .application {
+  .application .content-container,
+  .eeonyx-in-action .content-container {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
 @media (max-width: 767px) {
-  .application {
+  .application .content-container,
+  .eeonyx-in-action .content-container {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
-.application .remove-horizontal-padding .from-left-position {
+.application .content-container .remove-horizontal-padding .from-left-position,
+.eeonyx-in-action .content-container .remove-horizontal-padding .from-left-position {
   left: -40px;
 }
-.application .remove-horizontal-padding .from-right-position {
+.application .content-container .remove-horizontal-padding .from-right-position,
+.eeonyx-in-action .content-container .remove-horizontal-padding .from-right-position {
   right: -40px;
 }
-.application .remove-horizontal-padding .from-left-margin {
+.application .content-container .remove-horizontal-padding .from-left-margin,
+.eeonyx-in-action .content-container .remove-horizontal-padding .from-left-margin {
   margin-left: -40px;
 }
-.application .remove-horizontal-padding .from-right-margin {
+.application .content-container .remove-horizontal-padding .from-right-margin,
+.eeonyx-in-action .content-container .remove-horizontal-padding .from-right-margin {
   margin-right: -40px;
 }
-.application .remove-horizontal-padding .from-margins,
-.application .wipe-hero {
+.application .content-container .remove-horizontal-padding .from-margins,
+.eeonyx-in-action .content-container .remove-horizontal-padding .from-margins,
+.application .content-container .product-category-grid,
+.eeonyx-in-action .content-container .product-category-grid,
+.application .content-container .wipe-hero,
+.eeonyx-in-action .content-container .wipe-hero {
   margin-right: -40px;
   margin-left: -40px;
 }
 @media (max-width: 1023px) {
-  .application .remove-horizontal-padding .from-left-position {
+  .application .content-container .remove-horizontal-padding .from-left-position,
+  .eeonyx-in-action .content-container .remove-horizontal-padding .from-left-position {
     left: -20px;
   }
-  .application .remove-horizontal-padding .from-right-position {
+  .application .content-container .remove-horizontal-padding .from-right-position,
+  .eeonyx-in-action .content-container .remove-horizontal-padding .from-right-position {
     right: -20px;
   }
-  .application .remove-horizontal-padding .from-left-margin {
+  .application .content-container .remove-horizontal-padding .from-left-margin,
+  .eeonyx-in-action .content-container .remove-horizontal-padding .from-left-margin {
     margin-left: -20px;
   }
-  .application .remove-horizontal-padding .from-right-margin {
+  .application .content-container .remove-horizontal-padding .from-right-margin,
+  .eeonyx-in-action .content-container .remove-horizontal-padding .from-right-margin {
     margin-right: -20px;
   }
-  .application .remove-horizontal-padding .from-margins,
-  .application .wipe-hero {
+  .application .content-container .remove-horizontal-padding .from-margins,
+  .eeonyx-in-action .content-container .remove-horizontal-padding .from-margins,
+  .application .content-container .product-category-grid,
+  .eeonyx-in-action .content-container .product-category-grid,
+  .application .content-container .wipe-hero,
+  .eeonyx-in-action .content-container .wipe-hero {
     margin-right: -20px;
     margin-left: -20px;
   }
 }
 @media (max-width: 767px) {
-  .application .remove-horizontal-padding .from-left-position {
+  .application .content-container .remove-horizontal-padding .from-left-position,
+  .eeonyx-in-action .content-container .remove-horizontal-padding .from-left-position {
     left: -20px;
   }
-  .application .remove-horizontal-padding .from-right-position {
+  .application .content-container .remove-horizontal-padding .from-right-position,
+  .eeonyx-in-action .content-container .remove-horizontal-padding .from-right-position {
     right: -20px;
   }
-  .application .remove-horizontal-padding .from-left-margin {
+  .application .content-container .remove-horizontal-padding .from-left-margin,
+  .eeonyx-in-action .content-container .remove-horizontal-padding .from-left-margin {
     margin-left: -20px;
   }
-  .application .remove-horizontal-padding .from-right-margin {
+  .application .content-container .remove-horizontal-padding .from-right-margin,
+  .eeonyx-in-action .content-container .remove-horizontal-padding .from-right-margin {
     margin-right: -20px;
   }
-  .application .remove-horizontal-padding .from-margins,
-  .application .wipe-hero {
+  .application .content-container .remove-horizontal-padding .from-margins,
+  .eeonyx-in-action .content-container .remove-horizontal-padding .from-margins,
+  .application .content-container .product-category-grid,
+  .eeonyx-in-action .content-container .product-category-grid,
+  .application .content-container .wipe-hero,
+  .eeonyx-in-action .content-container .wipe-hero {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+}
+.top-gray-wrapper {
+  background: #e6e7e8;
+}
+.top-gray-wrapper .inner {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-top: 80px;
+}
+@media (max-width: 1023px) {
+  .top-gray-wrapper .inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .top-gray-wrapper .inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.top-gray-wrapper .inner .remove-horizontal-padding .from-left-position {
+  left: -40px;
+}
+.top-gray-wrapper .inner .remove-horizontal-padding .from-right-position {
+  right: -40px;
+}
+.top-gray-wrapper .inner .remove-horizontal-padding .from-left-margin {
+  margin-left: -40px;
+}
+.top-gray-wrapper .inner .remove-horizontal-padding .from-right-margin {
+  margin-right: -40px;
+}
+.top-gray-wrapper .inner .remove-horizontal-padding .from-margins,
+.top-gray-wrapper .inner .product-category-grid,
+.top-gray-wrapper .inner .wipe-hero {
+  margin-right: -40px;
+  margin-left: -40px;
+}
+@media (max-width: 1023px) {
+  .top-gray-wrapper .inner .remove-horizontal-padding .from-left-position {
+    left: -20px;
+  }
+  .top-gray-wrapper .inner .remove-horizontal-padding .from-right-position {
+    right: -20px;
+  }
+  .top-gray-wrapper .inner .remove-horizontal-padding .from-left-margin {
+    margin-left: -20px;
+  }
+  .top-gray-wrapper .inner .remove-horizontal-padding .from-right-margin {
+    margin-right: -20px;
+  }
+  .top-gray-wrapper .inner .remove-horizontal-padding .from-margins,
+  .top-gray-wrapper .inner .product-category-grid,
+  .top-gray-wrapper .inner .wipe-hero {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+}
+@media (max-width: 767px) {
+  .top-gray-wrapper .inner .remove-horizontal-padding .from-left-position {
+    left: -20px;
+  }
+  .top-gray-wrapper .inner .remove-horizontal-padding .from-right-position {
+    right: -20px;
+  }
+  .top-gray-wrapper .inner .remove-horizontal-padding .from-left-margin {
+    margin-left: -20px;
+  }
+  .top-gray-wrapper .inner .remove-horizontal-padding .from-right-margin {
+    margin-right: -20px;
+  }
+  .top-gray-wrapper .inner .remove-horizontal-padding .from-margins,
+  .top-gray-wrapper .inner .product-category-grid,
+  .top-gray-wrapper .inner .wipe-hero {
     margin-right: -20px;
     margin-left: -20px;
   }
@@ -1960,10 +2093,46 @@ label {
  * Single Application
  *
  */
+.application {
+  position: relative;
+}
 @media (min-width: 768px) {
   .application .row {
     margin: 0;
   }
+}
+.application .background-image {
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.application .background-image .image {
+  width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: visible;
+}
+.application .background-image .image:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=1);
+  /* IE6-9 */
+}
+.application .background-image img {
+  width: 130%;
+  margin-left: 0px;
+  margin-top: 200px;
 }
 .application .summary {
   background-color: #101013;
@@ -1977,10 +2146,48 @@ label {
 }
 .application .summary .information {
   padding: 20px;
+  color: #DAE5CE;
+  font-size: 18px;
+  font-family: Seravek;
+}
+.application .summary .information .summary-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 20px 0;
+}
+.application .summary .information .summary-list:after {
+  display: table;
+  height: 0;
+  content: "";
+  clear: both;
+}
+.application .summary .information .summary-list .list-column {
+  display: block;
+  float: left;
+}
+.application .summary .information .summary-list .list-column span {
+  font-size: 12px;
+  line-height: 24px;
+  font-family: SeravekBold;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.application .summary .information .summary-list .list-column span a {
+  color: inherit;
+  text-decoration: underline;
+}
+.application .summary .information .summary-list .list-column span.name {
+  color: #7A897A;
+  padding-right: 20px;
 }
 .application .description {
   margin-top: 60px;
   padding: 0 120px 40px 120px;
+}
+.application .description * {
+  position: relative;
+  z-index: 20;
 }
 @media (max-width: 1023px) {
   .application .description {
@@ -1993,7 +2200,7 @@ label {
   }
 }
 .application .description .full-text:first-letter {
-  padding-right: 5px;
+  padding-right: 10px;
   float: left;
   font-family: SeravekBold;
   font-size: 60px;

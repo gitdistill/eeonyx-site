@@ -1686,6 +1686,8 @@ nav header,
   max-width: 1024px;
   margin: 0 auto;
   position: relative;
+}
+#page {
   overflow-x: hidden;
 }
 .page .content-container,

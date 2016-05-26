@@ -717,6 +717,9 @@ nav header .margin-filler {
   background-color: #fff;
   z-index: 100;
 }
+.home nav header {
+  max-width: 100%;
+}
 .left-menu {
   position: absolute;
   bottom: 0;
@@ -1160,6 +1163,9 @@ nav header .margin-filler {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   width: 231px;
+}
+.home .content-container #nav-link {
+  display: none;
 }
 #nav-link .nav-toggle {
   height: 45px;

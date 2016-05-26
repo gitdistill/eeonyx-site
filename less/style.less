@@ -707,6 +707,14 @@ nav{
     }
   }
 }
+.home {
+  nav{
+    header {
+      max-width: 100%;
+    }
+  }
+}
+
 .left-menu {
   position: absolute;
   bottom: 0;
@@ -1157,6 +1165,9 @@ nav{
   -webkit-transform:translateZ(0);
   transform:translateZ(0);
   width:231px;
+  .home .content-container & {
+    display: none;
+  }
   .nav-toggle {
     height:45px;
     width:38px;

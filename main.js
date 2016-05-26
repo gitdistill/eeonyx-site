@@ -29,12 +29,14 @@ function EeonyxSlideout( $nav ){
 		1: $allSiblingsByNumber[2].add( $allSiblingsByNumber[3] ),
 		2: $allSiblingsByNumber[3]
 	};
+	var headerElement = $nav.find('header')[0];
+	var menuElement = $nav.find('.left-menu')[0];
 
 	var init = function(){
 		$nav.addClass('slideout-menu');
 		$nav.hide();
 		$nav.click( function(e){
-			if( $(e.toElement)[0] == $nav[0] ){
+			if( $(e.toElement)[0] == headerElement || $(e.toElement)[0] == menuElement ){
 				_self.toggle();
 			}
 		});
@@ -88,7 +90,7 @@ $(".nav-toggle").on('click', function() {
 $(document).on('ready', function() {
 
 	$("#menu").removeClass('hidden');
-	
+
 	$('.wipe-hero .image').addClass('visible');
 
 	if ( $('#fullpage').length ){

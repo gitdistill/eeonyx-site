@@ -229,4 +229,6 @@ while ( have_posts() ) : the_post();
 		</div>
 	</div><!--end outer -->
 </div><!--end #page -->
+
 <?php endwhile; ?>
+<?php get_footer(); ?>

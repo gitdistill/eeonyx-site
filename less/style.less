@@ -1709,6 +1709,7 @@ nav{
   max-width: @site-max-width;
   margin: 0 auto;
   position: relative;
+  overflow-x: hidden;
 }
 
 @horizontal-page-padding-desktop: 80px;
@@ -1764,6 +1765,12 @@ nav{
   @mobile: @horizontal-page-padding-mobile;
   .padding-rules;
 }
+.increased-horizontal-padding() {
+  @desktop: @horizontal-page-padding-desktop;
+  @tablet: @horizontal-page-padding-tablet;
+  @mobile: @horizontal-page-padding-mobile;
+  .padding-rules;
+}
 .reduced-horizontal-padding() {
   @desktop: @horizontal-page-padding-tablet;
   @tablet: @horizontal-page-padding-mobile;
@@ -1773,11 +1780,13 @@ nav{
 
 .page,
 .product,
-.product-category {
+.product-category{
+
   .content-container {
     .default-horizontal-padding;
     position: relative;
   }
+
   h2 {
     text-align: center;
     margin-bottom: 40px;
@@ -1785,14 +1794,28 @@ nav{
   article {
     padding-top: 60px;
   }
+
 }
+
 .application,
 .eeonyx-in-action {
+
   .content-container {
     .reduced-horizontal-padding;
     position: relative;
   }
+
 }
+
+.about-eeonyx {
+
+  .content-container {
+    .increased-horizontal-padding;
+    position: relative;
+  }
+
+}
+
 .top-gray-wrapper {
   &:extend( .content-container );
   background:#e6e7e8;
@@ -1862,10 +1885,10 @@ nav{
     position: absolute;
     top: 0;
     left: 0;
-    margin: 0;
+    margin: 0 !important;
     height: 540px;
     .image{
-      .wipe-image( -30deg, -1200px, -880px, 620px, 400px);
+      .wipe-image( -30deg, -1200px, -930px, 620px, 164px);
     }
   }
   &.large{
@@ -1885,8 +1908,8 @@ nav{
 .row-0 {
   @media (min-width: @tablet-min ) {
     .image {
-      padding-left: 40px;
-      padding-top: 40px;
+      padding-left: 120px;
+      padding-top: 60px;
     }
   }
 

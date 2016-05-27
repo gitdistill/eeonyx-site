@@ -124,6 +124,7 @@ $(document).on('ready', function() {
         //entering section 1
         else if(index == 2 && direction == 'up'){
         	$('#nav-link.small').removeClass('small').addClass('big');
+	        slideout.toggle(true);
         }
 
       }

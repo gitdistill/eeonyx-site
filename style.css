@@ -558,7 +558,6 @@ label {
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 2;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -605,6 +604,14 @@ label {
 .home .menu-header {
   margin-top: 50px;
   background: transparent;
+}
+.home .content {
+  padding-left: 200px;
+  padding-top: 160px;
+  width: 900px;
+}
+.home .content-container {
+  max-width: 100%;
 }
 .menu-items {
   transition: background-color 0.3s, -webkit-transform 0.5s ease;
@@ -750,19 +757,6 @@ nav header .margin-filler {
 }
 .green-circle.selected {
   background: #3cd52e;
-}
-.logo {
-  background-repeat: no-repeat;
-  background-image: url(images/logo.svg);
-}
-.logo.big {
-  height: 124px;
-  width: 415px;
-  margin: 0 0 58px 0;
-}
-.logo.small {
-  height: 44px;
-  width: 144px;
 }
 .sub-page-header {
   margin: 40px 0;
@@ -1288,18 +1282,17 @@ nav header .margin-filler {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
+.logo {
+  background-repeat: no-repeat;
+  background-image: url(images/logo.svg);
+}
 #nav-link {
   position: fixed;
-  z-index: 10;
   top: 40px;
-  margin-left: 40px;
+  margin-left: 50px;
   height: 45px;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  width: 231px;
-}
-.home .content-container #nav-link {
-  display: none;
 }
 #nav-link .nav-toggle {
   height: 45px;
@@ -1308,12 +1301,22 @@ nav header .margin-filler {
   background-image: url(images/menu-bg-blank.png);
   float: left;
   margin-right: 40px;
+  transition: all 1s ease;
 }
 #nav-link .logo {
+  height: 44px;
+  width: 144px;
   float: left;
+  transition: all 1s ease;
 }
-#nav-link.static {
-  position: absolute;
+#nav-link.big .nav-toggle {
+  margin-top: 40px;
+  margin-right: 110px;
+}
+#nav-link.big .logo {
+  height: 124px;
+  width: 415px;
+  margin: 0 0 0 0;
 }
 .nav-icon {
   width: 25px;

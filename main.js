@@ -17,7 +17,8 @@
 function EeonyxSlideout( $nav ){
 	var _self = this;
 	var menuColumnWidth = 130;
-	var visible = false;
+	var visibility = false;
+	var $toggleIcon = $(".nav-toggle").find('.nav-icon');
 	var $allColumns = $nav.find('.menu-items');
 	var $allLinks = $nav.find('.menu-item');
 	var $allSiblingsByNumber = {
@@ -54,17 +55,26 @@ function EeonyxSlideout( $nav ){
 			$link.addClass('selected');
 		});
 	};
-	this.toggle = function(){
-		if( !visible ){
+	this.toggle = function( state ){
+		if ( typeof state === 'undefined' ){
+			state = !visibility;
+		} else {
+			if( state === visibility ){
+				return; //no need to do anything if state and visibility are the same
+			}
+		}
+		if( state ){
+			$toggleIcon.addClass('open');
 			$nav.show();
 			setTimeout(function(){
 				$nav.addClass('visible');
 			},10);
 			$('#outer').addClass('menu-open');
 		}else{
+			$toggleIcon.removeClass('open');
 			$allColumns.removeClass('visible');
 			$nav.one('transitionend webkitTransitionEnd oTransitionEnd', function () {
-				if( !visible ) {
+				if( !visibility ) {
 					$nav.hide();
 				}
 			});
@@ -73,15 +83,14 @@ function EeonyxSlideout( $nav ){
 			$allColumns.removeClass('visible open');
 			$('#outer').removeClass('menu-open');
 		}
-		visible = !visible;
+		visibility = !visibility;
 	};
 	init();
-};
+}
 
 var slideout = new EeonyxSlideout( $('nav') );
 
 $(".nav-toggle").on('click', function() {
-	$(this).find('.nav-icon').toggleClass('open');
 	slideout.toggle();
 });
 
@@ -94,13 +103,61 @@ $(document).on('ready', function() {
 	$('.wipe-hero .image').addClass('visible');
 
 	if ( $('#fullpage').length ){
+		$('#nav-link').addClass('big');
+		slideout.toggle(true);
 		$('#fullpage').fullpage({
       anchors: ['intro', 'explore-products', 'products-in-action', 'about-eeonyx'],
       sectionsColor: ['#E6E7E8', '#ffffff', '#E6E7E8', '#ffffff'],
       css3: true,
-      responsiveWidth: 768
+      responsiveWidth: 768,
+      onLeave: function(index, nextIndex, direction){
+
+        slideout.toggle( false );
+
+        var leavingSection = $(this);
+
+        //after leaving section 1
+        if(index == 1 && direction =='down'){
+        	$('#nav-link.big').removeClass('big').addClass('small');
+        }
+
+        //entering section 1
+        else if(index == 2 && direction == 'up'){
+        	$('#nav-link.small').removeClass('small').addClass('big');
+        }
+
+      }
   	});
 	}
+	//prevent scrolling in the menu from triggering a section change.
+	$('.menu-items').on('DOMMouseScroll mousewheel', function(ev) {
+
+	    var $this = $(this),
+	        scrollTop = this.scrollTop,
+	        scrollHeight = this.scrollHeight,
+	        height = $this.innerHeight(),
+	        delta = (ev.type == 'DOMMouseScroll' ?
+	            ev.originalEvent.detail * -40 :
+	            ev.originalEvent.wheelDelta),
+	        up = delta > 0;
+
+	    var prevent = function() {
+	        ev.stopPropagation();
+	        ev.preventDefault();
+	        ev.returnValue = false;
+	        return false;
+	    };
+
+	    if (!up && -delta > scrollHeight - height - scrollTop) {
+	        // Scrolling down, but this will take us past the bottom.
+	        $this.scrollTop(scrollHeight);
+	        return prevent();
+	    } else if (up && delta > scrollTop) {
+	        // Scrolling up, but this will take us past the top.
+	        $this.scrollTop(0);
+	        return prevent();
+	    }
+	});
 
 });
 

@@ -13,54 +13,29 @@ while ( have_posts() ) : the_post();
 
 <div id="outer" class="home">
 
-    <div id="fullpage">
-        <div class="section fp-section" id="section0">
-          <nav class='slideout-menu static'>
-            <header>
-              <div class="left-menu">
-              <div class="menu-header">Menu</div>
+  <div id="fullpage">
 
-              <div class="menu-items">
-                          <a class="menu-item" href="/smart-fabrics">
-                  Smart
-                  Fabrics
-                </a>
-                <a class="menu-item" href="/custom-solutions">
-                  Custom Solutions
-                </a>
-                <a class="menu-item active" href="/about-eeonyx">
-                  About 
-                  Eeonyx
-                </a>
-                <a class="menu-item" href="/contact">
-                  Contact
-                </a>
-              </div>
-            </div>
-            </header>
-        </nav>
-        <div id="nav-link" class='hidden-desktop'>
-          <div class='nav-toggle'><div class='nav-icon'><span></span><span></span><span></span></div></div>
-          <div class='logo small'></div>
-        </div>
+      <!--======== TOP SECTION =========-->
+
+      <div class="section fp-section" id="section0">
+
         <div id="outer">
-          <main id="panel" class="slideout-panel" style="left: 220px;padding-right: 220px;">
+          <div id="panel">
             <div class="content">
               <div class="inner">
-                <div class="logo big hidden-mobile"></div>
                 <h1 class="dark-black">
                   SMART FABRICS FOR THE INTERNET OF THINGS
                 </h1>
               </div>
             </div>
-          </main>
           </div>
-      </div>
-      <div class="section fp-section" id="section1">
-        <div id="nav-link" class="static">
-          <div class='nav-toggle'><div class='nav-icon'><span></span><span></span><span></span></div></div>
-          <div class='logo small'></div>
         </div>
+
+      </div>
+
+      <!--======== EXPLORE PRODUCTS (COMBS) =========-->
+
+      <div class="section fp-section" id="section1">
 
         <div class='section-top-header'>
           <div class='text white'>Explore Our Products</div>
@@ -132,11 +107,10 @@ while ( have_posts() ) : the_post();
 
         </div>
       </div>
+
+      <!--======== PRODUCTS IN ACTION =========-->
+
       <div class="section fp-section fp-completely" id="section2">
-        <div id="nav-link" class="static">
-          <div class='nav-toggle'><div class='nav-icon'><span></span><span></span><span></span></div></div>
-          <div class='logo small'></div>
-        </div>
 
         <div class='section-top-header'>
           <div class='text'>Eeonyx Products In Action</div>
@@ -194,11 +168,11 @@ while ( have_posts() ) : the_post();
         </div>
 
       </div>
+
+
+      <!--======== FINAL SECTION =========-->
+
       <div class="section fp-section" id="section3">
-        <div id="nav-link" class="static">
-          <div class='nav-toggle'><div class='nav-icon'><span></span><span></span><span></span></div></div>
-          <div class='logo small'></div>
-        </div>
 
         <div class='section-top-header'>
           <div class='text'>What Eeonyx Can Provide You</div>

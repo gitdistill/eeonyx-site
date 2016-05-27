@@ -5,6 +5,9 @@
  *
  */
  ?>
+
+ <?php include 'template-parts/nav.php'; ?>
+
 		</div><!--end page -->
 		<div class="footer">
 			<div class="logo"></div>

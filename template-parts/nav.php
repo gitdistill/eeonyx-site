@@ -137,7 +137,7 @@ if ( !defined('EEONYX_NAV_INITIALIZED') ) {
     <div class='nav-toggle'>
       <div class='nav-icon'>
         <span></span><span></span><span></span></div></div>
-      <div class='logo'>
-    </div>
+      <a href="/" class='logo'>
+      </a>
   </div>
 </div>

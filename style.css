@@ -1282,10 +1282,6 @@ nav header .margin-filler {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-.logo {
-  background-repeat: no-repeat;
-  background-image: url(images/logo.svg);
-}
 #nav-link {
   position: fixed;
   top: 40px;
@@ -1301,13 +1297,16 @@ nav header .margin-filler {
   background-image: url(images/menu-bg-blank.png);
   float: left;
   margin-right: 40px;
-  transition: all 1s ease;
+  transition: all 200ms ease;
 }
 #nav-link .logo {
+  transition: all 200ms ease;
+  display: block;
   height: 44px;
   width: 144px;
   float: left;
-  transition: all 1s ease;
+  background-repeat: no-repeat;
+  background-image: url(images/logo.svg);
 }
 #nav-link.big .nav-toggle {
   margin-top: 40px;

@@ -6,7 +6,7 @@
  */
  ?>
 
- <?php include 'template-parts/nav.php'; ?>
+ 			<?php include 'template-parts/nav.php'; ?>
 
 		</div><!--end page -->
 		<div class="footer">

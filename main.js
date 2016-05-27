@@ -21,6 +21,7 @@ function EeonyxSlideout( $nav ){
 	var $toggleIcon = $(".nav-toggle").find('.nav-icon');
 	var $allColumns = $nav.find('.menu-items');
 	var $allLinks = $nav.find('.menu-item');
+	var $stateElement = $('#page');
 	var $allSiblingsByNumber = {
 		1: $allColumns.filter( '[data-column=1]' ),
 		2: $allColumns.filter( '[data-column=2]' ),
@@ -50,6 +51,7 @@ function EeonyxSlideout( $nav ){
 			$allChildrenByNumber[ $linkColumn.data('column') ].removeClass('visible open');
 			$allChildrenByNumber[ $linkColumn.data('column') ].find('.menu-item.selected').removeClass('selected');
 			$slugColumn.addClass('visible');
+			$stateElement.attr( 'column-visible', $slugColumn.data('column') );
 			$linkColumn.addClass('open');
 			$link.siblings().removeClass('selected');
 			$link.addClass('selected');
@@ -69,7 +71,8 @@ function EeonyxSlideout( $nav ){
 			setTimeout(function(){
 				$nav.addClass('visible');
 			},10);
-			$('#outer').addClass('menu-open');
+			$stateElement.addClass('menu-open');
+			$stateElement.attr( 'column-visible', 1 );
 		}else{
 			$toggleIcon.removeClass('open');
 			$allColumns.removeClass('visible');
@@ -81,7 +84,8 @@ function EeonyxSlideout( $nav ){
 			$nav.removeClass('visible');
 			$allLinks.removeClass('selected');
 			$allColumns.removeClass('visible open');
-			$('#outer').removeClass('menu-open');
+			$stateElement.removeClass('menu-open');
+			$stateElement.attr( 'column-visible', '' );
 		}
 		visibility = !visibility;
 	};

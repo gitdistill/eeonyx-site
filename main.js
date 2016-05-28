@@ -100,7 +100,7 @@ $(".nav-toggle").on('click', function() {
 
 $(document).on('ready', function() {
 
-  $('#men').removeClass('hidden');
+  $('#menu').removeClass('hidden');
   $('.wipe-hero .image').addClass('visible');
 
   if ( $('#fullpage').length ){

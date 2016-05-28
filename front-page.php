@@ -9,9 +9,11 @@ get_header();
 // Start the loop.
 while ( have_posts() ) : the_post();
 
+$wipe_image = get_field('hero_image');
+
 ?>
 
-<div id="outer" class="home">
+<div id="outer" class="home loading">
 
   <div id="fullpage">
 
@@ -19,7 +21,13 @@ while ( have_posts() ) : the_post();
 
       <div class="section fp-section" id="section0">
 
-        <div id="outer">
+        <div class="wipe-panel" data-url="<?= $wipe_image['url'] ?>">
+          <div class="image">
+            <div style="background-image:url(<?= $wipe_image['url'] ?>)" title="<?= $wipe_image['alt'] ?>">
+            </div>
+          </div>
+        </div>
+        <div id="panel-outer">
           <div id="panel">
             <div class="content">
               <div class="inner">
@@ -30,7 +38,6 @@ while ( have_posts() ) : the_post();
             </div>
           </div>
         </div>
-
       </div>
 
       <!--======== EXPLORE PRODUCTS (COMBS) =========-->
@@ -212,9 +219,17 @@ while ( have_posts() ) : the_post();
           <div class="logo"></div>
         </div>
       </div>
-    </div>
+
+    </div><!--end fullpage -->
   </div><!--end outer -->
 </div><!--end #page -->
+
+<div class="down-arrow">
+  <span class="icon-EeonyxIconSet-67"></span>
+</div>
+<div class="up-arrow">
+  <span class="icon-EeonyxIconSet-65"></span>
+</div>
 
 <?php endwhile; ?>
 <?php get_footer(); ?>

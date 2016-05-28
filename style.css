@@ -74,6 +74,16 @@ body {
   padding: 0;
   height: 100%;
 }
+body.content-hidden:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #252c26;
+}
 article,
 aside,
 details,
@@ -551,7 +561,79 @@ label {
 }
 /**
  *
- * menu
+ * Home page
+ *
+ */
+.home .content-container {
+  max-width: 100%;
+}
+.home,
+.home #outer {
+  background: #e6e7e8;
+}
+.home .menu-header {
+  margin-top: 50px;
+  background: transparent;
+}
+.home #panel-outer {
+  min-height: 100%;
+}
+.home .content {
+  margin-left: 200px;
+  padding-top: 210px;
+  width: 700px;
+  transition: margin-left 0.5s ease;
+}
+.home.loading .section {
+  visibility: hidden;
+}
+.home.loading #section0 {
+  visibility: visible;
+}
+.home .wipe-panel {
+  z-index: 1;
+}
+.home #panel-outer {
+  position: relative;
+  z-index: 10;
+}
+.home .down-arrow,
+.home .up-arrow {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 10px;
+  font-size: 60px;
+  text-align: center;
+  color: #252c26;
+  transition: all 200ms ease;
+}
+.home .down-arrow:hover,
+.home .up-arrow:hover {
+  padding-bottom: 0;
+  font-size: 70px;
+  border: none;
+  text-decoration: none;
+}
+.home .up-arrow {
+  display: none;
+  padding-bottom: 35px;
+}
+.home .up-arrow:hover {
+  padding-bottom: 30px;
+}
+.fp-viewing-explore-products .down-arrow {
+  color: #fff;
+}
+.fp-viewing-about-eeonyx .down-arrow {
+  display: none;
+}
+.fp-viewing-about-eeonyx .up-arrow {
+  display: block;
+}
+/**
+ *
+ * Menu
  *
  */
 .slideout-menu {
@@ -582,7 +664,7 @@ label {
   pointer-events: all;
 }
 .home.fp-viewing-intro .slideout-menu .menu-items > div {
-  top: 190px;
+  top: 130px;
 }
 .slideout-menu .column-1 {
   z-index: 30;
@@ -611,23 +693,6 @@ label {
 }
 .slideout-menu.static {
   position: absolute;
-}
-.home,
-.home #outer {
-  background: #e6e7e8;
-}
-.home .menu-header {
-  margin-top: 50px;
-  background: transparent;
-}
-.home .content {
-  margin-left: 200px;
-  padding-top: 160px;
-  width: 700px;
-  transition: margin-left 0.5s ease;
-}
-.home .content-container {
-  max-width: 100%;
 }
 #page.menu-open [data-anchor='intro'] .content {
   margin-left: 200.4px;
@@ -1346,12 +1411,12 @@ nav header .margin-filler {
   background-image: url(images/logo.svg);
 }
 #nav-link.big .nav-toggle {
-  margin-top: 40px;
+  margin-top: 25px;
   margin-right: 110px;
 }
 #nav-link.big .logo {
-  height: 124px;
-  width: 415px;
+  height: 93px;
+  width: 310px;
   margin: 0 0 0 0;
 }
 .nav-icon {
@@ -2385,6 +2450,55 @@ nav header,
   -webkit-transform: skewX(30deg) translate(100px, 0px);
       -ms-transform: skewX(30deg) translate(100px, 0px);
           transform: skewX(30deg) translate(100px, 0px);
+}
+.wipe-panel {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  bottom: 0;
+  right: -50%;
+  overflow: hidden;
+}
+.wipe-panel .image {
+  overflow: hidden;
+  transition: -webkit-transform 3s ease;
+  transition: transform 3s ease;
+  transition: transform 3s ease, -webkit-transform 3s ease;
+  -webkit-transform: skewX(-30deg) translate(0, 0px);
+      -ms-transform: skewX(-30deg) translate(0, 0px);
+          transform: skewX(-30deg) translate(0, 0px);
+  background-color: #252c26;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.wipe-panel .image div {
+  -webkit-transform: skewX(30deg) translate(0, 0px);
+      -ms-transform: skewX(30deg) translate(0, 0px);
+          transform: skewX(30deg) translate(0, 0px);
+  transition: -webkit-transform 3s ease;
+  transition: transform 3s ease;
+  transition: transform 3s ease, -webkit-transform 3s ease;
+}
+.wipe-panel .image.visible {
+  -webkit-transform: skewX(-30deg) translate(100%, 0px);
+      -ms-transform: skewX(-30deg) translate(100%, 0px);
+          transform: skewX(-30deg) translate(100%, 0px);
+}
+.wipe-panel .image.visible div {
+  -webkit-transform: skewX(30deg) translate(-100%, 0px);
+      -ms-transform: skewX(30deg) translate(-100%, 0px);
+          transform: skewX(30deg) translate(-100%, 0px);
+}
+.wipe-panel .image div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-size: cover;
 }
 /**
  *

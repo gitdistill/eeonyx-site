@@ -32,10 +32,12 @@ $background_image = get_field( 'background_image' );
 	<!--============================-->
 
 		<div class="wipe-hero large">
-		  <div class="image">
-		  	<img src="<?= $hero_image['url'] ?>" alt="<?= $hero_image['alt'] ?>">
-		  </div>
+			<div class="image">
+			  <div style="background-image:url(<?= $hero_image['url'] ?>)" title="<?= $hero_image['alt'] ?>">
+			  </div>
+			</div>
 		</div>
+
 
 		<div class="row">
 			<div class="col-sm-6">

@@ -2077,13 +2077,13 @@ nav{
   transform: skewX(@angle) translate(@start-x,0px);
   transition: transform 1.5s ease;
   overflow: hidden;
-  img {
+  div {
       transform: skewX(-1*@angle) translate(@image-start-x,0px);
       transition: transform 1.5s ease;
   }
   &.visible{
     transform: skewX(@angle) translate(@end-x,0px);
-    img {
+    div {
       transform: skewX(-1*@angle) translate(@image-end-x,0px);
     }
   }
@@ -2096,7 +2096,23 @@ nav{
   overflow: hidden;
   height: 275px;
   .image{
-    .wipe-image( -30deg, -1100px, -176px, 620px, 140px);
+    @horizontal-correction: 56px;
+    .wipe-image( -30deg, -1*@site-max-width, 0, @horizontal-correction, @horizontal-correction);
+    background-color: @black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: @site-max-width;
+    margin-right: @horizontal-correction;
+    div {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: @site-max-width;
+      background-size: cover;
+    }
   }
   &.short{
     position: absolute;
@@ -2111,7 +2127,9 @@ nav{
   &.large{
     height: 430px;
     .image{
-      .wipe-image( -30deg, -1140px, -124px, 620px, 100px);
+      @horizontal-correction: 100px;
+      .wipe-image( -30deg, -1*@site-max-width, 0, @horizontal-correction, @horizontal-correction);
+      margin-right: @horizontal-correction;
     }
   }
 }

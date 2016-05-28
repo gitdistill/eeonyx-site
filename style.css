@@ -2362,31 +2362,46 @@ nav header,
   height: 275px;
 }
 .wipe-hero .image {
-  -webkit-transform: skewX(-30deg) translate(-1100px, 0px);
-      -ms-transform: skewX(-30deg) translate(-1100px, 0px);
-          transform: skewX(-30deg) translate(-1100px, 0px);
+  -webkit-transform: skewX(-30deg) translate(-1024px, 0px);
+      -ms-transform: skewX(-30deg) translate(-1024px, 0px);
+          transform: skewX(-30deg) translate(-1024px, 0px);
   transition: -webkit-transform 1.5s ease;
   transition: transform 1.5s ease;
   transition: transform 1.5s ease, -webkit-transform 1.5s ease;
   overflow: hidden;
+  background-color: #252c26;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1024px;
+  margin-right: 56px;
 }
-.wipe-hero .image img {
-  -webkit-transform: skewX(30deg) translate(620px, 0px);
-      -ms-transform: skewX(30deg) translate(620px, 0px);
-          transform: skewX(30deg) translate(620px, 0px);
+.wipe-hero .image div {
+  -webkit-transform: skewX(30deg) translate(56px, 0px);
+      -ms-transform: skewX(30deg) translate(56px, 0px);
+          transform: skewX(30deg) translate(56px, 0px);
   transition: -webkit-transform 1.5s ease;
   transition: transform 1.5s ease;
   transition: transform 1.5s ease, -webkit-transform 1.5s ease;
 }
 .wipe-hero .image.visible {
-  -webkit-transform: skewX(-30deg) translate(-176px, 0px);
-      -ms-transform: skewX(-30deg) translate(-176px, 0px);
-          transform: skewX(-30deg) translate(-176px, 0px);
+  -webkit-transform: skewX(-30deg) translate(0, 0px);
+      -ms-transform: skewX(-30deg) translate(0, 0px);
+          transform: skewX(-30deg) translate(0, 0px);
 }
-.wipe-hero .image.visible img {
-  -webkit-transform: skewX(30deg) translate(140px, 0px);
-      -ms-transform: skewX(30deg) translate(140px, 0px);
-          transform: skewX(30deg) translate(140px, 0px);
+.wipe-hero .image.visible div {
+  -webkit-transform: skewX(30deg) translate(56px, 0px);
+      -ms-transform: skewX(30deg) translate(56px, 0px);
+          transform: skewX(30deg) translate(56px, 0px);
+}
+.wipe-hero .image div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1024px;
+  background-size: cover;
 }
 .wipe-hero.short {
   position: absolute;
@@ -2404,7 +2419,7 @@ nav header,
   transition: transform 1.5s ease, -webkit-transform 1.5s ease;
   overflow: hidden;
 }
-.wipe-hero.short .image img {
+.wipe-hero.short .image div {
   -webkit-transform: skewX(30deg) translate(620px, 0px);
       -ms-transform: skewX(30deg) translate(620px, 0px);
           transform: skewX(30deg) translate(620px, 0px);
@@ -2417,7 +2432,7 @@ nav header,
       -ms-transform: skewX(-30deg) translate(-930px, 0px);
           transform: skewX(-30deg) translate(-930px, 0px);
 }
-.wipe-hero.short .image.visible img {
+.wipe-hero.short .image.visible div {
   -webkit-transform: skewX(30deg) translate(164px, 0px);
       -ms-transform: skewX(30deg) translate(164px, 0px);
           transform: skewX(30deg) translate(164px, 0px);
@@ -2426,28 +2441,29 @@ nav header,
   height: 430px;
 }
 .wipe-hero.large .image {
-  -webkit-transform: skewX(-30deg) translate(-1140px, 0px);
-      -ms-transform: skewX(-30deg) translate(-1140px, 0px);
-          transform: skewX(-30deg) translate(-1140px, 0px);
+  -webkit-transform: skewX(-30deg) translate(-1024px, 0px);
+      -ms-transform: skewX(-30deg) translate(-1024px, 0px);
+          transform: skewX(-30deg) translate(-1024px, 0px);
   transition: -webkit-transform 1.5s ease;
   transition: transform 1.5s ease;
   transition: transform 1.5s ease, -webkit-transform 1.5s ease;
   overflow: hidden;
+  margin-right: 100px;
 }
-.wipe-hero.large .image img {
-  -webkit-transform: skewX(30deg) translate(620px, 0px);
-      -ms-transform: skewX(30deg) translate(620px, 0px);
-          transform: skewX(30deg) translate(620px, 0px);
+.wipe-hero.large .image div {
+  -webkit-transform: skewX(30deg) translate(100px, 0px);
+      -ms-transform: skewX(30deg) translate(100px, 0px);
+          transform: skewX(30deg) translate(100px, 0px);
   transition: -webkit-transform 1.5s ease;
   transition: transform 1.5s ease;
   transition: transform 1.5s ease, -webkit-transform 1.5s ease;
 }
 .wipe-hero.large .image.visible {
-  -webkit-transform: skewX(-30deg) translate(-124px, 0px);
-      -ms-transform: skewX(-30deg) translate(-124px, 0px);
-          transform: skewX(-30deg) translate(-124px, 0px);
+  -webkit-transform: skewX(-30deg) translate(0, 0px);
+      -ms-transform: skewX(-30deg) translate(0, 0px);
+          transform: skewX(-30deg) translate(0, 0px);
 }
-.wipe-hero.large .image.visible img {
+.wipe-hero.large .image.visible div {
   -webkit-transform: skewX(30deg) translate(100px, 0px);
       -ms-transform: skewX(30deg) translate(100px, 0px);
           transform: skewX(30deg) translate(100px, 0px);

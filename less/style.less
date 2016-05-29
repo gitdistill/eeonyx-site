@@ -966,6 +966,11 @@ nav{
     top:35px;
     width:190px;
     cursor:pointer;
+    color: @black;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
     .arrow {
       width:30px;
       height:30px;
@@ -1186,7 +1191,7 @@ nav{
       margin-left:20px;
       margin-right:20px;
       margin-top:30px;
-      .icon {
+      .category-icon {
         width:30px;
         height:30px;
         float:left;
@@ -1194,6 +1199,9 @@ nav{
         margin-right:10px;
       }
       .text {
+        width: 100px;
+        marrgin-left: 30px;
+        float: left;
         font-size:12px;
         text-transform:uppercase;
         line-height:1.3em;
@@ -1821,6 +1829,9 @@ nav{
 .category-icon.pressure-sensors,
 .icon-pressure-sensors, .icon-pressure {
   background-image:url(./images/icon-pressure.png);
+  &.white{
+    background-image:url(./images/icon-pressure-white.png);
+  }
 }
 .category-icon.emi-stealth,
 .icon-stealth {
@@ -1833,9 +1844,6 @@ nav{
 .category-icon.custom-solutions,
 .icon-custom {
   background-image:url(./images/icon-custom.png);
-}
-.icon.icon-pressure-sensors-white, .icon.icon-pressure-white {
-  background-image:url(./images/icon-pressure-white.png);
 }
 .fp-controlArrow {
   width:8px !important;

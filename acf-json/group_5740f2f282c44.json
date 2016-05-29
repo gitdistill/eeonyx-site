@@ -197,11 +197,35 @@
             "mime_types": ""
         },
         {
+            "key": "field_574b6301aefd1",
+            "label": "Home Page Slide Image",
+            "name": "home_page_slide_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_57460018c76a5",
             "label": "Summary Heading",
             "name": "summary_heading",
             "type": "textarea",
-            "instructions": "Green heading of summary box on detail page",
+            "instructions": "Green heading of summary box on detail page and in slide on home page.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -337,5 +361,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1464206729
+    "modified": 1464558824
 }

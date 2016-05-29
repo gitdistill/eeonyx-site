@@ -133,46 +133,44 @@ $wipe_image = get_field('hero_image');
           <div class='arrow'></div>
           <div class='text'>View More of Our Products In Action</div>
         </a>
-        <div class="slide" id="slide1">
+
+        <?php
+        $args = array(
+            'post_type' => 'application',
+        );
+        $query = new WP_Query( $args );
+        if ($query->have_posts()) {
+          $count = 0;
+          while ( $query->have_posts() ){
+            $query->the_post();
+            $primary_category = get_field('primary_category');
+            $image = get_field('home_page_slide_image');
+        ?>
+
+        <div class="slide" id="slide<?=$count?>" style="background-image:url(<?= $image['url']; ?>)">
           <div class='section-text'>
             <div class='green-product-box'>
               <div class='product-category'>
-                <div class='icon icon-pressure-sensors-white'></div>
+                <div class="category-icon <?= $primary_category->slug; ?> white" ></div>
                 <div class='text'>
-                  Pressure <br />
-                  Sensors
+                  <?= $primary_category->name; ?>
                 </div>
                 <div class='clear'></div>
               </div>
               <div class='product-title'>
-                QUNEXUS SMART SENSOR KEYBOARD CONTROLLER
+                <?= get_the_title(); ?>
               </div>
               <div class='product-description'>
-                Imagine a piano key that could be played like a string or a horn!  
+                <?= get_field('summary_heading'); ?>
               </div>
             </div>
           </div>
         </div>
-        <div class="slide" id="slide2">
-          <div class='section-text'>
-            <div class='green-product-box'>
-              <div class='product-category'>
-                <div class='icon icon-pressure-sensors-white'></div>
-                <div class='text'>
-                  Pressure <br />
-                  Sensors
-                </div>
-                <div class='clear'></div>
-              </div>
-              <div class='product-title'>
-                QUNEXUS SMART SENSOR KEYBOARD CONTROLLER
-              </div>
-              <div class='product-description'>
-                Imagine a piano key that could be played like a string or a horn!  
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <?php
+            $count++;
+          }
+        } ?>
 
       </div>
 

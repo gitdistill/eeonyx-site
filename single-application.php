@@ -55,7 +55,7 @@ $background_image = get_field( 'background_image' );
 				</h2>
 				<div class="summary">
 					<div class="heading">
-						Imagine a piano key that could be played like a string or a horn!
+						<?=get_field('summary_heading')?>
 					</div>
 					<div class="information">
 

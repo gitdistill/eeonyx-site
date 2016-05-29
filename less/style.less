@@ -2118,10 +2118,15 @@ nav{
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     margin: 0 !important;
     height: 540px;
     .image{
-      .wipe-image( -30deg, -1200px, -930px, 620px, 164px);
+      right: reset;
+      left: 0;
+      @horizontal-correction: 155px;
+      .wipe-image( -30deg, -1*@site-max-width - @horizontal-correction, -1*@site-max-width + @horizontal-correction, @horizontal-correction, @horizontal-correction);
+      margin-right: @horizontal-correction;
     }
   }
   &.large{

@@ -2407,35 +2407,39 @@ nav header,
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   margin: 0 !important;
   height: 540px;
 }
 .wipe-hero.short .image {
-  -webkit-transform: skewX(-30deg) translate(-1200px, 0px);
-      -ms-transform: skewX(-30deg) translate(-1200px, 0px);
-          transform: skewX(-30deg) translate(-1200px, 0px);
+  right: reset;
+  left: 0;
+  -webkit-transform: skewX(-30deg) translate(-1179px, 0px);
+      -ms-transform: skewX(-30deg) translate(-1179px, 0px);
+          transform: skewX(-30deg) translate(-1179px, 0px);
   transition: -webkit-transform 1.5s ease;
   transition: transform 1.5s ease;
   transition: transform 1.5s ease, -webkit-transform 1.5s ease;
   overflow: hidden;
+  margin-right: 155px;
 }
 .wipe-hero.short .image div {
-  -webkit-transform: skewX(30deg) translate(620px, 0px);
-      -ms-transform: skewX(30deg) translate(620px, 0px);
-          transform: skewX(30deg) translate(620px, 0px);
+  -webkit-transform: skewX(30deg) translate(155px, 0px);
+      -ms-transform: skewX(30deg) translate(155px, 0px);
+          transform: skewX(30deg) translate(155px, 0px);
   transition: -webkit-transform 1.5s ease;
   transition: transform 1.5s ease;
   transition: transform 1.5s ease, -webkit-transform 1.5s ease;
 }
 .wipe-hero.short .image.visible {
-  -webkit-transform: skewX(-30deg) translate(-930px, 0px);
-      -ms-transform: skewX(-30deg) translate(-930px, 0px);
-          transform: skewX(-30deg) translate(-930px, 0px);
+  -webkit-transform: skewX(-30deg) translate(-869px, 0px);
+      -ms-transform: skewX(-30deg) translate(-869px, 0px);
+          transform: skewX(-30deg) translate(-869px, 0px);
 }
 .wipe-hero.short .image.visible div {
-  -webkit-transform: skewX(30deg) translate(164px, 0px);
-      -ms-transform: skewX(30deg) translate(164px, 0px);
-          transform: skewX(30deg) translate(164px, 0px);
+  -webkit-transform: skewX(30deg) translate(155px, 0px);
+      -ms-transform: skewX(30deg) translate(155px, 0px);
+          transform: skewX(30deg) translate(155px, 0px);
 }
 .wipe-hero.large {
   height: 430px;

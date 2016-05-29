@@ -15,7 +15,8 @@
 <?php if ($hero_image) { ?>
   <div class="wipe-hero short">
     <div class="image">
-      <img src="<?= $hero_image['url'] ?>" alt="<?= $hero_image['alt'] ?>">
+      <div style="background-image:url(<?= $hero_image['url'] ?>)" title="<?= $hero_image['alt'] ?>">
+      </div>
     </div>
   </div>
 <?php } ?>

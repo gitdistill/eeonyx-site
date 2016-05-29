@@ -305,7 +305,7 @@
                 {
                     "key": "field_574b7c189ac4e",
                     "label": "Has Link?",
-                    "name": "links_to_a_different_website",
+                    "name": "has_link",
                     "type": "select",
                     "instructions": "Does the property have a link? If so, what type?",
                     "required": 0,
@@ -429,5 +429,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1464565154
+    "modified": 1464565436
 }

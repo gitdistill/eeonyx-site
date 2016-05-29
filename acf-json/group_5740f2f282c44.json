@@ -303,11 +303,11 @@
                     "disabled": 0
                 },
                 {
-                    "key": "field_5746020380942",
-                    "label": "Property Link",
-                    "name": "property_link",
-                    "type": "url",
-                    "instructions": "Optional url for \"Property Value\" to link to",
+                    "key": "field_574b7c189ac4e",
+                    "label": "Has Link?",
+                    "name": "links_to_a_different_website",
+                    "type": "select",
+                    "instructions": "Does the property have a link? If so, what type?",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -315,8 +315,76 @@
                         "class": "",
                         "id": ""
                     },
+                    "choices": {
+                        "No link": "No link",
+                        "Links to another website": "Links to another website",
+                        "Links to an internal Eeonyx page": "Links to an internal Eeonyx page"
+                    },
+                    "default_value": [
+                        "No link"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                },
+                {
+                    "key": "field_5746020380942",
+                    "label": "Property Link",
+                    "name": "property_link",
+                    "type": "url",
+                    "instructions": "Optional url for \"Property Value\" to link to. Be sure to include the full link, eg http:\/\/www.google.com",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_574b7c189ac4e",
+                                "operator": "==",
+                                "value": "Links to another website"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "default_value": "",
                     "placeholder": ""
+                },
+                {
+                    "key": "field_574b7bc69ac4d",
+                    "label": "Propery Eeonix Page Link",
+                    "name": "propery_eeonix_page_link",
+                    "type": "page_link",
+                    "instructions": "Optional page for \"Property Value\" to link to.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_574b7c189ac4e",
+                                "operator": "==",
+                                "value": "Links to an internal Eeonyx page"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "page",
+                        "product",
+                        "application",
+                        "wpcf7_contact_form"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0
                 }
             ]
         },
@@ -361,5 +429,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1464558824
+    "modified": 1464565154
 }

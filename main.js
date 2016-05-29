@@ -144,6 +144,8 @@ $(document).on('ready', function() {
       sectionsColor: ['#E6E7E8', '#ffffff', '#E6E7E8', '#ffffff'],
       css3: true,
       responsiveWidth: 768,
+      slidesNavigation: true,
+      slidesNavPosition: 'top',
       afterLoad: function(anchorLink, index){
           // var loadedSection = $(this);
           if ( anchorLink === 'intro' ){

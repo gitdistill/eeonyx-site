@@ -999,6 +999,7 @@ nav{
       text-transform:uppercase;
       letter-spacing:1px;
       font-family:'SeravekBold', sans-serif;
+      line-height: 1.2;
     }
   }
   .section-text {
@@ -1246,28 +1247,33 @@ nav{
       margin-top:22px;
     }
   }
-  .link-circles {
-    margin:8px auto 0 auto;
-    width:auto;
-  }
-  .link-circle {
-    width:11px;
-    height:11px;
-    margin:0 5px;
-    display:inline-block;
-    vertical-align:top;
-    overflow:hidden;
-    .empty {
-      width:11px;
-      height:11px;
-      background-size:11px 11px;
-      background-image:url(./images/circle-empty.png);
-    }
-    .full {
-      width:11px;
-      height:11px;
-      background-size:11px 11px;
-      background-image:url(./images/circle-full.png);
+  .fp-slidesNav {
+    top: 62px;
+    ul li {
+      margin-right: 2px;
+      a {
+        span {
+          width:11px;
+          height:11px;
+          margin:0 5px;
+          display:inline-block;
+          vertical-align:top;
+          overflow:hidden;
+          width:11px;
+          height:11px;
+          background-size:11px 11px;
+          background-color: transparent;
+          background-image:url(./images/circle-empty.png);
+        }
+        &.active {
+          span {
+            width:11px;
+            height:11px;
+            background-size:11px 11px;
+            background-image:url(./images/circle-full.png);
+          }
+        }
+      }
     }
   }
 }

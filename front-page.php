@@ -121,12 +121,6 @@ $wipe_image = get_field('hero_image');
 
         <div class='section-top-header'>
           <div class='text'>Eeonyx Products In Action</div>
-          <div class='link-circles'>
-            <a class='link-circle active' href='#'><div class='empty'></div><div class='full'></div></a>
-            <a class='link-circle' href='#'><div class='empty'></div><div class='full'></div></a>
-            <a class='link-circle' href='#'><div class='empty'></div><div class='full'></div></a>
-            <a class='link-circle' href='#'><div class='empty'></div><div class='full'></div></a>
-          </div>
         </div>
 
         <a class='top-right-link hidden-mobile'>

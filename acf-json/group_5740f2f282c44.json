@@ -357,8 +357,8 @@
                 },
                 {
                     "key": "field_574b7bc69ac4d",
-                    "label": "Propery Eeonix Page Link",
-                    "name": "propery_eeonix_page_link",
+                    "label": "Property Eeonyx Page Link",
+                    "name": "property_eeonyx_page_link",
                     "type": "page_link",
                     "instructions": "Optional page for \"Property Value\" to link to.",
                     "required": 0,
@@ -429,5 +429,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1464565436
+    "modified": 1464567433
 }

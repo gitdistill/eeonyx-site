@@ -38,7 +38,7 @@ $tables = get_field('tables');
 						<?php the_field('type'); ?>
 					</h3>
 					<h5 class='bottom-margin-2x'>
-						<?php the_field('description'); ?><br/>
+						<?php the_field('description'); ?>
 					</h5>
 
 					<?php

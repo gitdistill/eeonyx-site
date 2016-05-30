@@ -19,7 +19,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-EeonyxIconSet-57:before {
+.icon-EeonyxIconSet-57:before,
+.category-icon.smart-fabrics:before,
+.icon-smart-fabrics:before {
   content: "\e900";
 }
 .icon-EeonyxIconSet-58:before,
@@ -28,16 +30,26 @@
 .icon-pressure:before {
   content: "\e901";
 }
-.icon-EeonyxIconSet-59:before {
+.icon-EeonyxIconSet-59:before,
+.category-icon.emi-stealth:before,
+.icon-stealth:before {
   content: "\e902";
 }
-.icon-EeonyxIconSet-60:before {
+.icon-EeonyxIconSet-60:before,
+.category-icon.warming-fabrics:before,
+.icon-warming-fabrics:before,
+.icon-warming:before {
   content: "\e903";
 }
-.icon-EeonyxIconSet-61:before {
+.icon-EeonyxIconSet-61:before,
+.category-icon.anti-static:before,
+.icon-anti-static:before,
+.icon-static:before {
   content: "\e904";
 }
-.icon-EeonyxIconSet-62:before {
+.icon-EeonyxIconSet-62:before,
+.category-icon.custom-solutions:before,
+.icon-custom:before {
   content: "\e905";
 }
 .icon-EeonyxIconSet-63:before {
@@ -595,13 +607,16 @@ label {
   text-transform: uppercase;
 }
 .product-crumb .category-icon {
-  width: 19px;
-  height: 25px;
-  margin-top: 2px;
+  width: 35px;
+  height: 35px;
+  margin-top: -7px;
+  margin-left: -8px;
+  margin-right: 3px;
   background-size: 100%;
   background-repeat: no-repeat;
   float: left;
-  margin-right: 8px;
+  font-size: 38px;
+  color: #3cd52e;
 }
 .application-crumb {
   margin: 0 0 38px 0;
@@ -616,13 +631,16 @@ label {
   text-transform: uppercase;
 }
 .application-crumb .category-icon {
-  width: 19px;
-  height: 25px;
-  margin-top: 2px;
+  width: 35px;
+  height: 35px;
+  margin-top: -7px;
+  margin-left: -8px;
+  margin-right: 3px;
   background-size: 100%;
   background-repeat: no-repeat;
   float: left;
-  margin-right: 8px;
+  font-size: 38px;
+  color: #3cd52e;
 }
 .narrow-column {
   max-width: 340px;
@@ -1500,6 +1518,15 @@ nav header .margin-filler {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
+@media (max-width: 767px) {
+  #nav-link {
+    top: 30px;
+    margin-left: 18%;
+    -webkit-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+            transform: translateX(-20px);
+  }
+}
 #nav-link .nav-toggle {
   height: 45px;
   width: 38px;
@@ -1911,32 +1938,8 @@ nav header .margin-filler {
   -moz-osx-font-smoothing: grayscale;
   font-size: 30px;
 }
-.category-icon.warming-fabrics,
-.icon-warming-fabrics,
-.icon-warming {
-  background-image: url(images/icon-warming.png);
-}
-.category-icon.smart-fabrics,
-.icon-smart-fabrics {
-  background-image: url(images/icon-touch.png);
-}
-.category-icon.pressure-sensors.white,
-.icon-pressure-sensors.white,
-.icon-pressure.white {
+.category-icon.white {
   color: #fff;
-}
-.category-icon.emi-stealth,
-.icon-stealth {
-  background-image: url(images/icon-smart.png);
-}
-.category-icon.anti-static,
-.icon-anti-static,
-.icon-static {
-  background-image: url(images/icon-static.png);
-}
-.category-icon.custom-solutions,
-.icon-custom {
-  background-image: url(images/icon-custom.png);
 }
 .fp-controlArrow {
   width: 8px !important;
@@ -1980,6 +1983,7 @@ nav header .margin-filler {
   width: 25px;
   margin: 5px;
   background-size: 25px 25px;
+  color: #3cd52e;
 }
 .application-product-grid .item-inner:hover .item-text a.item-link {
   color: #3cd52e;
@@ -2478,6 +2482,7 @@ nav header,
   margin-bottom: -20px;
   overflow: hidden;
   height: 275px;
+  z-index: 1;
 }
 .wipe-hero .image {
   -webkit-transform: skewX(-30deg) translate(-1024px, 0px);
@@ -2590,6 +2595,35 @@ nav header,
       -ms-transform: skewX(30deg) translate(100px, 0px);
           transform: skewX(30deg) translate(100px, 0px);
 }
+@media (max-width: 767px) {
+  .wipe-hero,
+  .wipe-hero.large,
+  .wipe-hero.short {
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 0;
+    top: 0;
+    height: 150px;
+  }
+  .wipe-hero .image,
+  .wipe-hero.large .image,
+  .wipe-hero.short .image,
+  .wipe-hero .image.visible,
+  .wipe-hero.large .image.visible,
+  .wipe-hero.short .image.visible,
+  .wipe-hero .image div,
+  .wipe-hero.large .image div,
+  .wipe-hero.short .image div,
+  .wipe-hero .image.visible div,
+  .wipe-hero.large .image.visible div,
+  .wipe-hero.short .image.visible div {
+    width: 100%;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    margin-right: 0;
+  }
+}
 .wipe-panel {
   position: absolute;
   top: 0;
@@ -2668,6 +2702,7 @@ nav header,
   position: absolute;
   left: 0;
   right: 0;
+  top: 0px;
 }
 .application .background-image .image {
   width: 1024px;
@@ -2695,6 +2730,27 @@ nav header,
   width: 130%;
   margin-left: 0px;
   margin-top: 200px;
+}
+@media (max-width: 767px) {
+  .application .background-image {
+    position: static;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .application .background-image .image {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    overflow: visible;
+  }
+  .application .background-image .image img {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .application .background-image .image:after {
+    display: none;
+  }
 }
 .application .summary {
   background-color: #101013;

@@ -507,13 +507,16 @@ label {
     }
   }
   .category-icon {
-    width:19px;
-    height:25px;
-    margin-top: 2px;
+    width: 35px;
+    height: 35px;
+    margin-top: -7px;
+    margin-left: -8px;
+    margin-right: 3px;
     background-size: 100%;
     background-repeat: no-repeat;
     float:left;
-    margin-right: 8px;
+    font-size: 38px;
+    color: @green;
   }
 }
 .product-crumb {
@@ -1419,6 +1422,11 @@ nav{
   height:45px;
   -webkit-transform:translateZ(0);
   transform:translateZ(0);
+  @media( max-width: @mobile-max ){
+    top: 30px;
+    margin-left:18%;
+    transform: translateX(-20px);
+  }
   // width:231px;
   .logo-transition(){
     transition: all 200ms ease;
@@ -1851,36 +1859,47 @@ nav{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 30px;
+
+  &.white{
+    color: #fff;
+  }
+
 }
 .category-icon.warming-fabrics,
 .icon-warming-fabrics, .icon-warming {
-  background-image:url(./images/icon-warming.png);
+  &:before {
+    &:extend( .icon-EeonyxIconSet-60:before );
+  }
 }
 .category-icon.smart-fabrics,
 .icon-smart-fabrics {
-  background-image:url(./images/icon-touch.png);
+  &:before {
+    &:extend( .icon-EeonyxIconSet-57:before );
+  }
 }
 .category-icon.pressure-sensors,
 .icon-pressure-sensors, .icon-pressure {
-  //background-image:url(./images/icon-pressure.png);
   &:before {
     &:extend( .icon-EeonyxIconSet-58:before );
-  }
-  &.white{
-    color: #fff;
   }
 }
 .category-icon.emi-stealth,
 .icon-stealth {
-  background-image:url(./images/icon-smart.png);
+  &:before {
+    &:extend( .icon-EeonyxIconSet-59:before );
+  }
 }
 .category-icon.anti-static,
 .icon-anti-static, .icon-static {
-  background-image:url(./images/icon-static.png);
+  &:before {
+    &:extend( .icon-EeonyxIconSet-61:before );
+  }
 }
 .category-icon.custom-solutions,
 .icon-custom {
-  background-image:url(./images/icon-custom.png);
+  &:before {
+    &:extend( .icon-EeonyxIconSet-62:before );
+  }
 }
 .fp-controlArrow {
   width:8px !important;
@@ -1928,6 +1947,7 @@ nav{
     width:25px;
     margin:5px;
     background-size:25px 25px;
+    color: @green;
   }
   .item-inner:hover .item-text a.item-link {
     color:#3cd52e;
@@ -2140,6 +2160,7 @@ nav{
   margin-bottom: -20px;
   overflow: hidden;
   height: 275px;
+  z-index: 1;
   .image{
     @horizontal-correction: 56px;
     .wipe-image( -30deg, -1*@site-max-width, 0, @horizontal-correction, @horizontal-correction);
@@ -2180,6 +2201,22 @@ nav{
       @horizontal-correction: 100px;
       .wipe-image( -30deg, -1*@site-max-width, 0, @horizontal-correction, @horizontal-correction);
       margin-right: @horizontal-correction;
+    }
+  }
+  @media( max-width: @mobile-max ){
+    &, &.large, &.short {
+      position: relative;
+      margin-top: 100px;
+      margin-bottom: 0;
+      top: 0;
+      height: 150px;
+      .image, .image.visible {
+        &, & div {
+          width: 100%;
+          transform: none;
+          margin-right: 0;
+        }
+      }
     }
   }
 }
@@ -2259,7 +2296,8 @@ nav{
     position: absolute;
     left: 0;
     right: 0;
-    .image{
+    top: 0px;
+    .image {
       width: @site-max-width;
       margin: 0 auto;
       text-align: center;
@@ -2283,6 +2321,25 @@ nav{
       width: 130%;
       margin-left: 0px;
       margin-top: 200px;
+    }
+    @media( max-width: @mobile-max ){
+      position: static;
+      margin-bottom: 20px;
+      width: 100%;
+      .image {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        overflow: visible;
+        img {
+          width: 100%;
+          margin-left: 0;
+          margin-top: 0;
+        }
+        &:after {
+          display: none;
+        }
+      }
     }
   }
   .summary {

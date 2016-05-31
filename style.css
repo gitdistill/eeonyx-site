@@ -823,9 +823,6 @@ label {
           transform: translateX(179.6%);
   z-index: 10;
 }
-#page.menu-open {
-  pointer-events: none;
-}
 #page.menu-open [data-anchor='intro'] .content {
   margin-left: 140.4px;
 }

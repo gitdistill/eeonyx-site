@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?ipu2a5');
-  src: url('fonts/icomoon.eot?ipu2a5#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?ipu2a5') format('truetype'), url('fonts/icomoon.woff?ipu2a5') format('woff'), url('fonts/icomoon.svg?ipu2a5#icomoon') format('svg');
+  src: url('fonts/icomoon.eot?aurnqy');
+  src: url('fonts/icomoon.eot?aurnqy#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?aurnqy') format('truetype'), url('fonts/icomoon.woff?aurnqy') format('woff'), url('fonts/icomoon.svg?aurnqy#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -102,6 +102,15 @@
   content: "\e912";
   margin-left: -1em;
   color: #ffffff;
+}
+.icon-EeonyxIconSet-71:before {
+  content: "\e913";
+}
+.icon-EeonyxIconSet-72:before {
+  content: "\e914";
+}
+.icon-EeonyxIconSet-73:before {
+  content: "\e915";
 }
 @font-face {
   font-family: 'icomoon';
@@ -607,14 +616,12 @@ label {
   text-transform: uppercase;
 }
 .product-crumb .category-icon {
+  float: left;
   width: 35px;
   height: 35px;
   margin-top: -7px;
   margin-left: -8px;
   margin-right: 3px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  float: left;
   font-size: 38px;
   color: #3cd52e;
 }
@@ -631,14 +638,12 @@ label {
   text-transform: uppercase;
 }
 .application-crumb .category-icon {
+  float: left;
   width: 35px;
   height: 35px;
   margin-top: -7px;
   margin-left: -8px;
   margin-right: 3px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  float: left;
   font-size: 38px;
   color: #3cd52e;
 }
@@ -1223,6 +1228,8 @@ nav header .margin-filler {
   background-repeat: no-repeat;
   background-position: center center;
   transition: all 200ms ease;
+  color: #3cd52e;
+  font-size: 38px;
 }
 @media (max-width: 767px) {
   #fullpage .combs-container .comb .icon {
@@ -1236,6 +1243,7 @@ nav header .margin-filler {
   top: 10px;
   width: 19px;
   height: 19px;
+  font-size: 19px;
 }
 @media (max-width: 767px) {
   #fullpage .combs-container .comb .icon.hover {
@@ -1290,6 +1298,7 @@ nav header .margin-filler {
   top: 10px;
   width: 19px;
   height: 19px;
+  font-size: 19px;
 }
 @media (max-width: 767px) {
   #fullpage .combs-container .comb:hover .icon {
@@ -1315,11 +1324,13 @@ nav header .margin-filler {
   margin-top: 30px;
 }
 #fullpage .green-product-box .product-category .category-icon {
-  width: 30px;
-  height: 30px;
   float: left;
-  background-size: cover;
-  margin-right: 10px;
+  width: 35px;
+  height: 35px;
+  margin-top: -7px;
+  margin-left: -8px;
+  margin-right: 3px;
+  font-size: 38px;
 }
 #fullpage .green-product-box .product-category .text {
   width: 100px;
@@ -1327,7 +1338,7 @@ nav header .margin-filler {
   float: left;
   font-size: 12px;
   text-transform: uppercase;
-  line-height: 1.3em;
+  line-height: 1.2em;
   letter-spacing: 2px;
   font-family: "SeravekBold", 'sans-serif';
 }
@@ -1517,6 +1528,7 @@ nav header .margin-filler {
   height: 45px;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+  z-index: 100;
 }
 @media (max-width: 767px) {
   #nav-link {

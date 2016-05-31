@@ -217,7 +217,7 @@ $wipe_image = get_field('hero_image');
 </div><!--end #page -->
 
 <div class="down-arrow">
-  <span class="icon-EeonyxIconSet-67"></span>
+  <span class="icon-EeonyxIconSet-71"></span>
 </div>
 <div class="up-arrow">
   <span class="icon-EeonyxIconSet-65"></span>

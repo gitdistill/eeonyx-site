@@ -154,23 +154,26 @@ $wipe_image = get_field('hero_image');
                 <div class='clear'>
                 </div>
               </div>
+
               <div class='product-title'>
                 <?= get_the_title(); ?>
               </div>
+              
               <div class='product-description'>
                 <?= get_field('summary_heading'); ?>
               </div>
 
-          </a>
-        </div>
+            </a>
+          </div>
 
-        <?php
-            $count++;
-          }
-        } ?>
-
-        <div class="heading-background">
         </div>
+      <?php
+          $count++;
+        }
+      } ?>
+
+      <div class="heading-background">
+      </div>
 
       </div>
 

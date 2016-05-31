@@ -1257,6 +1257,7 @@ nav{
     }
   }
   .green-product-box {
+    display: block;
     width:560px;
     height:255px;
     margin-top: 60px;
@@ -1264,6 +1265,14 @@ nav{
     background-size:cover;
     background-position:center center;
     background:url(./images/bg-green-box.png);
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      .product-title{
+        text-decoration: underline;
+      }
+    }
+
     @media( max-width: @mobile-max ){
       background-color: fade(@green, 80%);
       background-image: none;

@@ -1384,6 +1384,7 @@ nav header .margin-filler {
           transform: translateZ(-1px);
 }
 #fullpage .green-product-box {
+  display: block;
   width: 560px;
   height: 255px;
   margin-top: 60px;
@@ -1391,6 +1392,11 @@ nav header .margin-filler {
   background-size: cover;
   background-position: center center;
   background: url(images/bg-green-box.png);
+  text-decoration: none;
+  color: inherit;
+}
+#fullpage .green-product-box:hover .product-title {
+  text-decoration: underline;
 }
 @media (max-width: 767px) {
   #fullpage .green-product-box {

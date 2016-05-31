@@ -143,13 +143,16 @@ $wipe_image = get_field('hero_image');
 
         <div class="slide" id="slide<?=$count?>" style="background-image:url(<?= $image['url']; ?>)">
           <div class='section-text'>
-            <div class='green-product-box'>
+            <a class='green-product-box' href="<?= get_the_permalink(); ?>">
+
               <div class='product-category'>
-                <div class="category-icon <?= $primary_category->slug; ?> white" ></div>
+                <div class="category-icon <?= $primary_category->slug; ?> white" >
+                </div>
                 <div class='text'>
                   <?= $primary_category->name; ?>
                 </div>
-                <div class='clear'></div>
+                <div class='clear'>
+                </div>
               </div>
               <div class='product-title'>
                 <?= get_the_title(); ?>
@@ -157,8 +160,8 @@ $wipe_image = get_field('hero_image');
               <div class='product-description'>
                 <?= get_field('summary_heading'); ?>
               </div>
-            </div>
-          </div>
+
+          </a>
         </div>
 
         <?php

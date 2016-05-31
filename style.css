@@ -743,12 +743,19 @@ label {
   color: #252c26;
   transition: all 200ms ease;
 }
-.home .down-arrow:hover,
-.home .up-arrow:hover {
-  padding-bottom: 0;
-  font-size: 70px;
-  border: none;
-  text-decoration: none;
+@media (min-width: 1024px) {
+  .home .down-arrow:hover,
+  .home .up-arrow:hover {
+    padding-bottom: 0;
+    font-size: 70px;
+    border: none;
+    text-decoration: none;
+  }
+}
+@media (max-width: 1023px) {
+  .home[class*="fp-viewing-products-in-action"] .down-arrow {
+    height: 50px;
+  }
 }
 .home .up-arrow {
   display: none;
@@ -791,11 +798,11 @@ label {
       -ms-transform: translateX(0);
           transform: translateX(0);
 }
-.home .slideout-menu.visible {
+.home.fp-viewing-intro .slideout-menu.visible {
   background-color: transparent;
   pointer-events: none;
 }
-.home .slideout-menu.visible .menu-items {
+.home.fp-viewing-intro .slideout-menu.visible .menu-items {
   pointer-events: all;
 }
 .slideout-menu .column-1 {
@@ -997,6 +1004,11 @@ nav header .margin-filler {
 .sub-page-header {
   margin: 40px 0;
 }
+@media (max-width: 767px) {
+  .grid-subtitle {
+    font-size: 28px;
+  }
+}
 .sub-page-subtitle {
   margin: 0 auto 75px auto;
   padding: 0 5px 10px 5px;
@@ -1029,18 +1041,30 @@ nav header .margin-filler {
   background-size: 155px 44px;
   background-image: url(images/logo-plain.svg);
 }
-#fullpage .link-circle.active .empty,
-#fullpage .link-circle:hover .empty {
-  display: none;
-}
-#fullpage .link-circle.active .full,
-#fullpage .link-circle:hover .full {
-  display: block;
-}
 #fullpage .section .footer {
   position: absolute;
   bottom: 0px;
   left: 0px;
+}
+#fullpage .heading-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 120px;
+  z-index: 2;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0.4) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=1);
+  /* IE6-9 */
+}
+@media (max-width: 767px) {
+  #fullpage .heading-background {
+    height: 170px;
+  }
 }
 #fullpage .section-top-header {
   position: absolute;
@@ -1049,6 +1073,13 @@ nav header .margin-filler {
   width: 100%;
   text-align: center;
   margin: 0 auto;
+}
+@media (max-width: 1023px) and (min-width: 768px) {
+  #fullpage .section-top-header {
+    left: 270px;
+    right: 0;
+    width: auto;
+  }
 }
 @media (max-width: 767px) {
   #fullpage .section-top-header {
@@ -1069,43 +1100,44 @@ nav header .margin-filler {
 #fullpage .section-top-header .text.white {
   color: #ffffff;
 }
-#fullpage .top-right-link {
+#fullpage .section.fp-section .top-right-link {
   position: absolute;
   z-index: 6;
-  width: 190px;
+  width: 220px;
   cursor: pointer;
   color: #252c26;
   text-decoration: none;
+  padding: 15px 15px 10px 15px;
+  background-color: #fff;
 }
-@media (min-width: 768px) {
-  #fullpage .top-right-link {
+@media (min-width: 1024px) {
+  #fullpage .section.fp-section .top-right-link {
     right: 30px;
     top: 35px;
   }
 }
-@media (max-width: 767px) {
-  #fullpage .top-right-link {
+@media (max-width: 1023px) {
+  #fullpage .section.fp-section .top-right-link {
     left: 50%;
-    bottom: 35px;
+    bottom: 50px;
     margin: 0 auto;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
   }
 }
-#fullpage .top-right-link:hover {
+#fullpage .section.fp-section .top-right-link:hover {
   text-decoration: underline;
 }
-#fullpage .top-right-link .arrow {
-  width: 30px;
-  height: 30px;
-  background-size: 30px 30px;
+#fullpage .section.fp-section .top-right-link .arrow {
+  width: 25px;
+  height: 25px;
+  background-size: 25px 25px;
   background-image: url(images/icon-arrow.png);
   float: right;
   margin-left: 4px;
   position: relative;
 }
-#fullpage .top-right-link .text {
+#fullpage .section.fp-section .top-right-link .text {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1113,38 +1145,36 @@ nav header .margin-filler {
   line-height: 1.2;
 }
 #fullpage .section-text {
+  overflow: auto;
+  max-height: 100%;
   padding: 40px 80px;
 }
 @media (max-width: 767px) {
   #fullpage .section-text {
-    padding: 130px 10px;
+    padding: 0px 20px 0 20px;
   }
 }
 #fullpage .links-bar {
-  margin: 40px -30px 0 -30px;
-  text-align: center;
-}
-#fullpage .links-bar .link-wrapper {
-  padding: 0 30px 10px 30px;
-  width: 19%;
-  display: inline-block;
-  vertical-align: top;
   text-align: left;
+  margin: 0;
 }
-#fullpage .links-bar .link-wrapper a {
+#fullpage .links-bar a {
+  display: block;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 15px;
   font-family: 'SeravekBold', sans-serif;
   color: inherit;
   text-decoration: none;
-  display: block;
-  letter-spacing: 2px;
+  letter-spacing: 0px;
+  padding-top: 15px;
+  cursor: pointer;
 }
 #fullpage .links-bar a:hover {
   color: #3cd52e;
 }
 #fullpage .bottom-home-text {
-  font-size: 24px;
+  font-size: 21px;
+  line-height: 1.25;
 }
 #fullpage .explore-intro {
   margin: 1em 0 0 0;
@@ -1162,6 +1192,7 @@ nav header .margin-filler {
 #fullpage .combs-container {
   width: 855px;
   padding-left: 20px;
+  min-height: 320px;
   margin: 40px auto 0 auto;
   text-align: left;
 }
@@ -1340,9 +1371,22 @@ nav header .margin-filler {
     font-size: 9.5px;
   }
 }
+#fullpage .fp-section[data-anchor=products-in-action] {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+#fullpage .fp-section[data-anchor=products-in-action] * {
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+#fullpage .fp-section[data-anchor=products-in-action] .slide {
+  -webkit-transform: translateZ(-1px);
+          transform: translateZ(-1px);
+}
 #fullpage .green-product-box {
   width: 560px;
   height: 255px;
+  margin-top: 60px;
   overflow: hidden;
   background-size: cover;
   background-position: center center;
@@ -1350,7 +1394,7 @@ nav header .margin-filler {
 }
 @media (max-width: 767px) {
   #fullpage .green-product-box {
-    background-color: #3cd52e;
+    background-color: rgba(60, 213, 46, 0.8);
     background-image: none;
     width: 100%;
   }
@@ -1358,7 +1402,7 @@ nav header .margin-filler {
 #fullpage .green-product-box .product-category {
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 #fullpage .green-product-box .product-category .category-icon {
   float: left;
@@ -1401,13 +1445,18 @@ nav header .margin-filler {
   font-family: "SeravekBold", 'sans-serif';
   margin-top: 22px;
 }
+@media (max-width: 767px) {
+  #fullpage .green-product-box .product-description {
+    margin-right: 10px;
+  }
+}
 #fullpage .fp-slidesNav {
   top: 70px;
 }
 #fullpage .fp-slidesNav ul li {
   padding: 0;
-  height: 14px;
-  width: 14px;
+  height: 10px;
+  width: 10px;
 }
 #fullpage .fp-slidesNav ul li a span {
   height: 100%;
@@ -1419,6 +1468,11 @@ nav header .margin-filler {
 }
 #fullpage .fp-slidesNav ul li a.active span {
   background-color: #3cd52e;
+}
+@media (max-width: 1023px) and (min-width: 768px) {
+  #fullpage .fp-slidesNav {
+    padding-left: 135px;
+  }
 }
 @media (max-width: 767px) {
   #fullpage .fp-slidesNav {
@@ -2445,6 +2499,11 @@ nav header,
   background: #e6e7e8;
   margin-bottom: 40px;
 }
+@media (max-width: 767px) {
+  .top-gray-wrapper {
+    margin-bottom: 0;
+  }
+}
 .top-gray-wrapper .inner {
   padding-left: 40px;
   padding-right: 40px;
@@ -2602,7 +2661,7 @@ nav header,
   top: 0;
   left: 0;
   right: 0;
-  margin: 0 !important;
+  margin: 0;
   height: 540px;
 }
 .wipe-hero.short .image {
@@ -2671,7 +2730,7 @@ nav header,
   .wipe-hero.large,
   .wipe-hero.short {
     position: relative;
-    margin-top: 100px;
+    margin-top: 80px;
     margin-bottom: 0;
     top: 0;
     height: 150px;

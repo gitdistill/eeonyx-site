@@ -108,7 +108,7 @@ $(document).on('ready', function() {
       setTimeout( function(){
         $('.home').removeClass('loading');
         $('.home .wipe-panel .image').addClass('visible');
-        if( !mobile() ){
+        if( !mobile() && !window.location.hash ) {
           slideout.toggle(true);
         }
       }, WIPE_DELAY);
@@ -140,9 +140,9 @@ $(document).on('ready', function() {
 
     $('#fullpage').fullpage({
       anchors: ['intro', 'explore-products', 'products-in-action', 'about-eeonyx'],
-      sectionsColor: ['#E6E7E8', '#ffffff', '#E6E7E8', '#ffffff'],
+      sectionsColor: ['#E6E7E8', '#ffffff', '#E6E7E8', 'transparent'],
       css3: true,
-      responsiveWidth: 768,
+      // responsiveWidth: 768,
       slidesNavigation: true,
       slidesNavPosition: 'top',
       afterLoad: function(anchorLink, index){

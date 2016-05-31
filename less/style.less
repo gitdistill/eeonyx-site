@@ -622,10 +622,19 @@ label {
     color: @black;
     transition: all 200ms ease;
     &:hover{
-      padding-bottom: 0;
-      font-size: 70px;
-      border: none;
-      text-decoration: none;
+      @media( min-width: @desktop-min ){
+        padding-bottom: 0;
+        font-size: 70px;
+        border: none;
+        text-decoration: none;
+      }
+    }
+  }
+  &[class*="fp-viewing-products-in-action"]{
+    .down-arrow{
+      @media( max-width: @tablet-max ){
+        height: 50px;
+      }
     }
   }
   .up-arrow {
@@ -677,7 +686,7 @@ label {
     }
     background-color: rgba(130, 185, 130, 0.5); //rgba(0,0,0,0.2);
   }
-  .home &.visible {
+  .home.fp-viewing-intro &.visible {
     background-color: transparent;
     pointer-events: none;
     .menu-items {
@@ -907,6 +916,9 @@ nav{
 .grid-header {
 }
 .grid-subtitle {
+  @media( max-width: @mobile-max ) {
+    font-size: 28px
+  }
 }
 .sub-page-subtitle {
   margin:0 auto 75px auto;
@@ -943,16 +955,26 @@ nav{
   }
 }
 #fullpage {
-  .link-circle.active .empty, .link-circle:hover .empty {
-    display:none;
-  }
-  .link-circle.active .full, .link-circle:hover .full {
-    display:block;
-  }
   .section .footer {
     position:absolute;
     bottom:0px;
     left:0px;
+  }
+  .heading-background {
+    position: absolute;
+    top:0;
+    right:0;
+    left:0;
+    height: 120px;
+    @media( max-width: @mobile-max ){
+      height: 170px;
+    }
+    z-index: 2;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.4) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.4) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.4) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
   }
   .section-top-header {
     position:absolute;
@@ -961,9 +983,17 @@ nav{
     width:100%;
     text-align:center;
     margin:0 auto;
+    @media( max-width: @tablet-max ){
+      @media( min-width: @tablet-min ){
+        left: 270px;
+        right: 0;
+        width: auto;
+      }
+    }
     @media( max-width: @mobile-max ){
       top: 90px;
     }
+
     .text {
       border-bottom:5px solid #3cd52e;
       font-size:16px;
@@ -979,30 +1009,32 @@ nav{
       color:#ffffff;
     }
   }
-  .top-right-link {
+  .section.fp-section .top-right-link {
     position:absolute;
     z-index:6;
-    width:190px;
+    width:220px;
     cursor:pointer;
     color: @black;
     text-decoration: none;
-    @media( min-width: @tablet-min ){
+    padding: 15px 15px 10px 15px;
+    background-color: #fff;
+    @media( min-width: @desktop-min ){
       right:30px;
       top:35px;
     }
-    @media( max-width: @mobile-max ){
+    @media( max-width: @tablet-max ){
       left: 50%;
-      bottom: 35px;
+      bottom: 50px;
       margin: 0 auto;
-      transform: translateX(-50%);
+      transform: translate3d( -50%,0,0 );
     }
     &:hover {
       text-decoration: underline;
     }
     .arrow {
-      width:30px;
-      height:30px;
-      background-size:30px 30px;
+      width:25px;
+      height:25px;
+      background-size:25px 25px;
       background-image:url(./images/icon-arrow.png);
       float:right;
       margin-left:4px;
@@ -1017,36 +1049,34 @@ nav{
     }
   }
   .section-text {
+    overflow: auto;
+    max-height: 100%;
     padding:40px 80px;
     @media( max-width: @mobile-max ){
-      padding: 130px 10px;
+      padding: 0px 20px 0 20px;
     }
   }
   .links-bar {
-    margin:40px -30px 0 -30px;
-    text-align:center;
-    .link-wrapper {
-      padding:0 30px 10px 30px;
-      width:19%;
-      display:inline-block;
-      vertical-align:top;
-      text-align:left;
-      a {
-        text-transform:uppercase;
-        font-size:16px;
-        font-family:'SeravekBold', sans-serif;
-        color:inherit;
-        text-decoration:none;
-        display:block;
-        letter-spacing:2px;
-      }
+    text-align:left;
+    margin: 0;
+    a {
+      display: block;
+      text-transform:uppercase;
+      font-size: 15px;
+      font-family:'SeravekBold', sans-serif;
+      color:inherit;
+      text-decoration:none;
+      letter-spacing:0px;
+      padding-top: 15px;
+      cursor: pointer;
     }
     a:hover {
       color:#3cd52e;
     }
   }
   .bottom-home-text {
-    font-size:24px;
+    font-size:21px;
+    line-height: 1.25;
   }
   .explore-intro {
     margin:1em 0 0 0;
@@ -1078,6 +1108,7 @@ nav{
     @mobile-width: @tablet-width * @mobile-scale-factor; 
     width: @desktop-width;
     padding-left: @comb-right-margin;
+    min-height: 320px;
     margin: 40px auto 0 auto;
     text-align:left;
     @media( max-width: @tablet-max ){
@@ -1216,22 +1247,32 @@ nav{
       }
     }
   }
+  .fp-section[data-anchor=products-in-action]{
+    transform-style: preserve-3d;
+    * {
+      transform: translateZ( 0 );
+    }
+    .slide {
+      transform: translateZ( -1px );
+    }
+  }
   .green-product-box {
     width:560px;
     height:255px;
+    margin-top: 60px;
     overflow:hidden;
     background-size:cover;
     background-position:center center;
     background:url(./images/bg-green-box.png);
     @media( max-width: @mobile-max ){
-      background-color: @green;
+      background-color: fade(@green, 80%);
       background-image: none;
       width:100%;
     }
     .product-category {
       margin-left:20px;
       margin-right:20px;
-      margin-top:30px;
+      margin-top:20px;
       .category-icon {
         float:left;
         width: 35px;
@@ -1273,47 +1314,18 @@ nav{
       letter-spacing:1px;
       font-family:"SeravekBold", 'sans-serif';
       margin-top:22px;
+      @media( max-width: @mobile-max ){
+        margin-right: 10px;
+      }
     }
   }
   .fp-slidesNav {
     top: 70px;
-    //margin-left: 0 !important;
-    //transform: translateX(-50%);
-
-    // ul li {
-    //   margin-right: 2px;
-    //   height: auto;
-    //   width: auto;
-    //   a {
-    //     span {
-    //       top: 0;
-    //       left: 0;
-    //       width:11px;
-    //       height:11px;
-    //       margin:0 10px;
-    //       display:inline-block;
-    //       vertical-align:top;
-    //       overflow:hidden;
-    //       background-size:11px 11px;
-    //       background-color: transparent;
-    //       background-image:url(./images/circle-empty.png);
-    //     }
-    //     &.active {
-    //       span {
-    //         width:11px;
-    //         height:11px;
-    //         background-size:11px 11px;
-    //         background-image:url(./images/circle-full.png);
-    //       }
-    //     }
-    //   }
-    // }
-
     ul {
       li {
         padding: 0;
-        height: 14px;
-        width: 14px;
+        height: 10px;
+        width: 10px;
         a {
           span {
             height: 100%;
@@ -1331,6 +1343,13 @@ nav{
         }
       }
     }
+
+    @media( max-width: @tablet-max ){
+      @media( min-width: @tablet-min ){
+        padding-left: 135px;
+      }
+    }
+
     @media( max-width: @mobile-max ){
       top: 122px;
     }
@@ -2180,6 +2199,9 @@ nav{
   &:extend( .content-container );
   background:#e6e7e8;
   margin-bottom: 40px;
+  @media (max-width: @mobile-max ) {
+    margin-bottom: 0;
+  }
   .inner{
     .reduced-horizontal-padding;
     padding-bottom: 40px;
@@ -2264,7 +2286,7 @@ nav{
     top: 0;
     left: 0;
     right: 0;
-    margin: 0 !important;
+    margin: 0;
     height: 540px;
     .image{
       right: reset;
@@ -2285,7 +2307,7 @@ nav{
   @media( max-width: @mobile-max ){
     &, &.large, &.short {
       position: relative;
-      margin-top: 100px;
+      margin-top: 80px;
       margin-bottom: 0;
       top: 0;
       height: 150px;

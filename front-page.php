@@ -166,6 +166,9 @@ $wipe_image = get_field('hero_image');
           }
         } ?>
 
+        <div class="heading-background">
+        </div>
+
       </div>
 
 
@@ -178,40 +181,62 @@ $wipe_image = get_field('hero_image');
         </div>
 
         <div class='section-text'>
+
           <h4 class='bottom-home-text'>
-            Manufacturer of electron conductive cloth, textiles, and fabrics for the aerospace, commercial, electronics, marine, military, and medical industries. Features tunable conductive coating applied to the product. Specific electrical resistances can be applied in gradients and patterns. Other products offered are conductive coatings, felt, foams, yarns, and polymers. Suitable for ESD applications, bomb suits, cleanroom garments, resistive heaters, and piezoresistive fabric sensors.
+          Look smart. Be smart. Discover electronics you can wash and wear. Conductive textiles by Eeonyx warm you up, sense your environment, and protect you and your devices from unwanted energy.
+            <!-- Manufacturer of electron conductive cloth, textiles, and fabrics for the aerospace, commercial, electronics, marine, military, and medical industries. Features tunable conductive coating applied to the product. Specific electrical resistances can be applied in gradients and patterns. Other products offered are conductive coatings, felt, foams, yarns, and polymers. Suitable for ESD applications, bomb suits, cleanroom garments, resistive heaters, and piezoresistive fabric sensors. -->
           </h4>
 
-          <div class='links-bar'>
-            <div class='link-wrapper'>
-              <a href='#'>
-                Our Full Product List
-              </a>
+          <div class='links-bar row'>
+            
+            <div class='col-xs-12 col-sm-6'>
+              <div class="row">
+
+                <div class='col-xs-6'>
+                  <a href='#'>
+                    Our Full Product List
+                  </a>
+                </div>
+
+                <div class='col-xs-6'>
+                  <a href='#'>
+                    About Our Technology
+                  </a>
+                </div>
+
+              </div>
             </div>
-            <div class='link-wrapper'>
-              <a href='#'>
-                About Our Technology
-              </a>
+
+            <div class='col-xs-12 col-sm-6'>
+              <div class="row">
+
+                <div class='col-xs-6'>
+                  <a href='#'>
+                    More About Who We Are
+                  </a>
+                </div>
+
+                <div class='col-xs-6'>
+                  <a href='/eeonyx-in-action'>
+                    Our Products In Action
+                  </a>
+                </div>
+
+              </div>
             </div>
-            <div class='link-wrapper'>
-              <a href='#'>
-                More About Who We Are
-              </a>
-            </div>
-            <div class='link-wrapper'>
-              <a href='#'>
-                Our Products In Actions
-              </a>
-            </div>
-            <div class='clear'></div>
+
           </div>
+        
+        </div>
+
+        <div class="footer">
+          <div class="logo"></div>
         </div>
 
       </div>
 
     </div><!--end fullpage -->
   </div><!--end outer -->
-</div><!--end #page -->
 
 <div class="down-arrow">
   <span class="icon-EeonyxIconSet-71"></span>
@@ -221,4 +246,7 @@ $wipe_image = get_field('hero_image');
 </div>
 
 <?php endwhile; ?>
+
+<?php define( 'INCLUDE_EEONYX_FOOTER_ELEMENT', false ); ?>
 <?php get_footer(); ?>
+

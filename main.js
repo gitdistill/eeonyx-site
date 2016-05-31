@@ -5,7 +5,7 @@ function EeonyxSlideout( $nav ){
   var _self = this;
   var menuColumnWidth = 130;
   var visibility = false;
-  var $toggleIcon = $(".nav-toggle").find('.nav-icon');
+  var $toggleIcon = $('#nav-link');
   var $allColumns = $nav.find('.menu-items');
   var $allLinks = $nav.find('.menu-item');
   var $stateElement = $('#page');

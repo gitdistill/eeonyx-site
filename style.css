@@ -798,9 +798,6 @@ label {
 .home .slideout-menu.visible .menu-items {
   pointer-events: all;
 }
-.home.fp-viewing-intro .slideout-menu .menu-items > div {
-  top: 130px;
-}
 .slideout-menu .column-1 {
   z-index: 30;
   -webkit-transform: translateX(-100%);
@@ -825,9 +822,6 @@ label {
       -ms-transform: translateX(179.6%);
           transform: translateX(179.6%);
   z-index: 10;
-}
-.slideout-menu.static {
-  position: absolute;
 }
 #page.menu-open {
   pointer-events: none;
@@ -877,6 +871,11 @@ label {
   top: 150px;
   bottom: 0;
   overflow-y: auto;
+}
+@media (max-width: 767px) {
+  .menu-items > div {
+    top: 100px;
+  }
 }
 .menu-items.open .menu-item {
   color: #859888;
@@ -1056,7 +1055,7 @@ nav header .margin-filler {
 }
 @media (max-width: 767px) {
   #fullpage .section-top-header {
-    top: 100px;
+    top: 90px;
   }
 }
 #fullpage .section-top-header .text {
@@ -1076,12 +1075,26 @@ nav header .margin-filler {
 #fullpage .top-right-link {
   position: absolute;
   z-index: 6;
-  right: 30px;
-  top: 35px;
   width: 190px;
   cursor: pointer;
   color: #252c26;
   text-decoration: none;
+}
+@media (min-width: 768px) {
+  #fullpage .top-right-link {
+    right: 30px;
+    top: 35px;
+  }
+}
+@media (max-width: 767px) {
+  #fullpage .top-right-link {
+    left: 50%;
+    bottom: 35px;
+    margin: 0 auto;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
 }
 #fullpage .top-right-link:hover {
   text-decoration: underline;
@@ -1385,27 +1398,28 @@ nav header .margin-filler {
   margin-top: 22px;
 }
 #fullpage .fp-slidesNav {
-  top: 62px;
+  top: 70px;
 }
 #fullpage .fp-slidesNav ul li {
-  margin-right: 2px;
+  padding: 0;
+  height: 14px;
+  width: 14px;
 }
 #fullpage .fp-slidesNav ul li a span {
-  margin: 0 5px;
-  display: inline-block;
-  vertical-align: top;
-  overflow: hidden;
-  width: 11px;
-  height: 11px;
-  background-size: 11px 11px;
+  height: 100%;
+  width: 100%;
   background-color: transparent;
-  background-image: url(images/circle-empty.png);
+  border: 1px solid #3cd52e;
+  border-radius: 50%;
+  margin: 0;
 }
 #fullpage .fp-slidesNav ul li a.active span {
-  width: 11px;
-  height: 11px;
-  background-size: 11px 11px;
-  background-image: url(images/circle-full.png);
+  background-color: #3cd52e;
+}
+@media (max-width: 767px) {
+  #fullpage .fp-slidesNav {
+    top: 122px;
+  }
 }
 /* slideout was here */
 #outer {
@@ -1549,10 +1563,14 @@ nav header .margin-filler {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   z-index: 100;
+  transition: all 0.5s ease;
 }
 @media (max-width: 767px) {
   #nav-link {
-    top: 30px;
+    top: 20px;
+    margin-left: 20px;
+  }
+  #nav-link.open {
     margin-left: 18%;
     -webkit-transform: translateX(-20px);
         -ms-transform: translateX(-20px);
@@ -1631,22 +1649,22 @@ nav header .margin-filler {
   -ms-transform-origin: left center;
       transform-origin: left center;
 }
-.nav-icon.open span:nth-child(1) {
+#nav-link.open .nav-icon span:nth-child(1) {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
       transform: rotate(45deg);
-  top: 0px;
+  top: 1px;
   left: 4px;
 }
-.nav-icon.open span:nth-child(2) {
+#nav-link.open .nav-icon span:nth-child(2) {
   width: 0%;
   opacity: 0;
 }
-.nav-icon.open span:nth-child(3) {
+#nav-link.open .nav-icon span:nth-child(3) {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
       transform: rotate(-45deg);
-  top: 18px;
+  top: 17.5px;
   left: 4px;
 }
 .bottom-margin-1x {
@@ -1757,6 +1775,16 @@ nav header .margin-filler {
 }
 .specs-section {
   margin: 40px 0 0 0;
+}
+.data-section {
+  margin-top: 40px;
+  text-align: center;
+}
+.data-section img {
+  margin-bottom: 40px;
+  width: 100%;
+  height: auto;
+  max-width: 600px;
 }
 .specs-table {
   margin: 3px 0;

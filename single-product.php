@@ -10,6 +10,7 @@ get_header();
 while ( have_posts() ) : the_post();
 
 $tables = get_field('tables');
+$data = get_field('data');
 
 ?>
 
@@ -152,6 +153,21 @@ $tables = get_field('tables');
 		</div><!-- end specs row -->
 
 		<?php } ?><!--end tables loop and if statement -->
+
+		<?php if( $data ){ ?>
+
+		<div class='data-section row'>
+
+			<?php foreach( $data as $item ){ ?>
+				<div class="col-sm-6">
+					<img src="<?=$item['chart']['url']?>" alt="<?=$item['chart']['alt']?>">
+				</div>
+			<?php } ?>
+
+		</div>
+
+		<?php } ?>
+
 
 	</div><!-- content-container -->
 </div><!--outer-->

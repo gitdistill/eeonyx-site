@@ -408,7 +408,7 @@ h3 {
   font-family: 'Seravek', sans-serif;
   line-height: 1.5em;
   font-weight: 200;
-  letter-spacing: .05em;
+  letter-spacing: 0;
 }
 h4 {
   margin: 0;
@@ -416,7 +416,7 @@ h4 {
   font-family: 'Seravek', sans-serif;
   line-height: 1.5em;
   font-weight: 200;
-  letter-spacing: .05em;
+  letter-spacing: 0;
 }
 h5 {
   margin: 0;
@@ -446,7 +446,7 @@ p.p1 {
   font-family: 'Seravek', sans-serif;
   line-height: 1.5em;
   font-weight: 200;
-  letter-spacing: .05em;
+  letter-spacing: 0;
 }
 .text-center {
   text-align: center;
@@ -457,7 +457,7 @@ h3.light {
   font-family: 'SeravekLight', sans-serif;
   text-transform: none;
   line-height: 1.3em;
-  letter-spacing: .05em;
+  letter-spacing: 0;
 }
 blockquote {
   font-size: 26px;
@@ -1351,6 +1351,13 @@ nav header .margin-filler {
   background-position: center center;
   background: url(images/bg-green-box.png);
 }
+@media (max-width: 767px) {
+  #fullpage .green-product-box {
+    background-color: #3cd52e;
+    background-image: none;
+    width: 100%;
+  }
+}
 #fullpage .green-product-box .product-category {
   margin-left: 20px;
   margin-right: 20px;
@@ -1917,7 +1924,7 @@ nav header .margin-filler {
   font-family: 'Seravek', sans-serif;
   line-height: 1.5em;
   font-weight: 200;
-  letter-spacing: .05em;
+  letter-spacing: 0;
   font-family: 'SeravekExtraLight', sans-serif;
   font-weight: normal;
   padding-bottom: 40px;

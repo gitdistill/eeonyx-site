@@ -296,7 +296,7 @@ h3 {
   font-family:'Seravek', sans-serif;
   line-height:1.5em;
   font-weight:200;
-  letter-spacing:.05em;
+  letter-spacing:0;
 }
 h4 {
   .h4;
@@ -335,7 +335,7 @@ h3.light {
   font-family:'SeravekLight', sans-serif;
   text-transform:none;
   line-height:1.3em;
-  letter-spacing:.05em;
+  letter-spacing:0;
 }
 blockquote {
   font-size:26px;
@@ -1224,6 +1224,11 @@ nav{
     background-size:cover;
     background-position:center center;
     background:url(./images/bg-green-box.png);
+    @media( max-width: @mobile-max ){
+      background-color: @green;
+      background-image: none;
+      width:100%;
+    }
     .product-category {
       margin-left:20px;
       margin-right:20px;

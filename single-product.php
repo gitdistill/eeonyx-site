@@ -157,7 +157,11 @@ $data = get_field('data');
 		<?php if( $data ){ ?>
 
 		<div class='data-section row'>
-
+		<div class="col-sm-12">
+			<h4 class="subsection-heading">
+				Product Data
+			</h4>
+		</div>
 			<?php foreach( $data as $item ){ ?>
 				<div class="col-sm-6">
 					<img src="<?=$item['chart']['url']?>" alt="<?=$item['chart']['alt']?>">

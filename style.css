@@ -405,7 +405,7 @@ h3 {
 .h4 {
   margin: 0;
   font-size: 30px;
-  font-family: 'SeravekExtraLight', sans-serif;
+  font-family: 'Seravek', sans-serif;
   line-height: 1.5em;
   font-weight: 200;
   letter-spacing: .05em;
@@ -413,7 +413,7 @@ h3 {
 h4 {
   margin: 0;
   font-size: 30px;
-  font-family: 'SeravekExtraLight', sans-serif;
+  font-family: 'Seravek', sans-serif;
   line-height: 1.5em;
   font-weight: 200;
   letter-spacing: .05em;
@@ -443,7 +443,7 @@ p strong {
 p.p1 {
   margin: 0;
   font-size: 30px;
-  font-family: 'SeravekExtraLight', sans-serif;
+  font-family: 'Seravek', sans-serif;
   line-height: 1.5em;
   font-weight: 200;
   letter-spacing: .05em;
@@ -1786,6 +1786,10 @@ nav header .margin-filler {
   height: auto;
   max-width: 600px;
 }
+.data-section .subsection-heading {
+  text-align: left;
+  margin-bottom: 10px;
+}
 .specs-table {
   margin: 3px 0;
   word-break: break-all;
@@ -1910,6 +1914,7 @@ nav header .margin-filler {
 .about-category {
   margin: 0;
   font-size: 30px;
+  font-family: 'Seravek', sans-serif;
   line-height: 1.5em;
   font-weight: 200;
   letter-spacing: .05em;

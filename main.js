@@ -1,18 +1,5 @@
 
-// var slideout = new Slideout({
-//   'panel': document.getElementById('panel'),
-//   'menu': document.getElementById('menu'),
-//   'padding': menuColumnWidth,
-//   'tolerance': 70,
-//   'duration': 220,
-//   'toggleElement': document.getElementById('nav-link')
-// });
-
-
-// $(".nav-toggle").on('click', function() {
-//  $(this).find('.nav-icon').toggleClass('open');
-//  slideout.toggle();
-// });
+var MOBILE_MAX_WIDTH = 767;
 
 function EeonyxSlideout( $nav ){
   var _self = this;
@@ -98,6 +85,10 @@ $(".nav-toggle").on('click', function() {
   slideout.toggle();
 });
 
+var mobile = function(){
+  return parseInt($(window).width()) <= MOBILE_MAX_WIDTH;
+};
+
 $(document).on('ready', function() {
 
   $('#menu').removeClass('hidden');
@@ -105,7 +96,9 @@ $(document).on('ready', function() {
 
   if ( $('#fullpage').length ){
 
-    $('#nav-link').addClass('big');
+    if( !mobile() ){
+      $('#nav-link').addClass('big');
+    }
 
     $('body').addClass('content-hidden');
 
@@ -115,7 +108,9 @@ $(document).on('ready', function() {
       setTimeout( function(){
         $('.home').removeClass('loading');
         $('.home .wipe-panel .image').addClass('visible');
-        slideout.toggle(true);
+        if( !mobile() ){
+          slideout.toggle(true);
+        }
       }, WIPE_DELAY);
     };
     $wipeImage = $('<img/>');
@@ -131,12 +126,16 @@ $(document).on('ready', function() {
     // $('.home .wipe-panel').click(function(){ $('.home .wipe-panel .image').toggleClass('visible'); });
 
     var enterIntroSlide = function(){
-      $('#nav-link.small').removeClass('small').addClass('big');
-      slideout.toggle(true);
+      if( !mobile() ){
+        $('#nav-link.small').removeClass('small').addClass('big');
+        slideout.toggle(true);
+      }
     };
     var leaveIntroSlide = function(){
-      $('#nav-link.big').removeClass('big').addClass('small');
-      slideout.toggle( false );
+      if( !mobile() ){
+        $('#nav-link.big').removeClass('big').addClass('small');
+        slideout.toggle( false );
+      }
     };
 
     $('#fullpage').fullpage({
@@ -153,19 +152,14 @@ $(document).on('ready', function() {
           }
       },
       onLeave: function(index, nextIndex, direction){
-
-        var leavingSection = $(this);
-
         //after leaving section 1
         if(index == 1 && direction =='down'){
           leaveIntroSlide();
         }
-
         //entering section 1
         else if(index == 2 && direction == 'up'){
           enterIntroSlide();
         }
-
       }
     });
     //adding the action to the arrows

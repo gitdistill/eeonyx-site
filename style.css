@@ -702,10 +702,22 @@ label {
   min-height: 100%;
 }
 .home .content {
-  margin-left: 200px;
+  padding-left: 60px;
+  margin-left: 140px;
   padding-top: 210px;
   width: 700px;
   transition: margin-left 0.5s ease;
+}
+@media (max-width: 767px) {
+  .home .content {
+    padding-left: 20px;
+    padding-top: 110px;
+    margin: 0;
+    width: 320px;
+  }
+  .home .content h1 {
+    font-size: 45px;
+  }
 }
 .home.loading .section {
   visibility: hidden;
@@ -817,26 +829,29 @@ label {
 .slideout-menu.static {
   position: absolute;
 }
+#page.menu-open {
+  pointer-events: none;
+}
 #page.menu-open [data-anchor='intro'] .content {
-  margin-left: 200.4px;
+  margin-left: 140.4px;
 }
 #page.menu-open[column-visible='1'] [data-anchor='intro'] .content {
-  margin-left: 200.4px;
+  margin-left: 140.4px;
 }
 #page.menu-open[column-visible='1'] #nav-link.big .logo {
   margin-left: 140.4px;
 }
 #page.menu-open[column-visible='2'] [data-anchor='intro'] .content {
-  margin-left: 340.8px;
+  margin-left: 266.4792px;
 }
 #page.menu-open[column-visible='2'] #nav-link.big .logo {
-  margin-left: 280.8px;
+  margin-left: 266.4792px;
 }
 #page.menu-open[column-visible='3'] [data-anchor='intro'] .content {
-  margin-left: 481.2px;
+  margin-left: 392.5584px;
 }
 #page.menu-open[column-visible='3'] #nav-link.big .logo {
-  margin-left: 280.8px;
+  margin-left: 266.4792px;
 }
 .menu-items {
   transition: background-color 0.3s, -webkit-transform 0.5s ease;
@@ -1236,6 +1251,7 @@ nav header .margin-filler {
     top: 32.5px;
     height: 19px;
     width: 19px;
+    font-size: 19px;
     margin: 0 auto 10px auto;
   }
 }
@@ -1250,6 +1266,7 @@ nav header .margin-filler {
     top: 5px;
     width: 9.5px;
     height: 9.5px;
+    font-size: 9.5px;
   }
 }
 #fullpage .combs-container .comb .title {
@@ -1282,33 +1299,36 @@ nav header .margin-filler {
     font-size: 7px;
   }
 }
-#fullpage .combs-container .comb:hover .title {
-  padding: 0 60px;
-  top: 5px;
-  font-size: 14px;
+@media (min-width: 768px) {
+  #fullpage .combs-container .comb:hover .title {
+    padding: 0 60px;
+    top: 5px;
+    font-size: 14px;
+  }
+  #fullpage .combs-container .comb:hover .icon {
+    top: 10px;
+    width: 19px;
+    height: 19px;
+    font-size: 19px;
+  }
+  #fullpage .combs-container .comb:hover .body {
+    opacity: 1;
+  }
 }
-@media (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 767px) {
   #fullpage .combs-container .comb:hover .title {
     padding: 0 30px;
     top: 2.5px;
     font-size: 7px;
   }
 }
-#fullpage .combs-container .comb:hover .icon {
-  top: 10px;
-  width: 19px;
-  height: 19px;
-  font-size: 19px;
-}
-@media (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 767px) {
   #fullpage .combs-container .comb:hover .icon {
     top: 5px;
     width: 9.5px;
     height: 9.5px;
+    font-size: 9.5px;
   }
-}
-#fullpage .combs-container .comb:hover .body {
-  opacity: 1;
 }
 #fullpage .green-product-box {
   width: 560px;
@@ -1557,14 +1577,16 @@ nav header .margin-filler {
   background-repeat: no-repeat;
   background-image: url(images/logo.svg);
 }
-#nav-link.big .nav-toggle {
-  margin-top: 25px;
-  margin-right: 110px;
-}
-#nav-link.big .logo {
-  height: 93px;
-  width: 310px;
-  margin: 0 0 0 0;
+@media (min-width: 768px) {
+  #nav-link.big .nav-toggle {
+    margin-top: 25px;
+    margin-right: 110px;
+  }
+  #nav-link.big .logo {
+    height: 93px;
+    width: 310px;
+    margin: 0 0 0 0;
+  }
 }
 .nav-icon {
   width: 25px;
@@ -2668,14 +2690,43 @@ nav header,
   transition: transform 3s ease, -webkit-transform 3s ease;
 }
 .wipe-panel .image.visible {
-  -webkit-transform: skewX(-30deg) translate(100%, 0px);
-      -ms-transform: skewX(-30deg) translate(100%, 0px);
-          transform: skewX(-30deg) translate(100%, 0px);
+  -webkit-transform: skewX(-30deg) translate(72%, 0px);
+      -ms-transform: skewX(-30deg) translate(72%, 0px);
+          transform: skewX(-30deg) translate(72%, 0px);
 }
 .wipe-panel .image.visible div {
-  -webkit-transform: skewX(30deg) translate(-100%, 0px);
-      -ms-transform: skewX(30deg) translate(-100%, 0px);
-          transform: skewX(30deg) translate(-100%, 0px);
+  -webkit-transform: skewX(30deg) translate(-72%, 0px);
+      -ms-transform: skewX(30deg) translate(-72%, 0px);
+          transform: skewX(30deg) translate(-72%, 0px);
+}
+@media (max-width: 767px) {
+  .wipe-panel .image {
+    overflow: hidden;
+    transition: -webkit-transform 3s ease;
+    transition: transform 3s ease;
+    transition: transform 3s ease, -webkit-transform 3s ease;
+    -webkit-transform: skewX(-30deg) translate(0, 0px);
+        -ms-transform: skewX(-30deg) translate(0, 0px);
+            transform: skewX(-30deg) translate(0, 0px);
+  }
+  .wipe-panel .image div {
+    -webkit-transform: skewX(30deg) translate(0, 0px);
+        -ms-transform: skewX(30deg) translate(0, 0px);
+            transform: skewX(30deg) translate(0, 0px);
+    transition: -webkit-transform 3s ease;
+    transition: transform 3s ease;
+    transition: transform 3s ease, -webkit-transform 3s ease;
+  }
+  .wipe-panel .image.visible {
+    -webkit-transform: skewX(-30deg) translate(82%, 0px);
+        -ms-transform: skewX(-30deg) translate(82%, 0px);
+            transform: skewX(-30deg) translate(82%, 0px);
+  }
+  .wipe-panel .image.visible div {
+    -webkit-transform: skewX(30deg) translate(-82%, 0px);
+        -ms-transform: skewX(30deg) translate(-82%, 0px);
+            transform: skewX(30deg) translate(-82%, 0px);
+  }
 }
 .wipe-panel .image div {
   position: absolute;

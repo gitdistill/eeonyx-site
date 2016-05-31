@@ -123,7 +123,7 @@ $wipe_image = get_field('hero_image');
           <div class='text'>Eeonyx Products In Action</div>
         </div>
 
-        <a class='top-right-link hidden-mobile'>
+        <a class='top-right-link hidden-mobile' href="/eeonyx-in-action">
           <div class='arrow'></div>
           <div class='text'>View More of Our Products In Action</div>
         </a>
@@ -207,9 +207,6 @@ $wipe_image = get_field('hero_image');
           </div>
         </div>
 
-        <div class="footer">
-          <div class="logo"></div>
-        </div>
       </div>
 
     </div><!--end fullpage -->

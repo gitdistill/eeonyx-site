@@ -120,7 +120,7 @@ $sections_post = $term;
     <?php wp_reset_query(); ?>
 
     <?php include('template-parts/flexible-content.php'); ?>
-
+    <br/>
     <div class='text-center'>
       <h6 class="black section-title sub-page-subtitle line thick uppercase">Some of our <?php echo $term->name; ?> in action</h6>
     </div>

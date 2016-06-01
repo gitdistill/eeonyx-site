@@ -80,7 +80,8 @@ $hero_image = get_field( 'hero_image', $term );
                     </div>
                   </a>
                   <div class='product-description'>
-                    <?= wp_trim_words( get_field('short_description'), $num_words = 10, $more = '... <a href="'.get_permalink().'">more</a>' ); ?>
+                    <?php $description = get_field('short_description')? get_field('short_description'): get_field('description'); ?>
+                    <?= wp_trim_words( $description, $num_words = 10, $more = '... <a href="'.get_permalink().'">more</a>' ); ?>
                   </div>
                 </div>
 

@@ -418,6 +418,10 @@ h4 {
   font-weight: 200;
   letter-spacing: 0;
 }
+.subsection-heading {
+  font-family: 'Seravek', sans-serif;
+  font-size: 28px;
+}
 h5 {
   margin: 0;
   font-size: 26px;
@@ -555,10 +559,6 @@ h6.section-title {
   float: left;
   margin: 0 12px 0 0;
 }
-.product-columns .subsection-heading {
-  font-family: 'Seravek', sans-serif;
-  font-size: 28px;
-}
 .product-columns .left-column {
   overflow-x: hidden;
 }
@@ -589,10 +589,10 @@ ul {
 ul li {
   padding-left: 5px;
   font-size: 18px;
-  line-height: 1.6em;
+  line-height: 1.4em;
   font-weight: 400;
   font-family: 'SeravekLight', sans-serif;
-  margin: 0 0 .5em 0;
+  margin: 0 0 .3em 0;
   list-style-image: url('images/MiniO-Fill-2-01.svg');
 }
 label {
@@ -2357,6 +2357,12 @@ nav header,
   text-align: center;
   margin-bottom: 40px;
 }
+@media (max-width: 767px) {
+  .page h2,
+  .product-category h2 {
+    margin-bottom: 10px;
+  }
+}
 .page article,
 .product-category article {
   padding-top: 60px;
@@ -3063,6 +3069,22 @@ nav header,
  * Flexible Content
  *
  */
+.flexible-content {
+  margin: 40px 0 40px 0;
+}
+.flexible-content [class*=col] {
+  padding-left: 0;
+  padding-right: 0;
+}
+.flexible-content .heading {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.5em;
+  font-weight: 200;
+  letter-spacing: 0;
+  font-family: 'Seravek', sans-serif;
+  font-size: 28px;
+}
 .flexible-content.row {
   margin-left: 0;
   margin-right: 0;
@@ -3077,16 +3099,8 @@ nav header,
   font-family: SeravekExtraLight;
   margin-bottom: 20px;
 }
-.flexible-content.text [class*=col] {
-  padding-left: 0;
-  padding-right: 0;
-}
-.flexible-content.image [class*=col] {
-  padding-left: 0;
-  padding-right: 0;
-}
 .flexible-content.image .image-container {
-  padding: 40px 0 40px 0;
+  padding: 0;
   text-align: center;
 }
 .flexible-content.image .image-container img {
@@ -3094,10 +3108,27 @@ nav header,
   max-width: 100%;
 }
 .flexible-content.image .caption {
-  padding: 10px 0 40px 0;
+  padding: 10px 0 0 0;
+  margin-top: 40px;
   font-family: SeravekExtraLight;
   font-size: 13px;
   border-top: 1px solid #D5E8D6;
+}
+@media (max-width: 767px) {
+  .flexible-content.image .caption {
+    margin-top: 20px;
+  }
+}
+.flexible-content.bullet-list ul {
+  padding-left: 50px;
+}
+.flexible-content.bullet-list .heading {
+  padding-left: 40px;
+}
+@media (min-width: 768px) {
+  .flexible-content.table .specs-table {
+    padding-bottom: 0;
+  }
 }
 /**
  *

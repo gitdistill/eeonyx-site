@@ -160,7 +160,7 @@
                             "min": "",
                             "max": "",
                             "layout": "table",
-                            "button_label": "Add Row",
+                            "button_label": "Add a bullet item",
                             "sub_fields": [
                                 {
                                     "key": "field_574e3935cf05f",
@@ -195,6 +195,51 @@
                     "label": "Table",
                     "display": "block",
                     "sub_fields": [
+                        {
+                            "key": "field_574e90aae93ff",
+                            "label": "Has Heading",
+                            "name": "has_heading",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_574e90a2e93fe",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_574e90aae93ff",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
                         {
                             "key": "field_574e39930000f",
                             "label": "Columns",
@@ -296,8 +341,8 @@
                         },
                         {
                             "key": "field_574e3ac600010",
-                            "label": "Row",
-                            "name": "row",
+                            "label": "Rows",
+                            "name": "rows",
                             "type": "repeater",
                             "instructions": "",
                             "required": 0,
@@ -472,5 +517,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1464762357
+    "modified": 1464766681
 }

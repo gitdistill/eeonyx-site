@@ -117,10 +117,6 @@ $sections_post = $term;
       <h6 class="text-center black section-title sub-page-subtitle line thick uppercase">About <?php echo $term->name; ?></h6>
     </div>
 
-    <div class="about-category">
-      <?= the_field( 'about', $term ); ?>
-    </div>
-
     <?php wp_reset_query(); ?>
 
     <?php include('template-parts/flexible-content.php'); ?>

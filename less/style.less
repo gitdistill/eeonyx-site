@@ -301,6 +301,11 @@ h3 {
 h4 {
   .h4;
 }
+.subsection-heading {
+ font-family:'Seravek', sans-serif;
+ font-size: 28px;
+}
+
 h5 {
   margin:0;
   font-size:26px;
@@ -437,10 +442,6 @@ h6.section-title {
       margin:0 12px 0 0;
     }
   }
-  .subsection-heading {
-   font-family:'Seravek', sans-serif;
-   font-size: 28px;
-  }
    .left-column {
   //   display:inline-block;
   //   vertical-align:top;
@@ -481,10 +482,10 @@ ul {
   li {
     padding-left:5px;
     font-size:18px;
-    line-height:1.6em;
+    line-height:1.4em;
     font-weight:400;
     font-family:'SeravekLight', sans-serif;
-    margin:0 0 .5em 0;
+    margin:0 0 .3em 0;
     list-style-image:url('./images/MiniO-Fill-2-01.svg');
   }
 }
@@ -1741,9 +1742,6 @@ nav{
 
 .specs-section {
   margin: 40px 0 0 0;
-  // @media (max-width: @mobile-max ) {
-  //   margin: 40px 0px 0px 0px;
-  // }
 }
 .data-section {
   margin-top: 40px;
@@ -2190,6 +2188,9 @@ nav{
   h2 {
     text-align: center;
     margin-bottom: 40px;
+    @media (max-width: @mobile-max ) {
+      margin-bottom: 10px;
+    }
   }
   article {
     padding-top: 60px;
@@ -2271,11 +2272,14 @@ nav{
  *
  */
 .flexible-content{
-  .no-padding(){
-    [class*=col]{
-      padding-left: 0;
-      padding-right: 0;
-    }
+  margin: 40px 0 40px 0;
+  [class*=col] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .heading {
+    .h4;
+    .subsection-heading;
   }
   &.row {
     margin-left: 0;
@@ -2283,14 +2287,12 @@ nav{
   }
   &.text {
     .h4;
-    .no-padding;
     font-family: SeravekExtraLight;
     margin-bottom: 20px;
   }
   &.image {
-    .no-padding;
     .image-container {
-      padding: 40px 0 40px 0;
+      padding: 0;
       text-align: center;
       img {
         max-height: 600px;
@@ -2298,10 +2300,29 @@ nav{
       }
     }
     .caption {
-      padding: 10px 0 40px 0;
+      padding: 10px 0 0 0;
+      margin-top: 40px;
       font-family: SeravekExtraLight;
       font-size: 13px;
       border-top: 1px solid #D5E8D6;
+      @media( max-width: @mobile-max ){
+        margin-top: 20px;
+      }
+    }
+  }
+  &.bullet-list {
+    ul {
+      padding-left: 50px;
+    }
+    .heading {
+      padding-left: 40px;
+    }
+  }
+  &.table {
+    .specs-table{
+      @media( min-width: @tablet-min ){
+        padding-bottom: 0;
+      }
     }
   }
 }

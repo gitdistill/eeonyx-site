@@ -103,9 +103,6 @@ $data = get_field('data');
 				<h4 class="subsection-heading">
 					<?=$table['heading']?>
 				</h4>
-				<div class="scroll-message hidden visible-xs-block">
-					Scroll right to see full table...
-				</div>
 				<div class='specs-table'>
 					<div class='specs-table-inner'>
 						<div class='table-header'>
@@ -145,6 +142,9 @@ $data = get_field('data');
 
 						</div>
 					</div>
+				</div>
+				<div class="scroll-message hidden visible-xs-block">
+					Scroll right to see full table...
 				</div>
 			</div>
 

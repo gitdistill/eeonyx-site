@@ -3,24 +3,6 @@
     "title": "Product Category Page",
     "fields": [
         {
-            "key": "field_574288d61542c",
-            "label": "About",
-            "name": "about",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1
-        },
-        {
             "key": "field_57428d86a1848",
             "label": "Hero Image",
             "name": "hero_image",
@@ -62,5 +44,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1464041403
+    "modified": 1464767029
 }

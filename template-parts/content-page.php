@@ -31,6 +31,8 @@
     <?php
     the_content();
 
+    include('flexible-content.php');
+
 
   if ($is_contact) { ?>
     </div>

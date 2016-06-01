@@ -2267,6 +2267,46 @@ nav{
 
 /**
  *
+ * Flexible Content
+ *
+ */
+.flexible-content{
+  .no-padding(){
+    [class*=col]{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &.row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  &.text {
+    .h4;
+    .no-padding;
+    font-family: SeravekExtraLight;
+    margin-bottom: 20px;
+  }
+  &.image {
+    .no-padding;
+    .image-container {
+      padding: 40px 0 40px 0;
+      text-align: center;
+      img {
+        max-height: 600px;
+        max-width: 100%;
+      }
+    }
+    .caption {
+      padding: 10px 0 40px 0;
+      font-family: SeravekExtraLight;
+      font-size: 13px;
+      border-top: 1px solid #D5E8D6;
+    }
+  }
+}
+/**
+ *
  * Animated Wipe Hero
  *
  */

@@ -3060,6 +3060,47 @@ nav header,
 }
 /**
  *
+ * Flexible Content
+ *
+ */
+.flexible-content.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.flexible-content.text {
+  margin: 0;
+  font-size: 30px;
+  font-family: 'Seravek', sans-serif;
+  line-height: 1.5em;
+  font-weight: 200;
+  letter-spacing: 0;
+  font-family: SeravekExtraLight;
+  margin-bottom: 20px;
+}
+.flexible-content.text [class*=col] {
+  padding-left: 0;
+  padding-right: 0;
+}
+.flexible-content.image [class*=col] {
+  padding-left: 0;
+  padding-right: 0;
+}
+.flexible-content.image .image-container {
+  padding: 40px 0 40px 0;
+  text-align: center;
+}
+.flexible-content.image .image-container img {
+  max-height: 600px;
+  max-width: 100%;
+}
+.flexible-content.image .caption {
+  padding: 10px 0 40px 0;
+  font-family: SeravekExtraLight;
+  font-size: 13px;
+  border-top: 1px solid #D5E8D6;
+}
+/**
+ *
  * Animated Wipe Hero
  *
  */

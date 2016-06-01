@@ -14,6 +14,8 @@ $args = array(
 );
 $query = new WP_Query( $args );
 $hero_image = get_field( 'hero_image', $term );
+$sections_post = $term;
+
 
 ?>
 
@@ -118,6 +120,10 @@ $hero_image = get_field( 'hero_image', $term );
     <div class="about-category">
       <?= the_field( 'about', $term ); ?>
     </div>
+
+    <?php wp_reset_query(); ?>
+
+    <?php include('template-parts/flexible-content.php'); ?>
 
     <div class='text-center'>
       <h6 class="black section-title sub-page-subtitle line thick uppercase">Some of our <?php echo $term->name; ?> in action</h6>

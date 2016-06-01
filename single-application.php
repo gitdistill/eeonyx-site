@@ -41,7 +41,7 @@ $background_image = get_field( 'background_image' );
 
     <div class="row">
       <div class="col-sm-6">
-      
+
         <div class='application-crumb'>
           <div class="category-icon <?=$primary_category->slug?>"></div>
           <div class='text'>
@@ -61,35 +61,40 @@ $background_image = get_field( 'background_image' );
           <div class="information">
 
             <?php $summary_list = get_field('summary_list');
+
             if ( $summary_list ) { ?>
             <div class="summary-list">
-              <div class="list-column">
+
               <?php foreach ($summary_list as $key => $row) { ?>
-                <span class="name"><?=$row['property_name']?>:</span>
+                <div class="row">
+                  <div class="list-column col-xs-6">
+                    <span class="name"><?=$row['property_name']?>:</span>
+                  </div>
+                  <div class="list-column col-xs-6">
+                    <?php
+                    $has_link = $row['has_link'];
+                    $url = '';
+                    if ( is_string( $has_link ) ) {
+                      if ( $has_link == 'Links to an internal Eeonyx page' ) {
+                        $url = $row['property_eeonyx_page_link'];
+                      }
+                      if ( $has_link == 'Links to another website' ) {
+                        $url = $row['property_link'];
+                      }
+                    }
+                    ?>
+                    <span class="value">
+                      <?php if ( $url ){ ?><a href="<?=$url?>"><?php } ?>
+                      <?=$row['property_value']?>
+                      <?php if ( $url ){ ?></a><?php } ?>
+                    </span>
+                  </div>
+                </div>
               <?php } ?>
-              </div>
-              <div class="list-column">
-              <?php foreach ($summary_list as $key => $row) {
-                $has_link = $row['has_link'];
-                $url = '';
-                if ( is_string( $has_link ) ) {
-                  if ( $has_link == 'Links to an internal Eeonyx page' ) {
-                    $url = $row['property_eeonyx_page_link'];
-                  }
-                  if ( $has_link == 'Links to another website' ) {
-                    $url = $row['property_link'];
-                  }
-                }
-                ?>
-                <span class="value">
-                  <?php if ( $url ){ ?><a href="<?=$url?>"><?php } ?>
-                  <?=$row['property_value']?>
-                  <?php if ( $url ){ ?></a><?php } ?>
-                </span>
-              <?php } ?>
-              </div>
-              <?php } ?>
+              
             </div>
+            <?php } ?>
+
             <?=the_field('summary_blurb')?>
 
           </div>

@@ -3326,9 +3326,9 @@ nav header,
 }
 .wipe-panel .image {
   overflow: hidden;
-  transition: -webkit-transform 3s ease;
-  transition: transform 3s ease;
-  transition: transform 3s ease, -webkit-transform 3s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
   -webkit-transform: skewX(-30deg) translate(0, 0px);
       -ms-transform: skewX(-30deg) translate(0, 0px);
           transform: skewX(-30deg) translate(0, 0px);
@@ -3343,9 +3343,9 @@ nav header,
   -webkit-transform: skewX(30deg) translate(0, 0px);
       -ms-transform: skewX(30deg) translate(0, 0px);
           transform: skewX(30deg) translate(0, 0px);
-  transition: -webkit-transform 3s ease;
-  transition: transform 3s ease;
-  transition: transform 3s ease, -webkit-transform 3s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
 }
 .wipe-panel .image.visible {
   -webkit-transform: skewX(-30deg) translate(72%, 0px);
@@ -3360,9 +3360,9 @@ nav header,
 @media (max-width: 767px) {
   .wipe-panel .image {
     overflow: hidden;
-    transition: -webkit-transform 3s ease;
-    transition: transform 3s ease;
-    transition: transform 3s ease, -webkit-transform 3s ease;
+    transition: -webkit-transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
     -webkit-transform: skewX(-30deg) translate(0, 0px);
         -ms-transform: skewX(-30deg) translate(0, 0px);
             transform: skewX(-30deg) translate(0, 0px);
@@ -3371,9 +3371,9 @@ nav header,
     -webkit-transform: skewX(30deg) translate(0, 0px);
         -ms-transform: skewX(30deg) translate(0, 0px);
             transform: skewX(30deg) translate(0, 0px);
-    transition: -webkit-transform 3s ease;
-    transition: transform 3s ease;
-    transition: transform 3s ease, -webkit-transform 3s ease;
+    transition: -webkit-transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
   }
   .wipe-panel .image.visible {
     -webkit-transform: skewX(-30deg) translate(82%, 0px);

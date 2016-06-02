@@ -70,6 +70,10 @@ if ( !defined('EEONYX_NAV_INITIALIZED') ) {
     <div class="menu-items column-2" data-column="2" data-slug="conductive-products">
       <div>
 
+        <a class="menu-item" href="/about-our-products">
+          <div>About our Products</div>
+        </a>
+
         <?php foreach ($product_catgories as $index => $cat) { ?>
         <a class="menu-item has-icon" href="#" data-slug="<?=$cat->slug?>">
           <div><?=$cat->name?></div>

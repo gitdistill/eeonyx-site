@@ -94,12 +94,11 @@ $(document).on('ready', function() {
   $('#menu').removeClass('hidden');
   $('.wipe-hero .image').addClass('visible');
 
-  //open external links in a new tab
+  //open _all_ external links in a new tab
+  //must be done in js because client can add links in content
   $('a[href*="://"]').each(function() {
      var a = new RegExp('/' + window.location.host + '/');
-     console.log( this.href );
      if(!a.test(this.href)) {
-        console.log( 'converted' );
          $(this).click(function(event) {
              event.preventDefault();
              event.stopPropagation();

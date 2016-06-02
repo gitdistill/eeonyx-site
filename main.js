@@ -175,10 +175,10 @@ $(document).on('ready', function() {
       }
     });
     //adding the action to the arrows
-    $('.down-arrow').click( function(){
+    $('.down-arrow span').click( function(){
       $.fn.fullpage.moveSectionDown();
     });
-    $('.up-arrow').click( function(){
+    $('.up-arrow span').click( function(){
       $.fn.fullpage.moveTo('intro');
       enterIntroSlide();
     });

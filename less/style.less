@@ -623,6 +623,10 @@ label {
     text-align: center;
     color: @black;
     transition: all 200ms ease;
+    pointer-events: none;
+    span {
+      pointer-events: all;
+    }
     &:hover{
       @media( min-width: @desktop-min ){
         padding-bottom: 0;
@@ -632,13 +636,13 @@ label {
       }
     }
   }
-  &[class*="fp-viewing-products-in-action"]{
-    .down-arrow{
-      @media( max-width: @tablet-max ){
-        height: 50px;
-      }
+  // &[class*="fp-viewing-products-in-action"]{
+  .down-arrow{
+    @media( max-width: @tablet-max ){
+      height: 50px;
     }
   }
+  // }
   .up-arrow {
     display: none;
     padding-bottom: 35px;

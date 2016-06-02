@@ -743,6 +743,11 @@ label {
   text-align: center;
   color: #252c26;
   transition: all 200ms ease;
+  pointer-events: none;
+}
+.home .down-arrow span,
+.home .up-arrow span {
+  pointer-events: all;
 }
 @media (min-width: 1024px) {
   .home .down-arrow:hover,
@@ -754,7 +759,7 @@ label {
   }
 }
 @media (max-width: 1023px) {
-  .home[class*="fp-viewing-products-in-action"] .down-arrow {
+  .home .down-arrow {
     height: 50px;
   }
 }

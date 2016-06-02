@@ -36,6 +36,7 @@
        url('./fonts/SeravekWebBasicLight.woff') format('woff'); /* Pretty Modern Browsers */
 }
 
+@hero-max-width: 1400px;
 @site-max-width: 1024px;
 
 @large-desktop-min: 1280px;
@@ -2056,7 +2057,8 @@ body.home {
  */
 
 .application-product-grid {
-  padding: 10px 0 20px 0;
+  .bootstrap-column-horizontal-padding(20px);
+  padding: 0 0 20px 0;
   @media (max-width: @mobile-max ) {
     padding: 30px 0px 0px 0px;
   }
@@ -2069,6 +2071,8 @@ body.home {
     }
   }
   .item-text {
+    padding-top: 10px;
+    line-height: 1.2;
     a.item-link {
       color:inherit;
       text-decoration:none;
@@ -2078,7 +2082,7 @@ body.home {
     float:right;
     height:25px;
     width:25px;
-    margin:5px;
+    margin: 4px 5px 5px 5px;
     background-size:25px 25px;
     color: @green;
   }
@@ -2086,6 +2090,7 @@ body.home {
     color:#3cd52e;
   }
 }
+
 
 /**
  *
@@ -2198,6 +2203,16 @@ body.home {
   @mobile: @horizontal-page-padding-mobile;
   .padding-rules;
 }
+.bootstrap-column-horizontal-padding( @width ){
+  .row {
+    margin-left: -1*@width;
+    margin-right: -1*@width;
+  }
+  [class*=col-] {
+    padding-left: @width;
+    padding-right: @width;
+  }
+}
 
 .page,
 .product-category{
@@ -2250,16 +2265,20 @@ body.home {
 }
 
 .top-gray-wrapper {
-  &:extend( .content-container );
+  max-width: 100%;
   background:#e6e7e8;
   margin-bottom: 40px;
   @media (max-width: @mobile-max ) {
     margin-bottom: 0;
   }
+  h2{
+    margin-bottom: 10px;
+  }
   .inner{
+    &:extend( .content-container );
     .reduced-horizontal-padding;
-    padding-bottom: 40px;
-    padding-top: 80px;
+    padding-bottom: 27px;
+    padding-top: 85px;
   }
 }
 

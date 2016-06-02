@@ -154,7 +154,7 @@ $(document).on('ready', function() {
       anchors: ['intro', 'explore-products', 'products-in-action', 'about-eeonyx'],
       sectionsColor: ['transparent', 'transparent', '#E6E7E8', '#E6E7E8'],
       css3: true,
-      // responsiveWidth: 768,
+      responsiveWidth: 667,
       slidesNavigation: true,
       slidesNavPosition: 'top',
       afterLoad: function(anchorLink, index){

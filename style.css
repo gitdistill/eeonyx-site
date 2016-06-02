@@ -2121,7 +2121,15 @@ body.home nav header {
  *
  */
 .application-product-grid {
-  padding: 10px 0 20px 0;
+  padding: 0 0 20px 0;
+}
+.application-product-grid .row {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.application-product-grid [class*=col-] {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 @media (max-width: 767px) {
   .application-product-grid {
@@ -2134,6 +2142,10 @@ body.home nav header {
 .application-product-grid .image-wrapper img {
   width: 100%;
 }
+.application-product-grid .item-text {
+  padding-top: 10px;
+  line-height: 1.2;
+}
 .application-product-grid .item-text a.item-link {
   color: inherit;
   text-decoration: none;
@@ -2142,7 +2154,7 @@ body.home nav header {
   float: right;
   height: 25px;
   width: 25px;
-  margin: 5px;
+  margin: 4px 5px 5px 5px;
   background-size: 25px 25px;
   color: #3cd52e;
 }
@@ -2164,7 +2176,7 @@ body.home nav header {
 }
 .content-container,
 nav header,
-.top-gray-wrapper {
+.top-gray-wrapper .inner {
   max-width: 1024px;
   margin: 0 auto;
   position: relative;
@@ -2902,6 +2914,7 @@ nav header,
   }
 }
 .top-gray-wrapper {
+  max-width: 100%;
   background: #e6e7e8;
   margin-bottom: 40px;
 }
@@ -2910,11 +2923,14 @@ nav header,
     margin-bottom: 0;
   }
 }
+.top-gray-wrapper h2 {
+  margin-bottom: 10px;
+}
 .top-gray-wrapper .inner {
   padding-left: 40px;
   padding-right: 40px;
-  padding-bottom: 40px;
-  padding-top: 80px;
+  padding-bottom: 27px;
+  padding-top: 85px;
 }
 @media (max-width: 1023px) {
   .top-gray-wrapper .inner {

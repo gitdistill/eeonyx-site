@@ -55,60 +55,21 @@ $wipe_image = get_field('hero_image');
 
           <div class='combs-container'>
 
-            <div class='comb'>
+          <?php
+          $product_catgories = get_terms( 'product_category', array(
+              'hide_empty' => false,
+          ) );
+          foreach ($product_catgories as $index => $cat) {
+          ?><div class='comb'>
               <div>
-                <div class='icon icon-smart-fabrics'></div>
-                <div class='title'>Smart Fabrics</div>
+                <div class='icon icon-<?=$cat->slug?>'></div>
+                <div class='title'><?=$cat->name?></div>
                 <div class='body'>
-                  Thin, light and less costly. Fashionable enough for dress yet rugged and reliable enough for mission critical environments.
+                  <?=$cat->description?>
                 </div>
               </div>
             </div><!--
-         --><div class='comb'>
-              <div>
-                <div class='icon icon-pressure-sensors'></div>
-                <div class='title'>Pressure Sensors</div>
-                <div class='body'>
-                  Thin, light and less costly. Fashionable enough for dress yet rugged and reliable enough for mission critical environments.
-                </div>
-              </div>
-            </div><!--
-         --><div class='comb'>
-              <div>
-                <div class='icon icon-warming-fabrics'></div>
-                <div class='title'>Warming Fabrics</div>
-                <div class='body'>
-                  Thin, light and less costly. Fashionable enough for dress yet rugged and reliable enough for mission critical environments.
-                </div>
-              </div>
-            </div><!--
-         --><div class='comb'>
-              <div>
-                <div class='icon icon-stealth'></div>
-                <div class='title'>EMI &amp; Stealth</div>
-                <div class='body'>
-                  Thin, light and less costly. Fashionable enough for dress yet rugged and reliable enough for mission critical environments.
-                </div>
-              </div>
-            </div><!--
-         --><div class='comb'>
-              <div>
-                <div class='icon icon-anti-static'></div>
-                <div class='title'>Anti-Static</div>
-                <div class='body'>
-                  Thin, light and less costly. Fashionable enough for dress yet rugged and reliable enough for mission critical environments.
-                </div>
-              </div>
-            </div><!--
-         --><div class='comb'>
-              <div>
-                <div class='icon icon-custom'></div>
-                <div class='title'>Custom Solutions</div>
-                <div class='body'>
-                  Thin, light and less costly. Fashionable enough for dress yet rugged and reliable enough for mission critical environments.
-                </div>
-              </div>
-            </div>
+       --><?php } ?>
 
           </div>
 
@@ -158,7 +119,7 @@ $wipe_image = get_field('hero_image');
               <div class='product-title'>
                 <?= get_the_title(); ?>
               </div>
-              
+
               <div class='product-description'>
                 <?= get_field('summary_heading'); ?>
               </div>

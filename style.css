@@ -32,7 +32,7 @@
 }
 .icon-EeonyxIconSet-59:before,
 .category-icon.emi-stealth:before,
-.icon-stealth:before {
+.icon-emi-stealth:before {
   content: "\e902";
 }
 .icon-EeonyxIconSet-60:before,
@@ -49,7 +49,7 @@
 }
 .icon-EeonyxIconSet-62:before,
 .category-icon.custom-solutions:before,
-.icon-custom:before {
+.icon-custom-solutions:before {
   content: "\e905";
 }
 .icon-EeonyxIconSet-63:before {
@@ -1209,7 +1209,7 @@ nav header .margin-filler {
 @media (max-width: 767px) {
   #fullpage .combs-container {
     width: 310px;
-    padding-left: 10px;
+    padding-left: 0;
   }
 }
 #fullpage .combs-container .comb:hover .title,

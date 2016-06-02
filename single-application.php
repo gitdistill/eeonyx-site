@@ -91,7 +91,7 @@ $background_image = get_field( 'background_image' );
                   </div>
                 </div>
               <?php } ?>
-              
+
             </div>
             <?php } ?>
 
@@ -106,7 +106,9 @@ $background_image = get_field( 'background_image' );
 
         <div class="drop-quote">
         <?=the_field('drop_quote')?>
-        <p class="attribution">- <?=the_field('drop_quote_attribution')?></p>
+        <?php if( the_field('drop_quote_attribution') ){ ?>
+          <p class="attribution">- <?=the_field('drop_quote_attribution')?></p>
+        <?php } ?>
         </div>
 
         <div class="full-text">

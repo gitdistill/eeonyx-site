@@ -1543,6 +1543,9 @@ body.home {
   transform:translateZ(0);
   z-index: 100;
   transition: all @menu-position-transition-time ease;
+  a {
+    border: none;
+  }
   @media( max-width: @tablet-max ){
     top: 20px;
     margin-left: 20px;
@@ -2109,6 +2112,14 @@ body.home {
   max-width: @site-max-width;
   margin: 0 auto;
   position: relative;
+  a {
+    color: @black;
+    border-bottom: 1px solid @green;
+    &:hover{
+      text-decoration: none;
+      color: @green;
+    }
+  }
 }
 
 #page {
@@ -2528,6 +2539,9 @@ body.home {
  */
 .application {
   position: relative;
+  h2 {
+    line-height: 1;
+  }
   &:extend( .default-text );
   .row {
     @media (min-width: @tablet-min ) {
@@ -2589,7 +2603,7 @@ body.home {
     background-color: @dark-black;
     color: #fff;
     .heading {
-      padding: 20px 20px 40px 20px;
+      padding: 15px 20px 15px 20px;
       background-color: @green;
       font-family: SeravekBold;
       font-size: 24px;
@@ -2621,6 +2635,10 @@ body.home {
             a {
               color: inherit;
               text-decoration: underline;
+              border: none;
+              &:hover{
+                color: @green;
+              }
             }
             &.name {
               color: #7A897A;
@@ -2648,7 +2666,7 @@ body.home {
       padding-right: 10px;
       float: left;
       font-family: SeravekBold;
-      font-size: 60px;
+      font-size: 67px;
       line-height: 60px;
     }
     .drop-quote {

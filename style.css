@@ -1663,6 +1663,9 @@ body.home nav header {
   z-index: 100;
   transition: all 0.5s ease;
 }
+#nav-link a {
+  border: none;
+}
 @media (max-width: 1023px) {
   #nav-link {
     top: 20px;
@@ -2180,6 +2183,14 @@ nav header,
   max-width: 1024px;
   margin: 0 auto;
   position: relative;
+}
+.content-container a {
+  color: #252c26;
+  border-bottom: 1px solid #3cd52e;
+}
+.content-container a:hover {
+  text-decoration: none;
+  color: #3cd52e;
 }
 #page {
   overflow-x: hidden;
@@ -3450,6 +3461,9 @@ nav header,
 .application {
   position: relative;
 }
+.application h2 {
+  line-height: 1;
+}
 @media (min-width: 768px) {
   .application .row {
     margin: 0;
@@ -3515,7 +3529,7 @@ nav header,
   color: #fff;
 }
 .application .summary .heading {
-  padding: 20px 20px 40px 20px;
+  padding: 15px 20px 15px 20px;
   background-color: #3cd52e;
   font-family: SeravekBold;
   font-size: 24px;
@@ -3551,6 +3565,10 @@ nav header,
 .application .summary .information .summary-list .list-column span a {
   color: inherit;
   text-decoration: underline;
+  border: none;
+}
+.application .summary .information .summary-list .list-column span a:hover {
+  color: #3cd52e;
 }
 .application .summary .information .summary-list .list-column span.name {
   color: #7A897A;
@@ -3578,7 +3596,7 @@ nav header,
   padding-right: 10px;
   float: left;
   font-family: SeravekBold;
-  font-size: 60px;
+  font-size: 67px;
   line-height: 60px;
 }
 .application .description .drop-quote {

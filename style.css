@@ -1388,6 +1388,11 @@ nav header .margin-filler {
   -webkit-transform: translateZ(-1px);
           transform: translateZ(-1px);
 }
+@media (max-width: 767px) {
+  #fullpage .fp-section[data-anchor=products-in-action] .fp-controlArrow {
+    display: none;
+  }
+}
 #fullpage .green-product-box {
   display: block;
   width: 560px;
@@ -1473,7 +1478,7 @@ nav header .margin-filler {
   height: 100%;
   width: 100%;
   background-color: transparent;
-  border: 1px solid #3cd52e;
+  border: 1px solid #252c26;
   border-radius: 50%;
   margin: 0;
 }

@@ -122,7 +122,7 @@ $(document).on('ready', function() {
       setTimeout( function(){
         $('.home').removeClass('loading');
         $('.home .wipe-panel .image').addClass('visible');
-        if( !mobile() && !window.location.hash ) {
+        if( !mobile() && ( !window.location.hash || window.location.hash=='#intro' ) ) {
           slideout.toggle(true);
         }
       }, WIPE_DELAY);

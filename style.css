@@ -3384,22 +3384,22 @@ nav header,
     transition: -webkit-transform 1s ease;
     transition: transform 1s ease;
     transition: transform 1s ease, -webkit-transform 1s ease;
-    -webkit-transform: skewX(-30deg) translate(82%, 0px);
-        -ms-transform: skewX(-30deg) translate(82%, 0px);
-            transform: skewX(-30deg) translate(82%, 0px);
+    -webkit-transform: skewX(-30deg) translate(-100%, 0px);
+        -ms-transform: skewX(-30deg) translate(-100%, 0px);
+            transform: skewX(-30deg) translate(-100%, 0px);
   }
   .wipe-panel .image div {
-    -webkit-transform: skewX(30deg) translate(-82%, 0px);
-        -ms-transform: skewX(30deg) translate(-82%, 0px);
-            transform: skewX(30deg) translate(-82%, 0px);
+    -webkit-transform: skewX(30deg) translate(0, 0px);
+        -ms-transform: skewX(30deg) translate(0, 0px);
+            transform: skewX(30deg) translate(0, 0px);
     transition: -webkit-transform 1s ease;
     transition: transform 1s ease;
     transition: transform 1s ease, -webkit-transform 1s ease;
   }
   .wipe-panel .image.visible {
-    -webkit-transform: skewX(-30deg) translate(0, 0px);
-        -ms-transform: skewX(-30deg) translate(0, 0px);
-            transform: skewX(-30deg) translate(0, 0px);
+    -webkit-transform: skewX(-30deg) translate(-18%, 0px);
+        -ms-transform: skewX(-30deg) translate(-18%, 0px);
+            transform: skewX(-30deg) translate(-18%, 0px);
   }
   .wipe-panel .image.visible div {
     -webkit-transform: skewX(30deg) translate(0, 0px);

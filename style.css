@@ -1140,7 +1140,8 @@ nav header .margin-filler {
   background-size: 25px 25px;
   background-image: url(images/icon-arrow.png);
   float: right;
-  margin-left: 4px;
+  margin-left: 0px;
+  margin-right: 15px;
   position: relative;
 }
 #fullpage .section.fp-section .top-right-link .text {

@@ -94,6 +94,21 @@ $(document).on('ready', function() {
   $('#menu').removeClass('hidden');
   $('.wipe-hero .image').addClass('visible');
 
+  //open external links in a new tab
+  $('a[href*="://"]').each(function() {
+     var a = new RegExp('/' + window.location.host + '/');
+     console.log( this.href );
+     if(!a.test(this.href)) {
+        console.log( 'converted' );
+         $(this).click(function(event) {
+             event.preventDefault();
+             event.stopPropagation();
+             window.open(this.href, '_blank');
+         });
+     }
+  });
+
+  //set up fullpage
   if ( $('#fullpage').length ){
 
     if( !mobile() ){
@@ -122,8 +137,6 @@ $(document).on('ready', function() {
         startWipe();
       });
     }
-
-    // $('.home .wipe-panel').click(function(){ $('.home .wipe-panel .image').toggleClass('visible'); });
 
     var enterIntroSlide = function(){
       if( !mobile() ){
@@ -171,7 +184,9 @@ $(document).on('ready', function() {
       enterIntroSlide();
     });
   }
-  //prevent scrolling in the menu from triggering a section change.
+
+
+  //prevent scrolling in the menu from triggering a section change. from s/o
   $('.menu-items').on('DOMMouseScroll mousewheel', function(ev) {
 
       var $this = $(this),

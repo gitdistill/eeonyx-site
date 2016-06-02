@@ -1178,17 +1178,6 @@ nav header .margin-filler {
 #fullpage .links-bar a:hover {
   color: #3cd52e;
 }
-#fullpage .bottom-home-text {
-  margin: 0;
-  font-size: 30px;
-  font-family: 'Seravek', sans-serif;
-  line-height: 1.5em;
-  font-weight: 200;
-  letter-spacing: 0;
-  font-family: SeravekExtraLight;
-  max-width: 850px;
-  margin: 0 auto 40px auto;
-}
 #fullpage .combs-container {
   width: 855px;
   padding-left: 20px;
@@ -1409,6 +1398,20 @@ nav header .margin-filler {
   #fullpage .fp-section[data-anchor=products-in-action] .fp-controlArrow {
     display: none;
   }
+}
+#fullpage .fp-section[data-anchor=about-eeonyx] .section-text {
+  padding: 20px;
+}
+#fullpage .fp-section[data-anchor=about-eeonyx] .bottom-home-text {
+  margin: 0;
+  font-size: 30px;
+  font-family: 'Seravek', sans-serif;
+  line-height: 1.5em;
+  font-weight: 200;
+  letter-spacing: 0;
+  font-family: SeravekExtraLight;
+  max-width: 850px;
+  margin: 0 auto 80px auto;
 }
 #fullpage .green-product-box {
   display: block;

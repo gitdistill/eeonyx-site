@@ -691,10 +691,6 @@ label {
 .home .content-container {
   max-width: 100%;
 }
-.home,
-.home #outer {
-  background: #e6e7e8;
-}
 .home .menu-header {
   margin-top: 50px;
   background: transparent;
@@ -973,7 +969,12 @@ nav header .margin-filler {
   background-color: #fff;
   z-index: 100;
 }
-.home nav header {
+body.home {
+  background-position: center center;
+  background-size: cover;
+  background-image: url(images/bg-fibers.png);
+}
+body.home nav header {
   max-width: 100%;
 }
 .left-menu {
@@ -1393,6 +1394,8 @@ nav header .margin-filler {
 #fullpage .fp-section[data-anchor=products-in-action] .slide {
   -webkit-transform: translateZ(-1px);
           transform: translateZ(-1px);
+  background-position: center center;
+  background-size: cover;
 }
 @media (max-width: 767px) {
   #fullpage .fp-section[data-anchor=products-in-action] .fp-controlArrow {
@@ -2073,21 +2076,6 @@ nav header .margin-filler {
   text-transform: uppercase;
   font-weight: 400;
   margin: 0 0 .5em 0;
-}
-#section2 .slide {
-  background-position: center center;
-  background-size: cover;
-}
-#section2 #slide1 {
-  background-image: url(images/bg-touch-device.png);
-}
-#section2 #slide2 {
-  background-image: url(images/bg-fibers.png);
-}
-#section1 {
-  background-position: center center;
-  background-size: cover;
-  background-image: url(images/bg-fibers.png);
 }
 /**
  *
@@ -3362,10 +3350,10 @@ nav header,
   transition: -webkit-transform 1s ease;
   transition: transform 1s ease;
   transition: transform 1s ease, -webkit-transform 1s ease;
-  -webkit-transform: skewX(-30deg) translate(0, 0px);
-      -ms-transform: skewX(-30deg) translate(0, 0px);
-          transform: skewX(-30deg) translate(0, 0px);
-  background-color: #252c26;
+  -webkit-transform: skewX(-30deg) translate(-100%, 0px);
+      -ms-transform: skewX(-30deg) translate(-100%, 0px);
+          transform: skewX(-30deg) translate(-100%, 0px);
+  background-color: #e6e7e8;
   position: absolute;
   top: 0;
   left: 0;
@@ -3381,14 +3369,14 @@ nav header,
   transition: transform 1s ease, -webkit-transform 1s ease;
 }
 .wipe-panel .image.visible {
-  -webkit-transform: skewX(-30deg) translate(72%, 0px);
-      -ms-transform: skewX(-30deg) translate(72%, 0px);
-          transform: skewX(-30deg) translate(72%, 0px);
+  -webkit-transform: skewX(-30deg) translate(-28%, 0px);
+      -ms-transform: skewX(-30deg) translate(-28%, 0px);
+          transform: skewX(-30deg) translate(-28%, 0px);
 }
 .wipe-panel .image.visible div {
-  -webkit-transform: skewX(30deg) translate(-72%, 0px);
-      -ms-transform: skewX(30deg) translate(-72%, 0px);
-          transform: skewX(30deg) translate(-72%, 0px);
+  -webkit-transform: skewX(30deg) translate(0, 0px);
+      -ms-transform: skewX(30deg) translate(0, 0px);
+          transform: skewX(30deg) translate(0, 0px);
 }
 @media (max-width: 767px) {
   .wipe-panel .image {
@@ -3396,27 +3384,27 @@ nav header,
     transition: -webkit-transform 1s ease;
     transition: transform 1s ease;
     transition: transform 1s ease, -webkit-transform 1s ease;
-    -webkit-transform: skewX(-30deg) translate(0, 0px);
-        -ms-transform: skewX(-30deg) translate(0, 0px);
-            transform: skewX(-30deg) translate(0, 0px);
+    -webkit-transform: skewX(-30deg) translate(82%, 0px);
+        -ms-transform: skewX(-30deg) translate(82%, 0px);
+            transform: skewX(-30deg) translate(82%, 0px);
   }
   .wipe-panel .image div {
-    -webkit-transform: skewX(30deg) translate(0, 0px);
-        -ms-transform: skewX(30deg) translate(0, 0px);
-            transform: skewX(30deg) translate(0, 0px);
+    -webkit-transform: skewX(30deg) translate(-82%, 0px);
+        -ms-transform: skewX(30deg) translate(-82%, 0px);
+            transform: skewX(30deg) translate(-82%, 0px);
     transition: -webkit-transform 1s ease;
     transition: transform 1s ease;
     transition: transform 1s ease, -webkit-transform 1s ease;
   }
   .wipe-panel .image.visible {
-    -webkit-transform: skewX(-30deg) translate(82%, 0px);
-        -ms-transform: skewX(-30deg) translate(82%, 0px);
-            transform: skewX(-30deg) translate(82%, 0px);
+    -webkit-transform: skewX(-30deg) translate(0, 0px);
+        -ms-transform: skewX(-30deg) translate(0, 0px);
+            transform: skewX(-30deg) translate(0, 0px);
   }
   .wipe-panel .image.visible div {
-    -webkit-transform: skewX(30deg) translate(-82%, 0px);
-        -ms-transform: skewX(30deg) translate(-82%, 0px);
-            transform: skewX(30deg) translate(-82%, 0px);
+    -webkit-transform: skewX(30deg) translate(0, 0px);
+        -ms-transform: skewX(30deg) translate(0, 0px);
+            transform: skewX(30deg) translate(0, 0px);
   }
 }
 .wipe-panel .image div {

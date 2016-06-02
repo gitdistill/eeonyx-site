@@ -572,9 +572,6 @@ label {
   .content-container{
     max-width: 100%
   }
-  &, #outer {
-    background:#e6e7e8;
-  }
   .menu-header {
     margin-top:50px;
     background:transparent;
@@ -874,7 +871,12 @@ nav{
     }
   }
 }
-.home {
+
+body.home {
+  background-position:center center;
+  background-size:cover;
+  background-image:url(./images/bg-fibers.png);
+
   nav{
     header {
       max-width: 100%;
@@ -1266,6 +1268,8 @@ nav{
     }
     .slide {
       transform: translateZ( -1px );
+      background-position:center center;
+      background-size:cover;
     }
     //slide control arrows
     .fp-controlArrow {
@@ -1964,21 +1968,6 @@ nav{
 }
 .article.journal-item {
 }
-#section2 .slide {
-  background-position:center center;
-  background-size:cover;
-}
-#section2 #slide1 {
-  background-image:url(./images/bg-touch-device.png);
-}
-#section2 #slide2 {
-  background-image:url(./images/bg-fibers.png);
-}
-#section1 {
-  background-position:center center;
-  background-size:cover;
-  background-image:url(./images/bg-fibers.png);
-}
 
 /**
  *
@@ -2476,11 +2465,11 @@ nav{
   right: -50%;
   overflow: hidden;
   .image{
-    .reverse-wipe-image( -30deg, 72%, 0, -72%, 0);
+    .reverse-wipe-image( -30deg, -28%, -100%, 0, 0 );
     @media ( max-width: @mobile-max ) {
-      .reverse-wipe-image( -30deg, 82%, 0, -82%, 0);
+      .reverse-wipe-image( -30deg, 0, 82%, 0, -82% );
     }
-    background-color: @black;
+    background-color: #e6e7e8;
     position: absolute;
     top: 0;
     left: 0;

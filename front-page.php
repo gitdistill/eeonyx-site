@@ -22,9 +22,8 @@ $wipe_image = get_field('hero_image');
       <div class="section fp-section" id="section0">
 
         <div class="wipe-panel" data-url="<?= $wipe_image['url'] ?>">
+          <!--data-url is the image to load before wiping-->
           <div class="image">
-            <div style="background-image:url(<?= $wipe_image['url'] ?>)" title="<?= $wipe_image['alt'] ?>">
-            </div>
           </div>
         </div>
         <div id="panel-outer">

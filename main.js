@@ -152,7 +152,7 @@ $(document).on('ready', function() {
 
     $('#fullpage').fullpage({
       anchors: ['intro', 'explore-products', 'products-in-action', 'about-eeonyx'],
-      sectionsColor: ['#E6E7E8', '#ffffff', '#E6E7E8', 'transparent'],
+      sectionsColor: ['transparent', 'transparent', '#E6E7E8', '#E6E7E8'],
       css3: true,
       // responsiveWidth: 768,
       slidesNavigation: true,

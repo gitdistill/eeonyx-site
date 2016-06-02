@@ -1179,8 +1179,15 @@ nav header .margin-filler {
   color: #3cd52e;
 }
 #fullpage .bottom-home-text {
-  font-size: 21px;
-  line-height: 1.25;
+  margin: 0;
+  font-size: 30px;
+  font-family: 'Seravek', sans-serif;
+  line-height: 1.5em;
+  font-weight: 200;
+  letter-spacing: 0;
+  font-family: SeravekExtraLight;
+  max-width: 850px;
+  margin: 0 auto 40px auto;
 }
 #fullpage .combs-container {
   width: 855px;

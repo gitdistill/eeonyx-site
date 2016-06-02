@@ -1268,7 +1268,7 @@ nav header .margin-filler {
 }
 #fullpage .combs-container .comb .icon {
   position: relative;
-  top: 65px;
+  top: 55px;
   height: 38px;
   width: 38px;
   margin: 0 auto 20px auto;
@@ -1305,14 +1305,14 @@ nav header .margin-filler {
   }
 }
 #fullpage .combs-container .comb .title {
-  top: 65px;
+  position: relative;
+  top: 55px;
   padding: 0 50px;
   font-size: 20px;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.1;
-  position: relative;
   transition: all 200ms ease;
 }
 @media (max-width: 767px) {

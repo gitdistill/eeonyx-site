@@ -1248,9 +1248,10 @@ nav header .margin-filler {
   }
 }
 #fullpage .combs-container .comb .body {
-  top: 10px;
+  top: 15px;
   padding: 0 30px;
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 1.35;
   text-align: center;
   opacity: 0;
   position: relative;

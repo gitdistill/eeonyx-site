@@ -1451,6 +1451,7 @@ nav header .margin-filler {
 #fullpage .green-product-box .product-title {
   margin-left: 20px;
   margin-right: 20px;
+  max-width: 450px;
   font-size: 24px;
   font-weight: 700;
   font-family: "SeravekBold", 'sans-serif';
@@ -1460,18 +1461,18 @@ nav header .margin-filler {
   letter-spacing: 1px;
 }
 #fullpage .green-product-box .product-description {
+  margin-top: 22px;
   margin-left: 20px;
-  margin-right: 20px;
-  margin-right: 100px;
+  max-width: 400px;
   font-size: 20px;
   color: #ffffff;
   line-height: 1.3em;
   letter-spacing: 1px;
   font-family: "SeravekBold", 'sans-serif';
-  margin-top: 22px;
 }
 @media (max-width: 767px) {
   #fullpage .green-product-box .product-description {
+    display: none;
     margin-right: 10px;
   }
 }

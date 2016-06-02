@@ -1084,17 +1084,6 @@ nav{
     font-size:21px;
     line-height: 1.25;
   }
-  .explore-intro {
-    margin:1em 0 0 0;
-    color:#ffffff;
-    @media( max-width: @mobile-max ){
-      font-size: 14px;
-      text-align: left;
-      font-family: Seravek;
-      display: block;
-      padding-left: 10px;
-    }
-  }
 
   @mobile-scale-factor: 0.5;
   @comb-width: 217px;
@@ -1250,6 +1239,23 @@ nav{
             .body.hover;
           }
         }
+      }
+    }
+  }
+  .fp-section[data-anchor=explore-products]{
+    .explore-intro {
+      margin:1em 0 0 0;
+      color:#ffffff;
+      max-width: 600px;
+      margin: 0 auto;
+      padding-bottom: 50px;
+      @media( max-width: @mobile-max ){
+        font-size: 14px;
+        text-align: left;
+        font-family: Seravek;
+        display: block;
+        padding-left: 10px;
+        padding-bottom: 0px;
       }
     }
   }

@@ -1181,19 +1181,6 @@ nav header .margin-filler {
   font-size: 21px;
   line-height: 1.25;
 }
-#fullpage .explore-intro {
-  margin: 1em 0 0 0;
-  color: #ffffff;
-}
-@media (max-width: 767px) {
-  #fullpage .explore-intro {
-    font-size: 14px;
-    text-align: left;
-    font-family: Seravek;
-    display: block;
-    padding-left: 10px;
-  }
-}
 #fullpage .combs-container {
   width: 855px;
   padding-left: 20px;
@@ -1374,6 +1361,23 @@ nav header .margin-filler {
     width: 9.5px;
     height: 9.5px;
     font-size: 9.5px;
+  }
+}
+#fullpage .fp-section[data-anchor=explore-products] .explore-intro {
+  margin: 1em 0 0 0;
+  color: #ffffff;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+@media (max-width: 767px) {
+  #fullpage .fp-section[data-anchor=explore-products] .explore-intro {
+    font-size: 14px;
+    text-align: left;
+    font-family: Seravek;
+    display: block;
+    padding-left: 10px;
+    padding-bottom: 0px;
   }
 }
 #fullpage .fp-section[data-anchor=products-in-action] {

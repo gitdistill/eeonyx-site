@@ -3105,7 +3105,12 @@ nav header,
 }
 .flexible-content.image .image-container img {
   max-height: 600px;
-  max-width: 100%;
+  max-width: 600px;
+}
+@media (max-width: 767px) {
+  .flexible-content.image .image-container img {
+    max-width: 100%;
+  }
 }
 .flexible-content.image .caption {
   padding: 10px 0 0 0;

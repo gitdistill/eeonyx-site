@@ -1,6 +1,12 @@
 
 var MOBILE_MAX_WIDTH = 767;
 
+/**
+ *
+ * Slideout
+ *
+ */
+
 function EeonyxSlideout( $nav ){
   var _self = this;
   var menuColumnWidth = 130;
@@ -85,17 +91,24 @@ $(".nav-toggle").on('click', function() {
   slideout.toggle();
 });
 
+
+/**
+ *
+ * Detect mobile
+ *
+ */
+
+
 var mobile = function(){
   return parseInt($(window).width()) <= MOBILE_MAX_WIDTH;
 };
 
-$(document).on('ready', function() {
-
-  $('#menu').removeClass('hidden');
-  $('.wipe-hero .image').addClass('visible');
-
-  //open _all_ external links in a new tab
-  //must be done in js because client can add links in content
+/**
+ *
+ * Convert external links to open in a new tab
+ *
+ */
+var convertExternalLinks = function(){
   $('a[href*="://"]').each(function() {
      var a = new RegExp('/' + window.location.host + '/');
      if(!a.test(this.href)) {
@@ -106,8 +119,15 @@ $(document).on('ready', function() {
          });
      }
   });
+};
 
-  //set up fullpage
+/**
+ *
+ * Init full-page effect on home
+ *
+ */
+
+var initFullPage = function() {
   if ( $('#fullpage').length ){
 
     if( !mobile() ){
@@ -183,9 +203,16 @@ $(document).on('ready', function() {
       enterIntroSlide();
     });
   }
+};
 
-
-  //prevent scrolling in the menu from triggering a section change. from s/o
+/**
+ *
+ * Fix menu Scroll - keep scrolling on menu from triggering fullpage transitions
+ *
+ * (from s/o)
+ *
+ */
+var fixMenuScroll = function() {
   $('.menu-items').on('DOMMouseScroll mousewheel', function(ev) {
 
       var $this = $(this),
@@ -214,74 +241,136 @@ $(document).on('ready', function() {
           return prevent();
       }
   });
+};
+
+/**
+ *
+ * Set up hexagons (combs)
+ *
+ */
+var initCombs = function(){
+  if ($(".combs-container .comb").length) {
+    $(".combs-container").on('click', '.comb', function(e) {
+
+      //dont run on tablets
+      if ( true ){ return } //e.originalEvent.sourceCapabilities.firesTouchEvents
+
+      console.log(e);
+      var el = $(this);
+      var bodyEl = $(el.find('.body')[0]);
+      var iconEl = $(el.find('.icon')[0]);
+      var titleEl = $(el.find('.title')[0]);
+
+      if (! el.hasClass('active')) {
+
+        iconEl.addClass('hover');
+
+        titleEl.addClass('hover');
+
+        var addActiveClass = function() {
+          el.addClass('active');
+          bodyEl.off('transitionend oTransitionEnd webkitTransitionEnd', addActiveClass);
+        };
+        bodyEl.one('transitionend oTransitionEnd webkitTransitionEnd', addActiveClass );
+        bodyEl.addClass('hover');
+
+      } else {
+
+        iconEl.removeClass('hover');
+
+        titleEl.removeClass('hover');
+
+        var removeActiveClass = function() {
+          el.removeClass('active');
+          bodyEl.off('transitionend oTransitionEnd webkitTransitionEnd',removeActiveClass);
+        };
+        bodyEl.one('transitionend oTransitionEnd webkitTransitionEnd', removeActiveClass );
+        bodyEl.removeClass('hover');
+
+      }
+    });
+  }
+};
+
+/**
+ *
+ * Init contact form
+ *
+ */
+var initContactForm = function(){
+  if ($(".contact-form").length) { 
+    $(".contact-form").on('click', "span.wpcf7-not-valid-tip", function() {
+      $($(this).parent().find('input, textarea')[0]).focus();
+    });
+
+    autosize($('.contact-form textarea'));
+
+    $(".contact-form input[type='text'], .contact-form input[type='email'], .contact-form textarea").each(function() { 
+      $(this).on('focus', function() { 
+        $(this).parent().parent().addClass('active-input');
+        var errorMessages = $(this).parent().find("span.wpcf7-not-valid-tip");
+        if (errorMessages.length) {
+          $(errorMessages[0]).fadeOut(225);
+        }
+      });
+
+      $(this).on('blur', function() { 
+        $(this).parent().parent().removeClass('active-input');
+        var errorMessages = $(this).parent().find("span.wpcf7-not-valid-tip");
+        if (errorMessages.length && ! $(this).val().length) {
+          $(errorMessages[0]).fadeIn(225);
+        }
+      });
+    });
+  }
+};
+
+
+/**
+ *
+ * Init product hovers
+ *
+ */
+var initProductHovers = function(){
+  var toggleLine = function( $target, state ){
+    var slug = $target.data('product-grid-slug');
+    $('.lower-line[data-product-grid-slug=' + slug + ']').toggleClass( 'active', state );
+  };
+  $('.product-grid-item[data-product-grid-slug]').on('mouseover', function(){
+    toggleLine( $(this), true );
+  }).on('mouseout', function(){
+    toggleLine( $(this), false );
+  }).click( function() {
+    window.location = $(this).data('href');
+  });
+};
+
+/**
+ *
+ * Document load
+ *
+ */
+
+$(document).on('ready', function() {
+
+  //run wipe heros
+  $('.wipe-hero .image').addClass('visible');
+
+  //open _all_ external links in a new tab
+  //must be done in js because client can add links in content
+  convertExternalLinks();
+
+  //set up fullpage
+  initFullPage();
+  initCombs();
+
+  //prevent scrolling in the menu from triggering a section change
+  fixMenuScroll();
+
+  initContactForm();
+
+  initProductHovers();
 
 });
 
-if ($(".combs-container .comb").length) {
-  $(".combs-container").on('click', '.comb', function(e) {
 
-    //dont run on tablets
-    if ( true ){ return } //e.originalEvent.sourceCapabilities.firesTouchEvents
-
-    console.log(e);
-    var el = $(this);
-    var bodyEl = $(el.find('.body')[0]);
-    var iconEl = $(el.find('.icon')[0]);
-    var titleEl = $(el.find('.title')[0]);
-
-    if (! el.hasClass('active')) {
-
-      iconEl.addClass('hover');
-
-      titleEl.addClass('hover');
-
-      var addActiveClass = function() {
-        el.addClass('active');
-        bodyEl.off('transitionend oTransitionEnd webkitTransitionEnd', addActiveClass);
-      };
-      bodyEl.one('transitionend oTransitionEnd webkitTransitionEnd', addActiveClass );
-      bodyEl.addClass('hover');
-
-    } else {
-
-      iconEl.removeClass('hover');
-
-      titleEl.removeClass('hover');
-
-      var removeActiveClass = function() {
-        el.removeClass('active');
-        bodyEl.off('transitionend oTransitionEnd webkitTransitionEnd',removeActiveClass);
-      };
-      bodyEl.one('transitionend oTransitionEnd webkitTransitionEnd', removeActiveClass );
-      bodyEl.removeClass('hover');
-
-    }
-  });
-}
-
-
-if ($(".contact-form").length) { 
-  $(".contact-form").on('click', "span.wpcf7-not-valid-tip", function() {
-    $($(this).parent().find('input, textarea')[0]).focus();
-  });
-
-  autosize($('.contact-form textarea'));
-
-  $(".contact-form input[type='text'], .contact-form input[type='email'], .contact-form textarea").each(function() { 
-    $(this).on('focus', function() { 
-      $(this).parent().parent().addClass('active-input');
-      var errorMessages = $(this).parent().find("span.wpcf7-not-valid-tip");
-      if (errorMessages.length) {
-        $(errorMessages[0]).fadeOut(225);
-      }
-    });
-
-    $(this).on('blur', function() { 
-      $(this).parent().parent().removeClass('active-input');
-      var errorMessages = $(this).parent().find("span.wpcf7-not-valid-tip");
-      if (errorMessages.length && ! $(this).val().length) {
-        $(errorMessages[0]).fadeIn(225);
-      }
-    });
-  });
-}

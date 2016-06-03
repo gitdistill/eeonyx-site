@@ -1986,6 +1986,9 @@ body.home nav header {
     padding: 0;
   }
 }
+.product-category-grid .product-grid-item .product-image a {
+  border: none;
+}
 .product-category-grid .product-grid-item .product-image img {
   width: 100%;
 }
@@ -2147,7 +2150,9 @@ body.home nav header {
 }
 .application-product-grid .item-text {
   padding-top: 10px;
-  line-height: 1.2;
+}
+.application-product-grid .item-text * {
+  line-height: 1;
 }
 .application-product-grid .item-text a.item-link {
   color: inherit;
@@ -2157,7 +2162,7 @@ body.home nav header {
   float: right;
   height: 25px;
   width: 25px;
-  margin: 4px 5px 5px 5px;
+  margin: 0px 5px 5px 5px;
   background-size: 25px 25px;
   color: #3cd52e;
 }
@@ -2191,6 +2196,9 @@ nav header,
 .content-container a:hover {
   text-decoration: none;
   color: #3cd52e;
+}
+.content-container h3 a {
+  border-bottom: none;
 }
 #page {
   overflow-x: hidden;
@@ -3195,7 +3203,6 @@ nav header,
   margin-bottom: -20px;
   overflow: hidden;
   height: 275px;
-  z-index: 1;
 }
 .wipe-hero .image {
   -webkit-transform: skewX(-30deg) translate(-1024px, 0px);
@@ -3470,7 +3477,7 @@ nav header,
   }
 }
 .application .background-image {
-  z-index: 0;
+  z-index: -1;
   position: absolute;
   left: 0;
   right: 0;

@@ -113,17 +113,19 @@ $sections_post = $term;
     <?php } ?><!-- end if -->
 
 
+    <?php wp_reset_query();
+
+    if ( get_field('sections', $term ) ){
+    ?>
     <div class='text-center'>
       <h6 class="text-center black section-title sub-page-subtitle line thick uppercase">About <?php echo $term->name; ?></h6>
     </div>
 
-    <?php wp_reset_query(); ?>
 
     <?php include('template-parts/flexible-content.php'); ?>
+
     <br/>
-    <div class='text-center'>
-      <h6 class="black section-title sub-page-subtitle line thick uppercase">Some of our <?php echo $term->name; ?> in action</h6>
-    </div>
+    <?php } ?><!-- end if -->
 
     <?php
     $args = array(
@@ -131,9 +133,13 @@ $sections_post = $term;
         'product_category' => $term->slug
     );
     $query = new WP_Query( $args );
-    if ($query->have_posts()) { 
+    if ($query->have_posts()) { ?>
 
-      include get_template_directory() . '/template-parts/application-product-grid.php';
+    <div class='text-center'>
+      <h6 class="black section-title sub-page-subtitle line thick uppercase">Some of our <?php echo $term->name; ?> in action</h6>
+    </div>
+
+    <?php  include get_template_directory() . '/template-parts/application-product-grid.php';
 
     } ?><!-- end if -->
 

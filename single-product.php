@@ -176,6 +176,9 @@ $data = get_field('data');
 	</div><!-- content-container -->
 </div><!--outer-->
 
+<div class="inquire-modal">
+</div>
+
 <?php 
 		// End of the loop.
 		endwhile;

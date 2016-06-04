@@ -1996,6 +1996,7 @@ body.home nav header {
 }
 .product-category-grid .product-grid-item {
   position: relative;
+  cursor: pointer;
 }
 .product-category-grid .product-grid-item .product-grid-item-inner {
   position: relative;

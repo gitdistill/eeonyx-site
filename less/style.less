@@ -421,13 +421,20 @@ h6.section-title {
 }
 
 .product-columns {
-  //margin:0 -20px;
   .left-column .column-inner, .right-column .column-inner {
     padding:0 0;
   }
+  .right-column {
+    .column-inner {
+      text-align: right;
+      @media( max-width: @mobile-max ) {
+        text-align: center;
+      }
+    }
+  }
   .inquire-link {
     width: 200px;
-    margin: 0 auto;
+    display: inline-block;
     .text {
       font-size:18px;
       line-height:1.1;
@@ -435,6 +442,7 @@ h6.section-title {
       font-family:'SeravekBold', sans-serif;
       letter-spacing:.05em;
       text-transform:uppercase;
+      text-align: left;
     }
     .inquire-icon {
       width:30px;

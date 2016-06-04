@@ -543,6 +543,10 @@ h6.section-title {
 .product-columns .right-column .column-inner {
   padding: 0 0;
 }
+.product-columns .inquire-link {
+  width: 200px;
+  margin: 0 auto;
+}
 .product-columns .inquire-link .text {
   font-size: 18px;
   line-height: 1.1;

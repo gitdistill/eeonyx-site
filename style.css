@@ -194,6 +194,7 @@ body {
   font-family: 'SeravekLight', sans-serif;
   padding: 0;
   height: 100%;
+  background-color: #252c26;
 }
 body.content-hidden:after {
   content: " ";

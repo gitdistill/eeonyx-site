@@ -858,9 +858,6 @@ label {
 #page.menu-open[column-visible='1'] [data-anchor='intro'] .content {
   margin-left: 140.4px;
 }
-#page.menu-open[column-visible='1'] #nav-link.big .logo {
-  margin-left: 140.4px;
-}
 #page.menu-open[column-visible='2'] [data-anchor='intro'] .content {
   margin-left: 266.4792px;
 }

@@ -72,7 +72,7 @@ $data = get_field('data');
 						<div class='inquire-icon'>
 						</div>
 						<div class='text'>
-							Inquire about this product
+							Inquire about<br/>this product
 						</div>
 						<div class='clear'>
 						</div>

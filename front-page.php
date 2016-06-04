@@ -85,7 +85,7 @@ $wipe_image = get_field('hero_image');
 
         <a class='top-right-link hidden-mobile' href="/eeonyx-in-action">
           <div class='arrow'></div>
-          <div class='text'>View More of Our Products In Action</div>
+          <div class='text'>View All of Our Products In Action</div>
         </a>
 
         <?php

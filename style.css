@@ -1418,7 +1418,7 @@ body.home nav header {
 }
 @media (max-width: 767px) {
   #fullpage .fp-section[data-anchor=products-in-action] .fp-controlArrow {
-    display: none;
+    display: none !important;
   }
 }
 #fullpage .fp-section[data-anchor=about-eeonyx] .section-text {

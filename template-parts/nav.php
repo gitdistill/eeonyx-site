@@ -137,7 +137,7 @@ if ( !defined('EEONYX_NAV_INITIALIZED') ) {
 </nav>
 
 <div class="content-container">
-  <div id="nav-link">
+  <div id="nav-link" <?php if (is_front_page() && ! wp_is_mobile()) { ?>class="big"<?php } ?> >
     <div class='nav-toggle'>
       <div class='nav-icon'>
         <span></span><span></span><span></span></div></div>

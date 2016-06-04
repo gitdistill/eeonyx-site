@@ -574,7 +574,8 @@ h6.section-title {
   margin: 40px 0 0 0;
 }
 .product-columns .product-image-wrapper img {
-  max-width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
 }
 .uppercase {
   text-transform: uppercase;

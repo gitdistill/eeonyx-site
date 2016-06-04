@@ -972,7 +972,6 @@ nav header .margin-filler {
 body.home {
   background-position: center center;
   background-size: cover;
-  background-image: url(images/bg-fibers.png);
 }
 body.home nav header {
   max-width: 100%;

@@ -148,7 +148,9 @@ var initFullPage = function() {
       }, WIPE_DELAY);
     };
     $wipeImage = $('<img/>');
-    $wipeImage[0].src = $('.home .wipe-panel').data('url');
+    var src = $('.home .wipe-panel').data('url');
+    $wipeImage[0].src = src;
+    $('body.home').css('background-image', 'url(' + src + ')');
     if ( $wipeImage[0].complete ){
       startWipe();
     } else {
@@ -160,12 +162,14 @@ var initFullPage = function() {
     var enterIntroSlide = function(){
       if( !mobile() ){
         $('#nav-link.small').removeClass('small').addClass('big');
+        $('.home .wipe-panel .image').addClass('visible');
         slideout.toggle(true);
       }
     };
     var leaveIntroSlide = function(){
       if( !mobile() ){
         $('#nav-link.big').removeClass('big').addClass('small');
+        $('.home .wipe-panel .image').removeClass('visible');
         slideout.toggle( false );
       }
     };

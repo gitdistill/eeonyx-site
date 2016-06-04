@@ -177,6 +177,7 @@ var initFullPage = function() {
       responsiveWidth: 667,
       slidesNavigation: true,
       slidesNavPosition: 'top',
+      loopHorizontal: false,
       afterLoad: function(anchorLink, index){
           // var loadedSection = $(this);
           if ( anchorLink === 'intro' ){

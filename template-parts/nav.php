@@ -34,7 +34,7 @@ if ( !defined('EEONYX_NAV_INITIALIZED') ) {
 ?>
 
 
-<nav id="menu" <?php if (is_front_page() && ! wp_is_mobile()) { ?>class='slideout-menu'<?php } else { ?>class='hidden'<?php } ?>>
+<nav id="menu" class='slideout-menu'>
   <header>
 
     <div class="margin-filler"></div>

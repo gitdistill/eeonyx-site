@@ -188,6 +188,7 @@ var initFullPage = function() {
         if ( windowHeight !== newWindowHeight || newWindowWidth !== windowWidth ){
           $.fn.fullpage.reBuild();
         }
+        debugger;
         windowHeight = newWindowHeight;
         windowWidth = newWindowWidth;
       };

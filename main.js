@@ -180,17 +180,16 @@ var initFullPage = function() {
 
     //rebuild on window resize
     if ( screenWidthBelow( FULLPAGE_RESPONSIVE_WIDTH ) ) {
-      var windowHeight = $(window).height();
-      var windowWidth = $(window).width();
+      var windowHeight = $('body').height();
+      var windowWidth = $('body').width();
       var resize = function(){
-        var newWindowHeight = $(window).height();
-        var newWindowWidth = $(window).width();
+        var newWindowHeight = window.innerHeight;
+        var newWindowWidth = window.innerWidth;
         if ( windowHeight !== newWindowHeight || newWindowWidth !== windowWidth ){
           $.fn.fullpage.reBuild();
         }
-        debugger;
-        windowHeight = newWindowHeight;
-        windowWidth = newWindowWidth;
+        windowHeight = window.innerHeight;
+        windowWidth = window.innerWidth;
       };
       $(window).on('scroll', function(){
         if ( $(window).height() != windowHeight ){

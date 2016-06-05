@@ -1053,6 +1053,9 @@ body.home nav header {
   background-size: 155px 44px;
   background-image: url(images/logo-plain.svg);
 }
+#fullpage .fp-section {
+  transition: height 1s linear;
+}
 #fullpage .section .footer {
   position: absolute;
   bottom: 0px;

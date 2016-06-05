@@ -186,7 +186,7 @@ var initFullPage = function() {
         var newWindowHeight = window.innerHeight;
         var newWindowWidth = window.innerWidth;
         if ( windowHeight !== newWindowHeight || newWindowWidth !== windowWidth ){
-          $.fn.fullpage.reBuild();
+          $('.fp-section').height( newWindowHeight );
         }
         windowHeight = window.innerHeight;
         windowWidth = window.innerWidth;

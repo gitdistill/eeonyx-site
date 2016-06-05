@@ -194,7 +194,7 @@ body {
   font-family: 'SeravekLight', sans-serif;
   padding: 0;
   height: 100%;
-  background-color: #252c26;
+  background-color: #fff;
 }
 body.content-hidden:after {
   content: " ";
@@ -736,6 +736,11 @@ label {
     font-size: 45px;
   }
 }
+@media (max-width: 767px) and (max-width: 767px) {
+  .home .content h1 {
+    line-height: 1;
+  }
+}
 .home.loading .section {
   visibility: hidden;
 }
@@ -970,6 +975,7 @@ nav header .margin-filler {
   z-index: 100;
 }
 body.home {
+  background-color: #252c26;
   background-position: center center;
   background-size: cover;
 }

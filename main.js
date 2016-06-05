@@ -1,6 +1,6 @@
 
 var MOBILE_MAX_WIDTH = 767;
-
+var FULLPAGE_RESPONSIVE_WIDTH = 667;
 /**
  *
  * Slideout
@@ -98,9 +98,11 @@ $(".nav-toggle").on('click', function() {
  *
  */
 
-
-var mobile = function(){
-  return parseInt($(window).width()) <= MOBILE_MAX_WIDTH;
+var screenWidthBelow = function( width ) {
+  return parseInt($(window).width()) <= width;
+};
+var mobile = function() {
+  return screenWidthBelow( MOBILE_MAX_WIDTH );
 };
 
 /**
@@ -174,11 +176,36 @@ var initFullPage = function() {
       }
     };
 
-    $('#fullpage').fullpage({
+    var $fullpage = $('#fullpage');
+
+    //rebuild on window resize
+    if ( screenWidthBelow( FULLPAGE_RESPONSIVE_WIDTH ) ) {
+      var windowHeight = $(window).height();
+      var windowWidth = $(window).width();
+      var resize = function(){
+        var newWindowHeight = $(window).height();
+        var newWindowWidth = $(window).width();
+        if ( windowHeight !== newWindowHeight || newWindowWidth !== windowWidth ){
+          $.fn.fullpage.reBuild();
+        }
+        windowHeight = newWindowHeight;
+        windowWidth = newWindowWidth;
+      };
+      $(window).on('scroll', function(){
+        if ( $(window).height() != windowHeight ){
+          resize();
+        }
+      });
+      $(window).resize( function(){
+        resize();
+      });
+    }
+
+    $fullpage.fullpage({
       anchors: ['intro', 'explore-products', 'products-in-action', 'about-eeonyx'],
       sectionsColor: ['transparent', 'transparent', '#E6E7E8', '#E6E7E8'],
       css3: true,
-      responsiveWidth: 667,
+      responsiveWidth: FULLPAGE_RESPONSIVE_WIDTH,
       slidesNavigation: true,
       slidesNavPosition: 'top',
       loopHorizontal: false,

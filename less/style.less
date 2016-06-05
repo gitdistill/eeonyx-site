@@ -107,7 +107,7 @@ body {
   font-family:'SeravekLight', sans-serif;
   padding:0;
   height:100%;
-  background-color: @black;
+  background-color: #fff;
   &.content-hidden {
     &:after {
       content: " ";
@@ -608,6 +608,9 @@ label {
       width: 320px;
       h1 {
         font-size: 45px;
+        @media( max-width: @mobile-max ){
+          line-height: 1;
+        }
       }
     }
   }
@@ -890,6 +893,7 @@ nav{
 }
 
 body.home {
+  background-color: @black;
   background-position:center center;
   background-size:cover;
 

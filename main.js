@@ -180,19 +180,37 @@ var initFullPage = function() {
 
     //rebuild on window resize
     if ( screenWidthBelow( FULLPAGE_RESPONSIVE_WIDTH ) ) {
-      var windowHeight = $('body').height();
-      var windowWidth = $('body').width();
+      var windowHeight = window.innerHeight;
+      var windowWidth = window.innerWidth;
       var resize = function(){
         var newWindowHeight = window.innerHeight;
         var newWindowWidth = window.innerWidth;
+        //go through sections in reverse order and open them up
         if ( windowHeight !== newWindowHeight || newWindowWidth !== windowWidth ){
-          $('.fp-section').height( newWindowHeight );
+          var sections = $('.fp-section');
+          var transitioningSection = null;
+          var transitionEvents = 'transitionend oTransitionEnd webkitTransitionEnd';
+          var transitioningIndex = null;
+          var changeHeight = function( i ){
+            $transitioningSection = $( sections[i] );
+            transitioningIndex = i;
+            $transitioningSection.height( newWindowHeight );
+            $transitioningSection.find('.fp-tableCell').height( newWindowHeight );
+            $transitioningSection.on( transitionEvents, transitionCallback );
+          };
+          var transitionCallback = function() {
+            $transitioningSection.off( transitionEvents );
+            if ( transitioningIndex > 0 ){
+              changeHeight( transitioningIndex-1 );
+            }
+          };
+          changeHeight( sections.length - 1 );
         }
         windowHeight = window.innerHeight;
         windowWidth = window.innerWidth;
       };
       $(window).on('scroll', function(){
-        if ( $(window).height() != windowHeight ){
+        if ( window.innerHeight != windowHeight ){
           console.log('scroll');
           resize();
         }

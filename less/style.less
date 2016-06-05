@@ -1023,7 +1023,9 @@ body.home {
       }
     }
     @media( max-width: @mobile-max ){
-      top: 90px;
+      position: static;
+      margin-bottom: 10px;
+      top: 80px;
     }
 
     .text {
@@ -1087,24 +1089,7 @@ body.home {
     padding:40px 80px;
     @media( max-width: @mobile-max ){
       padding: 0px 20px 0 20px;
-    }
-  }
-  .links-bar {
-    text-align:left;
-    margin: 0;
-    a {
-      display: block;
-      text-transform:uppercase;
-      font-size: 15px;
-      font-family:'SeravekBold', sans-serif;
-      color:inherit;
-      text-decoration:none;
-      letter-spacing:0px;
-      padding-top: 15px;
-      cursor: pointer;
-    }
-    a:hover {
-      color:#3cd52e;
+      position: relative;
     }
   }
 
@@ -1121,11 +1106,12 @@ body.home {
     margin: 0 0 @top 0;
   }
   .combs-container {
-    @desktop-width: 815px + 2*@comb-right-margin; 
-    @tablet-width: 580px + 2*@comb-right-margin; 
+    @desktop-width: 830px;
+    @tablet-width: 580px;
     @mobile-width: @tablet-width * @mobile-scale-factor; 
     width: @desktop-width;
-    padding-left: @comb-right-margin;
+    padding-left: 0;
+    padding-bottom: -1* @comb-top-margin;
     min-height: 320px;
     margin: 40px auto 0 auto;
     text-align:left;
@@ -1134,7 +1120,7 @@ body.home {
     }
     @media( max-width: @mobile-max ){
       width: @mobile-width;
-      padding-left: 0;
+      padding-bottom: -1* @comb-top-margin * @mobile-scale-factor;
     }
     .comb:hover .title, .comb.active .title {
       text-decoration:underline;
@@ -1161,18 +1147,36 @@ body.home {
         }
       }
       @media( min-width: @desktop-min ){
-        &:nth-child(8n+4) {
+        &:nth-child(6n+4) {
           margin-left: @row-offset;
+        }
+        &:nth-child(6n+6) {
+          width: @comb-width;
+          &>div {
+            margin-right: 0;
+          }
         }
       }
       @media( max-width: @tablet-max ){
-        &:nth-child(6n+3) {
+        &:nth-child(4n+3) {
           margin-left: @row-offset;
+        }
+        &:nth-child(4n+4) {
+          width: @comb-width;
+          &>div {
+            margin-right: 0;
+          }
         }
       }
       @media( max-width: @mobile-max ){
-        &:nth-child(6n+3) {
+        &:nth-child(4n+3) {
           margin-left: @row-offset * @mobile-scale-factor;
+        }
+        &:nth-child(4n+4) {
+          width: @comb-width * @mobile-scale-factor;
+          &>div {
+            margin-right: 0;
+          }
         }
       }
       .body {
@@ -1284,6 +1288,15 @@ body.home {
         padding-bottom: 0px;
       }
     }
+    .section-text {
+      padding: 0;
+      @media( max-width: @mobile-max ){
+        padding-left: 3px;
+      }
+    }
+    .combs-container {
+      margin-top: 10px;
+    }
   }
   .fp-section[data-anchor=products-in-action]{
     transform-style: preserve-3d;
@@ -1301,6 +1314,9 @@ body.home {
         display: none !important;
       }
     }
+    .section-top-header {
+      position: absolute;
+    }
   }
   .fp-section[data-anchor=about-eeonyx]{
     .section-text{
@@ -1308,9 +1324,33 @@ body.home {
     }
     .bottom-home-text {
       .h4;
-      font-family: SeravekExtraLight;
       max-width: 850px;
       margin: 0 auto 80px auto;
+      font-family: SeravekExtraLight;
+      @media( max-width: @mobile-max ){
+        font-size: 20px;
+        margin-bottom: 0;
+      }
+    }
+    .links-bar {
+      text-align:left;
+      margin: 0 auto;
+      max-width: 850px;
+      a {
+        display: block;
+        max-width: 110px;
+        text-transform:uppercase;
+        font-size: 15px;
+        font-family:'SeravekBold', sans-serif;
+        color:inherit;
+        text-decoration:none;
+        letter-spacing:0px;
+        padding-top: 15px;
+        cursor: pointer;
+      }
+      a:hover {
+        color:#3cd52e;
+      }
     }
   }
   .green-product-box {
@@ -1334,6 +1374,8 @@ body.home {
       background-color: fade(@green, 80%);
       background-image: none;
       width:100%;
+      height: auto;
+      padding-bottom: 15px;
     }
     .product-category {
       margin-left:20px;
@@ -1366,10 +1408,13 @@ body.home {
       font-size:24px;
       font-weight:700;
       font-family:"SeravekBold", 'sans-serif';
-      line-height:1.3em;
+      line-height:1;
       text-transform:uppercase;
       margin-top:25px;
       letter-spacing:1px;
+      @media( max-width: @mobile-max ){
+        margin-top: 5px;
+      }
     }
     .product-description {
       margin-top:22px;
@@ -1377,11 +1422,12 @@ body.home {
       max-width: 400px;
       font-size:20px;
       color:#ffffff;
-      line-height:1.3em;
+      line-height:1.1;
       letter-spacing:1px;
       font-family:"SeravekBold", 'sans-serif';
       @media( max-width: @mobile-max ){
-        display: none;
+        // display: none;
+        margin-top: 5px;
         margin-right: 10px;
       }
     }

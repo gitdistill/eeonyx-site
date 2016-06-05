@@ -11,6 +11,14 @@ while ( have_posts() ) : the_post();
 
 $wipe_image = get_field('hero_image');
 
+$hero_text = get_field('hero_text');
+$explore_section_heading = get_field('explore_section_heading');
+$explore_section_text = get_field('explore_section_text');
+$application_section_heading = get_field('application_section_heading');
+$application_section_text = get_field('application_section_text');
+$about_eeonyx_section_heading = get_field('about_eeonyx_section_heading');
+$about_eeonyx_section_text = get_field('about_eeonyx_section_text');
+
 ?>
 
 <div id="outer" class="home loading">
@@ -31,7 +39,7 @@ $wipe_image = get_field('hero_image');
             <div class="content">
               <div class="inner">
                 <h1 class="dark-black">
-                  SMART FABRICS FOR THE INTERNET OF THINGS
+                  <?=$hero_text?><!-- SMART FABRICS FOR THE INTERNET OF THINGS -->
                 </h1>
               </div>
             </div>
@@ -44,17 +52,21 @@ $wipe_image = get_field('hero_image');
       <div class="section fp-section" id="section1">
 
         <div class='section-top-header'>
-          <div class='text white'>Explore Our Products</div>
+          <div class='text white'>
+            <?=$explore_section_heading?>
+            <!-- Explore Our Products -->
+          </div>
         </div>
 
         <div class='section-text'>
           <h4 class='explore-intro text-center'>
-            Eeonyx makes an assortment of products that fall into the following categories
+            <?=$explore_section_text?>
+            <!-- Eeonyx makes an assortment of products that fall into the following categories -->
           </h4>
 
-          <div class='combs-container'>
+          <div class='combs-container'><!--
 
-          <?php
+        --><?php
           $product_catgories = get_terms( 'product_category', array(
               'hide_empty' => false,
           ) );
@@ -68,11 +80,12 @@ $wipe_image = get_field('hero_image');
                 </div>
               </div>
             </div><!--
-       --><?php } ?>
+       --><?php } ?><!--
 
-          </div>
+      --></div>
 
         </div>
+        
       </div>
 
       <!--======== PRODUCTS IN ACTION =========-->
@@ -80,12 +93,18 @@ $wipe_image = get_field('hero_image');
       <div class="section fp-section fp-completely" id="section2">
 
         <div class='section-top-header'>
-          <div class='text'>Eeonyx Products In Action</div>
+          <div class='text'>
+            <!-- Eeonyx Products In Action -->
+            <?=$application_section_heading?>
+          </div>
         </div>
 
         <a class='top-right-link hidden-mobile' href="/eeonyx-in-action">
           <div class='arrow'></div>
-          <div class='text'>View All of Our Products In Action</div>
+          <div class='text'>
+            <!-- View All of Our Products In Action -->
+            <?=$application_section_text?>
+          </div>
         </a>
 
         <?php
@@ -143,14 +162,17 @@ $wipe_image = get_field('hero_image');
       <div class="section fp-section" id="section3">
 
         <div class='section-top-header'>
-          <div class='text'>What Eeonyx Can Provide You</div>
+          <div class='text'>
+            <?=$about_eeonyx_section_heading?>
+            <!-- What Eeonyx Can Provide You -->
+          </div>
         </div>
 
         <div class='section-text'>
 
           <h4 class='bottom-home-text'>
-          Look smart. Be smart. Discover electronics you can wash and wear. Conductive textiles by Eeonyx warm you up, sense your environment, and protect you and your devices from unwanted energy.
-            <!-- Manufacturer of electron conductive cloth, textiles, and fabrics for the aerospace, commercial, electronics, marine, military, and medical industries. Features tunable conductive coating applied to the product. Specific electrical resistances can be applied in gradients and patterns. Other products offered are conductive coatings, felt, foams, yarns, and polymers. Suitable for ESD applications, bomb suits, cleanroom garments, resistive heaters, and piezoresistive fabric sensors. -->
+          <?=$about_eeonyx_section_text?>
+          <!-- Look smart. Be smart. Discover electronics you can wash and wear. Conductive textiles by Eeonyx warm you up, sense your environment, and protect you and your devices from unwanted energy. -->
           </h4>
 
           <div class='links-bar row'>

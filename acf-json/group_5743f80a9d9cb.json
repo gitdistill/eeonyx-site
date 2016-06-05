@@ -36,13 +36,13 @@
             }
         ]
     ],
-    "menu_order": 0,
-    "position": "normal",
+    "menu_order": 1,
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1464072312
+    "modified": 1465097368
 }

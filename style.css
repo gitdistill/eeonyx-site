@@ -1055,7 +1055,7 @@ body.home nav header {
 }
 #fullpage .fp-section,
 #fullpage .fp-tableCell {
-  transition: height 250ms linear;
+  transition: height 100ms linear;
 }
 #fullpage .section .footer {
   position: absolute;

@@ -898,9 +898,16 @@ body.home {
   background-position: center center;
   background-size: cover;
   @media (max-width: @mobile-max ) {
-    background-position: center top;
-    background-size: auto 100%;
-    background-attachment: fixed;
+    &:before {
+      content: " ";
+      position: fixed;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      background-position: center top;
+      background-size: auto 100%;
+      background-image: inherit;
+    }
   }
   nav{
     header {

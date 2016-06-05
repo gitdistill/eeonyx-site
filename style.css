@@ -979,10 +979,15 @@ body.home {
   background-size: cover;
 }
 @media (max-width: 767px) {
-  body.home {
+  body.home:before {
+    content: " ";
+    position: fixed;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
     background-position: center top;
     background-size: auto 100%;
-    background-attachment: fixed;
+    background-image: inherit;
   }
 }
 body.home nav header {

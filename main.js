@@ -130,7 +130,48 @@ var convertExternalLinks = function(){
  */
 
 var initFullPage = function() {
-  if ( $('#fullpage').length ){
+
+  var $fullpage = $('#fullpage');
+
+  if ( $fullpage.length ) {
+
+    var enterIntroSlide = function(){
+      if( !mobile() ){
+        $('#nav-link.small').removeClass('small').addClass('big');
+        $('.home .wipe-panel .image').addClass('visible');
+        slideout.toggle(true);
+      }
+    };
+    var leaveIntroSlide = function(){
+      if( !mobile() ){
+        $('#nav-link.big').removeClass('big').addClass('small');
+        $('.home .wipe-panel .image').removeClass('visible');
+        slideout.toggle( false );
+      }
+    };
+
+    var resizeSections = function( newWindowWidth, newWindowHeight ){
+      //go through sections in reverse order and open them up
+      //this is less choppy because it is changing less of the page at a time
+      var sections = $('.fp-section');
+      var transitioningSection = null;
+      var transitionEvents = 'transitionend oTransitionEnd webkitTransitionEnd';
+      var transitioningIndex = null;
+      var changeHeight = function( i ){
+        $transitioningSection = $( sections[i] );
+        transitioningIndex = i;
+        $transitioningSection.height( newWindowHeight );
+        $transitioningSection.find('.fp-tableCell').height( newWindowHeight );
+        $transitioningSection.on( transitionEvents, transitionCallback );
+      };
+      var transitionCallback = function() {
+        $transitioningSection.off( transitionEvents );
+        if ( transitioningIndex > 0 ){
+          changeHeight( transitioningIndex-1 );
+        }
+      };
+      changeHeight( sections.length - 1 );
+    };
 
     if( !mobile() ){
       $('#nav-link').addClass('big');
@@ -161,66 +202,6 @@ var initFullPage = function() {
       });
     }
 
-    var enterIntroSlide = function(){
-      if( !mobile() ){
-        $('#nav-link.small').removeClass('small').addClass('big');
-        $('.home .wipe-panel .image').addClass('visible');
-        slideout.toggle(true);
-      }
-    };
-    var leaveIntroSlide = function(){
-      if( !mobile() ){
-        $('#nav-link.big').removeClass('big').addClass('small');
-        $('.home .wipe-panel .image').removeClass('visible');
-        slideout.toggle( false );
-      }
-    };
-
-    var $fullpage = $('#fullpage');
-
-    //rebuild on window resize
-    if ( screenWidthBelow( FULLPAGE_RESPONSIVE_WIDTH ) ) {
-      var windowHeight = window.innerHeight;
-      var windowWidth = window.innerWidth;
-      var resize = function(){
-        var newWindowHeight = window.innerHeight;
-        var newWindowWidth = window.innerWidth;
-        //go through sections in reverse order and open them up
-        if ( windowHeight !== newWindowHeight || newWindowWidth !== windowWidth ){
-          var sections = $('.fp-section');
-          var transitioningSection = null;
-          var transitionEvents = 'transitionend oTransitionEnd webkitTransitionEnd';
-          var transitioningIndex = null;
-          var changeHeight = function( i ){
-            $transitioningSection = $( sections[i] );
-            transitioningIndex = i;
-            $transitioningSection.height( newWindowHeight );
-            $transitioningSection.find('.fp-tableCell').height( newWindowHeight );
-            $transitioningSection.on( transitionEvents, transitionCallback );
-          };
-          var transitionCallback = function() {
-            $transitioningSection.off( transitionEvents );
-            if ( transitioningIndex > 0 ){
-              changeHeight( transitioningIndex-1 );
-            }
-          };
-          changeHeight( sections.length - 1 );
-        }
-        windowHeight = window.innerHeight;
-        windowWidth = window.innerWidth;
-      };
-      $(window).on('scroll', function(){
-        if ( window.innerHeight != windowHeight ){
-          console.log('scroll');
-          resize();
-        }
-      });
-      $(window).resize( function(){
-        console.log('resize');
-        resize();
-      });
-    }
-
     $fullpage.fullpage({
       anchors: ['intro', 'explore-products', 'products-in-action', 'about-eeonyx'],
       sectionsColor: ['transparent', 'transparent', '#E6E7E8', '#E6E7E8'],
@@ -246,7 +227,8 @@ var initFullPage = function() {
         }
       }
     });
-    //adding the action to the arrows
+
+    //adding the scroll action to the arrows
     $('.down-arrow span').click( function(){
       $.fn.fullpage.moveSectionDown();
     });
@@ -254,7 +236,46 @@ var initFullPage = function() {
       $.fn.fullpage.moveTo('intro');
       enterIntroSlide();
     });
+
+    if ( screenWidthBelow( FULLPAGE_RESPONSIVE_WIDTH ) ) {
+
+      //keep track of dims and resize when they actually change
+      var windowHeight = window.innerHeight;
+      var windowWidth = window.innerWidth;
+
+      //resize on scroll event
+      $(window).on('scroll', function(){
+        if ( window.innerHeight != windowHeight ){
+          console.log('scroll');
+          var newWindowHeight = window.innerHeight;
+          var newWindowWidth = window.innerWidth;
+          if ( windowHeight !== newWindowHeight || newWindowWidth !== windowWidth ){
+            resizeSections( newWindowWidth, newWindowHeight );
+          }
+          windowHeight = window.innerHeight;
+          windowWidth = window.innerWidth;
+        }
+      });
+
+      //resize on resize event
+      $(window).resize( function(){
+        console.log('resize');
+        var newWindowHeight = window.innerHeight;
+        var newWindowWidth = window.innerWidth;
+        if ( windowHeight !== newWindowHeight || newWindowWidth !== windowWidth ){
+          resizeSections( newWindowWidth, newWindowHeight );
+        }
+        windowHeight = window.innerHeight;
+        windowWidth = window.innerWidth;
+      });
+
+      //resize to the actual outer dims, minus the chrome, immediately
+      resizeSections( $(window).width(), $(window).height() );
+
+    }
+
   }
+
 };
 
 /**

@@ -506,6 +506,9 @@ h6.section-title {
 .menu-open #outer {
   -webkit-filter: blur(3px);
 }
+#outer.home {
+  padding-bottom: 0;
+}
 .menu-open #outer.home,
 .menu-open #outer.home * {
   -webkit-filter: none;
@@ -733,11 +736,7 @@ label {
     width: 320px;
   }
   .home .content h1 {
-    font-size: 45px;
-  }
-}
-@media (max-width: 767px) and (max-width: 767px) {
-  .home .content h1 {
+    font-size: 40px;
     line-height: 1;
   }
 }
@@ -978,6 +977,13 @@ body.home {
   background-color: #252c26;
   background-position: center center;
   background-size: cover;
+}
+@media (max-width: 767px) {
+  body.home {
+    background-position: center top;
+    background-size: auto 100%;
+    background-attachment: fixed;
+  }
 }
 body.home nav header {
   max-width: 100%;
@@ -1430,7 +1436,7 @@ body.home nav header {
   position: absolute;
 }
 #fullpage .fp-section[data-anchor=about-eeonyx] .section-text {
-  padding: 20px;
+  padding: 0 20px 20px 20px;
 }
 #fullpage .fp-section[data-anchor=about-eeonyx] .bottom-home-text {
   margin: 0;

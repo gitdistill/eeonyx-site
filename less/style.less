@@ -384,6 +384,9 @@ h6.section-title {
   .menu-open & {
     -webkit-filter: blur(3px);
   }
+  &.home {
+    padding-bottom: 0;
+  }
 }
 .menu-open #outer.home,
 .menu-open #outer.home * {
@@ -607,10 +610,8 @@ label {
       margin: 0;
       width: 320px;
       h1 {
-        font-size: 45px;
-        @media( max-width: @mobile-max ){
-          line-height: 1;
-        }
+        font-size: 40px;
+        line-height: 1;
       }
     }
   }
@@ -894,9 +895,13 @@ nav{
 
 body.home {
   background-color: @black;
-  background-position:center center;
-  background-size:cover;
-
+  background-position: center center;
+  background-size: cover;
+  @media (max-width: @mobile-max ) {
+    background-position: center top;
+    background-size: auto 100%;
+    background-attachment: fixed;
+  }
   nav{
     header {
       max-width: 100%;
@@ -1320,7 +1325,7 @@ body.home {
   }
   .fp-section[data-anchor=about-eeonyx]{
     .section-text{
-      padding: 20px;
+      padding: 0 20px 20px 20px;
     }
     .bottom-home-text {
       .h4;

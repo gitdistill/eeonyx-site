@@ -193,10 +193,12 @@ var initFullPage = function() {
       };
       $(window).on('scroll', function(){
         if ( $(window).height() != windowHeight ){
+          console.log('scroll');
           resize();
         }
       });
       $(window).resize( function(){
+        console.log('resize');
         resize();
       });
     }

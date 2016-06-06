@@ -228,9 +228,10 @@ var initFullPage = function() {
       },
       afterRender: function(){
         //resize to the actual outer dims, minus the chrome, immediately
-        console.log( $(window).height() );
-        console.log( $(window) );
-        resizeSections( $(window).width(), $(window).height() );
+        // console.log( $(window).height() );
+        // console.log( $(window) );
+        var height = window.screen.availHeight? window.screen.availHeight: window.innerHeight;
+        resizeSections( window.innerWidth, height );
       }
     });
 

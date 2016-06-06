@@ -113,13 +113,6 @@
   content: "\e915";
 }
 @font-face {
-  font-family: 'icomoon' !important;
-  src: url('fonts/icomoon/fonts/icomoon.eot?ipu2a5') !important;
-  src: url('fonts/icomoon/fonts/icomoon.eot?ipu2a5#iefix') format('embedded-opentype'), url('fonts/icomoon/fonts/icomoon.ttf?ipu2a5') format('truetype'), url('fonts/icomoon/fonts/icomoon.woff?ipu2a5') format('woff'), url('fonts/icomoon/fonts/icomoon.svg?ipu2a5#icomoon') format('svg') !important;
-  font-weight: normal !important;
-  font-style: normal !important;
-}
-@font-face {
   font-family: 'SeravekExtraLight';
   src: url('fonts/SeravekWebBasicExtraLight.eot');
   /* IE9 Compat Modes */
@@ -1103,7 +1096,7 @@ body.home .mobile-background {
 }
 @media (max-width: 767px) {
   #fullpage .heading-background {
-    height: 170px;
+    height: 150px;
   }
 }
 #fullpage .section-top-header {
@@ -1417,7 +1410,7 @@ body.home .mobile-background {
 }
 @media (max-width: 767px) {
   #fullpage .fp-section[data-anchor=explore-products] .explore-intro {
-    font-size: 14px;
+    font-size: 16px;
     text-align: left;
     font-family: Seravek;
     display: block;
@@ -1586,14 +1579,18 @@ body.home .mobile-background {
   padding: 0;
   height: 10px;
   width: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 #fullpage .fp-slidesNav ul li a span {
   height: 100%;
   width: 100%;
+  margin: 0;
+  top: 0;
+  left: 0;
   background-color: transparent;
   border: 1px solid #252c26;
   border-radius: 50%;
-  margin: 0;
 }
 #fullpage .fp-slidesNav ul li a.active span {
   background-color: #3cd52e;
@@ -1605,7 +1602,7 @@ body.home .mobile-background {
 }
 @media (max-width: 767px) {
   #fullpage .fp-slidesNav {
-    top: 122px;
+    top: 117px;
   }
 }
 /* slideout was here */

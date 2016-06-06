@@ -225,6 +225,12 @@ var initFullPage = function() {
         else if(index == 2 && direction == 'up'){
           enterIntroSlide();
         }
+      },
+      afterRender: function(){
+        //resize to the actual outer dims, minus the chrome, immediately
+        console.log( $(window).height() );
+        console.log( $(window) );
+        resizeSections( $(window).width(), $(window).height() );
       }
     });
 
@@ -243,37 +249,31 @@ var initFullPage = function() {
       var windowHeight = window.innerHeight;
       var windowWidth = window.innerWidth;
 
-      //resize on scroll event
-      $(window).on('scroll', function(){
-        if ( window.innerHeight != windowHeight ){
-          console.log('scroll');
-          var newWindowHeight = window.innerHeight;
-          var newWindowWidth = window.innerWidth;
-          if ( windowHeight !== newWindowHeight || newWindowWidth !== windowWidth ){
-            resizeSections( newWindowWidth, newWindowHeight );
-          }
-          windowHeight = window.innerHeight;
-          windowWidth = window.innerWidth;
-        }
-      });
+      // //resize on scroll event
+      // $(window).on('scroll', function(){
+      //   if ( window.innerHeight != windowHeight ){
+      //     console.log('scroll');
+      //     var newWindowHeight = window.innerHeight;
+      //     var newWindowWidth = window.innerWidth;
+      //     if ( windowHeight !== newWindowHeight || newWindowWidth !== windowWidth ){
+      //       resizeSections( newWindowWidth, newWindowHeight );
+      //     }
+      //     windowHeight = window.innerHeight;
+      //     windowWidth = window.innerWidth;
+      //   }
+      // });
 
-      //resize on resize event
-      $(window).resize( function(){
-        console.log('resize');
-        var newWindowHeight = window.innerHeight;
-        var newWindowWidth = window.innerWidth;
-        if ( windowHeight !== newWindowHeight || newWindowWidth !== windowWidth ){
-          resizeSections( newWindowWidth, newWindowHeight );
-        }
-        windowHeight = window.innerHeight;
-        windowWidth = window.innerWidth;
-      });
-
-      //resize to the actual outer dims, minus the chrome, immediately
-      console.log( $(window).height() );
-      console.log( $(window) );
-
-      resizeSections( $(window).width(), $(window).height() );
+      // //resize on resize event
+      // $(window).resize( function(){
+      //   console.log('resize');
+      //   var newWindowHeight = window.innerHeight;
+      //   var newWindowWidth = window.innerWidth;
+      //   if ( windowHeight !== newWindowHeight || newWindowWidth !== windowWidth ){
+      //     resizeSections( newWindowWidth, newWindowHeight );
+      //   }
+      //   windowHeight = window.innerHeight;
+      //   windowWidth = window.innerWidth;
+      // });
 
     }
 

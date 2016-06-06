@@ -977,6 +977,7 @@ body.home {
   background-color: #252c26;
   background-position: center center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 body.home nav header {
   max-width: 100%;

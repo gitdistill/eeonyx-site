@@ -1396,6 +1396,11 @@ body.home .mobile-background {
     margin-bottom: 5px;
   }
 }
+@media (max-width: 767px) {
+  #fullpage .fp-section[data-anchor=intro] .fp-tableCell {
+    display: block;
+  }
+}
 #fullpage .fp-section[data-anchor=explore-products] .explore-intro {
   margin: 1em 0 0 0;
   color: #ffffff;

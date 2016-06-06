@@ -176,6 +176,9 @@
 .red {
   color: #f74900;
 }
+*:not(html) {
+  -webkit-transform: translate3d(0, 0, 0);
+}
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

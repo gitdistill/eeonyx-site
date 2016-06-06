@@ -2261,6 +2261,9 @@ body.home .mobile-background {
   color: inherit;
   text-decoration: none;
 }
+.application-product-grid .item-text h3 {
+  font-size: 25px;
+}
 .application-product-grid .category-icon {
   float: right;
   height: 25px;

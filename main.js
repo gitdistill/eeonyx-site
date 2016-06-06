@@ -270,10 +270,10 @@ var initFullPage = function() {
       });
 
       //resize to the actual outer dims, minus the chrome, immediately
-      console.log( window.height );
-      console.log( window );
+      console.log( $(window).height() );
+      console.log( $(window) );
 
-      resizeSections( window.width, window.height );
+      resizeSections( $(window).width(), $(window).height() );
 
     }
 

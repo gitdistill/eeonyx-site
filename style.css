@@ -176,6 +176,18 @@
 .red {
   color: #f74900;
 }
+::-moz-selection {
+  background: #3cd52e;
+  /* WebKit/Blink Browsers */
+}
+::selection {
+  background: #3cd52e;
+  /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #3cd52e;
+  /* Gecko Browsers */
+}
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -184,6 +196,7 @@ html {
   padding: 0;
   height: 100%;
   -webkit-font-smoothing: antialiased;
+  background-color: #3cd52e;
 }
 html * {
   box-sizing: border-box;

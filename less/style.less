@@ -99,6 +99,13 @@
 //     -webkit-transform: translate3d(0, 0, 0);
 // }
 
+::selection {
+  background: @green; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: @green; /* Gecko Browsers */
+}
+
 html {
   font-family:sans-serif;
   -ms-text-size-adjust:100%;
@@ -107,6 +114,7 @@ html {
   padding:0;
   height:100%;
   -webkit-font-smoothing: antialiased;
+  background-color: @green;
   * {
     -moz-box-sizing:border-box;
     -webkit-box-sizing:border-box;

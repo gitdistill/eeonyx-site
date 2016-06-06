@@ -140,6 +140,13 @@
   src: url('fonts/SeravekWebBasicLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('fonts/SeravekWebBasicLight.woff2') format('woff2'), /* Super Modern Browsers */ url('fonts/SeravekWebBasicLight.woff') format('woff');
   /* Pretty Modern Browsers */
 }
+@font-face {
+  font-family: 'Seravek';
+  src: url('fonts/SeravekWebBasicLight.eot');
+  /* IE9 Compat Modes */
+  src: url('fonts/SeravekWebBasicLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('fonts/SeravekWebBasicLight.woff2') format('woff2'), /* Super Modern Browsers */ url('fonts/SeravekWebBasicLight.woff') format('woff');
+  /* Pretty Modern Browsers */
+}
 .dark-black {
   color: #101013;
 }

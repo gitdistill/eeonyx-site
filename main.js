@@ -162,6 +162,7 @@ var initFullPage = function() {
         transitioningIndex = i;
         $transitioningSection.height( newWindowHeight );
         $transitioningSection.find('.fp-tableCell').height( newWindowHeight );
+        $(".mobile-background").height( newWindowHeight );
         $transitioningSection.on( transitionEvents, transitionCallback );
       };
       var transitionCallback = function() {

@@ -978,25 +978,25 @@ body.home {
   background-position: center center;
   background-size: cover;
 }
+body.home nav header {
+  max-width: 100%;
+}
+body.home .mobile-background {
+  display: none;
+}
 @media (max-width: 767px) {
   body.home {
     background-position: center top;
     background-size: auto 50%;
   }
-  body.home:before {
-    content: " ";
+  body.home .mobile-background {
+    display: block;
     position: fixed;
     z-index: -1;
-    height: 1000px;
-    width: 100%;
-    background-position: center top;
-    background-size: auto 100%;
-    background-image: inherit;
+    height: 600px;
+    width: auto;
     -webkit-transform: translate3d(0, 0, 0);
   }
-}
-body.home nav header {
-  max-width: 100%;
 }
 .left-menu {
   position: absolute;

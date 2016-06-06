@@ -21,6 +21,8 @@ $about_eeonyx_section_text = get_field('about_eeonyx_section_text');
 
 ?>
 
+<img src="<?= $wipe_image['url'] ?>" class="mobile-background">
+
 <div id="outer" class="home loading">
 
   <div id="fullpage">
@@ -85,7 +87,7 @@ $about_eeonyx_section_text = get_field('about_eeonyx_section_text');
       --></div>
 
         </div>
-        
+
       </div>
 
       <!--======== PRODUCTS IN ACTION =========-->

@@ -902,24 +902,24 @@ body.home {
   background-color: @black;
   background-position: center center;
   background-size: cover;
-  @media (max-width: @mobile-max ) {
-    background-position: center top;
-    background-size: auto 50%;
-    &:before {
-      content: " ";
-      position: fixed;
-      z-index: -1;
-      height: 1000px;
-      width: 100%;
-      background-position: center top;
-      background-size: auto 100%;
-      background-image: inherit;
-      -webkit-transform: translate3d(0, 0, 0);
-    }
-  }
   nav{
     header {
       max-width: 100%;
+    }
+  }
+  .mobile-background {
+    display: none;
+  }
+  @media (max-width: @mobile-max ) {
+    background-position: center top;
+    background-size: auto 50%;
+    .mobile-background {
+      display: block;
+      position: fixed;
+      z-index: -1;
+      height: 600px;
+      width: auto;
+      -webkit-transform: translate3d(0, 0, 0);
     }
   }
 }

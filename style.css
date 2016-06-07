@@ -1325,10 +1325,10 @@ nav header .margin-filler {
 @media (max-width: 767px) {
   #fullpage .combs-container .comb .icon {
     top: 32.5px;
-    height: 19px;
-    width: 19px;
-    font-size: 19px;
-    margin: 0 auto 10px auto;
+    height: 22.8px;
+    width: 22.8px;
+    font-size: 22.8px;
+    margin: 0 auto 7.6px auto;
   }
 }
 #fullpage .combs-container .comb .icon.hover {
@@ -1363,6 +1363,7 @@ nav header .margin-filler {
     top: 32.5px;
     padding: 0 25px;
     font-size: 10px;
+    font-family: SeravekBold;
   }
 }
 #fullpage .combs-container .comb .title.hover {

@@ -150,7 +150,7 @@ var initFullPage = function() {
       }
     };
 
-    var resizeSections = function( newWindowWidth, newWindowHeight ){
+    var resizeSections = function( newWindowWidth, newWindowHeight ) {
       //go through sections in reverse order and open them up
       //this is less choppy because it is changing less of the page at a time
       var sections = $('.fp-section');
@@ -231,8 +231,7 @@ var initFullPage = function() {
         //resize to the actual outer dims, minus the chrome, immediately
         // console.log( $(window).height() );
         // console.log( $(window) );
-        var height = window.screen.availHeight? window.screen.availHeight: window.innerHeight;
-        resizeSections( window.innerWidth, height );
+        resizeSections( window.innerWidth, window.innerHeight );
       }
     });
 
@@ -251,19 +250,19 @@ var initFullPage = function() {
       var windowHeight = window.innerHeight;
       var windowWidth = window.innerWidth;
 
-      // //resize on scroll event
-      // $(window).on('scroll', function(){
-      //   if ( window.innerHeight != windowHeight ){
-      //     console.log('scroll');
-      //     var newWindowHeight = window.innerHeight;
-      //     var newWindowWidth = window.innerWidth;
-      //     if ( windowHeight !== newWindowHeight || newWindowWidth !== windowWidth ){
-      //       resizeSections( newWindowWidth, newWindowHeight );
-      //     }
-      //     windowHeight = window.innerHeight;
-      //     windowWidth = window.innerWidth;
-      //   }
-      // });
+      //resize on scroll event
+      $(window).on('scroll', function(){
+        if ( window.innerHeight != windowHeight ){
+          console.log('scroll');
+          var newWindowHeight = window.innerHeight;
+          var newWindowWidth = window.innerWidth;
+          if ( windowHeight > newWindowHeight || newWindowWidth !== windowWidth ){
+            resizeSections( newWindowWidth, newWindowHeight );
+          }
+          windowHeight = window.innerHeight;
+          windowWidth = window.innerWidth;
+        }
+      });
 
       // //resize on resize event
       // $(window).resize( function(){

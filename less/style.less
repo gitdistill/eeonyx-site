@@ -127,7 +127,7 @@ body {
   color:#252c26;
   font-family:'SeravekLight', sans-serif;
   padding:0;
-  height:100%;
+  min-height:100%;
   background-color: #fff;
   &.content-hidden {
     &:after {
@@ -136,6 +136,32 @@ body {
       position: absolute;
       top:0; right:0; bottom:0; left:0;
       background-color: @black;
+    }
+  }
+  &.home {
+    background-color: @black;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100%;
+    nav{
+      header {
+        max-width: 100%;
+      }
+    }
+    .mobile-background {
+      display: none;
+    }
+    @media (max-width: @mobile-max ) {
+      background-position: center top;
+      background-size: auto 50%;
+      .mobile-background {
+        display: block;
+        position: fixed;
+        height: 600px;
+        width: auto;
+        -webkit-transform: translate3d(0, 0, 0);
+      }
     }
   }
 }
@@ -914,32 +940,6 @@ nav{
   }
 }
 
-body.home {
-  background-color: @black;
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  nav{
-    header {
-      max-width: 100%;
-    }
-  }
-  .mobile-background {
-    display: none;
-  }
-  @media (max-width: @mobile-max ) {
-    background-position: center top;
-    background-size: auto 50%;
-    .mobile-background {
-      display: block;
-      position: fixed;
-      height: 600px;
-      width: auto;
-      -webkit-transform: translate3d(0, 0, 0);
-    }
-  }
-}
-
 .left-menu {
   position: absolute;
   bottom: 0;
@@ -1021,7 +1021,7 @@ body.home {
 #fullpage {
   .fp-section,
   .fp-tableCell {
-    transition: height 100ms linear;
+    transition: height 50ms linear;
   }
   .section .footer {
     position:absolute;

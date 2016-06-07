@@ -258,9 +258,9 @@ var initFullPage = function() {
           var newWindowWidth = window.innerWidth;
           if ( newWindowHeight > windowHeight || newWindowWidth !== windowWidth ){
             resizeSections( newWindowWidth, newWindowHeight );
+            windowHeight = window.innerHeight;
+            windowWidth = window.innerWidth;
           }
-          windowHeight = window.innerHeight;
-          windowWidth = window.innerWidth;
         }
       });
 

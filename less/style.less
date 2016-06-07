@@ -1269,9 +1269,10 @@ nav{
         }
       }
       .title {
+        @padding: 30px;
         position:relative;
         top:55px;
-        padding: 0 50px;
+        padding: 0 @padding;
         font-size:20px;
         letter-spacing:1px;
         text-transform:uppercase;
@@ -1280,7 +1281,7 @@ nav{
         transition: all 200ms ease;
         @media( max-width: @mobile-max ){
           top: @mobile-scale-factor * 65px;
-          padding: 0 @mobile-scale-factor * 50px;
+          padding: 0 @mobile-scale-factor * @padding;
           font-size: @mobile-scale-factor * 20px;
           font-family: SeravekBold;
         }

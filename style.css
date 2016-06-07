@@ -1350,7 +1350,7 @@ nav header .margin-filler {
 #fullpage .combs-container .comb .title {
   position: relative;
   top: 55px;
-  padding: 0 50px;
+  padding: 0 30px;
   font-size: 20px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1361,7 +1361,7 @@ nav header .margin-filler {
 @media (max-width: 767px) {
   #fullpage .combs-container .comb .title {
     top: 32.5px;
-    padding: 0 25px;
+    padding: 0 15px;
     font-size: 10px;
     font-family: SeravekBold;
   }

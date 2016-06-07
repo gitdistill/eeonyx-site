@@ -196,7 +196,7 @@ html {
   padding: 0;
   height: 100%;
   -webkit-font-smoothing: antialiased;
-  background-color: #fff;
+  background-color: #3cd52e;
 }
 html * {
   box-sizing: border-box;
@@ -207,7 +207,7 @@ body {
   font-family: 'SeravekLight', sans-serif;
   padding: 0;
   height: 100%;
-  background-color: #3cd52e;
+  background-color: #fff;
 }
 body.content-hidden:after {
   content: " ";

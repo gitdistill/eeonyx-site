@@ -256,7 +256,7 @@ var initFullPage = function() {
           console.log('scroll');
           var newWindowHeight = window.innerHeight;
           var newWindowWidth = window.innerWidth;
-          if ( windowHeight > newWindowHeight || newWindowWidth !== windowWidth ){
+          if ( newWindowHeight > windowHeight || newWindowWidth !== windowWidth ){
             resizeSections( newWindowWidth, newWindowHeight );
           }
           windowHeight = window.innerHeight;

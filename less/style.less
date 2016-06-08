@@ -1171,8 +1171,10 @@ nav{
       &>div{
         .comb-dimensions( @comb-width, @comb-height );
         background-image:url(./images/bg-comb.png);
+        background-repeat: no-repeat;
         display: table-cell;
         vertical-align: middle;
+        overflow-x: hidden;
       }
 
       @media( min-width: @desktop-min ){
@@ -1215,7 +1217,7 @@ nav{
       @content-vertical-shift: 0;
       .body {
         top: 0;
-        padding: 0 30px;
+        padding: 0 20px;
         font-size: 13px;
         line-height: 1.35;
         text-align:center;
@@ -1225,9 +1227,9 @@ nav{
         height: 0;
         overflow-y: hidden;
         .scaled( @scale-factor ){
-          padding: 0 @scale-factor * 30px;
+          padding: 0 @scale-factor * 20px;
           top: @scale-factor * 0;
-          font-size: @scale-factor * 14px;
+          font-size: @scale-factor * 13px;
         }
         @media( max-width: @tablet-max ){
           .scaled( @tablet-scale-factor );

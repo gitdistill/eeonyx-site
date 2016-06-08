@@ -23,7 +23,7 @@ $sections_post = $term;
 <div id="outer" class="product-category <?= $post->post_name; ?>">
   <div class="content-container">
 
-    <div class="wipe-hero">
+    <div class="wipe-hero medium">
       <div class="image">
         <div style="background-image:url(<?= $hero_image['url'] ?>)" title="<?= $hero_image['alt'] ?>">
         </div>

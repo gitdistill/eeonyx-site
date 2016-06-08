@@ -2435,6 +2435,9 @@ nav{
     }
   }
   article {
+    .h4;
+    font-family: SeravekExtraLight;
+    margin-bottom: 40px;
     padding-top: 60px;
   }
 
@@ -2596,7 +2599,6 @@ nav{
   }
 }
 .wipe-hero {
-  &:extend(.remove-horizontal-padding .from-margins all);
   position: relative;
   top: -40px;
   margin-bottom: -20px;
@@ -2621,8 +2623,10 @@ nav{
       background-size: cover;
     }
   }
+  &.medium {
+    &:extend(.remove-horizontal-padding .from-margins all);
+  }
   &.short{
-    &:extend(.restore-horizontal-padding .to-margins all);
     position: fixed;
     top: 0;
     left: 0;
@@ -2638,8 +2642,12 @@ nav{
         .wipe-image( -30deg, -1*@site-max-width - @horizontal-correction - @tablet-offset, -1*@site-max-width + @horizontal-correction - @tablet-offset, 3*@horizontal-correction, @horizontal-correction);
       }
     }
+    @media( max-width: @mobile-max ){
+      &:extend(.remove-horizontal-padding .from-margins all);
+    }
   }
   &.large{
+    &:extend(.remove-horizontal-padding .from-margins all);
     height: 430px;
     .image{
       @horizontal-correction: 100px;

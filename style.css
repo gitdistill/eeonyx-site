@@ -2442,8 +2442,10 @@ nav header,
 .product-category .content-container .remove-horizontal-padding .from-margins,
 .page .content-container .product-category-grid,
 .product-category .content-container .product-category-grid,
-.page .content-container .wipe-hero,
-.product-category .content-container .wipe-hero {
+.page .content-container .wipe-hero.medium,
+.product-category .content-container .wipe-hero.medium,
+.page .content-container .wipe-hero.large,
+.product-category .content-container .wipe-hero.large {
   margin-right: -80px;
   margin-left: -80px;
 }
@@ -2473,8 +2475,10 @@ nav header,
   .product-category .content-container .remove-horizontal-padding .from-margins,
   .page .content-container .product-category-grid,
   .product-category .content-container .product-category-grid,
-  .page .content-container .wipe-hero,
-  .product-category .content-container .wipe-hero {
+  .page .content-container .wipe-hero.medium,
+  .product-category .content-container .wipe-hero.medium,
+  .page .content-container .wipe-hero.large,
+  .product-category .content-container .wipe-hero.large {
     margin-right: -20px;
     margin-left: -20px;
   }
@@ -2505,8 +2509,10 @@ nav header,
   .product-category .content-container .remove-horizontal-padding .from-margins,
   .page .content-container .product-category-grid,
   .product-category .content-container .product-category-grid,
-  .page .content-container .wipe-hero,
-  .product-category .content-container .wipe-hero {
+  .page .content-container .wipe-hero.medium,
+  .product-category .content-container .wipe-hero.medium,
+  .page .content-container .wipe-hero.large,
+  .product-category .content-container .wipe-hero.large {
     margin-right: -20px;
     margin-left: -20px;
   }
@@ -2538,9 +2544,7 @@ nav header,
   margin-left: 0;
 }
 .page .content-container .restore-horizontal-padding .to-margins,
-.product-category .content-container .restore-horizontal-padding .to-margins,
-.page .content-container .wipe-hero.short,
-.product-category .content-container .wipe-hero.short {
+.product-category .content-container .restore-horizontal-padding .to-margins {
   margin-right: 0;
   margin-left: 0;
 }
@@ -2567,9 +2571,7 @@ nav header,
     margin-left: 0;
   }
   .page .content-container .restore-horizontal-padding .to-margins,
-  .product-category .content-container .restore-horizontal-padding .to-margins,
-  .page .content-container .wipe-hero.short,
-  .product-category .content-container .wipe-hero.short {
+  .product-category .content-container .restore-horizontal-padding .to-margins {
     margin-right: 0;
     margin-left: 0;
   }
@@ -2597,9 +2599,7 @@ nav header,
     margin-left: 0;
   }
   .page .content-container .restore-horizontal-padding .to-margins,
-  .product-category .content-container .restore-horizontal-padding .to-margins,
-  .page .content-container .wipe-hero.short,
-  .product-category .content-container .wipe-hero.short {
+  .product-category .content-container .restore-horizontal-padding .to-margins {
     margin-right: 0;
     margin-left: 0;
   }
@@ -2617,6 +2617,14 @@ nav header,
 }
 .page article,
 .product-category article {
+  margin: 0;
+  font-size: 30px;
+  font-family: 'Seravek', sans-serif;
+  line-height: 1.5em;
+  font-weight: 200;
+  letter-spacing: 0;
+  font-family: SeravekExtraLight;
+  margin-bottom: 40px;
   padding-top: 60px;
 }
 .application .content-container,
@@ -2659,8 +2667,10 @@ nav header,
 .eeonyx-in-action .content-container .remove-horizontal-padding .from-margins,
 .application .content-container .product-category-grid,
 .eeonyx-in-action .content-container .product-category-grid,
-.application .content-container .wipe-hero,
-.eeonyx-in-action .content-container .wipe-hero {
+.application .content-container .wipe-hero.medium,
+.eeonyx-in-action .content-container .wipe-hero.medium,
+.application .content-container .wipe-hero.large,
+.eeonyx-in-action .content-container .wipe-hero.large {
   margin-right: -40px;
   margin-left: -40px;
 }
@@ -2690,8 +2700,10 @@ nav header,
   .eeonyx-in-action .content-container .remove-horizontal-padding .from-margins,
   .application .content-container .product-category-grid,
   .eeonyx-in-action .content-container .product-category-grid,
-  .application .content-container .wipe-hero,
-  .eeonyx-in-action .content-container .wipe-hero {
+  .application .content-container .wipe-hero.medium,
+  .eeonyx-in-action .content-container .wipe-hero.medium,
+  .application .content-container .wipe-hero.large,
+  .eeonyx-in-action .content-container .wipe-hero.large {
     margin-right: -20px;
     margin-left: -20px;
   }
@@ -2722,8 +2734,10 @@ nav header,
   .eeonyx-in-action .content-container .remove-horizontal-padding .from-margins,
   .application .content-container .product-category-grid,
   .eeonyx-in-action .content-container .product-category-grid,
-  .application .content-container .wipe-hero,
-  .eeonyx-in-action .content-container .wipe-hero {
+  .application .content-container .wipe-hero.medium,
+  .eeonyx-in-action .content-container .wipe-hero.medium,
+  .application .content-container .wipe-hero.large,
+  .eeonyx-in-action .content-container .wipe-hero.large {
     margin-right: -20px;
     margin-left: -20px;
   }
@@ -2755,9 +2769,7 @@ nav header,
   margin-left: 0;
 }
 .application .content-container .restore-horizontal-padding .to-margins,
-.eeonyx-in-action .content-container .restore-horizontal-padding .to-margins,
-.application .content-container .wipe-hero.short,
-.eeonyx-in-action .content-container .wipe-hero.short {
+.eeonyx-in-action .content-container .restore-horizontal-padding .to-margins {
   margin-right: 0;
   margin-left: 0;
 }
@@ -2784,9 +2796,7 @@ nav header,
     margin-left: 0;
   }
   .application .content-container .restore-horizontal-padding .to-margins,
-  .eeonyx-in-action .content-container .restore-horizontal-padding .to-margins,
-  .application .content-container .wipe-hero.short,
-  .eeonyx-in-action .content-container .wipe-hero.short {
+  .eeonyx-in-action .content-container .restore-horizontal-padding .to-margins {
     margin-right: 0;
     margin-left: 0;
   }
@@ -2814,9 +2824,7 @@ nav header,
     margin-left: 0;
   }
   .application .content-container .restore-horizontal-padding .to-margins,
-  .eeonyx-in-action .content-container .restore-horizontal-padding .to-margins,
-  .application .content-container .wipe-hero.short,
-  .eeonyx-in-action .content-container .wipe-hero.short {
+  .eeonyx-in-action .content-container .restore-horizontal-padding .to-margins {
     margin-right: 0;
     margin-left: 0;
   }
@@ -2852,7 +2860,8 @@ nav header,
 }
 .about-eeonyx .content-container .remove-horizontal-padding .from-margins,
 .about-eeonyx .content-container .product-category-grid,
-.about-eeonyx .content-container .wipe-hero {
+.about-eeonyx .content-container .wipe-hero.medium,
+.about-eeonyx .content-container .wipe-hero.large {
   margin-right: -80px;
   margin-left: -80px;
 }
@@ -2875,7 +2884,8 @@ nav header,
   }
   .about-eeonyx .content-container .remove-horizontal-padding .from-margins,
   .about-eeonyx .content-container .product-category-grid,
-  .about-eeonyx .content-container .wipe-hero {
+  .about-eeonyx .content-container .wipe-hero.medium,
+  .about-eeonyx .content-container .wipe-hero.large {
     margin-right: -40px;
     margin-left: -40px;
   }
@@ -2899,7 +2909,8 @@ nav header,
   }
   .about-eeonyx .content-container .remove-horizontal-padding .from-margins,
   .about-eeonyx .content-container .product-category-grid,
-  .about-eeonyx .content-container .wipe-hero {
+  .about-eeonyx .content-container .wipe-hero.medium,
+  .about-eeonyx .content-container .wipe-hero.large {
     margin-right: -20px;
     margin-left: -20px;
   }
@@ -2924,8 +2935,7 @@ nav header,
   margin-right: 0;
   margin-left: 0;
 }
-.about-eeonyx .content-container .restore-horizontal-padding .to-margins,
-.about-eeonyx .content-container .wipe-hero.short {
+.about-eeonyx .content-container .restore-horizontal-padding .to-margins {
   margin-right: 0;
   margin-left: 0;
 }
@@ -2946,8 +2956,7 @@ nav header,
     margin-right: 0;
     margin-left: 0;
   }
-  .about-eeonyx .content-container .restore-horizontal-padding .to-margins,
-  .about-eeonyx .content-container .wipe-hero.short {
+  .about-eeonyx .content-container .restore-horizontal-padding .to-margins {
     margin-right: 0;
     margin-left: 0;
   }
@@ -2969,8 +2978,7 @@ nav header,
     margin-right: 0;
     margin-left: 0;
   }
-  .about-eeonyx .content-container .restore-horizontal-padding .to-margins,
-  .about-eeonyx .content-container .wipe-hero.short {
+  .about-eeonyx .content-container .restore-horizontal-padding .to-margins {
     margin-right: 0;
     margin-left: 0;
   }
@@ -3008,7 +3016,8 @@ nav header,
 }
 .product .content-container .remove-horizontal-padding .from-margins,
 .product .content-container .product-category-grid,
-.product .content-container .wipe-hero {
+.product .content-container .wipe-hero.medium,
+.product .content-container .wipe-hero.large {
   margin-right: -130px;
   margin-left: -130px;
 }
@@ -3031,7 +3040,8 @@ nav header,
   }
   .product .content-container .remove-horizontal-padding .from-margins,
   .product .content-container .product-category-grid,
-  .product .content-container .wipe-hero {
+  .product .content-container .wipe-hero.medium,
+  .product .content-container .wipe-hero.large {
     margin-right: -40px;
     margin-left: -40px;
   }
@@ -3055,7 +3065,8 @@ nav header,
   }
   .product .content-container .remove-horizontal-padding .from-margins,
   .product .content-container .product-category-grid,
-  .product .content-container .wipe-hero {
+  .product .content-container .wipe-hero.medium,
+  .product .content-container .wipe-hero.large {
     margin-right: -20px;
     margin-left: -20px;
   }
@@ -3080,8 +3091,7 @@ nav header,
   margin-right: 0;
   margin-left: 0;
 }
-.product .content-container .restore-horizontal-padding .to-margins,
-.product .content-container .wipe-hero.short {
+.product .content-container .restore-horizontal-padding .to-margins {
   margin-right: 0;
   margin-left: 0;
 }
@@ -3102,8 +3112,7 @@ nav header,
     margin-right: 0;
     margin-left: 0;
   }
-  .product .content-container .restore-horizontal-padding .to-margins,
-  .product .content-container .wipe-hero.short {
+  .product .content-container .restore-horizontal-padding .to-margins {
     margin-right: 0;
     margin-left: 0;
   }
@@ -3125,8 +3134,7 @@ nav header,
     margin-right: 0;
     margin-left: 0;
   }
-  .product .content-container .restore-horizontal-padding .to-margins,
-  .product .content-container .wipe-hero.short {
+  .product .content-container .restore-horizontal-padding .to-margins {
     margin-right: 0;
     margin-left: 0;
   }
@@ -3176,7 +3184,8 @@ nav header,
 }
 .top-gray-wrapper .inner .remove-horizontal-padding .from-margins,
 .top-gray-wrapper .inner .product-category-grid,
-.top-gray-wrapper .inner .wipe-hero {
+.top-gray-wrapper .inner .wipe-hero.medium,
+.top-gray-wrapper .inner .wipe-hero.large {
   margin-right: -40px;
   margin-left: -40px;
 }
@@ -3199,7 +3208,8 @@ nav header,
   }
   .top-gray-wrapper .inner .remove-horizontal-padding .from-margins,
   .top-gray-wrapper .inner .product-category-grid,
-  .top-gray-wrapper .inner .wipe-hero {
+  .top-gray-wrapper .inner .wipe-hero.medium,
+  .top-gray-wrapper .inner .wipe-hero.large {
     margin-right: -20px;
     margin-left: -20px;
   }
@@ -3223,7 +3233,8 @@ nav header,
   }
   .top-gray-wrapper .inner .remove-horizontal-padding .from-margins,
   .top-gray-wrapper .inner .product-category-grid,
-  .top-gray-wrapper .inner .wipe-hero {
+  .top-gray-wrapper .inner .wipe-hero.medium,
+  .top-gray-wrapper .inner .wipe-hero.large {
     margin-right: -20px;
     margin-left: -20px;
   }
@@ -3248,8 +3259,7 @@ nav header,
   margin-right: 0;
   margin-left: 0;
 }
-.top-gray-wrapper .inner .restore-horizontal-padding .to-margins,
-.top-gray-wrapper .inner .wipe-hero.short {
+.top-gray-wrapper .inner .restore-horizontal-padding .to-margins {
   margin-right: 0;
   margin-left: 0;
 }
@@ -3270,8 +3280,7 @@ nav header,
     margin-right: 0;
     margin-left: 0;
   }
-  .top-gray-wrapper .inner .restore-horizontal-padding .to-margins,
-  .top-gray-wrapper .inner .wipe-hero.short {
+  .top-gray-wrapper .inner .restore-horizontal-padding .to-margins {
     margin-right: 0;
     margin-left: 0;
   }
@@ -3293,8 +3302,7 @@ nav header,
     margin-right: 0;
     margin-left: 0;
   }
-  .top-gray-wrapper .inner .restore-horizontal-padding .to-margins,
-  .top-gray-wrapper .inner .wipe-hero.short {
+  .top-gray-wrapper .inner .restore-horizontal-padding .to-margins {
     margin-right: 0;
     margin-left: 0;
   }

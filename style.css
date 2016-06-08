@@ -1387,7 +1387,9 @@ nav header .margin-filler {
 #fullpage .combs-container .comb .title {
   position: relative;
   top: 0;
-  padding: 0 30px;
+  padding: 0;
+  margin: 0 auto;
+  width: 157px;
   font-size: 20px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1397,42 +1399,44 @@ nav header .margin-filler {
 }
 @media (max-width: 1023px) {
   #fullpage .combs-container .comb .title {
+    width: 117.75px;
     top: 0;
-    padding: 0 22.5px;
     font-size: 15px;
     font-family: SeravekBold;
   }
 }
 @media (max-width: 767px) {
   #fullpage .combs-container .comb .title {
+    width: 78.5px;
     top: 0;
-    padding: 0 15px;
     font-size: 10px;
     font-family: SeravekBold;
   }
 }
 #fullpage .combs-container .comb .title.hover {
-  padding: 0 60px;
+  padding: 0;
+  width: 109.9px;
   top: -5px;
   font-size: 14px;
 }
 @media (max-width: 1023px) {
   #fullpage .combs-container .comb .title.hover {
-    padding: 0 45px;
+    width: 82.425px;
     top: -3.75px;
     font-size: 10.5px;
   }
 }
 @media (max-width: 767px) {
   #fullpage .combs-container .comb .title.hover {
-    padding: 0 30px;
+    width: 54.95px;
     top: -2.5px;
     font-size: 7px;
   }
 }
 @media (min-width: 768px) {
   #fullpage .combs-container .comb:hover .title {
-    padding: 0 60px;
+    padding: 0;
+    width: 109.9px;
     top: -5px;
     font-size: 14px;
   }
@@ -1450,14 +1454,14 @@ nav header .margin-filler {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   #fullpage .combs-container .comb:hover .title {
-    padding: 0 45px;
+    width: 82.425px;
     top: -3.75px;
     font-size: 10.5px;
   }
 }
 @media (min-width: 768px) and (max-width: 767px) {
   #fullpage .combs-container .comb:hover .title {
-    padding: 0 30px;
+    width: 54.95px;
     top: -2.5px;
     font-size: 7px;
   }

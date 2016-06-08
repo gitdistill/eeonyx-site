@@ -1287,21 +1287,25 @@ nav{
           .scaled( @mobile-scale-factor );
         }
       }
+      @title-font-size: 20px;
+      @title-width: @comb-width - 60px;
+      @title-width-over-font-size: @title-width / @title-font-size;
       .title {
-        @padding: 30px;
         position:relative;
         top: @content-vertical-shift;
-        padding: 0 @padding;
-        font-size:20px;
+        padding: 0;
+        margin: 0 auto;
+        width: @title-width;
+        font-size: @title-font-size;
         letter-spacing:1px;
         text-transform:uppercase;
         text-align:center;
         line-height: 1.1;
         transition: all 200ms ease;
         .scaled( @scale-factor ){
+          width: @title-width * @scale-factor;
           top: @scale-factor * 0;
-          padding: 0 @scale-factor * @padding;
-          font-size: @scale-factor * 20px;
+          font-size: ( @scale-factor * @title-font-size );
           font-family: SeravekBold;
         }
         @media( max-width: @tablet-max ){
@@ -1312,13 +1316,15 @@ nav{
         }
       }
       .title.hover {
-        padding: 0 60px;
+        @title-hover-font-size: 14px;
+        padding: 0;
+        width: @title-width-over-font-size * @title-hover-font-size;
         top: -5px;
-        font-size: 14px;
+        font-size: @title-hover-font-size;
         .scaled( @scale-factor ){
-          padding: 0 @scale-factor * 60px;
+          width: @title-width-over-font-size * @title-hover-font-size * @scale-factor;
           top: @scale-factor * -5px;
-          font-size: @scale-factor * 14px;
+          font-size: @scale-factor * @title-hover-font-size;
         }
         @media( max-width: @tablet-max ){
           .scaled( @tablet-scale-factor );

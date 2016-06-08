@@ -649,15 +649,16 @@ label {
     padding-left: 60px;
     margin-left: 140px;
     padding-top: 210px;
-    width: 700px;
+    max-width: 700px;
     transition: margin-left @menu-position-transition-time ease;
     @media( max-width: @mobile-max ){
       padding-left: 20px;
       padding-top: 110px;
       margin: 0;
-      width: 320px;
+      max-width: 320px;
       h1 {
         font-size: 40px;
+        font-size: 12vw;
         line-height: 1;
       }
     }
@@ -749,6 +750,7 @@ label {
   bottom:0;
   right:0;
   left:0;
+  z-index: 3;
   overflow-y:auto;
   -webkit-overflow-scrolling:touch;
   &.visible {
@@ -1045,23 +1047,14 @@ nav{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
   }
   .section-top-header {
-    position:absolute;
+    position:static;
     z-index:5;
-    top:36px;
     width:100%;
     text-align:center;
     margin:0 auto;
-    @media( max-width: @tablet-max ){
-      @media( min-width: @tablet-min ){
-        left: 270px;
-        right: 0;
-        width: auto;
-      }
-    }
+    margin-bottom: 40px;
     @media( max-width: @mobile-max ){
-      position: static;
       margin-bottom: 10px;
-      top: 80px;
     }
 
     .text {
@@ -1130,6 +1123,7 @@ nav{
   }
 
   @mobile-scale-factor: 0.5;
+  @tablet-scale-factor: 0.75;
   @comb-width: 217px;
   @comb-height: 228px;
   @comb-right-margin: 20px;
@@ -1143,8 +1137,8 @@ nav{
   }
   .combs-container {
     @desktop-width: 830px;
-    @tablet-width: 580px;
-    @mobile-width: @tablet-width * @mobile-scale-factor; 
+    @tablet-width: 580px * @tablet-scale-factor;
+    @mobile-width: 580px * @mobile-scale-factor; 
     width: @desktop-width;
     padding-left: 0;
     padding-bottom: -1* @comb-top-margin;
@@ -1162,26 +1156,25 @@ nav{
       text-decoration:underline;
     }
     .comb {
-      @height: @comb-height + @comb-top-margin;
-      @width: @comb-width + @comb-right-margin;
+      @height-with-margin: @comb-height + @comb-top-margin;
+      @width-with-margin: @comb-width + @comb-right-margin;
       @row-offset: @comb-right-margin/2 + @comb-width/2;
-      height: @height;
-      width: @width;
+      height: @height-with-margin;
+      width: @width-with-margin;
       vertical-align:top;
       display:inline-block;
       overflow: visible;
       cursor:pointer;
-      @media( max-width: @mobile-max ){
-        height: @height * @mobile-scale-factor;
-        width:  @width * @mobile-scale-factor;
-      }
+      color: @black;
+      text-decoration: none;
+
       &>div{
         .comb-dimensions( @comb-width, @comb-height );
         background-image:url(./images/bg-comb.png);
-        @media( max-width: @mobile-max ){
-          .comb-dimensions( @comb-width * @mobile-scale-factor, @comb-height * @mobile-scale-factor );
-        }
+        display: table-cell;
+        vertical-align: middle;
       }
+
       @media( min-width: @desktop-min ){
         &:nth-child(6n+4) {
           margin-left: @row-offset;
@@ -1193,85 +1186,111 @@ nav{
           }
         }
       }
+
+      .scaled-two-wide-combs( @scale-factor ){
+        height: @height-with-margin * @scale-factor;
+        width:  @width-with-margin * @scale-factor;
+        &>div {
+          .comb-dimensions( @comb-width * @scale-factor, @comb-height * @scale-factor );
+        }
+        &:nth-child(4n+3) {
+          margin-left: @row-offset * @scale-factor;
+        }
+        &:nth-child(4n+4) {
+          width: @comb-width * @scale-factor;
+          &>div {
+            margin-right: 0;
+          }
+        }
+      }
+
       @media( max-width: @tablet-max ){
-        &:nth-child(4n+3) {
-          margin-left: @row-offset;
-        }
-        &:nth-child(4n+4) {
-          width: @comb-width;
-          &>div {
-            margin-right: 0;
-          }
-        }
+        .scaled-two-wide-combs( @tablet-scale-factor );
       }
+
       @media( max-width: @mobile-max ){
-        &:nth-child(4n+3) {
-          margin-left: @row-offset * @mobile-scale-factor;
-        }
-        &:nth-child(4n+4) {
-          width: @comb-width * @mobile-scale-factor;
-          &>div {
-            margin-right: 0;
-          }
-        }
+        .scaled-two-wide-combs( @mobile-scale-factor );
       }
+
+      @content-vertical-shift: 0;
       .body {
-        top: 15px;
+        top: 0;
         padding: 0 30px;
         font-size: 13px;
         line-height: 1.35;
         text-align:center;
         opacity: 0;
         position:relative;
-        transition: all 200ms ease;
+        transition: opacity 200ms 200ms ease;
+        height: 0;
+        overflow-y: hidden;
+        .scaled( @scale-factor ){
+          padding: 0 @scale-factor * 30px;
+          top: @scale-factor * 0;
+          font-size: @scale-factor * 14px;
+        }
+        @media( max-width: @tablet-max ){
+          .scaled( @tablet-scale-factor );
+        }
         @media( max-width: @mobile-max ){
-          padding: 0 @mobile-scale-factor * 30px;
-          top: @mobile-scale-factor * 10px;
-          font-size: @mobile-scale-factor * 14px;
+          .scaled( @mobile-scale-factor );
         }
       }
       .body.hover {
         opacity:1;
+        height: auto;
       }
       .icon {
         @icon-width: 38px;
         position:relative;
-        top:55px;
-        height:@icon-width;
-        width:@icon-width;
+        top: @content-vertical-shift;
+        height: @icon-width;
+        width: @icon-width;
         margin:0 auto 20px auto;
         background-size: contain;
         background-repeat: no-repeat;
         background-position:center center;
-        transition: all 200ms ease;
+        // transition: all 200ms ease;
         color: @green;
         font-size: @icon-width;
+        .scaled( @scale-factor ){
+          top: @scale-factor * @content-vertical-shift;
+          height: @scale-factor * 1.2*@icon-width;
+          width: @scale-factor * 1.2*@icon-width;
+          font-size: @scale-factor * 1.2*@icon-width;
+          margin:0 auto @scale-factor * 0.8*@icon-width/2 auto;
+        }
+        @media( max-width: @tablet-max ){
+          .scaled( @tablet-scale-factor );
+        }
         @media( max-width: @mobile-max ){
-          top: @mobile-scale-factor * 65px;
-          height: @mobile-scale-factor * 1.2*@icon-width;
-          width: @mobile-scale-factor * 1.2*@icon-width;
-          font-size: @mobile-scale-factor * 1.2*@icon-width;
-          margin:0 auto @mobile-scale-factor * 0.8*@icon-width/2 auto;
+          .scaled( @mobile-scale-factor );
         }
       }
       .icon.hover {
-        top: 10px;
+        top: 0;
         width: 30px;
         height: 30px;
         font-size: 30px;
         margin-bottom: 10px;
+        .scaled( @scale-factor ){
+          top: @scale-factor * 0;
+          width: @scale-factor * 30px;
+          height: @scale-factor * 30px;
+          font-size: @scale-factor * 30px;
+          margin-bottom: @scale-factor * 10px;
+        }
+        @media( max-width: @tablet-max ){
+          .scaled( @tablet-scale-factor );
+        }
         @media( max-width: @mobile-max ){
-          top: @mobile-scale-factor * 10px;
-          width: @mobile-scale-factor * 30px;
-          height: @mobile-scale-factor * 30px;
-          font-size: @mobile-scale-factor * 30px;
-          margin-bottom: @mobile-scale-factor * 10px;
+          .scaled( @mobile-scale-factor );
         }
       }
       .title {
         @padding: 30px;
         position:relative;
-        top:55px;
+        top: @content-vertical-shift;
         padding: 0 @padding;
         font-size:20px;
         letter-spacing:1px;
@@ -1279,21 +1298,33 @@ nav{
         text-align:center;
         line-height: 1.1;
         transition: all 200ms ease;
-        @media( max-width: @mobile-max ){
-          top: @mobile-scale-factor * 65px;
-          padding: 0 @mobile-scale-factor * @padding;
-          font-size: @mobile-scale-factor * 20px;
+        .scaled( @scale-factor ){
+          top: @scale-factor * 0;
+          padding: 0 @scale-factor * @padding;
+          font-size: @scale-factor * 20px;
           font-family: SeravekBold;
+        }
+        @media( max-width: @tablet-max ){
+          .scaled( @tablet-scale-factor );
+        }
+        @media( max-width: @mobile-max ){
+          .scaled( @mobile-scale-factor );
         }
       }
       .title.hover {
         padding: 0 60px;
-        top: 5px;
+        top: -5px;
         font-size: 14px;
+        .scaled( @scale-factor ){
+          padding: 0 @scale-factor * 60px;
+          top: @scale-factor * -5px;
+          font-size: @scale-factor * 14px;
+        }
+        @media( max-width: @tablet-max ){
+          .scaled( @tablet-scale-factor );
+        }
         @media( max-width: @mobile-max ){
-          padding: 0 @mobile-scale-factor * 60px;
-          top: @mobile-scale-factor * 5px;
-          font-size: @mobile-scale-factor * 14px;
+          .scaled( @mobile-scale-factor );
         }
       }
       &:hover {
@@ -1311,6 +1342,13 @@ nav{
       }
     }
   }
+
+  /**
+   *
+   * Home fullpage sections
+   *
+   */
+  
   .fp-section[data-anchor=intro]{
     @media( max-width: @mobile-max ){
       .fp-tableCell {
@@ -1318,20 +1356,27 @@ nav{
       }
     }
   }
-  .fp-section[data-anchor=explore-products]{
+  .fp-section[data-anchor=explore-products]{ //
+    .section-top-header {
+      position: relative;
+      top: 0;
+    }
     .explore-intro {
       margin:1em 0 0 0;
       color:#ffffff;
       max-width: 600px;
       margin: 0 auto;
       padding-bottom: 50px;
+      @media( max-width: @tablet-max ){
+        padding-bottom: 10px;
+      }
       @media( max-width: @mobile-max ){
         font-size: 16px;
-        text-align: left;
+        text-align: center;
+        max-width: 320px;
         font-family: Seravek;
         display: block;
-        padding-left: 10px;
-        padding-bottom: 0px;
+        padding: 0 10px 0 10px;
       }
     }
     .section-text {
@@ -1362,6 +1407,11 @@ nav{
     }
     .section-top-header {
       position: absolute;
+      top: 36px;
+      @media( max-width: @mobile-max ){
+        position: absolute;
+        top: 80px;
+      }
     }
   }
   .fp-section[data-anchor=about-eeonyx]{
@@ -2565,7 +2615,7 @@ nav{
   }
   &.short{
     &:extend(.restore-horizontal-padding .to-margins all);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -2683,38 +2733,21 @@ nav{
       margin: 0;
     }
   }
+  @media( max-width: @mobile-max ){
+    .application-crumb {
+      margin-top: 20px;
+    }
+  }
+  .wipe-hero {
+    z-index: 1;
+  }
   .background-image {
-    z-index: -1;
     position: absolute;
     left: 0;
     right: 0;
     top: 0px;
-    .image {
-      width: @site-max-width;
-      margin: 0 auto;
-      text-align: center;
-      overflow: visible;
-      &:after {
-        content: " ";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
-        background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
-      }
-    }
-    img {
-      width: 130%;
-      margin-left: 0px;
-      margin-top: 200px;
-    }
-    @media( max-width: @mobile-max ){
+    &.mobile {
+      display: none;
       position: static;
       margin-bottom: 20px;
       width: 100%;
@@ -2731,6 +2764,39 @@ nav{
         &:after {
           display: none;
         }
+      }
+    }
+    .image {
+      width: @site-max-width;
+      margin: 0 auto;
+      text-align: center;
+      overflow: visible;
+      &:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+        background: -moz-linear-gradient(left,  rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 50%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left,  rgba(255,255,255,0.8) 0%,rgba(255,255,255,0) 50%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right,  rgba(255,255,255,0.8) 0%,rgba(255,255,255,0) 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+      }
+    }
+    img {
+      width: 130%;
+      margin-left: 0px;
+      margin-top: 200px;
+    }
+    @media( max-width: @mobile-max ){
+      &.desktop {
+        display: none;
+      }
+      &.mobile {
+        display: block;
       }
     }
   }

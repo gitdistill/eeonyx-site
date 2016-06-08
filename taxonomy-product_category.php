@@ -103,10 +103,10 @@ $sections_post = $term;
 
         <div class='col-sm-12 hidden-sm hidden-xs'>
           <div class='row'>
-            <div class='lower-line col-md-6' data-product-grid-slug="<?=$slugs[$count-1]?>"></div>
             <?php if ( $count%2 == 0 ) { ?>
-            <div class='lower-line col-md-6' data-product-grid-slug="<?=$slugs[$count]?>"></div>
+            <div class='lower-line col-md-6' data-product-grid-slug="<?=$slugs[$count-2]?>"></div>
             <?php } ?>
+            <div class='lower-line col-md-6' data-product-grid-slug="<?=$slugs[$count-1]?>"></div>
           </div>
         </div>
 

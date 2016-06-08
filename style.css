@@ -765,7 +765,7 @@ label {
   padding-left: 60px;
   margin-left: 140px;
   padding-top: 210px;
-  width: 700px;
+  max-width: 700px;
   transition: margin-left 0.5s ease;
 }
 @media (max-width: 767px) {
@@ -773,10 +773,11 @@ label {
     padding-left: 20px;
     padding-top: 110px;
     margin: 0;
-    width: 320px;
+    max-width: 320px;
   }
   .home .content h1 {
     font-size: 40px;
+    font-size: 12vw;
     line-height: 1;
   }
 }
@@ -854,6 +855,7 @@ label {
   bottom: 0;
   right: 0;
   left: 0;
+  z-index: 3;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -1084,6 +1086,13 @@ nav header .margin-filler {
   background-size: 155px 44px;
   background-image: url(images/logo-plain.svg);
 }
+#fullpage {
+  /**
+   *
+   * Home fullpage sections
+   *
+   */
+}
 #fullpage .fp-section,
 #fullpage .fp-tableCell {
   transition: height 50ms linear;
@@ -1114,25 +1123,16 @@ nav header .margin-filler {
   }
 }
 #fullpage .section-top-header {
-  position: absolute;
+  position: static;
   z-index: 5;
-  top: 36px;
   width: 100%;
   text-align: center;
   margin: 0 auto;
-}
-@media (max-width: 1023px) and (min-width: 768px) {
-  #fullpage .section-top-header {
-    left: 270px;
-    right: 0;
-    width: auto;
-  }
+  margin-bottom: 40px;
 }
 @media (max-width: 767px) {
   #fullpage .section-top-header {
-    position: static;
     margin-bottom: 10px;
-    top: 80px;
   }
 }
 #fullpage .section-top-header .text {
@@ -1214,7 +1214,7 @@ nav header .margin-filler {
 }
 @media (max-width: 1023px) {
   #fullpage .combs-container {
-    width: 580px;
+    width: 435px;
   }
 }
 @media (max-width: 767px) {
@@ -1234,12 +1234,8 @@ nav header .margin-filler {
   display: inline-block;
   overflow: visible;
   cursor: pointer;
-}
-@media (max-width: 767px) {
-  #fullpage .combs-container .comb {
-    height: 99px;
-    width: 118.5px;
-  }
+  color: #252c26;
+  text-decoration: none;
 }
 #fullpage .combs-container .comb > div {
   width: 217px;
@@ -1247,14 +1243,8 @@ nav header .margin-filler {
   background-size: 217px 228px;
   margin: 0 0 -30px 0;
   background-image: url(images/bg-comb.png);
-}
-@media (max-width: 767px) {
-  #fullpage .combs-container .comb > div {
-    width: 108.5px;
-    height: 114px;
-    background-size: 108.5px 114px;
-    margin: 0 0 -15px 0;
-  }
+  display: table-cell;
+  vertical-align: middle;
 }
 @media (min-width: 1024px) {
   #fullpage .combs-container .comb:nth-child(6n+4) {
@@ -1268,17 +1258,37 @@ nav header .margin-filler {
   }
 }
 @media (max-width: 1023px) {
+  #fullpage .combs-container .comb {
+    height: 148.5px;
+    width: 177.75px;
+  }
+  #fullpage .combs-container .comb > div {
+    width: 162.75px;
+    height: 171px;
+    background-size: 162.75px 171px;
+    margin: 0 0 -22.5px 0;
+  }
   #fullpage .combs-container .comb:nth-child(4n+3) {
-    margin-left: 118.5px;
+    margin-left: 88.875px;
   }
   #fullpage .combs-container .comb:nth-child(4n+4) {
-    width: 217px;
+    width: 162.75px;
   }
   #fullpage .combs-container .comb:nth-child(4n+4) > div {
     margin-right: 0;
   }
 }
 @media (max-width: 767px) {
+  #fullpage .combs-container .comb {
+    height: 99px;
+    width: 118.5px;
+  }
+  #fullpage .combs-container .comb > div {
+    width: 108.5px;
+    height: 114px;
+    background-size: 108.5px 114px;
+    margin: 0 0 -15px 0;
+  }
   #fullpage .combs-container .comb:nth-child(4n+3) {
     margin-left: 59.25px;
   }
@@ -1290,41 +1300,59 @@ nav header .margin-filler {
   }
 }
 #fullpage .combs-container .comb .body {
-  top: 15px;
+  top: 0;
   padding: 0 30px;
   font-size: 13px;
   line-height: 1.35;
   text-align: center;
   opacity: 0;
   position: relative;
-  transition: all 200ms ease;
+  transition: opacity 200ms 200ms ease;
+  height: 0;
+  overflow-y: hidden;
+}
+@media (max-width: 1023px) {
+  #fullpage .combs-container .comb .body {
+    padding: 0 22.5px;
+    top: 0;
+    font-size: 10.5px;
+  }
 }
 @media (max-width: 767px) {
   #fullpage .combs-container .comb .body {
     padding: 0 15px;
-    top: 5px;
+    top: 0;
     font-size: 7px;
   }
 }
 #fullpage .combs-container .comb .body.hover {
   opacity: 1;
+  height: auto;
 }
 #fullpage .combs-container .comb .icon {
   position: relative;
-  top: 55px;
+  top: 0;
   height: 38px;
   width: 38px;
   margin: 0 auto 20px auto;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  transition: all 200ms ease;
   color: #3cd52e;
   font-size: 38px;
 }
+@media (max-width: 1023px) {
+  #fullpage .combs-container .comb .icon {
+    top: 0;
+    height: 34.2px;
+    width: 34.2px;
+    font-size: 34.2px;
+    margin: 0 auto 11.4px auto;
+  }
+}
 @media (max-width: 767px) {
   #fullpage .combs-container .comb .icon {
-    top: 32.5px;
+    top: 0;
     height: 22.8px;
     width: 22.8px;
     font-size: 22.8px;
@@ -1332,15 +1360,24 @@ nav header .margin-filler {
   }
 }
 #fullpage .combs-container .comb .icon.hover {
-  top: 10px;
+  top: 0;
   width: 30px;
   height: 30px;
   font-size: 30px;
   margin-bottom: 10px;
 }
+@media (max-width: 1023px) {
+  #fullpage .combs-container .comb .icon.hover {
+    top: 0;
+    width: 22.5px;
+    height: 22.5px;
+    font-size: 22.5px;
+    margin-bottom: 7.5px;
+  }
+}
 @media (max-width: 767px) {
   #fullpage .combs-container .comb .icon.hover {
-    top: 5px;
+    top: 0;
     width: 15px;
     height: 15px;
     font-size: 15px;
@@ -1349,7 +1386,7 @@ nav header .margin-filler {
 }
 #fullpage .combs-container .comb .title {
   position: relative;
-  top: 55px;
+  top: 0;
   padding: 0 30px;
   font-size: 20px;
   letter-spacing: 1px;
@@ -1358,9 +1395,17 @@ nav header .margin-filler {
   line-height: 1.1;
   transition: all 200ms ease;
 }
+@media (max-width: 1023px) {
+  #fullpage .combs-container .comb .title {
+    top: 0;
+    padding: 0 22.5px;
+    font-size: 15px;
+    font-family: SeravekBold;
+  }
+}
 @media (max-width: 767px) {
   #fullpage .combs-container .comb .title {
-    top: 32.5px;
+    top: 0;
     padding: 0 15px;
     font-size: 10px;
     font-family: SeravekBold;
@@ -1368,24 +1413,31 @@ nav header .margin-filler {
 }
 #fullpage .combs-container .comb .title.hover {
   padding: 0 60px;
-  top: 5px;
+  top: -5px;
   font-size: 14px;
+}
+@media (max-width: 1023px) {
+  #fullpage .combs-container .comb .title.hover {
+    padding: 0 45px;
+    top: -3.75px;
+    font-size: 10.5px;
+  }
 }
 @media (max-width: 767px) {
   #fullpage .combs-container .comb .title.hover {
     padding: 0 30px;
-    top: 2.5px;
+    top: -2.5px;
     font-size: 7px;
   }
 }
 @media (min-width: 768px) {
   #fullpage .combs-container .comb:hover .title {
     padding: 0 60px;
-    top: 5px;
+    top: -5px;
     font-size: 14px;
   }
   #fullpage .combs-container .comb:hover .icon {
-    top: 10px;
+    top: 0;
     width: 30px;
     height: 30px;
     font-size: 30px;
@@ -1393,18 +1445,35 @@ nav header .margin-filler {
   }
   #fullpage .combs-container .comb:hover .body {
     opacity: 1;
+    height: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #fullpage .combs-container .comb:hover .title {
+    padding: 0 45px;
+    top: -3.75px;
+    font-size: 10.5px;
   }
 }
 @media (min-width: 768px) and (max-width: 767px) {
   #fullpage .combs-container .comb:hover .title {
     padding: 0 30px;
-    top: 2.5px;
+    top: -2.5px;
     font-size: 7px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #fullpage .combs-container .comb:hover .icon {
+    top: 0;
+    width: 22.5px;
+    height: 22.5px;
+    font-size: 22.5px;
+    margin-bottom: 7.5px;
   }
 }
 @media (min-width: 768px) and (max-width: 767px) {
   #fullpage .combs-container .comb:hover .icon {
-    top: 5px;
+    top: 0;
     width: 15px;
     height: 15px;
     font-size: 15px;
@@ -1416,6 +1485,10 @@ nav header .margin-filler {
     display: block;
   }
 }
+#fullpage .fp-section[data-anchor=explore-products] .section-top-header {
+  position: relative;
+  top: 0;
+}
 #fullpage .fp-section[data-anchor=explore-products] .explore-intro {
   margin: 1em 0 0 0;
   color: #ffffff;
@@ -1423,14 +1496,19 @@ nav header .margin-filler {
   margin: 0 auto;
   padding-bottom: 50px;
 }
+@media (max-width: 1023px) {
+  #fullpage .fp-section[data-anchor=explore-products] .explore-intro {
+    padding-bottom: 10px;
+  }
+}
 @media (max-width: 767px) {
   #fullpage .fp-section[data-anchor=explore-products] .explore-intro {
     font-size: 16px;
-    text-align: left;
+    text-align: center;
+    max-width: 320px;
     font-family: Seravek;
     display: block;
-    padding-left: 10px;
-    padding-bottom: 0px;
+    padding: 0 10px 0 10px;
   }
 }
 #fullpage .fp-section[data-anchor=explore-products] .section-text {
@@ -1465,6 +1543,13 @@ nav header .margin-filler {
 }
 #fullpage .fp-section[data-anchor=products-in-action] .section-top-header {
   position: absolute;
+  top: 36px;
+}
+@media (max-width: 767px) {
+  #fullpage .fp-section[data-anchor=products-in-action] .section-top-header {
+    position: absolute;
+    top: 80px;
+  }
 }
 #fullpage .fp-section[data-anchor=about-eeonyx] .section-text {
   padding: 0 20px 20px 20px;
@@ -3355,7 +3440,7 @@ nav header,
   background-size: cover;
 }
 .wipe-hero.short {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -3584,12 +3669,39 @@ nav header,
     margin: 0;
   }
 }
+@media (max-width: 767px) {
+  .application .application-crumb {
+    margin-top: 20px;
+  }
+}
+.application .wipe-hero {
+  z-index: 1;
+}
 .application .background-image {
-  z-index: -1;
   position: absolute;
   left: 0;
   right: 0;
   top: 0px;
+}
+.application .background-image.mobile {
+  display: none;
+  position: static;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.application .background-image.mobile .image {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  overflow: visible;
+}
+.application .background-image.mobile .image img {
+  width: 100%;
+  margin-left: 0;
+  margin-top: 0;
+}
+.application .background-image.mobile .image:after {
+  display: none;
 }
 .application .background-image .image {
   width: 1024px;
@@ -3608,7 +3720,7 @@ nav header,
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
   /* FF3.6-15 */
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 50%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=1);
   /* IE6-9 */
@@ -3619,24 +3731,11 @@ nav header,
   margin-top: 200px;
 }
 @media (max-width: 767px) {
-  .application .background-image {
-    position: static;
-    margin-bottom: 20px;
-    width: 100%;
-  }
-  .application .background-image .image {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    overflow: visible;
-  }
-  .application .background-image .image img {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 0;
-  }
-  .application .background-image .image:after {
+  .application .background-image.desktop {
     display: none;
+  }
+  .application .background-image.mobile {
+    display: block;
   }
 }
 .application .summary {

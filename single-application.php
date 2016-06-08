@@ -28,7 +28,7 @@ $background_image = get_field( 'background_image' );
     </div>
     <!--============================-->
 
-  <div class="background-image">
+  <div class="background-image desktop">
     <div class="image">
       <img src="<?= $background_image['url'] ?>" alt="<?= $background_image['alt'] ?>">
     </div>
@@ -101,6 +101,13 @@ $background_image = get_field( 'background_image' );
         </div>
       </div>
     </div>
+
+    <div class="background-image mobile">
+      <div class="image">
+        <img src="<?= $background_image['url'] ?>" alt="<?= $background_image['alt'] ?>">
+      </div>
+    </div>
+
 
     <div class="description">
 

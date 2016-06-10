@@ -1747,12 +1747,12 @@ nav{
       transform: translateX(-20px);
     }
   }
-  @media( max-width: @mobile-max ){
-    &.open {
-      margin-left: @menu-column-width/2;
-      transform: translateX(-20px);
-    }
-  }
+  // @media( max-width: @mobile-max ){
+  //   &.open {
+  //     margin-left: @menu-column-width/2;
+  //     transform: translateX(-20px);
+  //   }
+  // }
   // width:231px;
   .logo-transition(){
     transition: all 200ms ease;
@@ -2085,6 +2085,8 @@ nav{
       }
       img {
         width:100%;
+        max-width: 250px;
+        margin: 0 auto;
       }
     }
     .product-text {

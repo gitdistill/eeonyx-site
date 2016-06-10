@@ -1875,14 +1875,6 @@ nav header .margin-filler {
             transform: translateX(-20px);
   }
 }
-@media (max-width: 767px) {
-  #nav-link.open {
-    margin-left: 18%;
-    -webkit-transform: translateX(-20px);
-        -ms-transform: translateX(-20px);
-            transform: translateX(-20px);
-  }
-}
 #nav-link .nav-toggle {
   height: 45px;
   width: 38px;
@@ -2200,6 +2192,8 @@ nav header .margin-filler {
 }
 .product-category-grid .product-grid-item .product-image img {
   width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
 }
 .product-category-grid .product-grid-item .product-text {
   text-align: left;

@@ -1077,6 +1077,8 @@ nav header .margin-filler {
   padding: 10px 0;
   height: 55px;
   width: 100%;
+  color: #3cd52e;
+  font-size: 12px;
 }
 .footer .logo {
   margin: 0 auto;
@@ -1084,6 +1086,12 @@ nav header .margin-filler {
   height: 44px;
   background-size: 155px 44px;
   background-image: url(images/logo-plain.svg);
+}
+.footer .phone {
+  float: left;
+}
+.footer .address {
+  float: right;
 }
 #fullpage {
   /**
@@ -1435,40 +1443,40 @@ nav header .margin-filler {
   }
 }
 @media (min-width: 768px) {
-  #fullpage .combs-container .comb:hover .title {
+  #fullpage .combs-container .comb.has-hover:hover .title {
     padding: 0;
     width: 109.9px;
     top: -5px;
     font-size: 14px;
   }
-  #fullpage .combs-container .comb:hover .icon {
+  #fullpage .combs-container .comb.has-hover:hover .icon {
     top: 0;
     width: 30px;
     height: 30px;
     font-size: 30px;
     margin-bottom: 10px;
   }
-  #fullpage .combs-container .comb:hover .body {
+  #fullpage .combs-container .comb.has-hover:hover .body {
     opacity: 1;
     height: auto;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  #fullpage .combs-container .comb:hover .title {
+  #fullpage .combs-container .comb.has-hover:hover .title {
     width: 82.425px;
     top: -3.75px;
     font-size: 10.5px;
   }
 }
 @media (min-width: 768px) and (max-width: 767px) {
-  #fullpage .combs-container .comb:hover .title {
+  #fullpage .combs-container .comb.has-hover:hover .title {
     width: 54.95px;
     top: -2.5px;
     font-size: 7px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  #fullpage .combs-container .comb:hover .icon {
+  #fullpage .combs-container .comb.has-hover:hover .icon {
     top: 0;
     width: 22.5px;
     height: 22.5px;
@@ -1477,7 +1485,7 @@ nav header .margin-filler {
   }
 }
 @media (min-width: 768px) and (max-width: 767px) {
-  #fullpage .combs-container .comb:hover .icon {
+  #fullpage .combs-container .comb.has-hover:hover .icon {
     top: 0;
     width: 15px;
     height: 15px;

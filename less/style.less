@@ -1018,12 +1018,20 @@ nav{
   padding:10px 0;
   height:55px;
   width:100%;
+  color: @green;
+  font-size: 12px;
   .logo {
     margin:0 auto;
     width:155px;
     height:44px;
     background-size:155px 44px;
     background-image:url(./images/logo-plain.svg);
+  }
+  .phone {
+    float: left;
+  }
+  .address {
+    float: right;
   }
 }
 #fullpage {
@@ -1341,16 +1349,18 @@ nav{
           .scaled( @mobile-scale-factor );
         }
       }
-      &:hover {
-        @media( min-width: @tablet-min ) {
-          .title {
-            .title.hover;
-          }
-          .icon {
-            .icon.hover;
-          }
-          .body {
-            .body.hover;
+      &.has-hover {
+        &:hover {
+          @media( min-width: @tablet-min ) {
+            .title {
+              .title.hover;
+            }
+            .icon {
+              .icon.hover;
+            }
+            .body {
+              .body.hover;
+            }
           }
         }
       }

@@ -73,7 +73,7 @@ $about_eeonyx_section_text = get_field('about_eeonyx_section_text');
               'hide_empty' => false,
           ) );
           foreach ($product_catgories as $index => $cat) {
-          ?><a href="/product_category/<?=$cat->slug?>" class='comb'>
+          ?><a href="/product_category/<?=$cat->slug?>" class='comb has-hover'>
               <div>
                 <div class='icon icon-<?=$cat->slug?>'></div>
                 <div class='title'><?=$cat->name?></div>
@@ -84,7 +84,23 @@ $about_eeonyx_section_text = get_field('about_eeonyx_section_text');
             </a><!--
        --><?php } ?><!--
 
-      --></div>
+      --><a href="/custom-solutions" class='comb'>
+              <div>
+                <div class='icon icon-<?=$cat->slug?>'></div>
+                <div class='title'>Custom Solutions</div>
+                <div class='body'>
+                </div>
+              </div>
+            </a><!--
+       --><a href="/about-our-products" class='comb'>
+              <div>
+                <div class='icon icon-<?=$cat->slug?>'></div>
+                <div class='title'>About out Products</div>
+                <div class='body'>
+                </div>
+              </div>
+            </a><!--
+       --></div>
 
         </div>
 

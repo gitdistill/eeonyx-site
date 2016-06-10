@@ -68,7 +68,7 @@ $data = get_field('data');
 			<div class='right-column col-sm-5'>
 				<div class='column-inner'>
 
-					<div class='inquire-link'>
+					<a href="/contact" class='inquire-link'>
 						<div class='inquire-icon'>
 						</div>
 						<div class='text'>
@@ -76,7 +76,7 @@ $data = get_field('data');
 						</div>
 						<div class='clear'>
 						</div>
-					</div>
+					</a>
 
 					<?php
 					if ( is_array( get_field('images') ) ){

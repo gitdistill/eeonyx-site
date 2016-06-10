@@ -598,6 +598,9 @@ h6.section-title {
 .product-columns .inquire-link {
   width: 200px;
   display: inline-block;
+  text-decoration: none;
+  border: none;
+  color: #252c26;
 }
 .product-columns .inquire-link .text {
   font-size: 18px;

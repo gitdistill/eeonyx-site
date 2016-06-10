@@ -1723,6 +1723,12 @@ nav header .margin-filler {
 .form-group {
   margin: 0 0 20px 0;
 }
+.contact .narrow-column h2:first-of-type {
+  display: none;
+}
+.contact .narrow-column h2 {
+  text-align: left;
+}
 .contact-form .form-group input[type='text'],
 .contact-form .form-group input[type='email'],
 .contact-form .form-group textarea {

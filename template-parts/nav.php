@@ -55,7 +55,7 @@ if ( !defined('EEONYX_NAV_INITIALIZED') ) {
         <a class="menu-item <?php active('eeonyx-in-action') ?>" href="/eeonyx-in-action">
           <div>Eeonyx in Action</div>
         </a>
-        <a class="menu-item <?php active('the-tech') ?>" href="#">
+        <a class="menu-item <?php active('the-tech') ?>" href="/the-tech">
           <div>The Tech</div>
         </a>
         <a class="menu-item <?php active('about-eeonyx') ?>" href="/about-eeonyx">

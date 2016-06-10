@@ -99,7 +99,7 @@ if( get_field('sections', $sections_post) ){
           <?php } ?>
 
           <div class='content col-sm-12'>
-            <div class='specs-table'>
+            <div class='specs-table <?php if ( $table["has_standards_column"] ){ ?>three-column<?php } ?>'>
               <div class='specs-table-inner'>
                 <div class='table-header'>
                   <div class='header-row table-row'>

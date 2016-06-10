@@ -103,7 +103,7 @@ $data = get_field('data');
 				<h4 class="subsection-heading">
 					<?=$table['heading']?>
 				</h4>
-				<div class='specs-table'>
+				<div class='specs-table <?php if ( $table["has_standards_column"] ){ ?>three-column<?php } ?>'>
 					<div class='specs-table-inner'>
 						<div class='table-header'>
 							<div class='header-row table-row'>

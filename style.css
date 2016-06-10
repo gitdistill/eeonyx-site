@@ -50,7 +50,9 @@
 }
 .icon-EeonyxIconSet-62:before,
 .category-icon.custom-solutions:before,
-.icon-custom-solutions:before {
+.icon-custom-solutions:before,
+.category-icon.default:before,
+.icon-default:before {
   content: "\e905";
 }
 .icon-EeonyxIconSet-63:before {

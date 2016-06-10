@@ -973,7 +973,7 @@ label {
 .menu-item.has-icon div {
   padding: 0 0 0 25px;
 }
-.menu-item.has-icon[data-slug]:before {
+.menu-item.has-icon:before {
   content: "";
   display: block;
   position: absolute;
@@ -992,13 +992,13 @@ label {
 .menu-item.has-icon[data-slug=emi-stealth]:before {
   background-image: url(images/emi-stealth.svg);
 }
-.menu-item.has-icon[data-slug=smart-fabrics]:before {
+.menu-item.has-icon.smart-fabrics:before {
   background-image: url(images/smart-fabrics.svg);
 }
 .menu-item.has-icon[data-slug=warming-fabrics]:before {
   background-image: url(images/warming-fabrics.svg);
 }
-.menu-item.has-icon[data-slug=anti-static]:before {
+.menu-item.has-icon[data-slug=esd-anti-static]:before {
   background-image: url(images/anti-static.svg);
 }
 nav header {

@@ -894,7 +894,7 @@ label {
     div {
       padding: 0 0 0 25px;
     }
-    &[data-slug]:before {
+    &:before {
       content: "";
       display: block;
       position: absolute;
@@ -913,13 +913,15 @@ label {
     &[data-slug=emi-stealth]:before {
       background-image: url(images/emi-stealth.svg);
     }
-    &[data-slug=smart-fabrics]:before {
+    &.smart-fabrics:before {
       background-image: url(images/smart-fabrics.svg);
+    }
+    &.custom-solutions:before {
     }
     &[data-slug=warming-fabrics]:before {
       background-image: url(images/warming-fabrics.svg);
     }
-    &[data-slug=anti-static]:before {
+    &[data-slug=esd-anti-static]:before {
       background-image: url(images/anti-static.svg);
     }
   }

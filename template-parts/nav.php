@@ -70,7 +70,7 @@ if ( !defined('EEONYX_NAV_INITIALIZED') ) {
     <div class="menu-items column-2" data-column="2" data-slug="conductive-products">
       <div>
 
-        <a class="menu-item" href="/about-our-products">
+        <a class="menu-item has-icon smart-fabrics" href="/about-our-products">
           <div>About our Products</div>
         </a>
 
@@ -80,6 +80,11 @@ if ( !defined('EEONYX_NAV_INITIALIZED') ) {
         </a>
 
         <?php } ?>
+
+        <a class="menu-item has-icon custom-solutions" href="/custom-solutions">
+          <div>Custom Solutions</div>
+        </a>
+
       </div>
     </div>
 

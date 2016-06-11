@@ -15,15 +15,15 @@
 		</div><!--end page -->
 		<?php  if ( INCLUDE_EEONYX_FOOTER_ELEMENT ){ ?>
 		<div class="footer">
-			<div class="phone">
-				<span class="phone-icon"></span>
-				+1 510.741.3632
+			<div class="info phone">
+				<span class="icon"></span>
+				<p>+1 510.741.3632</p>
 			</div>
 			<div class="logo"></div>
-			<div class="address">
-				<span class="map-icon"></span>
-				750 BELMONT WAY,<br/>
-				PINOLE, CA 94564
+			<div class="info address">
+				<span class="icon"></span>
+				<p>750 BELMONT WAY,<br/>
+				PINOLE, CA 94564</p>
 			</div>
 		</div>
 		<?php } ?>

@@ -55,10 +55,12 @@
 .icon-default:before {
   content: "\e905";
 }
-.icon-EeonyxIconSet-63:before {
+.icon-EeonyxIconSet-63:before,
+.footer .info.address .icon:before {
   content: "\e906";
 }
-.icon-EeonyxIconSet-64:before {
+.icon-EeonyxIconSet-64:before,
+.footer .info.phone .icon:before {
   content: "\e907";
 }
 .icon-EeonyxIconSet-65:before {
@@ -1075,25 +1077,70 @@ nav header .margin-filler {
   background: #ffffff;
 }
 .footer {
-  background: #101013;
+  position: relative;
   padding: 10px 0;
   height: 55px;
   width: 100%;
+  background: #101013;
   color: #3cd52e;
   font-size: 12px;
+  font-family: SeravekBold;
 }
 .footer .logo {
-  margin: 0 auto;
-  width: 155px;
-  height: 44px;
-  background-size: 155px 44px;
+  margin: 8px auto 0 auto;
+  width: 100px;
+  height: 24px;
+  background-size: 100px auto;
   background-image: url(images/logo-plain.svg);
+  background-repeat: no-repeat;
 }
-.footer .phone {
+.footer .info {
+  position: absolute;
+  top: 5px;
+  letter-spacing: 1.5px;
+  line-height: 15px;
+}
+.footer .info .icon {
+  display: block;
   float: left;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  color: #4B584E;
 }
-.footer .address {
-  float: right;
+.footer .info p {
+  margin: 0;
+  display: inline-block;
+}
+.footer .info.phone {
+  left: 5px;
+}
+.footer .info.phone p {
+  padding-top: 10px;
+}
+.footer .info.address {
+  right: 20px;
+}
+.footer .info.address p {
+  padding-top: 5px;
+  padding-left: 5px;
+}
+@media (max-width: 767px) {
+  .footer {
+    height: auto;
+    padding: 0 15px 10px 0;
+  }
+  .footer .info,
+  .footer .logo {
+    display: inline-block;
+    position: static;
+    margin: 0;
+    vertical-align: top;
+  }
+  .footer .logo {
+    float: right;
+    margin-top: 15px;
+  }
 }
 #fullpage {
   /**
@@ -2301,7 +2348,8 @@ nav header .margin-filler {
  * Icons
  *
  */
-.category-icon {
+.category-icon,
+.footer .icon {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -2315,7 +2363,8 @@ nav header .margin-filler {
   -moz-osx-font-smoothing: grayscale;
   font-size: 30px;
 }
-.category-icon.white {
+.category-icon.white,
+.footer .icon.white {
   color: #fff;
 }
 .fp-controlArrow {

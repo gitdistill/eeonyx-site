@@ -1014,24 +1014,72 @@ nav{
   background:#ffffff;
 }
 .footer {
-  background:#101013;
+  position: relative;
   padding:10px 0;
   height:55px;
   width:100%;
+  background:#101013;
   color: @green;
   font-size: 12px;
+  font-family: SeravekBold;
   .logo {
-    margin:0 auto;
-    width:155px;
-    height:44px;
-    background-size:155px 44px;
+    margin: 8px auto 0 auto;
+    width:100px;
+    height:24px;
+    background-size:100px auto;
     background-image:url(./images/logo-plain.svg);
+    background-repeat: no-repeat;
   }
-  .phone {
-    float: left;
+  .info {
+    position: absolute;
+    top: 5px;
+    letter-spacing: 1.5px;
+    line-height: 15px;
+    .icon {
+      display: block;
+      float: left;
+      width: 40px;
+      height: 40px;
+      font-size: 40px;
+      color: #4B584E;
+    }
+    p{
+      margin: 0;
+      display: inline-block;
+    }
+    &.phone {
+      left: 5px;
+      p {
+        padding-top: 10px;
+      }
+      .icon:before {
+        &:extend( .icon-EeonyxIconSet-64:before );
+      }
+    }
+    &.address {
+      right: 20px;
+      p {
+        padding-top: 5px;
+        padding-left: 5px;
+      }
+      .icon:before {
+        &:extend( .icon-EeonyxIconSet-63:before );
+      }
+    }
   }
-  .address {
-    float: right;
+  @media( max-width: @mobile-max ){
+    height: auto;
+    padding: 0 15px 10px 0;
+    .info, .logo {
+      display: inline-block;
+      position: static;
+      margin: 0;
+      vertical-align: top;
+    }
+    .logo {
+      float: right;
+      margin-top: 15px;
+    }
   }
 }
 #fullpage {
@@ -2198,7 +2246,8 @@ nav{
  * Icons
  *
  */
-.category-icon {
+.category-icon,
+.footer .icon {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;

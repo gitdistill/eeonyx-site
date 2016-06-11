@@ -2949,6 +2949,14 @@ nav header,
     margin-left: 0;
   }
 }
+.about-eeonyx .row {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.about-eeonyx [class*=col-] {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .about-eeonyx .content-container {
   padding-left: 80px;
   padding-right: 80px;
@@ -3102,6 +3110,10 @@ nav header,
     margin-right: 0;
     margin-left: 0;
   }
+}
+.about-eeonyx article {
+  max-width: 640px;
+  margin: 0 auto;
 }
 .product {
   padding-top: 120px;
@@ -3433,7 +3445,7 @@ nav header,
  *
  */
 .paragraph-with-image {
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 @media (max-width: 767px) {
   .paragraph-with-image .image {

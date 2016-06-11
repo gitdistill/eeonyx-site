@@ -12,7 +12,7 @@
             <img src="<?=$row['image']['url']?>" class="<?=$hide_image_on_mobile?'hidden-xs':'';?>" alt="<?=$row['image']['alt']?>">
           <?php } ?>
         </div>
-        <div class="col-sm-7 text <?=$swap_columns?'col-sm-pull-3':'';?>">
+        <div class="col-sm-8 text <?=$swap_columns?'col-sm-pull-4':'';?>">
           <?=$row['text']?>
         </div>
       </div>

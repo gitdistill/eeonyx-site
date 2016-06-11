@@ -3435,9 +3435,6 @@ nav header,
 .paragraph-with-image {
   margin-bottom: 60px;
 }
-.paragraph-with-image .image {
-  padding: 0;
-}
 @media (max-width: 767px) {
   .paragraph-with-image .image {
     padding: 0 15px 0 15px;
@@ -3781,12 +3778,6 @@ nav header,
  * About page
  *
  */
-@media (min-width: 768px) {
-  .row-0 .image {
-    padding-left: 120px;
-    padding-top: 60px;
-  }
-}
 /**
  *
  * Single Application

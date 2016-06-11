@@ -1,6 +1,5 @@
   <?php
   $paragraph_with_image_rows = get_field('paragraph_with_image');
-  //var_dump( $paragraph_with_image_rows );
   if( $paragraph_with_image_rows ){
     foreach ($paragraph_with_image_rows as $key => $row) {
       $swap_columns = $row['image_alignment'] == 'right';

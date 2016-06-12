@@ -46,5 +46,9 @@
 		<!-- WP footer -->
 		<?php wp_footer(); ?>
 
+		<!--[if IE]>
+		</div>
+		<![endif]-->
+
 	</body>
 </html>

@@ -27,6 +27,10 @@
 
 <body <?php if (is_front_page()) { ?>class='home'<?php } ?>>
 
+<!--[if IE]>
+<div class="ie">
+<![endif]-->
+
 <div id="page" class="site">
 
 

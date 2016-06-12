@@ -1758,6 +1758,10 @@ nav header .margin-filler {
   margin-right: 10px;
   margin-left: 10px;
 }
+#fullpage .fp-slidesNav ul li:before {
+  display: none;
+  content: '';
+}
 #fullpage .fp-slidesNav ul li a span {
   height: 100%;
   width: 100%;

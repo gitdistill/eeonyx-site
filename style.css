@@ -287,7 +287,8 @@ a {
   cursor: pointer;
 }
 a:active,
-a:hover {
+a:hover,
+a:focus {
   outline: 0;
 }
 abbr[title] {

@@ -25,7 +25,7 @@ $sections_post = $term;
 
     <div class="wipe-hero medium">
       <div class="image">
-        <div style="background-image:url(<?= $hero_image['url'] ?>)" title="<?= $hero_image['alt'] ?>">
+        <div style="background-image:url(<?= $hero_image['url'] ?>)" title="<?= $hero_image['alt'] ?>" data-src="<?= $hero_image['url'] ?>">
         </div>
       </div>
     </div>

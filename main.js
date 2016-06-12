@@ -1,6 +1,8 @@
 
 var MOBILE_MAX_WIDTH = 767;
 var FULLPAGE_RESPONSIVE_WIDTH = 667;
+var WIPE_DELAY = 1000;
+
 /**
  *
  * Slideout
@@ -125,6 +127,39 @@ var convertExternalLinks = function(){
 
 /**
  *
+ * Load wipe image and fire wipe
+ *
+ */
+
+ var initWipe = function( src, callback, delay ){
+   $wipeImage = $('<img/>');
+   $wipeImage[0].src = src;
+   if ( $wipeImage[0].complete ){
+     callback( delay );
+   } else {
+     $wipeImage.on('load', function(){
+       callback( delay );
+     });
+   }
+ };
+ var startHomeWipe = function( delay ){
+   setTimeout( function(){
+     $('.home').removeClass('loading');
+     $('.home .wipe-panel .image').addClass('visible');
+     if( !mobile() && ( !window.location.hash || window.location.hash=='#intro' ) ) {
+       slideout.toggle(true);
+     }
+   }, delay);
+ };
+ var startHeroWipe = function( delay ){
+   setTimeout( function(){
+     $('.wipe-hero .image').addClass('visible');
+   }, delay);
+ };
+
+
+/**
+ *
  * Init full-page effect on home
  *
  */
@@ -180,28 +215,12 @@ var initFullPage = function() {
 
     $('body').addClass('content-hidden');
 
-    //Prepare for wipe animation
-    var WIPE_DELAY = 1000;
-    var startWipe = function(){
-      setTimeout( function(){
-        $('.home').removeClass('loading');
-        $('.home .wipe-panel .image').addClass('visible');
-        if( !mobile() && ( !window.location.hash || window.location.hash=='#intro' ) ) {
-          slideout.toggle(true);
-        }
-      }, WIPE_DELAY);
-    };
-    $wipeImage = $('<img/>');
     var src = $('.home .wipe-panel').data('url');
-    $wipeImage[0].src = src;
     $('body.home').css('background-image', 'url(' + src + ')');
-    if ( $wipeImage[0].complete ){
-      startWipe();
-    } else {
-      $wipeImage.on('load', function(){
-        startWipe();
-      });
-    }
+
+
+    //Prepare for wipe animation
+    initWipe( src, startHomeWipe, WIPE_DELAY );
 
     $fullpage.fullpage({
       anchors: ['intro', 'explore-products', 'products-in-action', 'about-eeonyx'],
@@ -431,8 +450,11 @@ var initProductHovers = function(){
 
 $(document).on('ready', function() {
 
-  //run wipe heros
-  $('.wipe-hero .image').addClass('visible');
+  //Prepare for wipe animation in heros
+  if( $('.home').length === 0 ){
+    var src = $('.wipe-hero .image div').data('src');
+    initWipe( src, startHeroWipe, WIPE_DELAY );
+  }
 
   //open _all_ external links in a new tab
   //must be done in js because client can add links in content

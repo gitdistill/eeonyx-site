@@ -1916,6 +1916,8 @@ nav header .margin-filler {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   z-index: 100;
+}
+#nav-link.transition-armed {
   transition: all 0.5s ease;
 }
 #nav-link a {
@@ -3572,7 +3574,7 @@ nav header,
       -ms-transform: skewX(30deg) translate(56px, 0px);
           transform: skewX(30deg) translate(56px, 0px);
 }
-.wipe-hero .image.armed {
+.wipe-hero .image.transition-armed {
   transition: -webkit-transform 1.5s ease;
   transition: transform 1.5s ease;
   transition: transform 1.5s ease, -webkit-transform 1.5s ease;
@@ -3618,7 +3620,7 @@ nav header,
       -ms-transform: skewX(30deg) translate(155px, 0px);
           transform: skewX(30deg) translate(155px, 0px);
 }
-.wipe-hero.short .image.armed {
+.wipe-hero.short .image.transition-armed {
   transition: -webkit-transform 1.5s ease;
   transition: transform 1.5s ease;
   transition: transform 1.5s ease, -webkit-transform 1.5s ease;
@@ -3648,7 +3650,7 @@ nav header,
         -ms-transform: skewX(30deg) translate(155px, 0px);
             transform: skewX(30deg) translate(155px, 0px);
   }
-  .wipe-hero.short .image.armed {
+  .wipe-hero.short .image.transition-armed {
     transition: -webkit-transform 1.5s ease;
     transition: transform 1.5s ease;
     transition: transform 1.5s ease, -webkit-transform 1.5s ease;
@@ -3682,7 +3684,7 @@ nav header,
       -ms-transform: skewX(30deg) translate(100px, 0px);
           transform: skewX(30deg) translate(100px, 0px);
 }
-.wipe-hero.large .image.armed {
+.wipe-hero.large .image.transition-armed {
   transition: -webkit-transform 1.5s ease;
   transition: transform 1.5s ease;
   transition: transform 1.5s ease, -webkit-transform 1.5s ease;

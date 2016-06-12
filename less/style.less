@@ -1793,7 +1793,9 @@ nav{
   -webkit-transform:translateZ(0);
   transform:translateZ(0);
   z-index: 100;
-  transition: all @menu-position-transition-time ease;
+  &.transition-armed {
+    transition: all @menu-position-transition-time ease;
+  }
   a {
     border: none;
   }
@@ -2698,7 +2700,7 @@ nav{
       transform: skewX(-1*@angle) translate(@image-end-x,0px);
     }
   }
-  &.armed {
+  &.transition-armed {
     //prevent ie from animating movement to initial state 
     transition: transform 1.5s ease;
   }

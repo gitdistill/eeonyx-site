@@ -153,7 +153,7 @@ var convertExternalLinks = function(){
  };
  var startHeroWipe = function( delay ){
    setTimeout( function(){
-     $('.wipe-hero .image').addClass('armed');
+     $('.wipe-hero .image').addClass('transition-armed');
      $('.wipe-hero .image').addClass('visible');
    }, delay);
  };
@@ -456,6 +456,9 @@ $(document).on('ready', function() {
     var src = $('.wipe-hero .image div').data('src');
     initWipe( src, startHeroWipe, WIPE_DELAY );
   }
+
+  //prevent ie from floating the nav link around on load
+  $('#nav-link').addClass('transition-armed');
 
   //open _all_ external links in a new tab
   //must be done in js because client can add links in content

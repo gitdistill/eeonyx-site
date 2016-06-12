@@ -1880,7 +1880,8 @@ nav{
     -moz-transition:.25s ease-in-out;
     -o-transition:.25s ease-in-out;
     transition:.25s ease-in-out;
-    .ie & {
+    //ie 10+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
       transition: none;
     }
   }
@@ -1914,7 +1915,8 @@ nav{
     transform:rotate(45deg);
     top:1px;
     left:4px;
-    .ie & {
+    //ie 10+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
       top: 0;
     }
   }

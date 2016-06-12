@@ -13,7 +13,8 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js <?php if (wp_is_mobile()) { ?>mobile <?php } else { ?>desktop <?php } ?><?php if (is_front_page() && ! wp_is_mobile()) { ?>slideout-open<?php } ?>">
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+<!-- 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+ -->	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
@@ -26,10 +27,6 @@
 </head>
 
 <body <?php if (is_front_page()) { ?>class='home'<?php } ?>>
-
-<!--[if IE]>
-<div class="ie">
-<![endif]-->
 
 <div id="page" class="site">
 

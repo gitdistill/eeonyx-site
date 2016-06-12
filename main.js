@@ -33,6 +33,7 @@ function EeonyxSlideout( $nav ){
     $nav.addClass('slideout-menu');
     $nav.hide();
     $nav.click( function(e){
+      console.log(e);
       if( $(e.toElement)[0] == headerElement || $(e.toElement)[0] == menuElement ){
         _self.toggle();
       }

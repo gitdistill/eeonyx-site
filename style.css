@@ -660,13 +660,26 @@ ul {
   margin: 1em 0 2em 0;
 }
 ul li {
+  position: relative;
   padding-left: 5px;
   font-size: 18px;
   line-height: 1.4em;
   font-weight: 400;
   font-family: 'SeravekLight', sans-serif;
   margin: 0 0 .3em 0;
-  list-style-image: url('images/MiniO-Fill-2-01.svg');
+  list-style: none;
+}
+ul li:before {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  left: -15px;
+  top: 6px;
+  content: " ";
+  background-size: 100% auto;
+  background-image: url('images/MiniO-Fill-2-01.svg');
+  background-repeat: no-repeat;
 }
 label {
   font-size: 12px;

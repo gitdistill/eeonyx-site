@@ -153,6 +153,7 @@ var convertExternalLinks = function(){
  };
  var startHeroWipe = function( delay ){
    setTimeout( function(){
+     $('.wipe-hero .image').addClass('armed');
      $('.wipe-hero .image').addClass('visible');
    }, delay);
  };

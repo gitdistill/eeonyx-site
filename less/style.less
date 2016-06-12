@@ -2687,7 +2687,6 @@ nav{
  */
 .wipe-image( @angle, @start-x, @end-x, @image-start-x, @image-end-x) {
   transform: skewX(@angle) translate(@start-x,0px);
-  transition: transform 1.5s ease;
   overflow: hidden;
   div {
       transform: skewX(-1*@angle) translate(@image-start-x,0px);
@@ -2698,6 +2697,10 @@ nav{
     div {
       transform: skewX(-1*@angle) translate(@image-end-x,0px);
     }
+  }
+  &.armed {
+    //prevent ie from animating movement to initial state 
+    transition: transform 1.5s ease;
   }
 }
 .wipe-hero {

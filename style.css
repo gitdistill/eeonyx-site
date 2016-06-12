@@ -3545,9 +3545,6 @@ nav header,
   -webkit-transform: skewX(-30deg) translate(-1024px, 0px);
       -ms-transform: skewX(-30deg) translate(-1024px, 0px);
           transform: skewX(-30deg) translate(-1024px, 0px);
-  transition: -webkit-transform 1.5s ease;
-  transition: transform 1.5s ease;
-  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
   overflow: hidden;
   background-color: #252c26;
   position: absolute;
@@ -3575,6 +3572,11 @@ nav header,
       -ms-transform: skewX(30deg) translate(56px, 0px);
           transform: skewX(30deg) translate(56px, 0px);
 }
+.wipe-hero .image.armed {
+  transition: -webkit-transform 1.5s ease;
+  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
+}
 .wipe-hero .image div {
   position: absolute;
   top: 0;
@@ -3596,9 +3598,6 @@ nav header,
   -webkit-transform: skewX(-30deg) translate(-1179px, 0px);
       -ms-transform: skewX(-30deg) translate(-1179px, 0px);
           transform: skewX(-30deg) translate(-1179px, 0px);
-  transition: -webkit-transform 1.5s ease;
-  transition: transform 1.5s ease;
-  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
   overflow: hidden;
 }
 .wipe-hero.short .image div {
@@ -3619,14 +3618,16 @@ nav header,
       -ms-transform: skewX(30deg) translate(155px, 0px);
           transform: skewX(30deg) translate(155px, 0px);
 }
+.wipe-hero.short .image.armed {
+  transition: -webkit-transform 1.5s ease;
+  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
+}
 @media (max-width: 1023px) {
   .wipe-hero.short .image {
     -webkit-transform: skewX(-30deg) translate(-1259px, 0px);
         -ms-transform: skewX(-30deg) translate(-1259px, 0px);
             transform: skewX(-30deg) translate(-1259px, 0px);
-    transition: -webkit-transform 1.5s ease;
-    transition: transform 1.5s ease;
-    transition: transform 1.5s ease, -webkit-transform 1.5s ease;
     overflow: hidden;
   }
   .wipe-hero.short .image div {
@@ -3647,6 +3648,11 @@ nav header,
         -ms-transform: skewX(30deg) translate(155px, 0px);
             transform: skewX(30deg) translate(155px, 0px);
   }
+  .wipe-hero.short .image.armed {
+    transition: -webkit-transform 1.5s ease;
+    transition: transform 1.5s ease;
+    transition: transform 1.5s ease, -webkit-transform 1.5s ease;
+  }
 }
 .wipe-hero.large {
   height: 430px;
@@ -3655,9 +3661,6 @@ nav header,
   -webkit-transform: skewX(-30deg) translate(-1024px, 0px);
       -ms-transform: skewX(-30deg) translate(-1024px, 0px);
           transform: skewX(-30deg) translate(-1024px, 0px);
-  transition: -webkit-transform 1.5s ease;
-  transition: transform 1.5s ease;
-  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
   overflow: hidden;
   margin-right: 100px;
 }
@@ -3678,6 +3681,11 @@ nav header,
   -webkit-transform: skewX(30deg) translate(100px, 0px);
       -ms-transform: skewX(30deg) translate(100px, 0px);
           transform: skewX(30deg) translate(100px, 0px);
+}
+.wipe-hero.large .image.armed {
+  transition: -webkit-transform 1.5s ease;
+  transition: transform 1.5s ease;
+  transition: transform 1.5s ease, -webkit-transform 1.5s ease;
 }
 @media (max-width: 767px) {
   .wipe-hero,

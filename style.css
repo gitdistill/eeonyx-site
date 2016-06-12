@@ -1988,6 +1988,7 @@ nav header .margin-filler {
   -ms-transform: rotate(0deg);
       transform: rotate(0deg);
   transition: 0.25s ease-in-out;
+  -ms-transition: none;
 }
 .nav-icon span:nth-child(1) {
   top: 0px;

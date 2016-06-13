@@ -68,7 +68,7 @@ $background_image = get_field( 'background_image' );
               <?php foreach ($summary_list as $key => $row) { ?>
                 <div class="row">
                   <div class="list-column col-xs-6">
-                    <span class="name"><?=$row['property_name']?>:</span>
+                    <span class="name"><?=$row['property_name']?></span>
                   </div>
                   <div class="list-column col-xs-6">
                     <?php

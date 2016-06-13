@@ -43,7 +43,7 @@ $sections_post = $term;
 
       <?php
       $count = 0;
-      $slugs = [];
+      $slugs = array();
       while ( $query->have_posts() ){
         $query->the_post();
         $images = get_field('images');

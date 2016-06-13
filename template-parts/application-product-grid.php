@@ -15,23 +15,19 @@
   <?php } ?>
 
       <div class='item col-sm-6'>
-
-        <div class='image-wrapper'>
-          <a href="<?= get_permalink(); ?>">
+        <a href="<?= get_permalink(); ?>">
+          <div class='image-wrapper'>
             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
-          </a>
-        </div>
-
-        <div class='item-text'>
-          <div class="category-icon <?= $primary_category->slug ?>" >
           </div>
-          <h3>
-            <a href="<?= get_permalink(); ?>" class='item-link'>
-              <?= get_the_title(); ?>
-            </a>
-          </h3>
-        </div>
 
+          <div class='item-text'>
+            <div class="category-icon <?= $primary_category->slug ?>" >
+            </div>
+            <h3>
+              <?= get_the_title(); ?>
+            </h3>
+          </div>
+        </a>
       </div>
   <?php $count++;
   } ?><!-- end while -->

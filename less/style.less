@@ -2543,7 +2543,8 @@ nav{
 
 .page,
 .product-category,
-.page-with-hero
+.page-with-hero,
+.full-width-flexible
 {
 
   .content-container {
@@ -2570,6 +2571,9 @@ nav{
   article {
     padding-top: 0;
   }
+}
+
+.full-width-flexible {
 }
 
 
@@ -2692,6 +2696,19 @@ nav{
       border-top: 1px solid #D5E8D6;
       @media( max-width: @mobile-max ){
         margin-top: 20px;
+      }
+    }
+  }
+  &.image-grid {
+    .image-container {
+      padding: 0;
+      text-align: center;
+      img {
+        max-height: 200px;
+        max-width: 200px;
+        @media( max-width: @mobile-max ){
+          max-width: 100%;
+        }
       }
     }
   }

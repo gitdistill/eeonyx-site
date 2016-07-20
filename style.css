@@ -2504,7 +2504,8 @@ nav header,
 }
 .page .content-container,
 .product-category .content-container,
-.page-with-hero .content-container {
+.page-with-hero .content-container,
+.full-width-flexible .content-container {
   padding-left: 80px;
   padding-right: 80px;
   position: relative;
@@ -2512,7 +2513,8 @@ nav header,
 @media (max-width: 1023px) {
   .page .content-container,
   .product-category .content-container,
-  .page-with-hero .content-container {
+  .page-with-hero .content-container,
+  .full-width-flexible .content-container {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -2520,91 +2522,110 @@ nav header,
 @media (max-width: 767px) {
   .page .content-container,
   .product-category .content-container,
-  .page-with-hero .content-container {
+  .page-with-hero .content-container,
+  .full-width-flexible .content-container {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
 .page .content-container .remove-horizontal-padding .from-left-position,
 .product-category .content-container .remove-horizontal-padding .from-left-position,
-.page-with-hero .content-container .remove-horizontal-padding .from-left-position {
+.page-with-hero .content-container .remove-horizontal-padding .from-left-position,
+.full-width-flexible .content-container .remove-horizontal-padding .from-left-position {
   left: -80px;
 }
 .page .content-container .remove-horizontal-padding .from-right-position,
 .product-category .content-container .remove-horizontal-padding .from-right-position,
-.page-with-hero .content-container .remove-horizontal-padding .from-right-position {
+.page-with-hero .content-container .remove-horizontal-padding .from-right-position,
+.full-width-flexible .content-container .remove-horizontal-padding .from-right-position {
   right: -80px;
 }
 .page .content-container .remove-horizontal-padding .from-left-margin,
 .product-category .content-container .remove-horizontal-padding .from-left-margin,
-.page-with-hero .content-container .remove-horizontal-padding .from-left-margin {
+.page-with-hero .content-container .remove-horizontal-padding .from-left-margin,
+.full-width-flexible .content-container .remove-horizontal-padding .from-left-margin {
   margin-left: -80px;
 }
 .page .content-container .remove-horizontal-padding .from-right-margin,
 .product-category .content-container .remove-horizontal-padding .from-right-margin,
-.page-with-hero .content-container .remove-horizontal-padding .from-right-margin {
+.page-with-hero .content-container .remove-horizontal-padding .from-right-margin,
+.full-width-flexible .content-container .remove-horizontal-padding .from-right-margin {
   margin-right: -80px;
 }
 .page .content-container .remove-horizontal-padding .from-margins,
 .product-category .content-container .remove-horizontal-padding .from-margins,
 .page-with-hero .content-container .remove-horizontal-padding .from-margins,
+.full-width-flexible .content-container .remove-horizontal-padding .from-margins,
 .page .content-container .product-category-grid,
 .product-category .content-container .product-category-grid,
 .page-with-hero .content-container .product-category-grid,
+.full-width-flexible .content-container .product-category-grid,
 .page .content-container .wipe-hero.medium,
 .product-category .content-container .wipe-hero.medium,
 .page-with-hero .content-container .wipe-hero.medium,
+.full-width-flexible .content-container .wipe-hero.medium,
 .page .content-container .wipe-hero.large,
 .product-category .content-container .wipe-hero.large,
-.page-with-hero .content-container .wipe-hero.large {
+.page-with-hero .content-container .wipe-hero.large,
+.full-width-flexible .content-container .wipe-hero.large {
   margin-right: -80px;
   margin-left: -80px;
 }
 .page .content-container .remove-horizontal-padding .to-margins,
 .product-category .content-container .remove-horizontal-padding .to-margins,
-.page-with-hero .content-container .remove-horizontal-padding .to-margins {
+.page-with-hero .content-container .remove-horizontal-padding .to-margins,
+.full-width-flexible .content-container .remove-horizontal-padding .to-margins {
   margin-right: 80px;
   margin-left: 80px;
 }
 @media (max-width: 1023px) {
   .page .content-container .remove-horizontal-padding .from-left-position,
   .product-category .content-container .remove-horizontal-padding .from-left-position,
-  .page-with-hero .content-container .remove-horizontal-padding .from-left-position {
+  .page-with-hero .content-container .remove-horizontal-padding .from-left-position,
+  .full-width-flexible .content-container .remove-horizontal-padding .from-left-position {
     left: -20px;
   }
   .page .content-container .remove-horizontal-padding .from-right-position,
   .product-category .content-container .remove-horizontal-padding .from-right-position,
-  .page-with-hero .content-container .remove-horizontal-padding .from-right-position {
+  .page-with-hero .content-container .remove-horizontal-padding .from-right-position,
+  .full-width-flexible .content-container .remove-horizontal-padding .from-right-position {
     right: -20px;
   }
   .page .content-container .remove-horizontal-padding .from-left-margin,
   .product-category .content-container .remove-horizontal-padding .from-left-margin,
-  .page-with-hero .content-container .remove-horizontal-padding .from-left-margin {
+  .page-with-hero .content-container .remove-horizontal-padding .from-left-margin,
+  .full-width-flexible .content-container .remove-horizontal-padding .from-left-margin {
     margin-left: -20px;
   }
   .page .content-container .remove-horizontal-padding .from-right-margin,
   .product-category .content-container .remove-horizontal-padding .from-right-margin,
-  .page-with-hero .content-container .remove-horizontal-padding .from-right-margin {
+  .page-with-hero .content-container .remove-horizontal-padding .from-right-margin,
+  .full-width-flexible .content-container .remove-horizontal-padding .from-right-margin {
     margin-right: -20px;
   }
   .page .content-container .remove-horizontal-padding .from-margins,
   .product-category .content-container .remove-horizontal-padding .from-margins,
   .page-with-hero .content-container .remove-horizontal-padding .from-margins,
+  .full-width-flexible .content-container .remove-horizontal-padding .from-margins,
   .page .content-container .product-category-grid,
   .product-category .content-container .product-category-grid,
   .page-with-hero .content-container .product-category-grid,
+  .full-width-flexible .content-container .product-category-grid,
   .page .content-container .wipe-hero.medium,
   .product-category .content-container .wipe-hero.medium,
   .page-with-hero .content-container .wipe-hero.medium,
+  .full-width-flexible .content-container .wipe-hero.medium,
   .page .content-container .wipe-hero.large,
   .product-category .content-container .wipe-hero.large,
-  .page-with-hero .content-container .wipe-hero.large {
+  .page-with-hero .content-container .wipe-hero.large,
+  .full-width-flexible .content-container .wipe-hero.large {
     margin-right: -20px;
     margin-left: -20px;
   }
   .page .content-container .remove-horizontal-padding .to-margins,
   .product-category .content-container .remove-horizontal-padding .to-margins,
-  .page-with-hero .content-container .remove-horizontal-padding .to-margins {
+  .page-with-hero .content-container .remove-horizontal-padding .to-margins,
+  .full-width-flexible .content-container .remove-horizontal-padding .to-margins {
     margin-right: 20px;
     margin-left: 20px;
   }
@@ -2612,108 +2633,129 @@ nav header,
 @media (max-width: 767px) {
   .page .content-container .remove-horizontal-padding .from-left-position,
   .product-category .content-container .remove-horizontal-padding .from-left-position,
-  .page-with-hero .content-container .remove-horizontal-padding .from-left-position {
+  .page-with-hero .content-container .remove-horizontal-padding .from-left-position,
+  .full-width-flexible .content-container .remove-horizontal-padding .from-left-position {
     left: -20px;
   }
   .page .content-container .remove-horizontal-padding .from-right-position,
   .product-category .content-container .remove-horizontal-padding .from-right-position,
-  .page-with-hero .content-container .remove-horizontal-padding .from-right-position {
+  .page-with-hero .content-container .remove-horizontal-padding .from-right-position,
+  .full-width-flexible .content-container .remove-horizontal-padding .from-right-position {
     right: -20px;
   }
   .page .content-container .remove-horizontal-padding .from-left-margin,
   .product-category .content-container .remove-horizontal-padding .from-left-margin,
-  .page-with-hero .content-container .remove-horizontal-padding .from-left-margin {
+  .page-with-hero .content-container .remove-horizontal-padding .from-left-margin,
+  .full-width-flexible .content-container .remove-horizontal-padding .from-left-margin {
     margin-left: -20px;
   }
   .page .content-container .remove-horizontal-padding .from-right-margin,
   .product-category .content-container .remove-horizontal-padding .from-right-margin,
-  .page-with-hero .content-container .remove-horizontal-padding .from-right-margin {
+  .page-with-hero .content-container .remove-horizontal-padding .from-right-margin,
+  .full-width-flexible .content-container .remove-horizontal-padding .from-right-margin {
     margin-right: -20px;
   }
   .page .content-container .remove-horizontal-padding .from-margins,
   .product-category .content-container .remove-horizontal-padding .from-margins,
   .page-with-hero .content-container .remove-horizontal-padding .from-margins,
+  .full-width-flexible .content-container .remove-horizontal-padding .from-margins,
   .page .content-container .product-category-grid,
   .product-category .content-container .product-category-grid,
   .page-with-hero .content-container .product-category-grid,
+  .full-width-flexible .content-container .product-category-grid,
   .page .content-container .wipe-hero.medium,
   .product-category .content-container .wipe-hero.medium,
   .page-with-hero .content-container .wipe-hero.medium,
+  .full-width-flexible .content-container .wipe-hero.medium,
   .page .content-container .wipe-hero.large,
   .product-category .content-container .wipe-hero.large,
-  .page-with-hero .content-container .wipe-hero.large {
+  .page-with-hero .content-container .wipe-hero.large,
+  .full-width-flexible .content-container .wipe-hero.large {
     margin-right: -20px;
     margin-left: -20px;
   }
   .page .content-container .remove-horizontal-padding .to-margins,
   .product-category .content-container .remove-horizontal-padding .to-margins,
-  .page-with-hero .content-container .remove-horizontal-padding .to-margins {
+  .page-with-hero .content-container .remove-horizontal-padding .to-margins,
+  .full-width-flexible .content-container .remove-horizontal-padding .to-margins {
     margin-right: 20px;
     margin-left: 20px;
   }
 }
 .page .content-container .restore-horizontal-padding .from-left-position,
 .product-category .content-container .restore-horizontal-padding .from-left-position,
-.page-with-hero .content-container .restore-horizontal-padding .from-left-position {
+.page-with-hero .content-container .restore-horizontal-padding .from-left-position,
+.full-width-flexible .content-container .restore-horizontal-padding .from-left-position {
   left: 0;
 }
 .page .content-container .restore-horizontal-padding .from-right-position,
 .product-category .content-container .restore-horizontal-padding .from-right-position,
-.page-with-hero .content-container .restore-horizontal-padding .from-right-position {
+.page-with-hero .content-container .restore-horizontal-padding .from-right-position,
+.full-width-flexible .content-container .restore-horizontal-padding .from-right-position {
   right: 0;
 }
 .page .content-container .restore-horizontal-padding .from-left-margin,
 .product-category .content-container .restore-horizontal-padding .from-left-margin,
-.page-with-hero .content-container .restore-horizontal-padding .from-left-margin {
+.page-with-hero .content-container .restore-horizontal-padding .from-left-margin,
+.full-width-flexible .content-container .restore-horizontal-padding .from-left-margin {
   margin-left: 0;
 }
 .page .content-container .restore-horizontal-padding .from-right-margin,
 .product-category .content-container .restore-horizontal-padding .from-right-margin,
-.page-with-hero .content-container .restore-horizontal-padding .from-right-margin {
+.page-with-hero .content-container .restore-horizontal-padding .from-right-margin,
+.full-width-flexible .content-container .restore-horizontal-padding .from-right-margin {
   margin-right: 0;
 }
 .page .content-container .restore-horizontal-padding .from-margins,
 .product-category .content-container .restore-horizontal-padding .from-margins,
-.page-with-hero .content-container .restore-horizontal-padding .from-margins {
+.page-with-hero .content-container .restore-horizontal-padding .from-margins,
+.full-width-flexible .content-container .restore-horizontal-padding .from-margins {
   margin-right: 0;
   margin-left: 0;
 }
 .page .content-container .restore-horizontal-padding .to-margins,
 .product-category .content-container .restore-horizontal-padding .to-margins,
-.page-with-hero .content-container .restore-horizontal-padding .to-margins {
+.page-with-hero .content-container .restore-horizontal-padding .to-margins,
+.full-width-flexible .content-container .restore-horizontal-padding .to-margins {
   margin-right: 0;
   margin-left: 0;
 }
 @media (max-width: 1023px) {
   .page .content-container .restore-horizontal-padding .from-left-position,
   .product-category .content-container .restore-horizontal-padding .from-left-position,
-  .page-with-hero .content-container .restore-horizontal-padding .from-left-position {
+  .page-with-hero .content-container .restore-horizontal-padding .from-left-position,
+  .full-width-flexible .content-container .restore-horizontal-padding .from-left-position {
     left: 0;
   }
   .page .content-container .restore-horizontal-padding .from-right-position,
   .product-category .content-container .restore-horizontal-padding .from-right-position,
-  .page-with-hero .content-container .restore-horizontal-padding .from-right-position {
+  .page-with-hero .content-container .restore-horizontal-padding .from-right-position,
+  .full-width-flexible .content-container .restore-horizontal-padding .from-right-position {
     right: 0;
   }
   .page .content-container .restore-horizontal-padding .from-left-margin,
   .product-category .content-container .restore-horizontal-padding .from-left-margin,
-  .page-with-hero .content-container .restore-horizontal-padding .from-left-margin {
+  .page-with-hero .content-container .restore-horizontal-padding .from-left-margin,
+  .full-width-flexible .content-container .restore-horizontal-padding .from-left-margin {
     margin-left: 0;
   }
   .page .content-container .restore-horizontal-padding .from-right-margin,
   .product-category .content-container .restore-horizontal-padding .from-right-margin,
-  .page-with-hero .content-container .restore-horizontal-padding .from-right-margin {
+  .page-with-hero .content-container .restore-horizontal-padding .from-right-margin,
+  .full-width-flexible .content-container .restore-horizontal-padding .from-right-margin {
     margin-right: 0;
   }
   .page .content-container .restore-horizontal-padding .from-margins,
   .product-category .content-container .restore-horizontal-padding .from-margins,
-  .page-with-hero .content-container .restore-horizontal-padding .from-margins {
+  .page-with-hero .content-container .restore-horizontal-padding .from-margins,
+  .full-width-flexible .content-container .restore-horizontal-padding .from-margins {
     margin-right: 0;
     margin-left: 0;
   }
   .page .content-container .restore-horizontal-padding .to-margins,
   .product-category .content-container .restore-horizontal-padding .to-margins,
-  .page-with-hero .content-container .restore-horizontal-padding .to-margins {
+  .page-with-hero .content-container .restore-horizontal-padding .to-margins,
+  .full-width-flexible .content-container .restore-horizontal-padding .to-margins {
     margin-right: 0;
     margin-left: 0;
   }
@@ -2721,53 +2763,62 @@ nav header,
 @media (max-width: 767px) {
   .page .content-container .restore-horizontal-padding .from-left-position,
   .product-category .content-container .restore-horizontal-padding .from-left-position,
-  .page-with-hero .content-container .restore-horizontal-padding .from-left-position {
+  .page-with-hero .content-container .restore-horizontal-padding .from-left-position,
+  .full-width-flexible .content-container .restore-horizontal-padding .from-left-position {
     left: 0;
   }
   .page .content-container .restore-horizontal-padding .from-right-position,
   .product-category .content-container .restore-horizontal-padding .from-right-position,
-  .page-with-hero .content-container .restore-horizontal-padding .from-right-position {
+  .page-with-hero .content-container .restore-horizontal-padding .from-right-position,
+  .full-width-flexible .content-container .restore-horizontal-padding .from-right-position {
     right: 0;
   }
   .page .content-container .restore-horizontal-padding .from-left-margin,
   .product-category .content-container .restore-horizontal-padding .from-left-margin,
-  .page-with-hero .content-container .restore-horizontal-padding .from-left-margin {
+  .page-with-hero .content-container .restore-horizontal-padding .from-left-margin,
+  .full-width-flexible .content-container .restore-horizontal-padding .from-left-margin {
     margin-left: 0;
   }
   .page .content-container .restore-horizontal-padding .from-right-margin,
   .product-category .content-container .restore-horizontal-padding .from-right-margin,
-  .page-with-hero .content-container .restore-horizontal-padding .from-right-margin {
+  .page-with-hero .content-container .restore-horizontal-padding .from-right-margin,
+  .full-width-flexible .content-container .restore-horizontal-padding .from-right-margin {
     margin-right: 0;
   }
   .page .content-container .restore-horizontal-padding .from-margins,
   .product-category .content-container .restore-horizontal-padding .from-margins,
-  .page-with-hero .content-container .restore-horizontal-padding .from-margins {
+  .page-with-hero .content-container .restore-horizontal-padding .from-margins,
+  .full-width-flexible .content-container .restore-horizontal-padding .from-margins {
     margin-right: 0;
     margin-left: 0;
   }
   .page .content-container .restore-horizontal-padding .to-margins,
   .product-category .content-container .restore-horizontal-padding .to-margins,
-  .page-with-hero .content-container .restore-horizontal-padding .to-margins {
+  .page-with-hero .content-container .restore-horizontal-padding .to-margins,
+  .full-width-flexible .content-container .restore-horizontal-padding .to-margins {
     margin-right: 0;
     margin-left: 0;
   }
 }
 .page h2,
 .product-category h2,
-.page-with-hero h2 {
+.page-with-hero h2,
+.full-width-flexible h2 {
   text-align: center;
   margin-bottom: 40px;
 }
 @media (max-width: 767px) {
   .page h2,
   .product-category h2,
-  .page-with-hero h2 {
+  .page-with-hero h2,
+  .full-width-flexible h2 {
     margin-bottom: 10px;
   }
 }
 .page article,
 .product-category article,
-.page-with-hero article {
+.page-with-hero article,
+.full-width-flexible article {
   margin: 0;
   font-size: 30px;
   font-family: 'Seravek', sans-serif;
@@ -3549,6 +3600,19 @@ nav header,
 @media (max-width: 767px) {
   .flexible-content.image .caption {
     margin-top: 20px;
+  }
+}
+.flexible-content.image-grid .image-container {
+  padding: 0;
+  text-align: center;
+}
+.flexible-content.image-grid .image-container img {
+  max-height: 200px;
+  max-width: 200px;
+}
+@media (max-width: 767px) {
+  .flexible-content.image-grid .image-container img {
+    max-width: 100%;
   }
 }
 .flexible-content.bullet-list ul {

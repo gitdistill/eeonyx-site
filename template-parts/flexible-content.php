@@ -57,6 +57,35 @@ if( get_field('sections', $sections_post) ){
           <?php } ?>
         </div>
 
+<?php
+      elseif( get_row_layout() == 'image_grid' ): 
+        /**
+         *
+         * Image grid section
+         *
+         */
+        $images = get_sub_field('images');
+      ?>
+
+        <div class="flexible-content image-grid row">
+
+        <?php if ( get_sub_field('heading') ) { ?>
+        <div class="heading col-sm-12">
+          <?php the_sub_field('heading'); ?>
+        </div>
+        <?php } ?>
+
+        <?php foreach( $images as $imageWrapper ){ ?>
+          <?php $image = $imageWrapper['image']; if( $image ) { ?>
+            <div class="image-container col-sm-3">
+              <script language='javascript'> console.log(<?= json_encode($image) ?>);</script>
+              <img src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>" >
+            </div>
+          <?php } ?>
+        <?php } ?>
+
+        </div>
+
 
 <?php
       elseif( get_row_layout() == 'bullet_list' ): 

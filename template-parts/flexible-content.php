@@ -78,7 +78,6 @@ if( get_field('sections', $sections_post) ){
         <?php foreach( $images as $imageWrapper ){ ?>
           <?php $image = $imageWrapper['image']; if( $image ) { ?>
             <div class="image-container col-sm-3">
-              <script language='javascript'> console.log(<?= json_encode($image) ?>);</script>
               <img src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>" >
             </div>
           <?php } ?>

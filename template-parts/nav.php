@@ -64,6 +64,33 @@ if ( !defined('EEONYX_NAV_INITIALIZED') ) {
         <a class="menu-item <?php active('contact') ?>" href="/contact">
           <div>Contact</div>
         </a>
+
+        <!--additional items-->
+         <script language='javascript'>
+         console.log(<?= json_encode(wp_get_nav_menu_items('Additional Left Nav')) ?>);
+         </script>
+
+        <?php
+
+        $menu_items = wp_get_nav_menu_items('Additional Left Nav');
+ 
+        if ( count($menu_items) ){
+         
+            foreach ( (array) $menu_items as $key => $menu_item ) {
+                $title = $menu_item->title;
+                // $name = $menu_item->post_name;
+                $url = $menu_item->url;
+            ?>
+
+                <a class="menu-item" href="<?=$url?>">
+                  <div><?=$title?></div>
+                </a>
+
+            <?php
+            }
+        }
+
+        ?>
       </div>
     </div>
 
